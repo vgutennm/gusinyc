@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "q-tBSdb0mONYI42G6BdfE"
+uri = "file://artifacts/gusi/public/images/hero.png"
+type = "image"
+title = "Hero dining room"
+
+[[generated]]
+id = "qf0B69Fj1YNjUITUwn2UJ"
+uri = "file://artifacts/gusi/public/images/floor1.png"
+type = "image"
+title = "First floor dark wood"
+
+[[generated]]
+id = "2VErfOqkOK-NPJ7-is4oU"
+uri = "file://artifacts/gusi/public/images/staircase.png"
+type = "image"
+title = "Staircase passage"
+
+[[generated]]
+id = "J6DfFCIvst78cRkg032UP"
+uri = "file://artifacts/gusi/public/images/floor2.png"
+type = "image"
+title = "Second floor bright dining"
+
+[[generated]]
+id = "tgjf91poYcD6Or76ZNEIn"
+uri = "file://artifacts/gusi/public/images/food.png"
+type = "image"
+title = "Elegant food still life"

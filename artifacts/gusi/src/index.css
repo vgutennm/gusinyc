@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-gusi-burgundy: #2A0707;
+  --color-gusi-wine: #4A1111;
+  --color-gusi-charcoal: #161413;
+  --color-gusi-ivory: #F7F1E8;
+  --color-gusi-porcelain: #EFE9DE;
+  --color-gusi-sage: #8D978C;
+  --color-gusi-gold: #C8A24A;
+  --color-gusi-wood: #6B3F26;
+  --color-gusi-red: #9E2E2E;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
+}
+
+:root {
+  /* HSL Values for standard theme */
+  --background: 40 44% 96%; /* #F7F1E8 */
+  --foreground: 20 8% 8%; /* #161413 */
+  
+  --border: 40 24% 85%;
+  --input: 40 24% 85%;
+  --ring: 43 54% 54%; /* #C8A24A */
+  
+  --card: 40 33% 90%; /* #EFE9DE */
+  --card-foreground: 20 8% 8%;
+  --card-border: 40 24% 85%;
+
+  --primary: 0 74% 10%; /* #2A0707 */
+  --primary-foreground: 40 44% 96%;
+  
+  --secondary: 43 54% 54%; /* #C8A24A */
+  --secondary-foreground: 0 74% 10%;
+  
+  --muted: 40 33% 90%;
+  --muted-foreground: 20 8% 40%;
+  
+  --accent: 112 7% 57%; /* #8D978C */
+  --accent-foreground: 40 44% 96%;
+  
+  --destructive: 0 55% 40%; /* #9E2E2E */
+  --destructive-foreground: 40 44% 96%;
+
+  --radius: 0rem; /* Elegant sharp corners */
+}
+
+.dark {
+  --background: 20 8% 8%; /* #161413 */
+  --foreground: 40 44% 96%; /* #F7F1E8 */
+  
+  --border: 0 74% 15%;
+  --input: 0 74% 15%;
+  --ring: 43 54% 54%;
+  
+  --card: 0 74% 10%; /* #2A0707 */
+  --card-foreground: 40 44% 96%;
+  --card-border: 0 74% 15%;
+
+  --primary: 43 54% 54%; /* #C8A24A */
+  --primary-foreground: 20 8% 8%;
+  
+  --secondary: 40 44% 96%; /* #F7F1E8 */
+  --secondary-foreground: 20 8% 8%;
+  
+  --muted: 0 74% 15%;
+  --muted-foreground: 40 33% 70%;
+  
+  --accent: 112 7% 40%;
+  --accent-foreground: 40 44% 96%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-normal tracking-wide;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.bg-texture-paper {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.bg-texture-dark {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}

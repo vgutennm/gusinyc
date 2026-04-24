@@ -1,0 +1,242 @@
+Build a polished mobile-first restaurant website for GUSI, a modern Eastern European restaurant and bar in Greenwich Village, New York.
+
+Use Vite + React + TypeScript + Tailwind CSS. No backend is needed for the MVP. Use clean component architecture and static data files.
+
+Brand:
+GUSI is a modern Eastern European restaurant with a Mediterranean touch. It should feel elegant, warm, cultural, intimate, slightly mysterious, and contemporary. It should not feel kitschy, touristy, or like a museum.
+
+Location:
+432 Sixth Avenue, New York, NY, Greenwich Village.
+Add Google Maps and Apple Maps CTA buttons with placeholder URLs.
+
+Primary CTA:
+Reserve a Table
+
+Secondary CTA:
+View Menu
+
+Reservation system:
+Use an external OpenTable link placeholder:
+OPEN_TABLE_URL = "#"
+Do not create a custom booking system.
+
+Site sections:
+1. Header
+2. Hero
+3. Story
+4. Two Floors
+5. Menu Preview
+6. Bar
+7. Reservations
+8. Visit / Location
+9. Press & Social
+10. Footer
+
+Header:
+Sticky, minimal, elegant.
+Desktop navigation: Story, Menu, Bar, Space, Reservations, Visit.
+Mobile hamburger menu.
+Always show a Reserve button.
+
+Hero:
+Full-screen or near full-screen.
+Text:
+GUSI
+Modern Eastern European cuisine with a Mediterranean touch.
+Greenwich Village, New York.
+Buttons: Reserve a Table, Explore the Menu.
+Use a dark elegant background with subtle wing/paper texture if no real image is available.
+
+Story section:
+Title: A restaurant of two wings.
+Copy:
+GUSI reimagines familiar Eastern European flavors, rituals, and memories for modern New York. The name carries folklore, humor, childhood, and migration — a layered word for a layered place.
+The restaurant moves between two moods: the warmth and texture of the first floor, and the softer, elevated ceremony of the second floor.
+
+Two Floors section:
+Create three cards or panels:
+- First Floor — Gusi / The Geese
+Dark, warm, textured, bold, social. Charred wood, vintage mirrors, oak tables, cocktails, infused vodka, and relaxed evening energy.
+- The Staircase — The Passage
+A low-lit passage marked by a crystal chandelier — a movement from a dark forest into a bright meadow.
+- Second Floor — Lebedi / The Swans
+Light, refined, tablecloths, muted gray-green walls, warm parquet, curtains, paintings, elegant plating, and slower ceremonial dining.
+
+Menu section:
+Static menu preview with tabs or accordion categories. No online ordering.
+Categories:
+Cold Starters, Caviar, Hot Starters, Soups, Mains, Desserts, Signature Rituals.
+
+Menu items:
+Cold Starters:
+- Herring under a fur coat
+- Olivier salad with beef tongue
+- American wagyu tartare
+- Toast with smoked oyster
+- Creamy herring forshmak toast
+- Pickled tomatoes, cucumbers, sauerkraut, and mushrooms
+- Green salad with sorrel pesto
+- Trout tartare with crackers and red caviar
+
+Caviar:
+- Sturgeon caviar
+- Kaluga caviar
+- Trout roe
+- Pike roe
+Note: Served with fresh blini and smoked sour cream.
+
+Hot Starters:
+- Blini with salmon, cream, and dill
+- Pirozhki: cabbage, potato, egg and onion, or meat
+- Mini stuffed cabbage with whipped sour cream
+- Vareniki with baked potato, porcini mushrooms, and truffle sauce
+- Buckwheat with mushrooms and parmesan
+- Chebureki
+
+Soups:
+- Borscht with braised cheek, sour cream, and garlic pampushki
+- Sterlet and flounder ukha
+- Porcini mushroom soup
+- Pelmeni with broth
+- Solyanka
+- Okroshka
+- Svekolnik
+
+Mains:
+- Beef stroganoff with fettuccine
+- Chicken Kyiv with buckwheat
+- Chicken tapaka
+- Duck breast with baked apples
+- Crab cake with green salad
+- Salmon kulebyaka with beurre blanc and caviar
+- Burger with porcini sauce and fries
+- Filet mignon with pepper sauce
+- Christmas goose with apples and cranberry sauce
+
+Desserts:
+- Napoleon
+- Medovik
+- Rum baba
+- Bird’s milk
+- Pavlova
+- Vareniki with cherry and strawberry
+- Sorbets and ice creams
+- Apple sharlotka
+- Carrot cake
+
+Signature Rituals:
+- Complimentary bread basket with swan-shaped butter
+- Fairytale tasting menu
+- Seasonal cocktails in Christmas ornament-style glasses
+- Condensed milk walnut sweet served at the end of dinner
+- Broth cup served with lunch pirozhki or hot appetizers
+
+Bar section:
+Title: Infused vodka, cocktails, natural wine.
+Copy:
+The GUSI bar is built around house-infused vodkas, classic cocktails, natural wines, rare spirits, and forgotten Eastern European flavors reimagined for New York.
+Feature cards:
+- House-infused vodka
+- Signature cocktails
+- Natural and classic wines
+- Rare spirits
+- High-quality sound and evening atmosphere
+
+Reservations:
+Title: Reserve your table.
+Copy:
+Reservations will be available through OpenTable.
+Button: Reserve on OpenTable.
+Use placeholder URL "#".
+
+Visit section:
+Address:
+GUSI
+432 Sixth Avenue
+New York, NY
+Greenwich Village
+Add:
+- Google Maps button
+- Apple Maps button
+- Two blocks from West 4th Street subway station
+- Hours: Coming soon
+- Phone: Coming soon
+- Email: hello@gusinyc.com placeholder
+- Instagram/TikTok/Facebook/YouTube placeholder links
+
+Press & Social:
+Title: Follow the opening.
+Copy:
+Opening updates, menu previews, bar notes, and press announcements will be shared here.
+Add placeholders for Instagram, TikTok, Facebook, YouTube, and Press Inquiries.
+
+Design:
+Use an elegant restaurant aesthetic.
+Colors:
+Deep Burgundy #2A0707
+Wine #4A1111
+Charcoal #161413
+Warm Ivory #F7F1E8
+Porcelain #EFE9DE
+Muted Gray Green #8D978C
+Aged Gold #C8A24A
+Wood Brown #6B3F26
+Soft Red #9E2E2E
+
+Typography:
+Use Google Fonts:
+- Cormorant Garamond or Playfair Display for headings
+- Inter for body
+Make typography large, airy, and readable on mobile.
+
+Visual details:
+Use subtle wing silhouettes, paper texture, gold divider lines, dark-to-light section transitions, and elegant hover states.
+Avoid clutter.
+Avoid overly ornate Russian clichés.
+Keep it modern and polished.
+
+SEO:
+Add metadata in index.html:
+Title: GUSI | Modern Eastern European Restaurant in Greenwich Village
+Description: GUSI is a modern Eastern European restaurant and bar in Greenwich Village, New York, featuring Mediterranean touches, infused vodka, cocktails, natural wine, and warm Slavic hospitality.
+Keywords: Eastern European restaurant NYC, Greenwich Village restaurant, infused vodka bar NYC, modern Slavic restaurant, borscht NYC, pelmeni NYC, blini NYC, natural wine Greenwich Village.
+
+Add Open Graph tags:
+og:title
+og:description
+og:type website
+og:image placeholder
+og:url placeholder
+
+Add JSON-LD Restaurant schema with:
+name: GUSI
+servesCuisine: Eastern European, Mediterranean
+address: 432 Sixth Avenue, New York, NY
+priceRange: $$$
+acceptsReservations: true
+url placeholder
+sameAs placeholders for Instagram/TikTok/Facebook/YouTube.
+
+Accessibility:
+Use semantic HTML.
+All images must have alt text.
+Buttons must have visible focus states.
+Color contrast must be readable.
+Menu accordions must be keyboard accessible.
+
+Performance:
+Lazy load images.
+Use optimized image placeholders.
+Avoid heavy animations.
+Target Lighthouse score above 90 for Performance, Accessibility, Best Practices, and SEO.
+
+Acceptance criteria:
+- Site runs successfully in Replit.
+- Mobile layout looks excellent at 390px width.
+- Tablet and desktop layouts look polished.
+- Navigation anchors work.
+- Reserve buttons all point to the OpenTable placeholder.
+- Menu is readable and easy to scan.
+- Location section includes address and map CTAs.
+- SEO metadata and JSON-LD are included.
+- Site can be easily updated later with real photos, final hours, final phone number, final menu prices, OpenTable URL, and press links.
