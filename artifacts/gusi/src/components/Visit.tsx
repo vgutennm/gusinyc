@@ -1,5 +1,6 @@
-import { OPEN_TABLE_URL, GOOGLE_MAPS_URL, APPLE_MAPS_URL, SOCIAL_LINKS, RESTAURANT_EMAIL, PRESS_EMAIL } from "@/lib/constants";
+import { OPEN_TABLE_URL, GOOGLE_MAPS_URL, APPLE_MAPS_URL, GOOGLE_REVIEW_URL, SOCIAL_LINKS, RESTAURANT_EMAIL, PRESS_EMAIL } from "@/lib/constants";
 import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
 export function Visit() {
   return (
@@ -61,7 +62,7 @@ export function Visit() {
               <p className="text-gusi-gold/70 text-sm mt-4 italic font-light">Two blocks from West 4th Street subway station.</p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">
               <a
                 href={GOOGLE_MAPS_URL}
                 target="_blank"
@@ -78,6 +79,23 @@ export function Visit() {
               >
                 Apple Maps
               </a>
+            </div>
+
+            <div className="mb-12 sm:mb-16">
+              <h3 className="text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-3 sm:mb-4">Loved your visit?</h3>
+              <a
+                href={GOOGLE_REVIEW_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Leave a Google review for GUSI Restaurant"
+                className="group inline-flex items-center justify-center gap-2.5 w-full sm:w-auto text-center bg-gusi-gold text-gusi-charcoal px-7 py-3.5 uppercase tracking-[0.2em] text-xs hover:bg-gusi-ivory transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-ivory/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+              >
+                <Star className="w-3.5 h-3.5 fill-current" strokeWidth={1.5} aria-hidden="true" />
+                <span>Leave a Google Review</span>
+              </a>
+              <p className="mt-3 text-xs text-gusi-porcelain/50 font-light italic">
+                Your words help our flock take flight.
+              </p>
             </div>
 
             <div className="pt-10 sm:pt-12 border-t border-gusi-gold/10">
