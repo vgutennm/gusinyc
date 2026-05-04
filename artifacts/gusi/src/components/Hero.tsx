@@ -24,8 +24,21 @@ export function Hero() {
           <p className="text-gusi-gold uppercase tracking-[0.3em] text-[10px] sm:text-xs md:text-sm mb-5 sm:mb-6">
             Greenwich Village, New York
           </p>
-          <h1 className="font-serif text-[3.75rem] sm:text-7xl md:text-8xl lg:text-9xl text-gusi-ivory tracking-[0.1em] mb-5 sm:mb-6 leading-none">
-            GUSI
+          <h1 className="mb-5 sm:mb-6 leading-none">
+            <span className="sr-only">
+              GUSI — Modern Eastern European Restaurant in Greenwich Village, New York
+            </span>
+            <img
+              src="/brand/gusi-wordmark-light.svg"
+              alt=""
+              aria-hidden="true"
+              width={5102}
+              height={1862}
+              fetchPriority="high"
+              decoding="async"
+              className="block mx-auto h-[72px] sm:h-[112px] md:h-[140px] lg:h-[180px] w-auto select-none"
+              draggable={false}
+            />
           </h1>
           <p className="text-gusi-porcelain/80 text-base sm:text-lg md:text-xl font-light tracking-wide max-w-md md:max-w-lg mx-auto mb-10 sm:mb-12 leading-relaxed">
             Modern Eastern European cuisine with a Mediterranean touch.

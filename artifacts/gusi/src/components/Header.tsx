@@ -48,9 +48,16 @@ export function Header() {
         <Link
           href="/"
           aria-label="GUSI — return to homepage"
-          className="font-serif text-xl md:text-3xl tracking-[0.2em] text-gusi-ivory uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+          className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
         >
-          GUSI
+          <img
+            src="/brand/gusi-wordmark-light.svg"
+            alt="GUSI"
+            width={5102}
+            height={1862}
+            className="block h-5 md:h-7 w-auto select-none"
+            draggable={false}
+          />
         </Link>
 
         {/* Desktop Nav */}

@@ -2,8 +2,19 @@ import { motion } from "framer-motion";
 
 export function Story() {
   return (
-    <section id="story" className="py-20 md:py-32 bg-gusi-ivory text-gusi-charcoal bg-texture-paper">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+    <section id="story" className="relative py-20 md:py-32 bg-gusi-ivory text-gusi-charcoal bg-texture-paper overflow-hidden">
+      {/* Decorative goose silhouette — desktop only, subtle */}
+      <img
+        src="/brand/gusi-goose-mark.webp"
+        alt=""
+        aria-hidden="true"
+        width={900}
+        height={1467}
+        loading="lazy"
+        decoding="async"
+        className="hidden lg:block pointer-events-none absolute -left-10 xl:-left-4 top-1/2 -translate-y-1/2 h-[420px] xl:h-[480px] w-auto opacity-[0.07] select-none"
+      />
+      <div className="container mx-auto px-6 md:px-12 max-w-4xl relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

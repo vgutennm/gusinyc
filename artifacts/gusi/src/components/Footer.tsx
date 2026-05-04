@@ -5,7 +5,17 @@ export function Footer() {
   return (
     <footer className="bg-gusi-charcoal text-gusi-porcelain/40 py-10 sm:py-12 border-t border-gusi-ivory/5 text-sm font-light tracking-wide">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6 text-center md:text-left">
-        <div className="font-serif tracking-[0.2em] text-gusi-porcelain/60">GUSI</div>
+        <div className="flex items-center">
+          <img
+            src="/brand/gusi-wordmark-light.svg"
+            alt="GUSI"
+            width={5102}
+            height={1862}
+            className="block h-4 w-auto opacity-60"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
         <div>432 Sixth Avenue, New York, NY 10011</div>
         <div className="flex items-center gap-2">
           <a
