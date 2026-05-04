@@ -20,3 +20,4 @@ export const SOCIAL_LINKS = {
 export const GOOGLE_MAPS_URL = "https://maps.google.com/?q=432+Sixth+Avenue+New+York";
 export const APPLE_MAPS_URL = "https://maps.apple.com/?q=432+Sixth+Avenue+New+York";
 export const GOOGLE_REVIEW_URL = "https://g.page/r/CWL-sBI7qWJ7EBM/review";
+export const GOOGLE_BUSINESS_URL = "https://share.google/aCVI7n8A6PEaWXCPO";

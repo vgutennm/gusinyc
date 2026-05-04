@@ -1,6 +1,6 @@
-import { OPEN_TABLE_URL, GOOGLE_MAPS_URL, APPLE_MAPS_URL, GOOGLE_REVIEW_URL, SOCIAL_LINKS, RESTAURANT_EMAIL, PRESS_EMAIL } from "@/lib/constants";
+import { OPEN_TABLE_URL, GOOGLE_MAPS_URL, APPLE_MAPS_URL, GOOGLE_REVIEW_URL, GOOGLE_BUSINESS_URL, SOCIAL_LINKS, RESTAURANT_EMAIL, PRESS_EMAIL } from "@/lib/constants";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { Star, Store } from "lucide-react";
 
 export function Visit() {
   return (
@@ -83,16 +83,28 @@ export function Visit() {
 
             <div className="mb-12 sm:mb-16">
               <h3 className="text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-3 sm:mb-4">Loved your visit?</h3>
-              <a
-                href={GOOGLE_REVIEW_URL}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="Leave a Google review for GUSI Restaurant"
-                className="group inline-flex items-center justify-center gap-2.5 w-full sm:w-auto text-center bg-gusi-gold text-gusi-charcoal px-7 py-3.5 uppercase tracking-[0.2em] text-xs hover:bg-gusi-ivory transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-ivory/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
-              >
-                <Star className="w-3.5 h-3.5 fill-current" strokeWidth={1.5} aria-hidden="true" />
-                <span>Leave a Google Review</span>
-              </a>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                <a
+                  href={GOOGLE_REVIEW_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="Leave a Google review for GUSI Restaurant"
+                  className="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto text-center bg-gusi-gold text-gusi-charcoal px-7 py-3.5 uppercase tracking-[0.2em] text-xs hover:bg-gusi-ivory transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-ivory/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+                >
+                  <Star className="w-3.5 h-3.5 fill-current" strokeWidth={1.5} aria-hidden="true" />
+                  <span>Leave a Google Review</span>
+                </a>
+                <a
+                  href={GOOGLE_BUSINESS_URL}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  aria-label="View GUSI Restaurant's Google Business profile"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto text-center border border-gusi-gold/30 text-gusi-gold px-6 py-3 uppercase tracking-[0.2em] text-xs hover:bg-gusi-gold/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+                >
+                  <Store className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden="true" />
+                  <span>View on Google</span>
+                </a>
+              </div>
               <p className="mt-3 text-xs text-gusi-porcelain/50 font-light italic">
                 Your words help our flock take flight.
               </p>
