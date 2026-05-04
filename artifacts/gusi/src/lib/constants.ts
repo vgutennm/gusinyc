@@ -4,6 +4,13 @@ export const RESTAURANT_ADDRESS = "432 Sixth Avenue, New York, NY 10011";
 export const RESTAURANT_PHONE = "Coming soon";
 export const RESTAURANT_EMAIL = "hello@gusinyc.com";
 export const PRESS_EMAIL = "press@gusinyc.com";
+export const OPENING_DATE_LABEL = "Friday, May 8, 2026";
+export const MEDIA_CONTACT = {
+  name: "Aik Wye Ng",
+  email: "aikwye@gmail.com",
+  phone: "+1 917-374-3756",
+  phoneTel: "+19173743756",
+};
 export const SOCIAL_LINKS = {
   instagram: "#",
   tiktok: "#",

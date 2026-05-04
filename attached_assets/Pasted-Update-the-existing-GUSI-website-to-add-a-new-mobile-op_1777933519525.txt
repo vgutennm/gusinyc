@@ -1,0 +1,456 @@
+Update the existing GUSI website to add a new mobile-optimized Press / Opening Announcement page and add it to the existing website navigation.
+
+Use the current project structure, styles, components, routing, colors, and brand design already in the app. Do not rebuild the website from scratch. Do not remove or break any existing homepage sections, buttons, links, anchors, styling, or functionality.
+
+The new page should be elegant, premium, editorial, hospitality-focused, and consistent with the current GUSI brand.
+
+PROJECT CONTEXT
+
+This is an existing GUSI website. The app currently uses React / Vite with Wouter routing.
+
+The current site includes:
+
+- src/App.tsx
+- src/pages/Home.tsx
+- src/components/Header.tsx
+- src/components/Footer.tsx
+
+The current navigation includes:
+
+Story
+Space
+Menu
+Bar
+Visit
+Reserve
+
+Add a new navigation item called:
+
+Press
+
+Recommended navigation order:
+
+Story
+Space
+Menu
+Bar
+Press
+Visit
+Reserve
+
+The Press link should go to:
+
+/press
+
+The existing homepage anchor links should continue working.
+
+The GUSI logo in the top-left of the header must always link back to the homepage:
+
+/
+
+This should work from both the homepage and the new Press page.
+
+NEW ROUTE
+
+Create a new page:
+
+src/pages/Press.tsx
+
+Add a new route in src/App.tsx:
+
+/press
+
+Import the page:
+
+import Press from "@/pages/Press";
+
+Add the route:
+
+<Route path="/press" component={Press} />
+
+Do not remove the existing home route or NotFound route.
+
+NEW PAGE SEO
+
+The new Press page should have the following page title:
+
+Gusi Opens in Greenwich Village | Eastern European Restaurant & Bar in NYC
+
+The meta description should be:
+
+Gusi, a two-storey Eastern European restaurant and bar with Mediterranean influence, opens Friday, May 8, 2026 at 432 Sixth Avenue in Greenwich Village, NYC.
+
+If the project already has an SEO/meta system, use it. If not, use a simple useEffect in Press.tsx to update document.title and the meta description.
+
+NEW PAGE CONTENT
+
+Create the new Press page with this structure:
+
+Header
+Main Press Page Content
+Footer
+
+The page should not feel like a pasted press release. Break the content into polished, readable website sections with strong spacing, clear headings, cards where helpful, and mobile-friendly layouts.
+
+Use one H1 only. Use H2 headings for major sections and H3 headings for subsections.
+
+SECTION 1: HERO
+
+Dark charcoal / elegant brand-style hero section.
+
+Small label:
+
+FOR IMMEDIATE RELEASE
+
+H1:
+
+Gusi Opens in Greenwich Village on Friday, May 8th, 2026
+
+Subheadline:
+
+A Two-Storey Restaurant & Bar Where Eastern European Heritage Meets Mediterranean Influence
+
+Intro copy:
+
+Opening at 432 Sixth Avenue in the heart of Greenwich Village, Gusi brings a refined and soulful interpretation of Eastern European cuisine to New York City, infused with the warmth and brightness of Mediterranean influence.
+
+Add two CTA buttons:
+
+Reserve a Table
+Link to the existing OpenTable / reservation URL already used on the website.
+
+Visit GUSI
+Link to /#visit
+
+On mobile, stack the buttons vertically and make them easy to tap.
+
+SECTION 2: OPENING ANNOUNCEMENT
+
+Heading:
+
+A New Eastern European Restaurant in the Heart of Greenwich Village
+
+Body copy:
+
+Gusi, the new two-storey Eastern European restaurant and bar from Boris Artemyev and Elena Melnikova, will officially open its doors on Friday, May 8th, 2026 at 432 Sixth Avenue in the heart of Greenwich Village.
+
+Named after the Slavic word for “geese,” Gusi is a deeply personal, soulful venture where refined Eastern European cuisine meets Mediterranean warmth, creating a dining experience unlike anything else in New York City right now.
+
+Spanning two distinct floors, each its own world, Gusi unfolds as a journey from the grounded, art-filled ground floor to an airy, mural-adorned second-floor retreat overlooking the iconic Jefferson Market Library.
+
+SECTION 3: FOUNDERS
+
+Heading:
+
+Founded by Boris Artemyev and Elena Melnikova
+
+Body copy:
+
+Founded by husband-and-wife team Boris Artemyev and Elena Melnikova, both seasoned veterans of New York’s restaurant scene, Gusi is a deeply personal venture and the realization of a shared American dream.
+
+Together, they bring decades of combined experience and an unwavering vision: a place where Eastern European heritage, exceptional cuisine, and warm, intuitive hospitality converge.
+
+Design note:
+
+Use a two-column layout on desktop if it fits the existing design. Stack on mobile.
+
+SECTION 4: CULINARY JOURNEY
+
+Heading:
+
+A Culinary Journey Rooted in Tradition and Migration
+
+Body copy:
+
+New York is home to only a handful of restaurants dedicated to Eastern European cuisine. Gusi adds a distinct new voice to that conversation, one grounded in tradition yet shaped by a contemporary point of view, with interpretations that feel both respectful and quietly unexpected.
+
+At the heart of the menu is an expansive dumpling program that defines the Gusi experience. Pelmeni appear in multiple styles and fillings, from classic combinations of beef and pork or beef, pork, and veal, to less commonly seen expressions featuring elk, buffalo, goose, and a Mediterranean-influenced variation finished with tahini.
+
+Pierogi receive a similarly considered treatment. Rather than the short crust dough most familiar to New York diners, Gusi highlights a lesser-known tradition of puff pastry pierogi, resulting in a lighter, flakier texture that offers a new dimension while remaining rooted in heritage.
+
+Borscht anchors the menu as a fixture, offered daily in its classic form alongside rotating weekly interpretations that reflect the dish’s deep regional diversity.
+
+Add a feature card/grid section with these items:
+
+Expansive Dumpling Program
+Rotating Borscht Interpretations
+House Pickled Vegetables
+Mediterranean Influence
+Eastern European Comfort Cuisine
+
+On mobile, stack these cards in a single column.
+
+SECTION 5: BAR PROGRAM
+
+Heading:
+
+Gusi’s Bar Program: Nostalgia, Nature, and the Taste of Home
+
+Body copy:
+
+Gusi’s cocktail program is rooted in memory and tradition, drawing from flavors that shaped its team long before “mixology” entered their vocabulary.
+
+The beverage menu complements the food through house-infused vodkas and a focused list of signature cocktails designed to pair naturally with the richness and warmth of the cuisine. Ingredients are natural and minimally handled, crafted without commercial shortcuts to preserve their integrity and meaning.
+
+Pine cone infusions recall summers spent climbing trees, cornelian cherry liqueur evokes grandmothers’ compotes, tomato infusions channel garden lunches, and boiled condensed milk becomes a grown-up nod to a beloved childhood treat.
+
+Seasonality guides the program, with cocktails shifting as the year turns, echoing the way these flavors once marked time.
+
+Also include this line:
+
+By day and into the afternoon, Gusi also features coffee from Devoción, reflecting the same thoughtful approach found throughout the experience.
+
+SECTION 6: WINE PROGRAM
+
+Heading:
+
+Gusi’s Curated Wine Program
+
+Body copy:
+
+An extensive wine list plays a vital role at Gusi, balancing classic European and American labels with natural, biodynamic, and organic selections.
+
+Thoughtfully selected to appeal to both seasoned wine enthusiasts and more casual drinkers, the list offers familiar favorites alongside lesser-known discoveries, with a range of styles and price points to suit any occasion.
+
+Designed to pair seamlessly with the menu, the program encourages exploration while remaining approachable and welcoming for all guests.
+
+SECTION 7: MUSIC CONCEPT
+
+Heading:
+
+The Music Concept
+
+Body copy:
+
+The ground floor is equipped with a high-fidelity, customized sound system designed for vinyl listening, with curated record selections setting the tone throughout the evening.
+
+Drawing from a range of genres and eras, the soundtrack adds warmth, rhythm, and a sense of intention to the space, positioning music as an experiential layer rather than background noise.
+
+SECTION 8: DESIGN VISION
+
+Heading:
+
+Design Vision: Two Worlds, One Story
+
+Body copy:
+
+Gusi’s interiors are designed as a journey that unfolds across two distinct moods, each floor telling its own chapter of a larger story.
+
+The ground floor features a curated collection of original art objects crafted exclusively for the space, while the second floor is adorned with hand-painted ceiling and wall murals inspired by abstract expressionism and the vibrant culture of New York City.
+
+The space uses texture, light, and cultural moments rooted in memory to guide guests from a grounded, warm, and tactile first floor to an airy and refined second floor.
+
+Create three subsections or cards:
+
+H3:
+
+The First Floor: Geese, Earthbound
+
+Copy:
+
+The ground level embodies the essence of the goose. It is grounded, warm, and deeply human. Darkness, charred wood, vintage mirrors, and tactile surfaces create a mood that is intentionally cozy and contemporary while still rooted in memory.
+
+H3:
+
+The Passage: A Shift in Mood
+
+Copy:
+
+The stairway connecting both floors is designed as a symbolic threshold, guiding guests from earth to air, from grounded comfort to graceful uplift.
+
+H3:
+
+The Second Floor: Swans, Airy and Elevated
+
+Copy:
+
+Upstairs, the mood transforms entirely. Here Gusi becomes Lebedi, another Slavic word for swans. Soft gray-green walls, parquet floors, tablecloths, draped curtains, and hand-painted murals create an elevated, poetic dining experience.
+
+SECTION 9: OPENING HOURS
+
+Heading:
+
+Opening Hours
+
+Body copy:
+
+Gusi will open with weekday dinner service from 4:00 pm to midnight and weekend all-day service from noon to midnight, including brunch on weekend day shifts.
+
+In the following months, hours will expand to noon through midnight daily, adding weekday lunch service.
+
+By month three to four, weekday service will begin at 9:00 am, with the ground floor operating as a morning café featuring Devoción coffee, pastries, and sandwiches before transitioning into full service through midnight.
+
+Add a simple card layout highlighting:
+
+Weekday Dinner: 4:00 pm – Midnight
+Weekend Service: Noon – Midnight
+Future Expansion: Lunch, café service, pastries, sandwiches
+
+SECTION 10: ABOUT GUSI
+
+Heading:
+
+About GUSI
+
+Body copy:
+
+Gusi is an Eastern European restaurant with a Mediterranean soul, located at 432 Sixth Avenue in the heart of New York City’s Greenwich Village.
+
+Founded by Boris Artemyev and Elena Melnikova, the restaurant is a deeply personal expression of two lives shaped by movement, memory, and the search for belonging.
+
+Named after the Slavic word for “geese,” Gusi draws on the mythology of migration: the instinct to travel, to adapt, and to return. It is a restaurant built around the idea that food, like memory, carries us home.
+
+The menu celebrates refined Eastern European comfort cuisine reframed through a Mediterranean lens, supported by a collection of house-made infused spirits and a thoughtfully curated selection of natural wines.
+
+Situated in Greenwich Village, a neighborhood long defined by its spirit of creative freedom and its welcome of wanderers, artists, and dreamers, Gusi feels like a natural extension of that legacy.
+
+SECTION 11: MEDIA INQUIRIES
+
+Heading:
+
+Media Inquiries
+
+Body copy:
+
+For media inquiries, please contact:
+
+Aik Wye Ng
+aikwye@gmail.com
++1 917-374-3756
+
+Make the email clickable:
+
+mailto:aikwye@gmail.com
+
+Make the phone clickable:
+
+tel:+19173743756
+
+HOMEPAGE PRESS PREVIEW
+
+Add a small Press teaser section to the homepage before the Visit section.
+
+Update src/pages/Home.tsx.
+
+Create a reusable component if appropriate:
+
+src/components/PressPreview.tsx
+
+Homepage section content:
+
+Small label:
+
+Now Opening in Greenwich Village
+
+Heading:
+
+Gusi Opens Friday, May 8th, 2026
+
+Body:
+
+Gusi opens at 432 Sixth Avenue, bringing Eastern European heritage, Mediterranean warmth, house-infused vodkas, a curated wine program, vinyl sound, and a two-floor design story to New York City.
+
+Button:
+
+Read the Press Release
+
+Button link:
+
+/press
+
+Place this homepage Press Preview after the Bar section and before the Visit section if those components exist. If the structure is different, place it near the lower part of the homepage before Visit / location / reservation information.
+
+MOBILE OPTIMIZATION REQUIREMENTS
+
+The Press page and homepage Press Preview must be fully mobile optimized.
+
+Requirements:
+
+- No horizontal scrolling on mobile.
+- Use responsive spacing.
+- Use px-5 or similar mobile padding.
+- Use larger container spacing on desktop.
+- Hero headline should scale cleanly.
+- Mobile hero headline should not be too large or overflow.
+- Body copy should be readable on phones.
+- Use comfortable line height.
+- Cards should stack vertically on mobile.
+- Two-column desktop sections should become one-column on mobile.
+- Buttons must be at least 44px tall.
+- Mobile navigation must include Press.
+- Mobile menu should close after clicking Press.
+- Do not create dense walls of text on mobile.
+- Use spacing between paragraphs.
+- Keep section widths readable.
+- Preserve existing responsive styles across the site.
+
+LOCAL SEO AND AI SEO REQUIREMENTS
+
+Naturally include the following phrases where appropriate:
+
+Gusi
+Gusi NYC
+Gusi restaurant
+Eastern European restaurant in Greenwich Village
+Eastern European restaurant in NYC
+Mediterranean influenced Eastern European cuisine
+Greenwich Village restaurant
+432 Sixth Avenue
+New York City restaurant opening
+house-infused vodkas
+curated wine program
+two-storey restaurant and bar
+Boris Artemyev
+Elena Melnikova
+
+Do not keyword stuff. The writing should remain natural, elegant, and readable.
+
+DESIGN REQUIREMENTS
+
+The page should feel like a premium restaurant press feature.
+
+Use:
+
+- Dark charcoal hero section
+- Warm ivory / porcelain content sections
+- Gold accents
+- Serif-style editorial headings if already used in the website
+- Clean readable body text
+- Thin borders
+- Soft card layouts
+- Strong vertical spacing
+- Mobile-first responsive layouts
+
+Avoid:
+
+- Generic blog layout
+- Giant pasted press release wall
+- Tiny fonts
+- Crowded mobile layout
+- Breaking existing styles
+- Removing existing homepage content
+- Breaking existing reservation links
+
+FUNCTIONAL REQUIREMENTS
+
+Before finishing, verify:
+
+- /press loads correctly.
+- Press appears in desktop navigation.
+- Press appears in mobile navigation.
+- GUSI logo links back to / from every page.
+- Existing homepage anchor links still work.
+- Reserve button still works.
+- Homepage includes the Press Preview section.
+- Press page is responsive on mobile.
+- Mobile menu closes after tapping Press.
+- No horizontal overflow on phone screen sizes.
+- SEO title and meta description are updated.
+- Media email and phone are clickable.
+- App builds successfully with no TypeScript errors.
+- No placeholder content is left behind.
+- Do not remove anything from the existing website unless required for this update.
+
+FINAL GOAL
+
+Implement the new /press page, add it to routing, add it to desktop and mobile navigation, add the homepage Press Preview section, and make the full experience polished, mobile-first, SEO-friendly, AI-search-friendly, and visually consistent with the existing GUSI website.
