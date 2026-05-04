@@ -55,6 +55,152 @@ const IMAGES: GalleryImage[] = [
     width: 1600,
     height: 1200,
   },
+  {
+    src: "/gallery/gusi-photo-008.webp",
+    alt: "Long view of GUSI's first-floor bar with red leather stools and a fully backlit bottle wall",
+    caption: "The bar at full length.",
+    width: 1600,
+    height: 1200,
+    span: "wide",
+  },
+  {
+    src: "/gallery/gusi-photo-026.webp",
+    alt: "Red bar stools lined along the candlelit counter with the glowing bottle collection behind",
+    caption: "Down the length of the bar.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-029.webp",
+    alt: "Soft pink pampas grass in the foreground with GUSI's red bar stools and bottle wall behind",
+    caption: "Pampas at the bar.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-015.webp",
+    alt: "Two gold-framed paintings on a hand-troweled stone wall, lit from above",
+    caption: "Paintings on hand-troweled stone.",
+    width: 1200,
+    height: 1600,
+    span: "tall",
+  },
+  {
+    src: "/gallery/gusi-photo-028.webp",
+    alt: "Votive candles glowing on the bar counter beside antique decanters and rows of bottles",
+    caption: "Candles among the bottles.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-027.webp",
+    alt: "Side view of the candlelit bar at GUSI with red stools and warm pendant lighting",
+    caption: "The bar at twilight.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-023.webp",
+    alt: "Wide view of GUSI's second-floor dining room with a large gilt mirror and painted ceiling",
+    caption: "The upstairs dining room.",
+    width: 1600,
+    height: 1200,
+    span: "wide",
+  },
+  {
+    src: "/gallery/gusi-photo-016.webp",
+    alt: "Second-floor dining room in afternoon daylight, with curved ivory chairs and the painted ceiling",
+    caption: "Second floor — daylight through the windows.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-017.webp",
+    alt: "Window-side banquette upstairs at GUSI with bare winter trees visible outside",
+    caption: "Banquette at the window.",
+    width: 1200,
+    height: 1600,
+    span: "tall",
+  },
+  {
+    src: "/gallery/gusi-photo-018.webp",
+    alt: "Painted ceiling above white-clothed tables on GUSI's second floor, with paintings along the wall",
+    caption: "Beneath the painted ceiling, by day.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-019.webp",
+    alt: "Afternoon view across the second-floor dining room with a large commissioned painting on the wall",
+    caption: "An afternoon upstairs.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-024.webp",
+    alt: "Curved ivory chairs around white-linen tables on GUSI's second floor, with daylight windows along the side",
+    caption: "Curved chairs and white linens.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-020.webp",
+    alt: "Round dining table framed by a gold velvet curtain at the window, beneath the painted ceiling",
+    caption: "A round table by the curtain.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-021.webp",
+    alt: "View from the upstairs window onto Greenwich Village brownstones with white tables in the foreground",
+    caption: "West, toward the Village.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-011.webp",
+    alt: "GUSI's first-floor dining room before service, with table lamps glowing and red banquettes along the side",
+    caption: "An afternoon, an empty room.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-010.webp",
+    alt: "First-floor dining room set for service, table lamps glowing on each white-clothed table",
+    caption: "Tables before service.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-009.webp",
+    alt: "Down the length of the first-floor dining room toward the illuminated GUSI sign at the back",
+    caption: "The room with the GUSI sign.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-013.webp",
+    alt: "Illuminated frosted-glass cube seats and red banquettes in GUSI's lower lounge",
+    caption: "The lounge below.",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/gallery/gusi-photo-030.webp",
+    alt: "Wide view of the bar at the start of evening service, with pampas grass in the foreground",
+    caption: "An evening service begins.",
+    width: 1600,
+    height: 1200,
+    span: "wide",
+  },
+  {
+    src: "/gallery/gusi-photo-006.webp",
+    alt: "Looking into GUSI from Sixth Avenue at dusk — warm-lit bar room visible through the storefront windows",
+    caption: "Looking in from Sixth Avenue.",
+    width: 1200,
+    height: 1600,
+    span: "tall",
+  },
 ];
 
 export function Gallery() {
@@ -101,7 +247,7 @@ export function Gallery() {
               >
                 <img
                   src={img.src}
-                  srcSet={`${img.src.replace(/\.webp$/, "-800.webp")} 800w, ${img.src} 1600w`}
+                  srcSet={`${img.src.replace(/\.webp$/, "-800.webp")} ${Math.round(img.width / 2)}w, ${img.src} ${img.width}w`}
                   sizes={
                     img.span === "wide"
                       ? "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 800px"
