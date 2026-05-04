@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "q-tBSdb0mONYI42G6BdfE"
@@ -30,3 +29,9 @@ id = "tgjf91poYcD6Or76ZNEIn"
 uri = "file://artifacts/gusi/public/images/food.png"
 type = "image"
 title = "Elegant food still life"
+
+[[outputs]]
+id = "57t6UBtWSJywYBKQ4WSvB"
+uri = "file://exports/gusi.zip"
+type = "unspecified"
+title = "GUSI app source (zip)"
