@@ -39,7 +39,7 @@ export function Footer() {
             <Store className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden="true" />
           </a>
         </div>
-        <div className="text-xs sm:text-sm">&copy; {new Date().getFullYear()} GUSI. Site updates coming soon.</div>
+        <div className="text-xs sm:text-sm">&copy; {new Date().getFullYear()} GUSI</div>
       </div>
     </footer>
   );
