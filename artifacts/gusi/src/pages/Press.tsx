@@ -8,11 +8,32 @@ import {
   OPENING_DATE_LABEL,
   MEDIA_CONTACT,
 } from "@/lib/constants";
+import storefrontWide from "@assets/Screenshot_2026-05-04_at_6.32.48_PM_1777934137496.webp";
+import storefrontClose from "@assets/Screenshot_2026-05-04_at_6.33.43_PM_1777934137495.webp";
+import chefPortrait from "@assets/Screenshot_2026-05-04_at_6.31.24_PM_1777934137496.webp";
+import porkBellyDish from "@assets/Screenshot_2026-05-04_at_6.31.38_PM_1777934137496.webp";
+import tastingSpread from "@assets/Screenshot_2026-05-04_at_6.30.54_PM_1777934137497.webp";
+import barWithGoose from "@assets/Screenshot_2026-05-04_at_6.31.05_PM_1777934137496.webp";
+import slicedSteak from "@assets/Screenshot_2026-05-04_at_6.30.17_PM_1777934137497.webp";
+import platedDishes from "@assets/Screenshot_2026-05-04_at_6.30.28_PM_1777934137497.webp";
+
+const IMG_DIMS = {
+  storefrontWide: { w: 1404, h: 784 },
+  storefrontClose: { w: 944, h: 906 },
+  chefPortrait: { w: 826, h: 1032 },
+  porkBellyDish: { w: 954, h: 954 },
+  tastingSpread: { w: 884, h: 1076 },
+  barWithGoose: { w: 1194, h: 668 },
+  slicedSteak: { w: 1800, h: 739 },
+  platedDishes: { w: 1184, h: 786 },
+} as const;
 
 const PAGE_TITLE =
   "Gusi Opens in Greenwich Village | Eastern European Restaurant & Bar in NYC";
 const PAGE_DESCRIPTION =
   "Gusi, a two-storey Eastern European restaurant and bar with Mediterranean influence, opens Friday, May 8, 2026 at 432 Sixth Avenue in Greenwich Village, NYC.";
+
+const SOCIAL_IMAGE = storefrontWide;
 
 type MetaSnapshot = {
   el: HTMLMetaElement;
@@ -122,16 +143,111 @@ export default function Press() {
         PAGE_DESCRIPTION,
       ),
       applyMeta('meta[property="og:type"]', "property", "og:type", "article"),
+      applyMeta(
+        'meta[name="twitter:card"]',
+        "name",
+        "twitter:card",
+        "summary_large_image",
+      ),
+      applyMeta('meta[name="twitter:title"]', "name", "twitter:title", PAGE_TITLE),
+      applyMeta(
+        'meta[name="twitter:description"]',
+        "name",
+        "twitter:description",
+        PAGE_DESCRIPTION,
+      ),
     ];
+
+    let scriptEl: HTMLScriptElement | null = null;
+
     if (typeof window !== "undefined") {
+      const origin = window.location.origin;
+      const absolute = (p: string) => (p.startsWith("http") ? p : `${origin}${p}`);
+      const pageUrl = `${origin}/press`;
+      const ogImageUrl = absolute(SOCIAL_IMAGE);
+
       snapshots.push(
+        applyMeta('meta[property="og:url"]', "property", "og:url", pageUrl),
         applyMeta(
-          'meta[property="og:url"]',
+          'meta[property="og:image"]',
           "property",
-          "og:url",
-          `${window.location.origin}/press`,
+          "og:image",
+          ogImageUrl,
+        ),
+        applyMeta(
+          'meta[property="og:image:secure_url"]',
+          "property",
+          "og:image:secure_url",
+          ogImageUrl,
+        ),
+        applyMeta(
+          'meta[property="og:image:alt"]',
+          "property",
+          "og:image:alt",
+          "GUSI restaurant storefront at 432 Sixth Avenue in Greenwich Village, New York City",
+        ),
+        applyMeta('meta[name="twitter:image"]', "name", "twitter:image", ogImageUrl),
+        applyMeta(
+          'meta[name="twitter:image:alt"]',
+          "name",
+          "twitter:image:alt",
+          "GUSI restaurant storefront at 432 Sixth Avenue in Greenwich Village, New York City",
         ),
       );
+
+      const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        headline: PAGE_TITLE,
+        description: PAGE_DESCRIPTION,
+        datePublished: "2026-05-04",
+        dateModified: "2026-05-04",
+        inLanguage: "en-US",
+        mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+        image: [
+          absolute(storefrontWide),
+          absolute(storefrontClose),
+          absolute(chefPortrait),
+          absolute(porkBellyDish),
+          absolute(tastingSpread),
+          absolute(barWithGoose),
+          absolute(slicedSteak),
+          absolute(platedDishes),
+        ],
+        author: [
+          { "@type": "Person", name: "Boris Artemyev" },
+          { "@type": "Person", name: "Elena Melnikova" },
+        ],
+        publisher: {
+          "@type": "Organization",
+          name: "GUSI",
+          logo: { "@type": "ImageObject", url: absolute("/images/hero.png") },
+        },
+        about: {
+          "@type": "Restaurant",
+          name: "GUSI",
+          servesCuisine: ["Eastern European", "Mediterranean"],
+          priceRange: "$$$",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "432 Sixth Avenue",
+            addressLocality: "New York",
+            addressRegion: "NY",
+            addressCountry: "US",
+          },
+          openingDate: "2026-05-08",
+          founder: [
+            { "@type": "Person", name: "Boris Artemyev" },
+            { "@type": "Person", name: "Elena Melnikova" },
+          ],
+        },
+      };
+
+      scriptEl = document.createElement("script");
+      scriptEl.type = "application/ld+json";
+      scriptEl.setAttribute("data-press-jsonld", "true");
+      scriptEl.textContent = JSON.stringify(articleSchema);
+      document.head.appendChild(scriptEl);
     }
 
     // Make sure visitors land at the top, not on a stale anchor.
@@ -140,6 +256,7 @@ export default function Press() {
     return () => {
       document.title = previousTitle;
       snapshots.forEach(restoreMeta);
+      if (scriptEl) scriptEl.remove();
     };
   }, []);
 
@@ -149,11 +266,24 @@ export default function Press() {
       <main>
         {/* SECTION 1 — HERO */}
         <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 md:pt-48 md:pb-32 bg-gusi-charcoal text-gusi-ivory bg-texture-dark overflow-hidden">
+          <div aria-hidden="true" className="absolute inset-0 z-0">
+            <img
+              src={storefrontWide}
+              alt=""
+              aria-hidden="true"
+              fetchPriority="high"
+              decoding="async"
+              width={IMG_DIMS.storefrontWide.w}
+              height={IMG_DIMS.storefrontWide.h}
+              className="w-full h-full object-cover opacity-25"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-gusi-charcoal/85 via-gusi-charcoal/80 to-gusi-charcoal" />
+          </div>
           <div
             aria-hidden="true"
-            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gusi-gold/30 to-transparent"
+            className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gusi-gold/30 to-transparent z-10"
           />
-          <div className="container mx-auto px-5 sm:px-6 max-w-4xl">
+          <div className="relative z-10 container mx-auto px-5 sm:px-6 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -220,26 +350,53 @@ export default function Press() {
               Jefferson Market Library.
             </p>
           </div>
+
+          <PressFigure
+            src={storefrontClose}
+            width={IMG_DIMS.storefrontClose.w}
+            height={IMG_DIMS.storefrontClose.h}
+            alt='GUSI Restaurant window display reading "GUSI Restaurant — Landing Soon" with a QR code at 432 Sixth Avenue in Greenwich Village, New York City'
+            caption="The forthcoming GUSI Restaurant at 432 Sixth Avenue, Greenwich Village — opening Friday, May 8, 2026."
+          />
         </PressSection>
 
         {/* SECTION 3 — FOUNDERS */}
         <PressSection eyebrow="The Founders" tone="muted">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-start">
-            <h2 className="md:col-span-2 font-serif text-3xl sm:text-4xl md:text-[2.75rem] text-gusi-burgundy leading-tight">
-              Founded by Boris Artemyev and Elena Melnikova
-            </h2>
-            <div className="md:col-span-3 space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed">
-              <p>
-                Founded by husband-and-wife team Boris Artemyev and Elena
-                Melnikova, both seasoned veterans of New York&rsquo;s restaurant
-                scene, Gusi is a deeply personal venture and the realization of
-                a shared American dream.
-              </p>
-              <p>
-                Together, they bring decades of combined experience and an
-                unwavering vision: a place where Eastern European heritage,
-                exceptional cuisine, and warm, intuitive hospitality converge.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+            <figure className="md:col-span-5">
+              <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+                <img
+                  src={chefPortrait}
+                  alt="An executive chef in the GUSI kitchen presenting an earthen bowl of root vegetables, fresh rosemary, and seasonal Eastern European ingredients"
+                  loading="lazy"
+                  decoding="async"
+                  width={IMG_DIMS.chefPortrait.w}
+                  height={IMG_DIMS.chefPortrait.h}
+                  className="block w-full h-auto"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+                In the GUSI kitchen — seasonal ingredients shaped by Eastern
+                European tradition.
+              </figcaption>
+            </figure>
+            <div className="md:col-span-7">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-[2.5rem] lg:text-[2.75rem] text-gusi-burgundy leading-tight mb-6 sm:mb-8">
+                Founded by Boris Artemyev and Elena Melnikova
+              </h2>
+              <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed">
+                <p>
+                  Founded by husband-and-wife team Boris Artemyev and Elena
+                  Melnikova, both seasoned veterans of New York&rsquo;s
+                  restaurant scene, Gusi is a deeply personal venture and the
+                  realization of a shared American dream.
+                </p>
+                <p>
+                  Together, they bring decades of combined experience and an
+                  unwavering vision: a place where Eastern European heritage,
+                  exceptional cuisine, and warm, intuitive hospitality converge.
+                </p>
+              </div>
             </div>
           </div>
         </PressSection>
@@ -249,6 +406,15 @@ export default function Press() {
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-burgundy mb-6 sm:mb-8 leading-tight">
             A Culinary Journey Rooted in Tradition and Migration
           </h2>
+
+          <PressFigure
+            src={porkBellyDish}
+            width={IMG_DIMS.porkBellyDish.w}
+            height={IMG_DIMS.porkBellyDish.h}
+            alt="Crispy Eastern European pork belly served with lime wedges, pickled red onion, and house dill pickles at GUSI Restaurant in Greenwich Village"
+            caption="Crispy pork belly with lime, pickled red onion, and house pickles — a Gusi reading of Eastern European comfort."
+          />
+
           <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed">
             <p>
               New York is home to only a handful of restaurants dedicated to
@@ -279,6 +445,14 @@ export default function Press() {
             </p>
           </div>
 
+          <PressFigure
+            src={tastingSpread}
+            width={IMG_DIMS.tastingSpread.w}
+            height={IMG_DIMS.tastingSpread.h}
+            alt="A tasting spread of GUSI dishes including dumplings, skewers, and an array of small plates that reflect the restaurant's Eastern European and Mediterranean menu"
+            caption="A Gusi tasting — dumplings, skewers, and small plates spanning Eastern European tradition and Mediterranean influence."
+          />
+
           <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {culinaryHighlights.map((item) => (
               <article
@@ -302,9 +476,22 @@ export default function Press() {
         {/* SECTION 5 — BAR PROGRAM */}
         <section
           aria-labelledby="bar-program-heading"
-          className="py-20 sm:py-24 md:py-32 bg-gusi-burgundy text-gusi-ivory bg-texture-dark"
+          className="relative py-20 sm:py-24 md:py-32 bg-gusi-burgundy text-gusi-ivory bg-texture-dark overflow-hidden"
         >
-          <div className="container mx-auto px-5 sm:px-6 max-w-4xl">
+          <div aria-hidden="true" className="absolute inset-0 z-0">
+            <img
+              src={barWithGoose}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              width={IMG_DIMS.barWithGoose.w}
+              height={IMG_DIMS.barWithGoose.h}
+              className="w-full h-full object-cover opacity-30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-gusi-burgundy/85 via-gusi-burgundy/80 to-gusi-burgundy" />
+          </div>
+          <div className="relative z-10 container mx-auto px-5 sm:px-6 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -377,6 +564,42 @@ export default function Press() {
               exploration while remaining approachable and welcoming for all
               guests.
             </p>
+          </div>
+
+          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <figure>
+              <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+                <img
+                  src={slicedSteak}
+                  alt="Sliced medium-rare steak finished with a savory sauce on a vintage gold-rimmed green plate at GUSI"
+                  loading="lazy"
+                  decoding="async"
+                  width={IMG_DIMS.slicedSteak.w}
+                  height={IMG_DIMS.slicedSteak.h}
+                  className="block w-full h-auto aspect-[4/3] object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+                A Gusi main paired naturally with bold European reds.
+              </figcaption>
+            </figure>
+            <figure>
+              <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+                <img
+                  src={platedDishes}
+                  alt="A GUSI dinner of sliced beef, a pastry-topped pot pie, and duck breast in red wine sauce served alongside a glass of natural red wine"
+                  loading="lazy"
+                  decoding="async"
+                  width={IMG_DIMS.platedDishes.w}
+                  height={IMG_DIMS.platedDishes.h}
+                  className="block w-full h-auto aspect-[4/3] object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+                Plates designed to meet a curated list of natural, biodynamic,
+                and classic wines.
+              </figcaption>
+            </figure>
           </div>
         </PressSection>
 
@@ -608,6 +831,41 @@ export default function Press() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function PressFigure({
+  src,
+  alt,
+  caption,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  width: number;
+  height: number;
+}) {
+  return (
+    <figure className="my-10 sm:my-12">
+      <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          width={width}
+          height={height}
+          className="block w-full h-auto"
+        />
+      </div>
+      {caption ? (
+        <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+          {caption}
+        </figcaption>
+      ) : null}
+    </figure>
   );
 }
 
