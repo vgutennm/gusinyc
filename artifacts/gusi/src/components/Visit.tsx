@@ -1,6 +1,6 @@
-import { OPEN_TABLE_URL, GOOGLE_MAPS_URL, APPLE_MAPS_URL, GOOGLE_REVIEW_URL, GOOGLE_BUSINESS_URL, SOCIAL_LINKS, RESTAURANT_EMAIL, PRESS_EMAIL } from "@/lib/constants";
+import { OPEN_TABLE_URL, GOOGLE_MAPS_URL, APPLE_MAPS_URL, GOOGLE_REVIEW_URL, GOOGLE_BUSINESS_URL, GOOGLE_MAPS_EMBED_URL, SOCIAL_LINKS, RESTAURANT_EMAIL, PRESS_EMAIL } from "@/lib/constants";
 import { motion } from "framer-motion";
-import { Star, Store } from "lucide-react";
+import { Star, Store, MapPin } from "lucide-react";
 
 export function Visit() {
   return (
@@ -60,6 +60,30 @@ export function Visit() {
                 Greenwich Village
               </p>
               <p className="text-gusi-gold/70 text-sm mt-4 italic font-light">Two blocks from West 4th Street subway station.</p>
+            </div>
+
+            <div className="mb-6 sm:mb-8">
+              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden border border-gusi-gold/20 bg-gusi-charcoal/50">
+                <iframe
+                  src={GOOGLE_MAPS_EMBED_URL}
+                  title="Map showing GUSI Restaurant at 432 Sixth Avenue, New York"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full grayscale-[0.35] contrast-[0.95] brightness-[0.95]"
+                  style={{ border: 0 }}
+                />
+              </div>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="mt-3 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-gusi-gold/80 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+              >
+                <MapPin className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden="true" />
+                <span>Open in Google Maps</span>
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10">

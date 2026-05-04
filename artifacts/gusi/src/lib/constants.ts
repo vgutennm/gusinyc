@@ -17,7 +17,9 @@ export const SOCIAL_LINKS = {
   facebook: "#",
   youtube: "#",
 };
-export const GOOGLE_MAPS_URL = "https://maps.google.com/?q=432+Sixth+Avenue+New+York";
+export const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6";
 export const APPLE_MAPS_URL = "https://maps.apple.com/?q=432+Sixth+Avenue+New+York";
 export const GOOGLE_REVIEW_URL = "https://g.page/r/CWL-sBI7qWJ7EBM/review";
 export const GOOGLE_BUSINESS_URL = "https://share.google/aCVI7n8A6PEaWXCPO";
+export const GOOGLE_MAPS_EMBED_URL =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2523878776738!2d-74.00130979002554!3d40.73447163612284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259cc0147933b%3A0x7b62a93b12b0fe62!2sGUSI!5e0!3m2!1sen!2sus!4v1777934447183!5m2!1sen!2sus";
