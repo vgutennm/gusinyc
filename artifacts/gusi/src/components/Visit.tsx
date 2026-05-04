@@ -1,5 +1,4 @@
 import {
-  OPEN_TABLE_URL,
   GOOGLE_MAPS_URL,
   APPLE_MAPS_URL,
   GOOGLE_REVIEW_URL,
@@ -16,6 +15,7 @@ import {
 } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { Star, Store, MapPin } from "lucide-react";
+import { OpenTableWidget } from "@/components/OpenTableWidget";
 
 export function Visit() {
   return (
@@ -32,14 +32,9 @@ export function Visit() {
           >
             <h2 className="font-serif text-3xl sm:text-4xl mb-6 sm:mb-8 leading-tight">Reserve your table.</h2>
             <p className="text-gusi-porcelain/70 font-light mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">
-              Reservations will be available through OpenTable.
+              Choose a date, time, and party size below to book through OpenTable.
             </p>
-            <a
-              href={OPEN_TABLE_URL}
-              className="inline-block w-full sm:w-auto text-center bg-gusi-gold text-gusi-charcoal px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-ivory transition-colors duration-300 mb-12 sm:mb-16 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-ivory/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
-            >
-              Reserve on OpenTable
-            </a>
+            <OpenTableWidget />
 
             <div className="space-y-7 sm:space-y-8">
               <div>

@@ -1,4 +1,5 @@
-export const OPEN_TABLE_URL = "#";
+export const OPEN_TABLE_URL = "https://www.opentable.com/restref/client/?restref=1490239&rid=1490239";
+export const OPEN_TABLE_RID = "1490239";
 export const RESTAURANT_NAME = "GUSI";
 export const RESTAURANT_ADDRESS = "432 Sixth Avenue, New York, NY 10011";
 export const RESTAURANT_PHONE = "+1 (646) 370-5413";

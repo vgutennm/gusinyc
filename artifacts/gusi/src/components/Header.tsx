@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { OPEN_TABLE_URL } from "@/lib/constants";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -82,7 +81,7 @@ export function Header() {
             ),
           )}
           <a
-            href={OPEN_TABLE_URL}
+            href={anchor("reservations")}
             className="ml-4 border border-gusi-gold text-gusi-gold px-6 py-2 uppercase tracking-widest text-xs hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors duration-300"
           >
             Reserve
@@ -92,7 +91,7 @@ export function Header() {
         {/* Mobile Toggle */}
         <div className="flex items-center gap-2 sm:gap-3 md:hidden">
           <a
-            href={OPEN_TABLE_URL}
+            href={anchor("reservations")}
             className="inline-flex items-center justify-center min-h-10 border border-gusi-gold text-gusi-gold px-4 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
             Reserve
@@ -163,7 +162,7 @@ export function Header() {
               })}
               <div className="w-12 h-px bg-gusi-gold/40 my-2" />
               <a
-                href={OPEN_TABLE_URL}
+                href={anchor("reservations")}
                 onClick={closeMobile}
                 className="mt-2 border border-gusi-gold text-gusi-gold px-10 py-4 uppercase tracking-[0.25em] text-sm hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
               >
