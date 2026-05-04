@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import firstFloorInterior from "@assets/GUSI-NYC-03_1777934185727.webp";
 
 export function TwoFloors() {
   return (
@@ -7,10 +8,13 @@ export function TwoFloors() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[80vh]">
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-1">
           <img
-            src="/images/floor1.png"
-            alt="First floor — warm, dark wood interior with vintage mirrors and amber candlelight"
+            src={firstFloorInterior}
+            alt="GUSI's first-floor interior in Greenwich Village — banquette seating beneath hanging textile art, dried botanicals in a glass vase, a vintage porcelain-shade lamp, and a stone vessel on a reclaimed wood table"
+            width={765}
+            height={1020}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
           />
         </div>
         <div className="flex items-center justify-center px-6 sm:px-10 py-14 sm:py-20 lg:p-24 bg-gusi-burgundy/20 bg-texture-dark order-2 lg:order-2">

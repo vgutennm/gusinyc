@@ -16,6 +16,9 @@ import tastingSpread from "@assets/Screenshot_2026-05-04_at_6.30.54_PM_177793413
 import barWithGoose from "@assets/Screenshot_2026-05-04_at_6.31.05_PM_1777934137496.webp";
 import slicedSteak from "@assets/Screenshot_2026-05-04_at_6.30.17_PM_1777934137497.webp";
 import platedDishes from "@assets/Screenshot_2026-05-04_at_6.30.28_PM_1777934137497.webp";
+import artPortraitMan from "@assets/GUSI-NYC-01_1777934185727.webp";
+import artLipstickWoman from "@assets/GUSI-NYC-02_1777934185727.webp";
+import groundFloorInterior from "@assets/GUSI-NYC-03_1777934185727.webp";
 
 const IMG_DIMS = {
   storefrontWide: { w: 1404, h: 784 },
@@ -26,6 +29,9 @@ const IMG_DIMS = {
   barWithGoose: { w: 1194, h: 668 },
   slicedSteak: { w: 1800, h: 739 },
   platedDishes: { w: 1184, h: 786 },
+  artPortraitMan: { w: 765, h: 1020 },
+  artLipstickWoman: { w: 765, h: 1020 },
+  groundFloorInterior: { w: 765, h: 1020 },
 } as const;
 
 const PAGE_TITLE =
@@ -221,7 +227,7 @@ export default function Press() {
         publisher: {
           "@type": "Organization",
           name: "GUSI",
-          logo: { "@type": "ImageObject", url: absolute("/images/hero.png") },
+          logo: { "@type": "ImageObject", url: absolute("/gusi-logo.webp") },
         },
         about: {
           "@type": "Restaurant",
@@ -665,6 +671,60 @@ export default function Press() {
               memory to guide guests from a grounded, warm, and tactile first
               floor to an airy and refined second floor.
             </p>
+          </div>
+
+          <div className="mb-12 sm:mb-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <figure>
+              <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+                <img
+                  src={groundFloorInterior}
+                  alt="GUSI's ground-floor interior in Greenwich Village — banquette seating beneath hanging textile art, dried botanicals, a vintage porcelain-shade lamp, and a stone vessel on a reclaimed wood table"
+                  loading="lazy"
+                  decoding="async"
+                  width={IMG_DIMS.groundFloorInterior.w}
+                  height={IMG_DIMS.groundFloorInterior.h}
+                  className="block w-full h-auto aspect-[3/4] object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+                The ground floor — textile art, dried botanicals, and vintage
+                vessels assembled into a tactile, layered room.
+              </figcaption>
+            </figure>
+            <figure>
+              <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+                <img
+                  src={artLipstickWoman}
+                  alt="An original commissioned artwork at GUSI Restaurant — a large painterly portrait of a woman in fur applying red lipstick at a dinner table, framed by an expressionist red and black border, displayed on a textured plaster wall"
+                  loading="lazy"
+                  decoding="async"
+                  width={IMG_DIMS.artLipstickWoman.w}
+                  height={IMG_DIMS.artLipstickWoman.h}
+                  className="block w-full h-auto aspect-[3/4] object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+                An original work commissioned for the ground floor — a painterly
+                portrait edged in expressionist red and black.
+              </figcaption>
+            </figure>
+            <figure>
+              <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+                <img
+                  src={artPortraitMan}
+                  alt="An original commissioned mixed-media portrait at GUSI Restaurant — an older gentleman seated and writing, set against a dense collage of magazine clippings, hung on a deep red wall"
+                  loading="lazy"
+                  decoding="async"
+                  width={IMG_DIMS.artPortraitMan.w}
+                  height={IMG_DIMS.artPortraitMan.h}
+                  className="block w-full h-auto aspect-[3/4] object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+                A mixed-media portrait collage commissioned for GUSI — pop
+                ephemera framing a quiet, classical pose.
+              </figcaption>
+            </figure>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
