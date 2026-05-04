@@ -19,6 +19,7 @@ import slicedSteak from "@assets/Screenshot_2026-05-04_at_6.30.17_PM_17779341374
 import platedDishes from "@assets/Screenshot_2026-05-04_at_6.30.28_PM_1777934137497.webp";
 import artPortraitMan from "@assets/GUSI-NYC-01_1777934185727.webp";
 import artLipstickWoman from "@assets/GUSI-NYC-02_1777934185727.webp";
+import cabaretMural from "@assets/gusi_business_card_back_mural.jpg";
 import groundFloorInterior from "@assets/GUSI-NYC-03_1777934185727.webp";
 
 const IMG_DIMS = {
@@ -33,6 +34,7 @@ const IMG_DIMS = {
   artPortraitMan: { w: 765, h: 1020 },
   artLipstickWoman: { w: 765, h: 1020 },
   groundFloorInterior: { w: 765, h: 1020 },
+  cabaretMural: { w: 1050, h: 600 },
 } as const;
 
 const PAGE_TITLE =
@@ -77,6 +79,21 @@ function restoreMeta(snap: MetaSnapshot) {
   } else {
     snap.el.setAttribute("content", snap.previous);
   }
+}
+
+type CanonicalSnapshot = { previous: string | null };
+function applyCanonical(href: string): CanonicalSnapshot {
+  const el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!el) return { previous: null };
+  const previous = el.getAttribute("href");
+  el.setAttribute("href", href);
+  return { previous };
+}
+function restoreCanonical(snap: CanonicalSnapshot) {
+  const el = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+  if (!el) return;
+  if (snap.previous === null) el.removeAttribute("href");
+  else el.setAttribute("href", snap.previous);
 }
 
 const culinaryHighlights = [
@@ -166,12 +183,14 @@ export default function Press() {
     ];
 
     let scriptEl: HTMLScriptElement | null = null;
+    let canonicalSnap: CanonicalSnapshot | null = null;
 
     if (typeof window !== "undefined") {
       const origin = window.location.origin;
       const absolute = (p: string) => (p.startsWith("http") ? p : `${origin}${p}`);
       const pageUrl = `${origin}/press`;
       const ogImageUrl = absolute(SOCIAL_IMAGE);
+      canonicalSnap = applyCanonical("https://gusinyc.com/press");
 
       snapshots.push(
         applyMeta('meta[property="og:url"]', "property", "og:url", pageUrl),
@@ -263,6 +282,7 @@ export default function Press() {
     return () => {
       document.title = previousTitle;
       snapshots.forEach(restoreMeta);
+      if (canonicalSnap) restoreCanonical(canonicalSnap);
       if (scriptEl) scriptEl.remove();
     };
   }, []);
@@ -727,6 +747,24 @@ export default function Press() {
               </figcaption>
             </figure>
           </div>
+
+          <figure className="mb-12 sm:mb-16">
+            <div className="overflow-hidden border border-gusi-gold/30 bg-white/40">
+              <img
+                src={cabaretMural}
+                alt="GUSI's brand mural — a vibrant pop-art tableau in the spirit of Al Hirschfeld depicting a Manhattan night out: a waltzing couple at a lobster dinner with a martini, top-hatted figures, cabaret dancers in golden plumes, an opera singer with a wineglass, and the address '432 Avenue' woven into the composition"
+                loading="lazy"
+                decoding="async"
+                width={IMG_DIMS.cabaretMural.w}
+                height={IMG_DIMS.cabaretMural.h}
+                className="block w-full h-auto"
+              />
+            </div>
+            <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
+              GUSI&rsquo;s identity mural — a Hirschfeld-inflected pop-art portrait of a Manhattan night,
+              with cabaret dancers, a lobster dinner, and the 432 Sixth Avenue address woven into the scene.
+            </figcaption>
+          </figure>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {designVision.map((item) => (

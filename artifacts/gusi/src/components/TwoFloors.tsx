@@ -38,10 +38,15 @@ export function TwoFloors() {
       <div className="relative py-24 sm:py-32 md:py-48 flex items-center justify-center text-center px-6">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/staircase.png"
-            alt="A low-lit passage marked by a crystal chandelier"
+            src="/gallery/gusi-chandelier-mirror-detail.webp"
+            srcSet="/gallery/gusi-chandelier-mirror-detail-800.webp 800w, /gallery/gusi-chandelier-mirror-detail.webp 1100w"
+            sizes="100vw"
+            alt="A vintage gilded chandelier reflected in an inset mirror set into the textured stone wall of GUSI's stairwell passage"
+            width={1100}
+            height={1467}
             className="w-full h-full object-cover opacity-30"
             loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gusi-charcoal via-transparent to-gusi-porcelain/10" />
         </div>
@@ -80,10 +85,15 @@ export function TwoFloors() {
         </div>
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-2">
           <img
-            src="/images/floor2.png"
-            alt="Second floor — refined dining room with muted gray-green walls and warm parquet"
+            src="/gallery/gusi-second-floor-dining-paintings.webp"
+            srcSet="/gallery/gusi-second-floor-dining-paintings-800.webp 800w, /gallery/gusi-second-floor-dining-paintings.webp 1600w"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            alt="GUSI's second-floor dining room (Lebedi / The Swans) — three vibrant figurative paintings line the back wall above ivory leather chairs and white-clothed tables, beneath a hand-painted ceiling in muted greens and pastels"
+            width={1600}
+            height={1200}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

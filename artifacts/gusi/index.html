@@ -3,15 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>GUSI | Modern Eastern European Restaurant in Greenwich Village</title>
-    <meta name="description" content="GUSI is a modern Eastern European restaurant and bar in Greenwich Village, New York, featuring Mediterranean touches, infused vodka, cocktails, natural wine, and warm Slavic hospitality.">
-    <meta name="keywords" content="Eastern European restaurant NYC, Greenwich Village restaurant, infused vodka bar NYC, modern Slavic restaurant, borscht NYC, pelmeni NYC, blini NYC, natural wine Greenwich Village">
-    
-    <meta property="og:title" content="GUSI | Modern Eastern European Restaurant in Greenwich Village">
-    <meta property="og:description" content="GUSI is a modern Eastern European restaurant and bar in Greenwich Village, New York, featuring Mediterranean touches, infused vodka, cocktails, natural wine, and warm Slavic hospitality.">
-    <meta property="og:image" content="/og-image.jpg">
+    <title>GUSI | Modern Eastern European Restaurant in Greenwich Village, NYC</title>
+    <meta name="description" content="GUSI is a modern Eastern European restaurant and bar at 432 Sixth Avenue in Greenwich Village, New York. Two floors — a candlelit tavern bar of infused vodka, natural wine, and rare spirits downstairs, and a light-filled dining room of original art and hand-painted ceilings upstairs.">
+    <meta name="keywords" content="Eastern European restaurant NYC, Greenwich Village restaurant, infused vodka bar NYC, modern Slavic restaurant, borscht NYC, pelmeni NYC, blini NYC, natural wine Greenwich Village, 432 Sixth Avenue restaurant, GUSI NYC">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="theme-color" content="#1c1714">
+    <link rel="canonical" href="https://gusinyc.com/">
+
+    <meta property="og:title" content="GUSI | Modern Eastern European Restaurant in Greenwich Village, NYC">
+    <meta property="og:description" content="A modern Eastern European restaurant and bar in Greenwich Village. Infused vodka, natural wine, and rare spirits downstairs; original art and hand-painted ceilings upstairs.">
+    <meta property="og:image" content="https://gusinyc.com/gallery/gusi-second-floor-dining-paintings.webp">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="GUSI's second-floor dining room — three vibrant figurative paintings above ivory leather chairs and white-clothed tables, beneath a hand-painted ceiling">
     <meta property="og:url" content="https://gusinyc.com">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="GUSI">
+    <meta property="place:location:latitude" content="40.7344716">
+    <meta property="place:location:longitude" content="-74.0013098">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GUSI | Modern Eastern European Restaurant in Greenwich Village, NYC">
+    <meta name="twitter:description" content="A modern Eastern European restaurant and bar in Greenwich Village. Infused vodka, natural wine, original art, and hand-painted ceilings.">
+    <meta name="twitter:image" content="https://gusinyc.com/gallery/gusi-second-floor-dining-paintings.webp">
+    <meta name="twitter:image:alt" content="GUSI's second-floor dining room — three vibrant figurative paintings, ivory leather chairs, and a hand-painted ceiling">
 
     <link rel="icon" type="image/webp" href="/gusi-logo.webp" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -26,24 +42,91 @@
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
+      "@id": "https://gusinyc.com/#restaurant",
       "name": "GUSI",
-      "servesCuisine": ["Eastern European", "Mediterranean"],
+      "alternateName": "GUSI Restaurant",
+      "description": "Modern Eastern European restaurant and bar in Greenwich Village, New York. Two floors — a candlelit tavern bar of infused vodka, natural wine, and rare spirits downstairs, and a light-filled dining room of original art and hand-painted ceilings upstairs.",
+      "url": "https://gusinyc.com",
+      "logo": "https://gusinyc.com/gusi-logo.webp",
+      "image": [
+        "https://gusinyc.com/gallery/gusi-second-floor-dining-paintings.webp",
+        "https://gusinyc.com/gallery/gusi-first-floor-bar-banquette.webp",
+        "https://gusinyc.com/gallery/gusi-painted-ceiling-dining.webp",
+        "https://gusinyc.com/gallery/gusi-bar-bottles-banquette.webp",
+        "https://gusinyc.com/gallery/gusi-bar-bottle-collection.webp",
+        "https://gusinyc.com/gallery/gusi-second-floor-art-green.webp"
+      ],
+      "servesCuisine": ["Eastern European", "Mediterranean", "Modern European"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "432 Sixth Avenue",
         "addressLocality": "New York",
         "addressRegion": "NY",
-        "postalCode": "10011"
+        "postalCode": "10011",
+        "addressCountry": "US"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.7344716,
+        "longitude": -74.0013098
+      },
+      "hasMap": "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6",
+      "areaServed": [
+        { "@type": "Place", "name": "Greenwich Village" },
+        { "@type": "Place", "name": "West Village" },
+        { "@type": "Place", "name": "Manhattan" },
+        { "@type": "Place", "name": "New York City" }
+      ],
       "priceRange": "$$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card",
       "acceptsReservations": true,
-      "url": "https://gusinyc.com",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://gusinyc.com/#reservations",
+          "inLanguage": "en-US",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "FoodEstablishmentReservation",
+          "name": "Reserve a table at GUSI"
+        }
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Full bar" },
+        { "@type": "LocationFeatureSpecification", "name": "Cocktails" },
+        { "@type": "LocationFeatureSpecification", "name": "Natural wine list" },
+        { "@type": "LocationFeatureSpecification", "name": "House-infused vodka" },
+        { "@type": "LocationFeatureSpecification", "name": "Two-floor dining" },
+        { "@type": "LocationFeatureSpecification", "name": "Original commissioned art" }
+      ],
+      "publicAccess": true,
+      "smokingAllowed": false,
       "sameAs": [
         "https://instagram.com/gusinyc",
         "https://tiktok.com/@gusinyc",
         "https://facebook.com/gusinyc",
-        "https://youtube.com/@gusinyc"
+        "https://youtube.com/@gusinyc",
+        "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6"
       ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://gusinyc.com/#website",
+      "url": "https://gusinyc.com",
+      "name": "GUSI",
+      "description": "Modern Eastern European restaurant and bar in Greenwich Village, New York City.",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://gusinyc.com/#restaurant" }
     }
     </script>
   </head>

@@ -6,11 +6,23 @@ import { TwoFloors } from "@/components/TwoFloors";
 import { MenuPreview } from "@/components/MenuPreview";
 import { BarSection } from "@/components/BarSection";
 import { PressPreview } from "@/components/PressPreview";
+import { Gallery } from "@/components/Gallery";
 import { Visit } from "@/components/Visit";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
+  // Reset canonical to the home URL when navigating back from sub-routes.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const previous = link?.getAttribute("href") ?? null;
+    link?.setAttribute("href", "https://gusinyc.com/");
+    return () => {
+      if (link && previous !== null) link.setAttribute("href", previous);
+    };
+  }, []);
+
   // When arriving with a hash (e.g. /#menu from another page), scroll to it
   // after mount so the section actually exists in the DOM.
   useEffect(() => {
@@ -33,6 +45,7 @@ export default function Home() {
         <TwoFloors />
         <MenuPreview />
         <BarSection />
+        <Gallery />
         <PressPreview />
         <Visit />
       </main>
