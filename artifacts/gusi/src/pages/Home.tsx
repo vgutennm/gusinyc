@@ -8,6 +8,7 @@ import { BarSection } from "@/components/BarSection";
 import { PressPreview } from "@/components/PressPreview";
 import { Visit } from "@/components/Visit";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export default function Home() {
   // When arriving with a hash (e.g. /#menu from another page), scroll to it
@@ -36,6 +37,7 @@ export default function Home() {
         <Visit />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

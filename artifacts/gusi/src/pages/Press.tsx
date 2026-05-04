@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import {
   OPEN_TABLE_URL,
   OPENING_DATE_LABEL,
@@ -890,6 +891,7 @@ export default function Press() {
         </section>
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
