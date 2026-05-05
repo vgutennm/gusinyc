@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export function Story() {
   return (
     <section id="story" className="relative py-20 md:py-32 bg-gusi-ivory text-gusi-charcoal bg-texture-paper overflow-hidden">
-      {/* Decorative goose silhouette — desktop only, subtle */}
+      {/* Decorative goose silhouette — subtle watermark on every viewport */}
       <img
         src="/brand/gusi-goose-mark.webp"
         alt=""
@@ -12,7 +12,7 @@ export function Story() {
         height={1467}
         loading="lazy"
         decoding="async"
-        className="hidden lg:block pointer-events-none absolute -left-10 xl:-left-4 top-1/2 -translate-y-1/2 h-[420px] xl:h-[480px] w-auto opacity-[0.07] select-none"
+        className="pointer-events-none absolute -left-12 sm:-left-10 lg:-left-10 xl:-left-4 top-1/2 -translate-y-1/2 h-[260px] sm:h-[340px] md:h-[400px] lg:h-[420px] xl:h-[480px] w-auto opacity-[0.06] sm:opacity-[0.07] select-none"
       />
       <div className="container mx-auto px-6 md:px-12 max-w-4xl relative">
         <motion.div
