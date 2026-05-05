@@ -19,6 +19,17 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Auto-close mobile/tablet menu when viewport crosses into desktop (e.g. iPad rotation portrait→landscape).
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mql = window.matchMedia("(min-width: 1024px)");
+    const handleChange = (event: MediaQueryListEvent) => {
+      if (event.matches) setMobileMenuOpen(false);
+    };
+    mql.addEventListener("change", handleChange);
+    return () => mql.removeEventListener("change", handleChange);
+  }, []);
+
   // Use bare hash links on home so the browser scrolls without leaving the SPA;
   // use absolute "/#anchor" links from other pages so the browser navigates home and scrolls.
   const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
@@ -42,7 +53,7 @@ export function Header() {
           : "bg-transparent border-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-5 md:px-12 flex items-center justify-between">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-12 flex items-center justify-between">
         {/* Logo — always returns to homepage */}
         <Link
           href="/"
@@ -54,13 +65,13 @@ export function Header() {
             alt="GUSI"
             width={5102}
             height={1862}
-            className="block h-5 md:h-7 w-auto select-none"
+            className="block h-5 lg:h-7 w-auto select-none"
             draggable={false}
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop Nav (≥1024px so 4 nav links + Press + Visit + Reserve don't crowd at tablet widths) */}
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
           {navLinks.map((link) =>
             link.isRoute ? (
               <Link
@@ -88,8 +99,8 @@ export function Header() {
           </a>
         </nav>
 
-        {/* Mobile Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3 md:hidden">
+        {/* Mobile + Tablet Toggle (<1024px) */}
+        <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
           <a
             href={anchor("reservations")}
             className="inline-flex items-center justify-center min-h-10 border border-gusi-gold text-gusi-gold px-4 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"

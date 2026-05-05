@@ -4,7 +4,7 @@ import { GOOGLE_REVIEW_URL, GOOGLE_BUSINESS_URL } from "@/lib/constants";
 export function Footer() {
   return (
     <footer className="bg-gusi-charcoal text-gusi-porcelain/40 py-10 sm:py-12 border-t border-gusi-ivory/5 text-sm font-light tracking-wide">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6 text-center md:text-left">
+      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-6 text-center lg:text-left">
         <div className="flex items-center">
           <img
             src="/brand/gusi-wordmark-light.svg"

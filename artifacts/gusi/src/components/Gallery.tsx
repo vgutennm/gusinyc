@@ -38,7 +38,6 @@ const IMAGES: GalleryImage[] = [
     caption: "Cocktails by the velvet curtain.",
     width: 1600,
     height: 1200,
-    span: "tall",
   },
   {
     src: "/gallery/gusi-painted-ceiling-dining.webp",

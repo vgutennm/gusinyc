@@ -26,7 +26,7 @@ export function BarSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
           {cards.map((card, idx) => (
             <motion.div
               key={idx}
@@ -34,12 +34,16 @@ export function BarSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.5, delay: Math.min(idx, 3) * 0.08 }}
-              className={`p-6 sm:p-8 border border-gusi-wine/50 bg-gusi-charcoal/20 flex flex-col items-center justify-center min-h-[140px] sm:min-h-[160px] ${
-                idx === 3 ? "sm:col-start-1 sm:col-span-2 md:col-span-1 md:col-start-1" : ""
-              } ${idx === 4 ? "sm:col-start-auto sm:col-span-2 md:col-span-1 md:col-start-3" : ""}`}
+              className={`p-5 sm:p-6 md:p-7 lg:p-6 border border-gusi-wine/50 bg-gusi-charcoal/20 flex flex-col items-center justify-center min-h-[130px] sm:min-h-[150px] ${
+                idx === 4
+                  ? "sm:col-span-2 md:col-span-1 md:col-start-2 lg:col-span-1 lg:col-start-auto"
+                  : ""
+              }`}
             >
               <div className="w-6 h-px bg-gusi-gold/50 mb-3 sm:mb-4" />
-              <h3 className="font-serif text-lg sm:text-xl tracking-wide leading-snug">{card.title}</h3>
+              <h3 className="font-serif text-base sm:text-lg md:text-xl lg:text-base xl:text-lg tracking-wide leading-snug text-balance">
+                {card.title}
+              </h3>
             </motion.div>
           ))}
         </div>
