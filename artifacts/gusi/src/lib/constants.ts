@@ -9,7 +9,8 @@ export const PRESS_EMAIL = "press@gusi.nyc";
 export const OPENING_DATE_LABEL = "Friday, May 8, 2026";
 export const BRUNCH_LAUNCH_LABEL = "Saturday, May 23, 2026";
 export const HOURS = {
-  daily: "4:00 pm – Midnight",
+  weekday: "4:00 pm – Midnight",
+  weekend: "12:00 pm – Midnight",
   brunch: "11:30 am – 4:00 pm",
 };
 export const MEDIA_CONTACT = {

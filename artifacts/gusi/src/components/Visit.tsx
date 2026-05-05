@@ -41,8 +41,12 @@ export function Visit() {
                 <h3 className="text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-2 sm:mb-3">Hours</h3>
                 <dl className="font-light text-gusi-porcelain/80 space-y-1.5">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
-                    <dt className="text-gusi-porcelain/60 text-sm sm:w-24 shrink-0">Daily</dt>
-                    <dd>{HOURS.daily}</dd>
+                    <dt className="text-gusi-porcelain/60 text-sm sm:w-24 shrink-0">Mon–Fri</dt>
+                    <dd>{HOURS.weekday}</dd>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
+                    <dt className="text-gusi-porcelain/60 text-sm sm:w-24 shrink-0">Sat &amp; Sun</dt>
+                    <dd>{HOURS.weekend}</dd>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
                     <dt className="text-gusi-porcelain/60 text-sm sm:w-24 shrink-0">Brunch</dt>
