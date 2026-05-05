@@ -54,16 +54,16 @@ export function OpenTableWidget() {
   }, [shouldLoad]);
 
   return (
-    <div ref={sentinelRef} className="mb-12 sm:mb-16">
+    <div ref={sentinelRef} className="mb-10 sm:mb-12 max-w-[340px] mx-auto sm:mx-0">
       <section
         aria-label="OpenTable reservation widget"
-        className="bg-gusi-ivory/95 border border-gusi-gold/30 px-3 py-5 sm:px-4 sm:py-6 min-h-[220px] sm:min-h-[280px] md:min-h-[320px] flex flex-col items-center justify-center"
+        className="bg-gusi-ivory/95 border border-gusi-gold/30 px-2 py-3 min-h-[180px] sm:min-h-[200px] flex flex-col items-center justify-center"
       >
         <div
           ref={containerRef}
           aria-live="polite"
           aria-busy={shouldLoad}
-          className="opentable-widget-container flex items-center justify-center"
+          className="opentable-widget-container flex items-center justify-center w-full"
         >
           <span className="sr-only">
             {shouldLoad
@@ -72,7 +72,7 @@ export function OpenTableWidget() {
           </span>
         </div>
       </section>
-      <p className="mt-3 text-xs text-gusi-porcelain/50 font-light italic text-center sm:text-left">
+      <p className="mt-2 text-xs text-gusi-porcelain/50 font-light italic text-center sm:text-left">
         Bookings open through OpenTable. Widget not loading?{" "}
         <a
           href={OPEN_TABLE_URL}
