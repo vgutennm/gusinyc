@@ -49,14 +49,17 @@ export function ScrollToTop() {
         ${visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"}`}
     >
       <img
-        src="/gusi-logo.webp"
+        src="/brand/gusi-goose-mark-600.webp"
         alt=""
         aria-hidden="true"
-        width={56}
-        height={56}
+        width={600}
+        height={978}
         loading="lazy"
         decoding="async"
-        className="w-7 h-7 sm:w-8 sm:h-8 object-contain group-hover:scale-105 transition-transform duration-300"
+        className="h-8 sm:h-9 w-auto object-contain
+          [filter:brightness(0)_invert(1)] opacity-90
+          group-hover:[filter:brightness(0)_invert(0)] group-hover:opacity-100
+          group-hover:scale-105 transition-all duration-300"
       />
       <span
         aria-hidden="true"
