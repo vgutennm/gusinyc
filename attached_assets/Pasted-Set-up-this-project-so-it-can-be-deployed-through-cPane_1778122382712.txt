@@ -1,0 +1,98 @@
+Set up this project so it can be deployed through cPanel Git Version Control.
+
+Current workflow:
+Replit edits/builds the site → Replit pushes to GitHub → cPanel pulls from GitHub → cPanel deploys to production.
+
+Do not deploy directly from Replit.
+
+Tasks:
+
+1. Confirm the project builds correctly
+- Run:
+  npm install
+  npm run build
+
+- Confirm the production build output folder is:
+  dist
+
+If the build output folder is different, tell me before changing the deployment config.
+
+2. Add a cPanel deployment file
+Create a new file in the root of the project named exactly:
+
+.cpanel.yml
+
+It must be in the same root level as package.json.
+
+Add this exact content:
+
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/vllzr8jk8a1z/public_html/
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R dist/* $DEPLOYPATH
+
+Important:
+- Do not rename this file.
+- Do not put it inside src.
+- Do not use .cpanel.yaml.
+- The file must be committed to GitHub.
+
+3. Make sure the dist folder can be committed
+Open .gitignore and check whether it contains:
+
+dist
+
+or:
+
+/dist
+
+If it does, remove that line.
+
+For this cPanel Git Version Control workflow, the built dist folder needs to be pushed to GitHub so cPanel can copy it into public_html.
+
+4. Rebuild the project
+Run:
+
+npm run build
+
+Confirm the dist folder exists and includes the built website files, including index.html and assets.
+
+5. Stage and commit all required files
+Stage these files/folders:
+- .cpanel.yml
+- dist/
+- package.json/package-lock.json if npm install changed them
+- any other project files that were modified for the temporary website
+
+Commit message:
+
+Add cPanel deployment config and production build
+
+6. Push to GitHub
+Push the commit to the connected GitHub repository.
+
+7. Do not change the cPanel repo path
+The cPanel repository path should remain:
+
+/home/vllzr8jk8a1z/repositories/GUSI-Temp
+
+The deployment path in .cpanel.yml should remain:
+
+/home/vllzr8jk8a1z/public_html/
+
+8. Final verification
+After pushing to GitHub, confirm:
+- .cpanel.yml exists in the GitHub repo root
+- dist/index.html exists in GitHub
+- dist/assets exists in GitHub
+- There are no uncommitted changes in Replit Git
+- The latest commit has been pushed successfully
+
+Acceptance criteria:
+- npm run build succeeds
+- .cpanel.yml exists in the root
+- dist folder is committed and pushed
+- GitHub contains the latest build
+- cPanel should be able to click “Update from Remote” and then “Deploy HEAD Commit” successfully
