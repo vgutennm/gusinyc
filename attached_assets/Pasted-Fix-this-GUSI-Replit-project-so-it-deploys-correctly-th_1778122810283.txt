@@ -1,0 +1,177 @@
+Fix this GUSI Replit project so it deploys correctly through cPanel Git Version Control to the temp domain.
+
+Current problem:
+The project is building into dist/public, but the cPanel deployment workflow should deploy a built site where index.html and assets are directly inside dist. The current cPanel deploy may be copying the wrong folder structure, causing the temp domain to show nothing.
+
+Important workflow:
+Replit builds the site → Replit pushes to GitHub → cPanel pulls from GitHub → cPanel deploys to the temp domain document root.
+
+Do not deploy directly from Replit.
+
+Tasks:
+
+1. Fix vite.config.ts for cPanel deployment
+
+Open vite.config.ts and update it so:
+- The build output folder is dist, not dist/public.
+- The app uses "/" as the default base path when BASE_PATH is not provided.
+- The app does not fail during build just because PORT or BASE_PATH is missing.
+- PORT should only matter for local dev/preview, not production build.
+
+Use this logic:
+- const port = Number(process.env.PORT || 5173)
+- const basePath = process.env.BASE_PATH || "/"
+
+In the build config, use:
+
+build: {
+  outDir: path.resolve(import.meta.dirname, "dist"),
+  emptyOutDir: true,
+}
+
+Do not use:
+
+dist/public
+
+2. Add or update .cpanel.yml
+
+Create or update a file in the project root named exactly:
+
+.cpanel.yml
+
+It must be at the same level as package.json.
+
+Use this content for now:
+
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/vllzr8jk8a1z/public_html/
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R dist/* $DEPLOYPATH
+
+Important:
+- If the temp domain sxp.3b7.mytemp.website has a different document root in cPanel, update DEPLOYPATH to that exact folder instead of public_html.
+- The goal is that index.html ends up directly inside the temp domain’s document root, not inside a nested public folder.
+
+3. Make sure Home.tsx only shows the temporary site
+
+Open src/pages/Home.tsx and make sure it only renders:
+
+- Hero
+- Footer
+
+Remove Visit from the page.
+
+The final Home component should not import or render Visit.
+
+Expected structure:
+
+import { useEffect } from "react";
+import { Hero } from "@/components/Hero";
+import { Footer } from "@/components/Footer";
+
+export default function Home() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const previous = link?.getAttribute("href") ?? null;
+    link?.setAttribute("href", "https://gusinyc.com/");
+    return () => {
+      if (link && previous !== null) link.setAttribute("href", previous);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gusi-charcoal">
+      <main>
+        <Hero />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+4. Simplify routing for the temporary version
+
+Open src/App.tsx.
+
+For this temporary website, remove or disable the Press route so no extra page content is active.
+
+The router should only include:
+- /
+- NotFound fallback
+
+Keep QueryClientProvider, TooltipProvider, Toaster, and WouterRouter if needed.
+
+Remove the unused Press import.
+
+5. Build the project
+
+Run:
+
+npm install
+npm run build
+
+Confirm that this exists after build:
+
+dist/index.html
+
+Confirm that assets exist directly under dist, such as:
+
+dist/assets/
+
+There should not be a required structure like:
+
+dist/public/index.html
+
+6. Fix .gitignore so dist is committed
+
+Open .gitignore.
+
+If it contains:
+
+dist
+
+or:
+
+/dist
+
+remove that line.
+
+For this cPanel Git Version Control setup, the production dist folder must be committed and pushed to GitHub because cPanel is copying dist into the live folder.
+
+7. Stage, commit, and push
+
+Stage:
+- vite.config.ts
+- .cpanel.yml
+- src/pages/Home.tsx
+- src/App.tsx
+- .gitignore if changed
+- dist/
+
+Commit message:
+
+Fix cPanel deployment build output
+
+Push to GitHub.
+
+8. Final verification checklist
+
+Before marking this done, confirm:
+- npm run build succeeds
+- dist/index.html exists
+- dist/assets exists
+- .cpanel.yml exists in the root
+- .cpanel.yml copies from dist/* to the correct DEPLOYPATH
+- Home page renders only Hero and Footer
+- Header has no navigation
+- Hero shows Coming Soon
+- Footer is directly under the hero
+- Git status is clean
+- Latest commit is pushed to GitHub
+
+After this is pushed, I will go to cPanel and click:
+1. Update from Remote
+2. Deploy HEAD Commit
