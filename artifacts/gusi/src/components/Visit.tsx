@@ -15,7 +15,6 @@ import {
 } from "@/lib/constants";
 import { motion } from "framer-motion";
 import { Star, Store, MapPin } from "lucide-react";
-import { OpenTableWidget } from "@/components/OpenTableWidget";
 
 export function Visit() {
   return (
@@ -30,12 +29,6 @@ export function Visit() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-3xl sm:text-4xl mb-6 sm:mb-8 leading-tight">Reserve your table.</h2>
-            <p className="text-gusi-porcelain/70 font-light mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">
-              Choose a date, time, and party size below to book through OpenTable.
-            </p>
-            <OpenTableWidget />
-
             <div className="space-y-7 sm:space-y-8">
               <div>
                 <h3 className="text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-2 sm:mb-3">Hours</h3>
