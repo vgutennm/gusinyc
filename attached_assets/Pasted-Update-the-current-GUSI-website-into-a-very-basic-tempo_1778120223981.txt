@@ -1,0 +1,142 @@
+Update the current GUSI website into a very basic temporary “Coming Soon” version using the existing finished site design.
+
+Goal:
+Keep only:
+1. Header/logo area
+2. Hero image section
+3. Footer directly under the hero
+
+Remove everything else from the site.
+
+Specific required changes:
+
+1. Home page cleanup
+In `src/pages/Home.tsx`, remove all homepage sections under the hero except the footer.
+
+Remove these imports if they exist:
+- Story
+- TwoFloors
+- MenuPreview
+- BarSection
+- Gallery
+- PressPreview
+- Visit
+- ScrollToTop if it is no longer needed
+
+The homepage should render only:
+
+<Header />
+<main>
+  <Hero />
+</main>
+<Footer />
+
+Do not render:
+- Story section
+- Two floors / space section
+- Menu preview
+- Bar section
+- Gallery
+- Press section
+- Visit / reservation section
+- OpenTable reservation section
+- Any extra CTA section
+- Scroll-to-top button unless absolutely needed
+
+2. Header cleanup
+In `src/components/Header.tsx`, remove all navigation items and header buttons.
+
+Remove:
+- Desktop nav links: Story, Space, Menu, Bar, Press, Visit
+- Desktop Reserve button
+- Mobile Reserve button
+- Mobile hamburger menu button
+- Mobile menu overlay
+- Any unused imports related to menu behavior, including Menu, X, motion, AnimatePresence if no longer used
+- Any unused state such as mobileMenuOpen
+- Any navLinks array and anchor logic if no longer needed
+
+Keep:
+- Header container
+- GUSI logo
+- Logo link to `/`
+
+The header should remain visually polished and responsive, but it should only show the logo. No nav links. No buttons. No hamburger menu.
+
+3. Hero button replacement
+In `src/components/Hero.tsx`, remove the two hero CTA buttons:
+
+- Reserve a Table
+- Explore the Menu
+
+Replace them with one non-clickable text/button-style element that says:
+
+Coming Soon
+
+Requirements for the Coming Soon element:
+- It should not link anywhere
+- It should not be a button that performs an action
+- It should visually match the site style
+- Use uppercase styling and gold/brand coloring
+- It should sit in the same area where the two buttons were
+
+Example structure:
+
+<div className="inline-flex items-center justify-center border border-gusi-gold text-gusi-gold px-8 py-4 uppercase tracking-[0.25em] text-sm">
+  Coming Soon
+</div>
+
+4. Footer cleanup
+Keep the footer directly under the hero.
+
+In `src/components/Footer.tsx`, keep the simple footer information such as:
+- GUSI logo
+- Address
+- Google Review link if already present
+- Google Business link if already present
+- Copyright
+
+Remove any “Reserve Your Table,” reservation CTA, OpenTable widget, or reservation-related section from the footer if one exists.
+
+Do not add any new footer reservation CTA.
+
+5. Remove all other site content
+Make sure no other content appears between the hero and the footer.
+
+The final page order should be exactly:
+
+Header
+Hero image section with logo/content and “Coming Soon”
+Footer
+
+6. Mobile optimization
+Confirm the temporary page looks clean on mobile, tablet, and desktop.
+
+Mobile requirements:
+- No hamburger menu should appear
+- No nav items should appear
+- No Reserve button should appear in the header
+- Hero should still fill the screen nicely
+- “Coming Soon” should be centered and readable
+- Footer should stack cleanly on mobile
+- No horizontal overflow
+
+7. Cleanup
+After making the changes:
+- Remove unused imports
+- Remove unused variables
+- Run the app and fix any TypeScript, lint, or build errors
+- Confirm the site loads without console errors
+- Do not delete image assets or components from the project unless necessary; just stop rendering them for now so they can be restored later
+
+Acceptance criteria:
+- Header only shows GUSI logo
+- No navigation items anywhere
+- No hamburger menu
+- No Reserve button in the header
+- Hero no longer shows “Reserve a Table” or “Explore the Menu”
+- Hero shows “Coming Soon”
+- Everything under the hero is removed except the footer
+- Footer remains visible directly below the hero
+- No reservation/OpenTable section appears anywhere on the page
+- Page works cleanly on mobile and desktop
