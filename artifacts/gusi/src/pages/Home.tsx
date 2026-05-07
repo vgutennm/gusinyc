@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Hero } from "@/components/Hero";
+import { HoursContact } from "@/components/HoursContact";
 import { Location } from "@/components/Location";
 import { Footer } from "@/components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
     <div className="min-h-screen bg-gusi-charcoal">
       <main>
         <Hero />
+        <HoursContact />
         <Location />
       </main>
       <Footer />
