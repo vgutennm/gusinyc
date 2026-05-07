@@ -41,3 +41,9 @@ id = "DroRWpPiSf7vpyiFcFjb-"
 uri = "file://exports/gusi-site.zip"
 type = "unspecified"
 title = "GUSI Site — Source for Troubleshooting"
+
+[[outputs]]
+id = "gBolZQkxn2K_UM2_tFN7a"
+uri = "file://exports/gusi-dist.tar.gz"
+type = "unspecified"
+title = "GUSI dist (latest build)"
