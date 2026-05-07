@@ -35,3 +35,9 @@ id = "57t6UBtWSJywYBKQ4WSvB"
 uri = "file://exports/gusi.zip"
 type = "unspecified"
 title = "GUSI app source (zip)"
+
+[[outputs]]
+id = "DroRWpPiSf7vpyiFcFjb-"
+uri = "file://exports/gusi-site.zip"
+type = "unspecified"
+title = "GUSI Restaurant — Site Source"
