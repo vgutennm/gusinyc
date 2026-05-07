@@ -4,12 +4,9 @@ import {
   GOOGLE_REVIEW_URL,
   GOOGLE_BUSINESS_URL,
   GOOGLE_MAPS_EMBED_URL,
-  SOCIAL_LINKS,
-  SOCIAL_HANDLE,
   RESTAURANT_EMAIL,
   RESTAURANT_PHONE,
   RESTAURANT_PHONE_TEL,
-  PRESS_EMAIL,
   HOURS,
   BRUNCH_LAUNCH_LABEL,
 } from "@/lib/constants";
@@ -164,28 +161,6 @@ export function Visit() {
             </p>
           </div>
 
-          {/* Follow the opening */}
-          <div className="pt-10 sm:pt-12 border-t border-gusi-gold/10">
-            <h3 className="font-serif text-2xl mb-3 sm:mb-4">Follow the opening.</h3>
-            <p className="text-gusi-porcelain/70 font-light mb-6 sm:mb-8 text-sm leading-relaxed">
-              Opening updates, menu previews, bar notes, and press announcements
-              — find us at <span className="text-gusi-gold">{SOCIAL_HANDLE}</span>.
-            </p>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 uppercase tracking-[0.2em] text-xs text-gusi-gold">
-              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">Instagram</a>
-              <a href={SOCIAL_LINKS.tiktok} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">TikTok</a>
-              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">Facebook</a>
-              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">YouTube</a>
-            </div>
-            <div className="mt-7 sm:mt-8">
-              <a
-                href={`mailto:${PRESS_EMAIL}`}
-                className="text-gusi-porcelain/60 hover:text-gusi-ivory text-sm font-light transition-colors break-all focus:outline-none focus-visible:text-gusi-ivory"
-              >
-                Press inquiries: {PRESS_EMAIL}
-              </a>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
