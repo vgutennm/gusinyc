@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/vllzr8jk8a1z/public_html/
+    - /bin/rm -rf $DEPLOYPATH/*
+    - /bin/cp -R artifacts/gusi/dist/public/* $DEPLOYPATH
