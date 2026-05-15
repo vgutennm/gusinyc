@@ -51,7 +51,7 @@ export function Hero() {
           className="flex justify-center w-full"
         >
           <div className="inline-flex items-center justify-center border border-gusi-gold text-gusi-gold px-8 py-4 uppercase tracking-[0.25em] text-sm">
-            Coming Soon
+            Now Open
           </div>
         </motion.div>
       </div>
