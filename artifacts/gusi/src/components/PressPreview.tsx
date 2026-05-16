@@ -24,7 +24,7 @@ export function PressPreview() {
             id="press-preview-heading"
             className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-burgundy mb-5 sm:mb-6 leading-tight"
           >
-            Gusi Opens {OPENING_DATE_LABEL}
+            Gusi Opened {OPENING_DATE_LABEL}
           </h2>
           <div className="w-12 h-px bg-gusi-gold/60 mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg text-gusi-charcoal/80 font-light leading-relaxed max-w-2xl mb-8 sm:mb-10">

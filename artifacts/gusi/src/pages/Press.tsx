@@ -38,7 +38,7 @@ const IMG_DIMS = {
 } as const;
 
 const PAGE_TITLE =
-  "Gusi Opens in Greenwich Village | Eastern European Restaurant & Bar in NYC";
+  "Gusi Opened in Greenwich Village | Eastern European Restaurant & Bar in NYC";
 const PAGE_DESCRIPTION =
   "Gusi, a two-storey Eastern European restaurant and bar with Mediterranean influence, opens Friday, May 8, 2026 at 432 Sixth Avenue in Greenwich Village, NYC.";
 
@@ -321,7 +321,7 @@ export default function Press() {
                 For Immediate Release
               </span>
               <h1 className="font-serif text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-gusi-ivory mb-6 sm:mb-8 max-w-3xl">
-                Gusi Opens in Greenwich Village on {OPENING_DATE_LABEL}
+                Gusi Opened in Greenwich Village on {OPENING_DATE_LABEL}
               </h1>
               <p className="font-serif italic text-lg sm:text-xl md:text-2xl text-gusi-gold/90 mb-8 sm:mb-10 max-w-2xl">
                 A Two-Storey Restaurant &amp; Bar Where Eastern European
