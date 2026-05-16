@@ -182,7 +182,7 @@ export default function Press() {
       ),
     ];
 
-    let scriptEl: HTMLScriptElement | null = null;
+    const scriptEls: HTMLScriptElement[] = [];
     let canonicalSnap: CanonicalSnapshot | null = null;
 
     if (typeof window !== "undefined") {
@@ -269,11 +269,23 @@ export default function Press() {
         },
       };
 
-      scriptEl = document.createElement("script");
-      scriptEl.type = "application/ld+json";
-      scriptEl.setAttribute("data-press-jsonld", "true");
-      scriptEl.textContent = JSON.stringify(articleSchema);
-      document.head.appendChild(scriptEl);
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${origin}/` },
+          { "@type": "ListItem", position: 2, name: "Press", item: pageUrl },
+        ],
+      };
+
+      for (const schema of [articleSchema, breadcrumbSchema]) {
+        const el = document.createElement("script");
+        el.type = "application/ld+json";
+        el.setAttribute("data-press-jsonld", "true");
+        el.textContent = JSON.stringify(schema);
+        document.head.appendChild(el);
+        scriptEls.push(el);
+      }
     }
 
     // Make sure visitors land at the top, not on a stale anchor.
@@ -283,7 +295,7 @@ export default function Press() {
       document.title = previousTitle;
       snapshots.forEach(restoreMeta);
       if (canonicalSnap) restoreCanonical(canonicalSnap);
-      if (scriptEl) scriptEl.remove();
+      scriptEls.forEach((el) => el.remove());
     };
   }, []);
 

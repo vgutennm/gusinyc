@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemaps/image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://gusinyc.com/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusinyc.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusinyc.com/" />
+    <image:image>
+      <image:loc>https://gusinyc.com/images/gusi-greenwich-village-bar-interior.jpg</image:loc>
+      <image:title>GUSI Restaurant &amp; Bar — Greenwich Village, NYC</image:title>
+      <image:caption>Interior of GUSI restaurant and bar at 432 Sixth Avenue, Greenwich Village — stone walls, banquettes, candlelit high-top tables, and a warmly lit central bar.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gusinyc.com/gallery/gusi-second-floor-lebedi-dining-room.jpg</image:loc>
+      <image:title>Lebedi / The Swans — GUSI second-floor dining room</image:title>
+      <image:caption>GUSI's second-floor dining room with three vibrant commissioned paintings, ivory chairs, white-clothed tables, and a hand-painted ceiling.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gusinyc.com/brand/gusi-share-card-og.webp</image:loc>
+      <image:title>GUSI Restaurant wordmark</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gusinyc.com/press</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusinyc.com/press" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusinyc.com/press" />
+  </url>
+</urlset>
