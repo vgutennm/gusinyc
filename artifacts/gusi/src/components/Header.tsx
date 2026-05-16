@@ -61,11 +61,13 @@ export function Header() {
           className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
         >
           <img
-            src="/brand/gusi-wordmark-light.svg"
-            alt="GUSI"
-            width={5102}
-            height={1862}
-            className="block h-5 lg:h-7 w-auto select-none"
+            src="/brand/gusi-goose-emblem.webp"
+            alt="GUSI Restaurant logo — a stylized red goose emblem inside a red circle on black, the brand mark of GUSI Eastern European restaurant and bar in Greenwich Village, NYC"
+            title="GUSI Restaurant — Greenwich Village, NYC"
+            width={1024}
+            height={1024}
+            fetchPriority="high"
+            className="block h-10 lg:h-12 w-auto select-none"
             draggable={false}
           />
         </Link>
