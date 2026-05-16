@@ -6,10 +6,16 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero.png"
-          alt="Candlelit dining room at GUSI"
-          className="w-full h-full object-cover opacity-40"
+          src="/images/gusi-greenwich-village-bar-interior.jpg"
+          alt="Interior of GUSI restaurant and bar in Greenwich Village, New York — exposed stone walls, banquette seating, candlelit high-top tables, and a warmly lit central bar stocked with infused vodka and natural wine at 432 Sixth Avenue."
+          title="GUSI Restaurant & Bar — 432 Sixth Avenue, Greenwich Village, NYC"
+          width={4032}
+          height={3024}
+          loading="eager"
+          decoding="async"
           fetchPriority="high"
+          itemProp="image"
+          className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gusi-charcoal via-gusi-charcoal/50 to-gusi-charcoal/80" />
       </div>
