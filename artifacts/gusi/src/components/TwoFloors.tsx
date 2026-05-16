@@ -85,12 +85,12 @@ export function TwoFloors() {
         </div>
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-2">
           <img
-            src="/gallery/gusi-second-floor-dining-paintings.webp"
-            srcSet="/gallery/gusi-second-floor-dining-paintings-800.webp 800w, /gallery/gusi-second-floor-dining-paintings.webp 1600w"
+            src="/gallery/gusi-second-floor-lebedi-dining-room.jpg"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            alt="GUSI's second-floor dining room (Lebedi / The Swans) — three vibrant figurative paintings line the back wall above ivory leather chairs and white-clothed tables, beneath a hand-painted ceiling in muted greens and pastels"
-            width={1600}
-            height={1200}
+            alt="GUSI's second-floor dining room (Lebedi / The Swans) — three vibrant figurative paintings line the back wall above ivory leather chairs and white-clothed tables, with an oval wood table in the foreground beneath a hand-painted ceiling of muted abstract shapes"
+            title="Lebedi / The Swans — GUSI second-floor dining room, 432 Sixth Avenue, Greenwich Village, NYC"
+            width={4032}
+            height={3024}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
             decoding="async"
