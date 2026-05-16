@@ -118,16 +118,57 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html, body {
+  overflow-x: clip;
+  overscroll-behavior-y: none;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove the blue/grey tap flash on iOS/Android while keeping focus rings intact */
+a, button, [role="button"], input, select, textarea, summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better hit targets for primary tap targets on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  a, button, [role="button"] {
+    touch-action: manipulation;
+  }
+}
+
+/* Prevent iOS auto-zoom on form inputs (font-size < 16px triggers zoom) */
+input, select, textarea {
+  font-size: 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 section[id] {
   scroll-margin-top: 80px;
+}
+
+@media (max-width: 640px) {
+  section[id] {
+    scroll-margin-top: 64px;
+  }
 }
 
 .scrollbar-hide {

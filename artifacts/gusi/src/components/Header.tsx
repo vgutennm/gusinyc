@@ -110,13 +110,13 @@ export function Header() {
         <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
           <a
             href={anchor("reservations")}
-            className="inline-flex items-center justify-center min-h-10 border border-gusi-gold text-gusi-gold px-4 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+            className="inline-flex items-center justify-center min-h-11 border border-gusi-gold text-gusi-gold px-4 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
             Reserve
           </a>
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="text-gusi-ivory p-2 -mr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 rounded-sm"
+            className="inline-flex items-center justify-center w-11 h-11 -mr-2 text-gusi-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 rounded-sm"
             aria-label="Open menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -149,7 +149,7 @@ export function Header() {
               </Link>
               <button
                 onClick={closeMobile}
-                className="text-gusi-ivory p-2 -mr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 rounded-sm"
+                className="inline-flex items-center justify-center w-11 h-11 -mr-2 text-gusi-ivory focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 rounded-sm"
                 aria-label="Close menu"
               >
                 <X className="w-7 h-7" strokeWidth={1} />
