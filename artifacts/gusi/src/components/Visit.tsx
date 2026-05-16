@@ -171,9 +171,6 @@ export function Visit() {
               <h3 className="font-serif text-2xl mb-6 sm:mb-8">Follow us on social media.</h3>
               <div className="flex flex-wrap gap-x-6 gap-y-3 uppercase tracking-[0.2em] text-xs text-gusi-gold">
                 <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">Instagram</a>
-                <a href={SOCIAL_LINKS.tiktok} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">TikTok</a>
-                <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">Facebook</a>
-                <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noreferrer noopener" className="hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory">YouTube</a>
               </div>
               <div className="mt-7 sm:mt-8">
                 <a
