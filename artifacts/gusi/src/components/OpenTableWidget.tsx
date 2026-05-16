@@ -63,7 +63,7 @@ export function OpenTableWidget() {
           ref={containerRef}
           aria-live="polite"
           aria-busy={shouldLoad}
-          className="opentable-widget-container block"
+          className="opentable-widget-container block [&_iframe]:block [&_iframe]:align-bottom"
         >
           <span className="sr-only">
             {shouldLoad
