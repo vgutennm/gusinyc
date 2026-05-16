@@ -57,7 +57,7 @@ export function OpenTableWidget() {
     <div ref={sentinelRef} className="mb-10 sm:mb-12 max-w-[340px] mx-auto sm:mx-0">
       <section
         aria-label="OpenTable reservation widget"
-        className="bg-gusi-ivory/95 border border-gusi-gold/30 px-2 py-3 min-h-[180px] sm:min-h-[200px] flex flex-col items-center justify-center"
+        className="border border-gusi-gold/30 overflow-hidden flex flex-col"
       >
         <div
           ref={containerRef}
