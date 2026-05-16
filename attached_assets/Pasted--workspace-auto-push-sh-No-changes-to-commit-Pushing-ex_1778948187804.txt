@@ -1,0 +1,64 @@
+~/workspace$ ./auto-push.sh
+No changes to commit. Pushing existing commits (if any)…
+Uploading LFS objects: 100% (1/1), 70 MB | 0 B/s, done.
+To https://github.com/vgutennm/gusinyc.git
+ ! [rejected]        HEAD -> main (fetch first)
+error: failed to push some refs to 'https://github.com/vgutennm/gusinyc.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+~/workspace$ # 1. See what's on GitHub that you don't have locally
+git fetch origin main
+git log --oneline HEAD..origin/main
+
+# 2. Replay your 28 local commits on top of GitHub's history
+git pull --rebase origin main
+
+# 3. If everything looks fine, push
+./auto-push.sh
+remote: Repository not found.
+fatal: repository 'https://github.com/vgutennm/GUSI-Temp/' not found
+remote: Repository not found.
+fatal: repository 'https://github.com/vgutennm/GUSI-Temp/' not found
+No changes to commit. Pushing existing commits (if any)…
+To https://github.com/vgutennm/gusinyc.git
+ ! [rejected]        HEAD -> main (fetch first)
+error: failed to push some refs to 'https://github.com/vgutennm/gusinyc.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+~/workspace$ # 1. Fix the broken remote URL
+git remote set-url origin https://github.com/vgutennm/gusinyc.git
+git remote -v   # confirm both fetch/push now show gusinyc.git
+
+# 2. Pull what's on GitHub that you don't have locally, replaying
+#    your 28 local commits on top of it
+git pull --rebase origin main
+
+# 3. Push everything
+./auto-push.sh
+gitsafe-backup  git://gitsafe:5418/backup.git (fetch)
+gitsafe-backup  git://gitsafe:5418/backup.git (push)
+origin  https://github.com/vgutennm/gusinyc.git (fetch)
+origin  https://github.com/vgutennm/gusinyc.git (push)
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 291 bytes | 11.00 KiB/s, done.
+From https://github.com/vgutennm/gusinyc
+ * branch            main       -> FETCH_HEAD
+   9187e38..13b00e1  main       -> origin/main
+warning: skipped previously applied commit 51f82a9
+hint: use --reapply-cherry-picks to include skipped commits
+hint: Disable this message with "git config set advice.skippedCherryPicks false"
+Successfully rebased and updated refs/heads/main.
+No changes to commit. Pushing existing commits (if any)…
+To https://github.com/vgutennm/gusinyc.git
+   13b00e1..3e2f008  HEAD -> main
+Push to https://github.com/vgutennm/gusinyc.git complete.
+~/workspace$ 
