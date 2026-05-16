@@ -57,7 +57,12 @@ export function Header() {
         {/* Logo — always returns to homepage */}
         <Link
           href="/"
-          aria-label="GUSI — return to homepage"
+          aria-label="GUSI — return to top of homepage"
+          onClick={() => {
+            if (window.location.pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
           className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
         >
           <img
