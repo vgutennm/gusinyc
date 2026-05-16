@@ -62,7 +62,7 @@ export function Header() {
         >
           <img
             src="/brand/gusi-goose-emblem.webp"
-            alt="GUSI Restaurant logo — a stylized red goose emblem inside a red circle on black, the brand mark of GUSI Eastern European restaurant and bar in Greenwich Village, NYC"
+            alt="GUSI Restaurant logo — a hand-drawn brown and amber goose standing inside a thin amber circle, the brand mark of GUSI Eastern European restaurant and bar in Greenwich Village, NYC"
             title="GUSI Restaurant — Greenwich Village, NYC"
             width={1024}
             height={1024}
