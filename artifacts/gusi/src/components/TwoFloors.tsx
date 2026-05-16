@@ -26,7 +26,7 @@ export function TwoFloors() {
             className="max-w-md"
           >
             <h3 className="text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-3 sm:mb-4">First Floor</h3>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-5 sm:mb-6 leading-tight">Gusi / The Geese</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-5 sm:mb-6 leading-tight">GUSI / The Geese</h2>
             <p className="text-gusi-porcelain/80 leading-relaxed font-light text-base sm:text-lg">
               Dark, warm, textured, bold, social. Charred wood, vintage mirrors, oak tables, cocktails, infused vodka, and relaxed evening energy.
             </p>

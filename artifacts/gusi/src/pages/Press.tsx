@@ -38,9 +38,9 @@ const IMG_DIMS = {
 } as const;
 
 const PAGE_TITLE =
-  "Gusi Opened in Greenwich Village | Eastern European Restaurant & Bar in NYC";
+  "GUSI Opened in Greenwich Village | Eastern European Restaurant & Bar in NYC";
 const PAGE_DESCRIPTION =
-  "Gusi, a two-storey Eastern European restaurant and bar with Mediterranean influence, opens Friday, May 8, 2026 at 432 Sixth Avenue in Greenwich Village, NYC.";
+  "GUSI, a two-storey Eastern European restaurant and bar with Mediterranean influence, opens Friday, May 8, 2026 at 432 Sixth Avenue in Greenwich Village, NYC.";
 
 const SOCIAL_IMAGE = storefrontWide;
 
@@ -133,7 +133,7 @@ const designVision = [
   {
     eyebrow: "Second Floor",
     title: "Swans, Airy and Elevated",
-    body: "Upstairs, the mood transforms entirely. Here Gusi becomes Lebedi, another Slavic word for swans. Soft gray-green walls, parquet floors, tablecloths, draped curtains, and hand-painted murals create an elevated, poetic dining experience.",
+    body: "Upstairs, the mood transforms entirely. Here GUSI becomes Lebedi, another Slavic word for swans. Soft gray-green walls, parquet floors, tablecloths, draped curtains, and hand-painted murals create an elevated, poetic dining experience.",
   },
 ];
 
@@ -321,7 +321,7 @@ export default function Press() {
                 For Immediate Release
               </span>
               <h1 className="font-serif text-[2.25rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-gusi-ivory mb-6 sm:mb-8 max-w-3xl">
-                Gusi Opened in Greenwich Village on {OPENING_DATE_LABEL}
+                GUSI Opened in Greenwich Village on {OPENING_DATE_LABEL}
               </h1>
               <p className="font-serif italic text-lg sm:text-xl md:text-2xl text-gusi-gold/90 mb-8 sm:mb-10 max-w-2xl">
                 A Two-Storey Restaurant &amp; Bar Where Eastern European
@@ -330,7 +330,7 @@ export default function Press() {
               <div className="w-12 h-px bg-gusi-gold/50 mb-8 sm:mb-10" />
               <p className="text-base sm:text-lg md:text-xl text-gusi-porcelain/85 font-light leading-relaxed max-w-2xl mb-10 sm:mb-12">
                 Opening at 432 Sixth Avenue in the heart of Greenwich Village,
-                Gusi brings a refined and soulful interpretation of Eastern
+                GUSI brings a refined and soulful interpretation of Eastern
                 European cuisine to New York City, infused with the warmth and
                 brightness of Mediterranean influence.
               </p>
@@ -359,19 +359,19 @@ export default function Press() {
           </h2>
           <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed">
             <p>
-              Gusi, the new two-storey Eastern European restaurant and bar from
+              GUSI, the new two-storey Eastern European restaurant and bar from
               Boris Artemyev and Elena Melnikova, will officially open its doors
               on {OPENING_DATE_LABEL} at 432 Sixth Avenue in the heart of
               Greenwich Village.
             </p>
             <p>
-              Named after the Slavic word for &ldquo;geese,&rdquo; Gusi is a
+              Named after the Slavic word for &ldquo;geese,&rdquo; GUSI is a
               deeply personal, soulful venture where refined Eastern European
               cuisine meets Mediterranean warmth, creating a dining experience
               unlike anything else in New York City right now.
             </p>
             <p>
-              Spanning two distinct floors, each its own world, Gusi unfolds as
+              Spanning two distinct floors, each its own world, GUSI unfolds as
               a journey from the grounded, art-filled ground floor to an airy,
               mural-adorned second-floor retreat overlooking the iconic
               Jefferson Market Library.
@@ -415,7 +415,7 @@ export default function Press() {
                 <p>
                   Founded by husband-and-wife team Boris Artemyev and Elena
                   Melnikova, both seasoned veterans of New York&rsquo;s
-                  restaurant scene, Gusi is a deeply personal venture and the
+                  restaurant scene, GUSI is a deeply personal venture and the
                   realization of a shared American dream.
                 </p>
                 <p>
@@ -439,20 +439,20 @@ export default function Press() {
             width={IMG_DIMS.porkBellyDish.w}
             height={IMG_DIMS.porkBellyDish.h}
             alt="Crispy Eastern European pork belly served with lime wedges, pickled red onion, and house dill pickles at GUSI Restaurant in Greenwich Village"
-            caption="Crispy pork belly with lime, pickled red onion, and house pickles — a Gusi reading of Eastern European comfort."
+            caption="Crispy pork belly with lime, pickled red onion, and house pickles — a GUSI reading of Eastern European comfort."
           />
 
           <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed">
             <p>
               New York is home to only a handful of restaurants dedicated to
-              Eastern European cuisine. Gusi adds a distinct new voice to that
+              Eastern European cuisine. GUSI adds a distinct new voice to that
               conversation, one grounded in tradition yet shaped by a
               contemporary point of view, with interpretations that feel both
               respectful and quietly unexpected.
             </p>
             <p>
               At the heart of the menu is an expansive dumpling program that
-              defines the Gusi experience. Pelmeni appear in multiple styles and
+              defines the GUSI experience. Pelmeni appear in multiple styles and
               fillings, from classic combinations of beef and pork or beef,
               pork, and veal, to less commonly seen expressions featuring elk,
               buffalo, goose, and a Mediterranean-influenced variation finished
@@ -460,7 +460,7 @@ export default function Press() {
             </p>
             <p>
               Pierogi receive a similarly considered treatment. Rather than the
-              short crust dough most familiar to New York diners, Gusi
+              short crust dough most familiar to New York diners, GUSI
               highlights a lesser-known tradition of puff pastry pierogi,
               resulting in a lighter, flakier texture that offers a new
               dimension while remaining rooted in heritage.
@@ -477,7 +477,7 @@ export default function Press() {
             width={IMG_DIMS.tastingSpread.w}
             height={IMG_DIMS.tastingSpread.h}
             alt="A tasting spread of GUSI dishes including dumplings, skewers, and an array of small plates that reflect the restaurant's Eastern European and Mediterranean menu"
-            caption="A Gusi tasting — dumplings, skewers, and small plates spanning Eastern European tradition and Mediterranean influence."
+            caption="A GUSI tasting — dumplings, skewers, and small plates spanning Eastern European tradition and Mediterranean influence."
           />
 
           <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -533,12 +533,12 @@ export default function Press() {
                 id="bar-program-heading"
                 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-ivory mb-8 sm:mb-10 leading-tight"
               >
-                Gusi&rsquo;s Bar Program: Nostalgia, Nature, and the Taste of
+                GUSI&rsquo;s Bar Program: Nostalgia, Nature, and the Taste of
                 Home
               </h2>
               <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-porcelain/85 font-light leading-relaxed">
                 <p>
-                  Gusi&rsquo;s cocktail program is rooted in memory and
+                  GUSI&rsquo;s cocktail program is rooted in memory and
                   tradition, drawing from flavors that shaped its team long
                   before &ldquo;mixology&rdquo; entered their vocabulary.
                 </p>
@@ -560,7 +560,7 @@ export default function Press() {
                   year turns, echoing the way these flavors once marked time.
                 </p>
                 <p className="border-l-2 border-gusi-gold/60 pl-5 italic text-gusi-porcelain/90">
-                  By day and into the afternoon, Gusi also features coffee from
+                  By day and into the afternoon, GUSI also features coffee from
                   Devoción, reflecting the same thoughtful approach found
                   throughout the experience.
                 </p>
@@ -572,11 +572,11 @@ export default function Press() {
         {/* SECTION 6 — WINE PROGRAM */}
         <PressSection eyebrow="The Wine List" tone="muted">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-burgundy mb-6 sm:mb-8 leading-tight">
-            Gusi&rsquo;s Curated Wine Program
+            GUSI&rsquo;s Curated Wine Program
           </h2>
           <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed">
             <p>
-              An extensive wine list plays a vital role at Gusi, balancing
+              An extensive wine list plays a vital role at GUSI, balancing
               classic European and American labels with natural, biodynamic, and
               organic selections.
             </p>
@@ -607,7 +607,7 @@ export default function Press() {
                 />
               </div>
               <figcaption className="mt-3 text-xs sm:text-sm text-gusi-charcoal/60 italic font-light text-center">
-                A Gusi main paired naturally with bold European reds.
+                A GUSI main paired naturally with bold European reds.
               </figcaption>
             </figure>
             <figure>
@@ -677,7 +677,7 @@ export default function Press() {
           </h2>
           <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed mb-12 sm:mb-16">
             <p>
-              Gusi&rsquo;s interiors are designed as a journey that unfolds
+              GUSI&rsquo;s interiors are designed as a journey that unfolds
               across two distinct moods, each floor telling its own chapter of a
               larger story.
             </p>
@@ -810,7 +810,7 @@ export default function Press() {
               </h2>
               <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-porcelain/85 font-light leading-relaxed max-w-3xl">
                 <p>
-                  Gusi will open with weekday dinner service from 4:00 pm to
+                  GUSI will open with weekday dinner service from 4:00 pm to
                   midnight and weekend all-day service from noon to midnight,
                   including brunch on weekend day shifts.
                 </p>
@@ -852,7 +852,7 @@ export default function Press() {
           </h2>
           <div className="space-y-5 sm:space-y-6 text-base sm:text-lg text-gusi-charcoal/85 font-light leading-relaxed">
             <p>
-              Gusi is an Eastern European restaurant with a Mediterranean soul,
+              GUSI is an Eastern European restaurant with a Mediterranean soul,
               located at 432 Sixth Avenue in the heart of New York City&rsquo;s
               Greenwich Village.
             </p>
@@ -862,7 +862,7 @@ export default function Press() {
               memory, and the search for belonging.
             </p>
             <p>
-              Named after the Slavic word for &ldquo;geese,&rdquo; Gusi draws on
+              Named after the Slavic word for &ldquo;geese,&rdquo; GUSI draws on
               the mythology of migration: the instinct to travel, to adapt, and
               to return. It is a restaurant built around the idea that food,
               like memory, carries us home.
@@ -876,7 +876,7 @@ export default function Press() {
             <p>
               Situated in Greenwich Village, a neighborhood long defined by its
               spirit of creative freedom and its welcome of wanderers, artists,
-              and dreamers, Gusi feels like a natural extension of that legacy.
+              and dreamers, GUSI feels like a natural extension of that legacy.
             </p>
           </div>
         </PressSection>
