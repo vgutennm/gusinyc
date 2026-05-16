@@ -19,7 +19,7 @@ run = "pnpm --filter @workspace/gusi run dev"
 
 [services.production]
 build = [ "pnpm", "--filter", "@workspace/gusi", "run", "build" ]
-publicDir = "artifacts/gusi/dist/public"
+publicDir = "artifacts/gusi/dist"
 serve = "static"
 
 [[services.production.rewrites]]

@@ -48,14 +48,34 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex justify-center w-full"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto max-w-xs sm:max-w-none"
         >
-          <div className="inline-flex items-center justify-center border border-gusi-gold text-gusi-gold px-8 py-4 uppercase tracking-[0.25em] text-sm">
-            Now Open
-          </div>
+          <a
+            href="#reservations"
+            className="bg-gusi-gold text-gusi-charcoal px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-ivory transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-ivory/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+          >
+            Reserve a Table
+          </a>
+          <a
+            href="#menu"
+            className="border border-gusi-gold/50 text-gusi-gold px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-gold/10 transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+          >
+            Explore the Menu
+          </a>
         </motion.div>
       </div>
 
+      {/* Scroll indicator (hidden on small screens to avoid crowding) */}
+      <motion.div
+        aria-hidden="true"
+        className="hidden sm:flex absolute bottom-10 left-1/2 -translate-x-1/2 text-gusi-gold/50 flex-col items-center gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+      >
+        <span className="uppercase tracking-widest text-[10px]">Scroll</span>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-gusi-gold/50 to-transparent" />
+      </motion.div>
     </section>
   );
 }
