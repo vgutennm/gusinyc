@@ -39,7 +39,21 @@ export function Footer() {
             <Store className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden="true" />
           </a>
         </div>
-        <div className="text-xs sm:text-sm">&copy; {new Date().getFullYear()} GUSI</div>
+        <div className="text-xs sm:text-sm flex flex-col sm:flex-row items-center gap-1 sm:gap-3">
+          <span>&copy; {new Date().getFullYear()} GUSI</span>
+          <span aria-hidden="true" className="hidden sm:inline opacity-40">·</span>
+          <span>
+            Website by{" "}
+            <a
+              href="https://setupshoponline.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-gusi-gold/80 hover:text-gusi-gold underline-offset-4 hover:underline transition-colors focus:outline-none focus-visible:underline"
+            >
+              SetUpShopOnline.com
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   );
