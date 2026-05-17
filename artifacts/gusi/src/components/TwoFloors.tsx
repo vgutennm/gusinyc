@@ -7,12 +7,12 @@ export function TwoFloors() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[80vh]">
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-1">
           <img
-            src="/gallery/gusi-1f-01.webp"
-            srcSet="/gallery/gusi-1f-01-800.webp 800w, /gallery/gusi-1f-01.webp 1600w"
+            src="/gallery/gusi-1f-geese.webp"
+            srcSet="/gallery/gusi-1f-geese-800.webp 800w, /gallery/gusi-1f-geese.webp 1600w"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            alt="GUSI's first-floor interior in Greenwich Village — candlelit Eastern European tavern bar and dining room at 432 Sixth Avenue, NYC"
-            width={1200}
-            height={1600}
+            alt="A pair of white porcelain geese on GUSI's first-floor bar in Greenwich Village — the brand's namesake mark beside candles and warm tavern lighting at 432 Sixth Avenue, NYC"
+            width={2048}
+            height={1152}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
             decoding="async"
