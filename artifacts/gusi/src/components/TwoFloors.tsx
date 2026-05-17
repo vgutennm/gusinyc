@@ -39,12 +39,12 @@ export function TwoFloors() {
       <div className="relative py-24 sm:py-32 md:py-48 flex items-center justify-center text-center px-6">
         <div className="absolute inset-0 z-0">
           <img
-            src="/gallery/gusi-1f-07.webp"
-            srcSet="/gallery/gusi-1f-07-800.webp 800w, /gallery/gusi-1f-07.webp 1600w"
+            src="/gallery/gusi-chandelier-mirror-detail.webp"
+            srcSet="/gallery/gusi-chandelier-mirror-detail-800.webp 800w, /gallery/gusi-chandelier-mirror-detail.webp 1600w"
             sizes="100vw"
-            alt="A candlelit detail of GUSI's first-floor passage between the bar downstairs and the dining room upstairs"
-            width={1600}
-            height={1200}
+            alt="A crystal chandelier and antique gilt mirror in GUSI's passage between floors — Greenwich Village, NYC"
+            width={825}
+            height={1100}
             className="w-full h-full object-cover opacity-30"
             loading="lazy"
             decoding="async"
