@@ -12,7 +12,7 @@ export function Story() {
         height={1467}
         loading="lazy"
         decoding="async"
-        className="pointer-events-none absolute -left-12 sm:-left-10 lg:-left-10 xl:-left-4 top-1/2 -translate-y-1/2 h-[260px] sm:h-[340px] md:h-[400px] lg:h-[420px] xl:h-[480px] w-auto opacity-[0.06] sm:opacity-[0.07] select-none"
+        className="pointer-events-none absolute left-2 sm:left-4 md:left-6 lg:left-8 xl:left-10 top-1/2 -translate-y-1/2 h-[180px] sm:h-[280px] md:h-[360px] lg:h-[420px] xl:h-[480px] w-auto opacity-[0.06] sm:opacity-[0.07] select-none"
       />
       <div className="container mx-auto px-6 md:px-12 max-w-4xl relative">
         <motion.div
