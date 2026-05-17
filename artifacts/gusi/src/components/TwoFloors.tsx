@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import firstFloorInterior from "@assets/GUSI-NYC-03_1777934185727.webp";
 
 export function TwoFloors() {
   return (
@@ -8,10 +7,12 @@ export function TwoFloors() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[80vh]">
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-1">
           <img
-            src={firstFloorInterior}
-            alt="GUSI's first-floor interior in Greenwich Village — banquette seating beneath hanging textile art, dried botanicals in a glass vase, a vintage porcelain-shade lamp, and a stone vessel on a reclaimed wood table"
-            width={765}
-            height={1020}
+            src="/gallery/gusi-1f-01.webp"
+            srcSet="/gallery/gusi-1f-01-800.webp 800w, /gallery/gusi-1f-01.webp 1600w"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            alt="GUSI's first-floor interior in Greenwich Village — candlelit Eastern European tavern bar and dining room at 432 Sixth Avenue, NYC"
+            width={1200}
+            height={1600}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
             decoding="async"
@@ -38,12 +39,12 @@ export function TwoFloors() {
       <div className="relative py-24 sm:py-32 md:py-48 flex items-center justify-center text-center px-6">
         <div className="absolute inset-0 z-0">
           <img
-            src="/gallery/gusi-chandelier-mirror-detail.webp"
-            srcSet="/gallery/gusi-chandelier-mirror-detail-800.webp 800w, /gallery/gusi-chandelier-mirror-detail.webp 1100w"
+            src="/gallery/gusi-1f-07.webp"
+            srcSet="/gallery/gusi-1f-07-800.webp 800w, /gallery/gusi-1f-07.webp 1600w"
             sizes="100vw"
-            alt="A vintage gilded chandelier reflected in an inset mirror set into the textured stone wall of GUSI's stairwell passage"
-            width={1100}
-            height={1467}
+            alt="A candlelit detail of GUSI's first-floor passage between the bar downstairs and the dining room upstairs"
+            width={1600}
+            height={1200}
             className="w-full h-full object-cover opacity-30"
             loading="lazy"
             decoding="async"
@@ -85,12 +86,13 @@ export function TwoFloors() {
         </div>
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-2">
           <img
-            src="/gallery/gusi-second-floor-lebedi-dining-room.jpg"
+            src="/gallery/gusi-2f-02.webp"
+            srcSet="/gallery/gusi-2f-02-800.webp 800w, /gallery/gusi-2f-02.webp 1600w"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            alt="GUSI's second-floor dining room (Lebedi / The Swans) — three vibrant figurative paintings line the back wall above ivory leather chairs and white-clothed tables, with an oval wood table in the foreground beneath a hand-painted ceiling of muted abstract shapes"
+            alt="GUSI's second-floor dining room (Lebedi / The Swans) — original commissioned paintings, ivory leather chairs, white-clothed tables, and a hand-painted ceiling"
             title="Lebedi / The Swans — GUSI second-floor dining room, 432 Sixth Avenue, Greenwich Village, NYC"
-            width={4032}
-            height={3024}
+            width={1600}
+            height={1200}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
             decoding="async"

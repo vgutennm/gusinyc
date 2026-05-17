@@ -80,15 +80,6 @@ export function MenuPreview() {
             )}
           </div>
         </div>
-
-        <div className="mt-16 md:mt-24 text-center">
-          <img
-            src="/images/food.png"
-            alt="A styled GUSI dish"
-            className="w-full max-w-2xl mx-auto h-[260px] sm:h-[340px] md:h-[400px] object-cover filter brightness-90 grayscale-[20%] sepia-[10%] rounded-sm"
-            loading="lazy"
-          />
-        </div>
       </div>
     </section>
   );

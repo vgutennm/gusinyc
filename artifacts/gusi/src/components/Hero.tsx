@@ -6,11 +6,13 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/gusi-greenwich-village-bar-interior.jpg"
-          alt="Interior of GUSI restaurant and bar in Greenwich Village, New York — exposed stone walls, banquette seating, candlelit high-top tables, and a warmly lit central bar stocked with infused vodka and natural wine at 432 Sixth Avenue."
+          src="/gallery/gusi-1f-05.webp"
+          srcSet="/gallery/gusi-1f-05-800.webp 800w, /gallery/gusi-1f-05.webp 1600w"
+          sizes="100vw"
+          alt="Interior of GUSI restaurant and bar in Greenwich Village, New York — first-floor dining and bar space at 432 Sixth Avenue."
           title="GUSI Restaurant & Bar — 432 Sixth Avenue, Greenwich Village, NYC"
-          width={4032}
-          height={3024}
+          width={1600}
+          height={1200}
           loading="eager"
           decoding="async"
           fetchPriority="high"
