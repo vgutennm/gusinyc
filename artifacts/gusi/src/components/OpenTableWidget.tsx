@@ -53,17 +53,21 @@ export function OpenTableWidget() {
     script.dataset.otLoader = "gusi";
     container.appendChild(script);
 
+    const trimIframe = () => {
+      const iframe = container.querySelector("iframe");
+      if (!iframe) return false;
+      iframe.setAttribute("height", "255");
+      iframe.style.height = "255px";
+      iframe.style.display = "block";
+      setIframeReady(true);
+      return true;
+    };
+
     const mo = new MutationObserver(() => {
-      if (container.querySelector("iframe")) {
-        setIframeReady(true);
-        mo.disconnect();
-      }
+      if (trimIframe()) mo.disconnect();
     });
     mo.observe(container, { childList: true, subtree: true });
-    if (container.querySelector("iframe")) {
-      setIframeReady(true);
-      mo.disconnect();
-    }
+    if (trimIframe()) mo.disconnect();
     return () => mo.disconnect();
   }, [shouldLoad]);
 
@@ -80,7 +84,7 @@ export function OpenTableWidget() {
           style={
             iframeReady
               ? { width: "fit-content", height: "fit-content" }
-              : { width: 224, height: 301 }
+              : { width: 224, height: 255 }
           }
           className="opentable-widget-container block [&_iframe]:block [&_iframe]:align-top [&_oc-component]:contents [&_#ot-reservation-widget]:contents"
         >
