@@ -13,6 +13,7 @@ export function OpenTableWidget() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
+  const [iframeReady, setIframeReady] = useState(false);
 
   useEffect(() => {
     const sentinel = sentinelRef.current;
@@ -51,25 +52,44 @@ export function OpenTableWidget() {
     script.async = true;
     script.dataset.otLoader = "gusi";
     container.appendChild(script);
+
+    const mo = new MutationObserver(() => {
+      if (container.querySelector("iframe")) {
+        setIframeReady(true);
+        mo.disconnect();
+      }
+    });
+    mo.observe(container, { childList: true, subtree: true });
+    if (container.querySelector("iframe")) {
+      setIframeReady(true);
+      mo.disconnect();
+    }
+    return () => mo.disconnect();
   }, [shouldLoad]);
 
   return (
     <div ref={sentinelRef} className="mb-4 sm:mb-6 w-fit mx-auto sm:mx-0">
       <section
         aria-label="OpenTable reservation widget"
-        className="border border-gusi-gold/30 inline-block leading-[0]"
+        className="border border-gusi-gold/30 inline-block leading-[0] align-top"
       >
         <div
           ref={containerRef}
           aria-live="polite"
-          aria-busy={shouldLoad}
-          style={{ width: 224, height: 301 }}
-          className="opentable-widget-container block [&_iframe]:block [&_iframe]:align-bottom"
+          aria-busy={shouldLoad && !iframeReady}
+          style={
+            iframeReady
+              ? { width: "fit-content", height: "fit-content" }
+              : { width: 224, height: 301 }
+          }
+          className="opentable-widget-container block [&_iframe]:block [&_iframe]:align-top [&_oc-component]:contents [&_#ot-reservation-widget]:contents"
         >
           <span className="sr-only">
-            {shouldLoad
-              ? "Loading OpenTable reservation widget."
-              : "OpenTable reservation widget will load when visible."}
+            {iframeReady
+              ? "OpenTable reservation widget loaded."
+              : shouldLoad
+                ? "Loading OpenTable reservation widget."
+                : "OpenTable reservation widget will load when visible."}
           </span>
         </div>
       </section>
