@@ -57,13 +57,14 @@ export function OpenTableWidget() {
     <div ref={sentinelRef} className="mb-4 sm:mb-6 w-fit mx-auto sm:mx-0">
       <section
         aria-label="OpenTable reservation widget"
-        className="border border-gusi-gold/30 overflow-hidden inline-block leading-[0] [&_iframe]:max-w-full"
+        className="border border-gusi-gold/30 inline-block leading-[0]"
       >
         <div
           ref={containerRef}
           aria-live="polite"
           aria-busy={shouldLoad}
-          className="opentable-widget-container block [&_iframe]:block [&_iframe]:!w-[288px] [&_iframe]:max-w-full [&_iframe]:align-bottom [&_iframe]:-mb-8"
+          style={{ width: 224, height: 301 }}
+          className="opentable-widget-container block [&_iframe]:block [&_iframe]:align-bottom"
         >
           <span className="sr-only">
             {shouldLoad
