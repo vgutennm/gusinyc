@@ -68,7 +68,17 @@ export function MenuPreview() {
                   <ul className="space-y-5 sm:space-y-6 mt-6 sm:mt-8">
                     {category.items.map((item, idx) => (
                       <li key={idx} className="flex flex-col">
-                        <span className="font-light text-base sm:text-lg tracking-wide leading-snug">{item.name}</span>
+                        <div className="flex items-baseline gap-3">
+                          <span className="font-light text-base sm:text-lg tracking-wide leading-snug">{item.name}</span>
+                          {item.price && (
+                            <>
+                              <span className="flex-1 border-b border-dotted border-gusi-gold/30 translate-y-[-2px]" aria-hidden="true" />
+                              <span className="font-light text-base sm:text-lg text-gusi-burgundy tabular-nums shrink-0">
+                                ${item.price}
+                              </span>
+                            </>
+                          )}
+                        </div>
                         {item.description && (
                           <span className="text-sm text-gusi-charcoal/60 mt-1">{item.description}</span>
                         )}
