@@ -80,7 +80,7 @@ export function MenuPreview() {
                           )}
                         </div>
                         {item.description && (
-                          <span className="text-sm text-gusi-charcoal/60 mt-1">{item.description}</span>
+                          <span className="text-sm text-gusi-burgundy/80 mt-1">{item.description}</span>
                         )}
                       </li>
                     ))}
