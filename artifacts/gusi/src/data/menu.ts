@@ -30,7 +30,7 @@ export const MENU_DATA: MenuCategory[] = [
     items: [
       { name: "Pirozhki", description: "Sweet yeast dough with potatoes, cabbage, or meat", price: "6" },
       { name: "Pickled Vegetables", description: "Pickles, tomatoes, cabbage", price: "16" },
-      { name: "Beef tongue platter", price: "25" },
+      { name: "Beef Tongue Platter", price: "25" },
     ],
   },
   {
