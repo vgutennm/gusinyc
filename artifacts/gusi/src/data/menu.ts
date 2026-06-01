@@ -61,7 +61,7 @@ export const MENU_DATA: MenuCategory[] = [
       { name: "Bison", price: "22" },
       { name: "Yak", price: "22" },
       { name: "Duck", price: "23" },
-      { name: "Potato with caramelized onions", price: "21" },
+      { name: "Potato", description: "With caramelized onions", price: "21" },
     ],
   },
   {
