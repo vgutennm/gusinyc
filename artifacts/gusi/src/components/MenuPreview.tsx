@@ -71,7 +71,7 @@ export function MenuPreview() {
                         <div className="flex items-baseline gap-3">
                           <span
                             className={`font-light text-base sm:text-lg tracking-wide leading-snug ${
-                              item.highlight ? "text-gusi-burgundy" : ""
+                              item.highlight ? "text-gusi-flame font-normal" : ""
                             }`}
                           >
                             {item.name}
@@ -79,14 +79,20 @@ export function MenuPreview() {
                           {item.price && (
                             <>
                               <span className="flex-1 border-b border-dotted border-gusi-gold/30 translate-y-[-2px]" aria-hidden="true" />
-                              <span className="font-light text-base sm:text-lg text-gusi-burgundy tabular-nums shrink-0">
+                              <span
+                                className={`font-light text-base sm:text-lg tabular-nums shrink-0 ${
+                                  item.highlight ? "text-gusi-flame font-normal" : "text-gusi-burgundy"
+                                }`}
+                              >
                                 ${item.price}
                               </span>
                             </>
                           )}
                         </div>
                         {item.description && (
-                          <span className="text-sm text-gusi-burgundy/80 mt-1">{item.description}</span>
+                          <span className={`text-sm mt-1 ${item.highlight ? "text-gusi-flame/90" : "text-gusi-burgundy/80"}`}>
+                            {item.description}
+                          </span>
                         )}
                       </li>
                     ))}
