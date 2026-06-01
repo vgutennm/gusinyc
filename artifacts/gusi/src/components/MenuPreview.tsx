@@ -69,7 +69,13 @@ export function MenuPreview() {
                     {category.items.map((item, idx) => (
                       <li key={idx} className="flex flex-col">
                         <div className="flex items-baseline gap-3">
-                          <span className="font-light text-base sm:text-lg tracking-wide leading-snug">{item.name}</span>
+                          <span
+                            className={`font-light text-base sm:text-lg tracking-wide leading-snug ${
+                              item.highlight ? "text-gusi-burgundy" : ""
+                            }`}
+                          >
+                            {item.name}
+                          </span>
                           {item.price && (
                             <>
                               <span className="flex-1 border-b border-dotted border-gusi-gold/30 translate-y-[-2px]" aria-hidden="true" />

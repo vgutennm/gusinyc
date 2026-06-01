@@ -2,6 +2,7 @@ export type MenuItem = {
   name: string;
   description?: string;
   price?: string;
+  highlight?: boolean;
 };
 
 export type MenuCategory = {
@@ -47,8 +48,8 @@ export const MENU_DATA: MenuCategory[] = [
     items: [
       { name: "Duck salad", description: "Mixed greens, apple, orange, prunes", price: "21" },
       { name: "Herring under a fur coat", description: "Ask your server about fur", price: "22" },
-      { name: "Olivier", description: "With veal bologna, beef tongue, or vegetarian", price: "19" },
-      { name: "Garden salad", price: "18" },
+      { name: "Olivier", description: "With veal bologna, beef tongue, or vegetarian", price: "19", highlight: true },
+      { name: "Garden salad", price: "18", highlight: true },
     ],
   },
   {
@@ -61,7 +62,7 @@ export const MENU_DATA: MenuCategory[] = [
       { name: "Bison", price: "22" },
       { name: "Yak", price: "22" },
       { name: "Duck", price: "23" },
-      { name: "Potato", description: "With caramelized onions", price: "21" },
+      { name: "Potato", description: "With caramelized onions", price: "21", highlight: true },
     ],
   },
   {
