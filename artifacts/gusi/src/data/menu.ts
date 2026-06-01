@@ -21,7 +21,7 @@ export const MENU_DATA: MenuCategory[] = [
       { name: "Hummus", description: "Chickpea, tahini, parsley, paprika, EVOO", price: "12" },
       { name: "Tahini", price: "12" },
       { name: "Tzatziki", price: "12" },
-      { name: "Baba ganoush", price: "12" },
+      { name: "Baba Ganoush", price: "12" },
     ],
   },
   {
