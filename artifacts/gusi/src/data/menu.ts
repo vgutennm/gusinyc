@@ -85,7 +85,7 @@ export const MENU_DATA: MenuCategory[] = [
       { name: "Duck Leg", price: "24" },
       { name: "Chicken Cutlets", price: "26" },
       { name: "Lamb Shank", price: "39" },
-      { name: "Golubtzi", description: "Beef, beef tongue, rice, sauce", price: "29" },
+      { name: "Golubtzi", description: "Beef, beef tongue, rice, sauce", price: "29", highlight: true },
     ],
   },
   {
