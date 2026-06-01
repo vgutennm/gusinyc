@@ -96,7 +96,7 @@ export const MENU_DATA: MenuCategory[] = [
       { name: "Meringue", price: "16" },
       { name: "Blinis with sweet condiments", price: "16" },
       { name: "Cherry Dumplings", price: "17" },
-      { name: "Grillage cake", price: "16" },
+      { name: "Grillage Cake", price: "16" },
     ],
   },
 ];
