@@ -5,6 +5,9 @@ import { Story } from "@/components/Story";
 import { TwoFloors } from "@/components/TwoFloors";
 import { MenuPreview } from "@/components/MenuPreview";
 import { BarSection } from "@/components/BarSection";
+import { MusicPlayer } from "@/components/MusicPlayer";
+import { Playlist } from "@/components/Playlist";
+import { SONGS } from "@/data/songs";
 import { PressPreview } from "@/components/PressPreview";
 import { Gallery } from "@/components/Gallery";
 import { Visit } from "@/components/Visit";
@@ -45,7 +48,25 @@ export default function Home() {
         <TwoFloors />
         <MenuPreview />
         <BarSection />
+        {SONGS.length > 0 && (
+          <section className="py-16 md:py-20 bg-gusi-burgundy text-gusi-ivory bg-texture-dark border-t border-gusi-gold/10">
+            <div className="container mx-auto px-6 max-w-3xl">
+              <div className="text-center mb-8 md:mb-10">
+                <p className="text-xs uppercase tracking-[0.3em] text-gusi-gold/80 mb-3">Listen to our music</p>
+                <h2 className="font-serif text-3xl sm:text-4xl text-gusi-gold leading-tight">Press play, settle in.</h2>
+              </div>
+              <MusicPlayer
+                songTitle={SONGS[0].title}
+                artistName={SONGS[0].artist}
+                description={SONGS[0].description}
+                audioSrc={SONGS[0].audioSrc}
+                compact
+              />
+            </div>
+          </section>
+        )}
         <Gallery />
+        <Playlist />
         <PressPreview />
         <Visit />
       </main>

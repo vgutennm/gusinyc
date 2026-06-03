@@ -17,6 +17,12 @@ export function Footer() {
           />
         </div>
         <div>432 Sixth Avenue, New York, NY 10011</div>
+        <a
+          href="/#playlist"
+          className="uppercase tracking-[0.2em] text-[11px] text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+        >
+          Playlist
+        </a>
         <div className="flex items-center gap-2">
           <a
             href={GOOGLE_REVIEW_URL}

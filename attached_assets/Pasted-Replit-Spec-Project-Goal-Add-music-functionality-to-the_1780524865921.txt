@@ -1,0 +1,219 @@
+Replit Spec
+
+Project Goal
+
+Add music functionality to the website in a clean, user controlled way.
+
+The website should not autoplay music when the page loads. Visitors must choose to play music themselves.
+
+Add two main features:
+
+1. A Play Music button on the home page
+2. A Playlist navigation item and footer link that takes visitors to a playlist section or page where more songs can be added later
+
+Music File Storage
+
+Create a dedicated music folder inside the public assets folder:
+
+/public/music/
+
+Add the current MP3 file there.
+
+Use a clean file name with no spaces, for example:
+
+/public/music/song-1.mp3
+
+If the current file name has spaces or special characters, rename it using lowercase letters, numbers, and dashes only.
+
+Example:
+
+gusi-theme-song.mp3
+
+Important
+
+Do not autoplay the music.
+Do not start audio on page load.
+The user must click Play Music before anything plays.
+
+Home Page Music Player
+
+Add a visible Play Music button or compact music player section on the home page.
+
+The home page music player should include:
+
+Play button
+Pause button
+Stop button
+Song title
+Optional small text such as “Listen to our music”
+Clean styling that matches the existing website design
+Mobile responsive layout
+
+Behavior
+
+When the visitor clicks Play, the song should start playing.
+When the visitor clicks Pause, the song should pause but remember the current position.
+When the visitor clicks Stop, the song should stop and reset back to the beginning.
+If the song ends naturally, reset the player state.
+
+Use the HTML audio element or React audio controls/state logic.
+
+Recommended implementation:
+
+Create a reusable MusicPlayer component.
+
+Example component structure:
+
+src/components/MusicPlayer.jsx
+
+The component should accept:
+
+songTitle
+artistName if available
+audioSrc
+
+Example audio source:
+
+/music/gusi-theme-song.mp3
+
+The component should manage play, pause, and stop using React state and useRef.
+
+Playlist Navigation Item
+
+Add a new navigation menu item called:
+
+Playlist
+
+Add it to the main navigation menu.
+
+When clicked, it should take the visitor to the playlist section or playlist page.
+
+Use whichever routing structure the current website already uses.
+
+If the site is a single page layout, use an anchor link:
+
+#playlist
+
+If the site has pages or React Router, create a page route:
+
+/playlist
+
+Use the existing site structure. Do not break current navigation.
+
+Footer Playlist Link
+
+Add a footer link called:
+
+Playlist
+
+When clicked, it should take the visitor to the same playlist section or page as the navigation item.
+
+Playlist Section or Page
+
+Create a new playlist section or page with the heading:
+
+Music Playlist
+
+Add intro copy:
+
+Listen to our featured music. More songs will be added soon.
+
+Add the current song as the first playlist item.
+
+Each playlist item should include:
+
+Song title
+Short description if available
+Play button
+Pause button
+Stop button
+
+Use the same reusable MusicPlayer component for the playlist song.
+
+The playlist structure should be easy to expand later by editing a songs array.
+
+Create a songs data array either inside the playlist page or in a separate file.
+
+Recommended structure:
+
+src/data/songs.js
+
+Example:
+
+export const songs = [
+{
+id: "song-1",
+title: "Song Title Here",
+artist: "Artist Name Here",
+description: "Featured song",
+audioSrc: "/music/gusi-theme-song.mp3"
+}
+];
+
+The playlist page or section should map through this array and display one MusicPlayer per song.
+
+Design Requirements
+
+Match the current website style.
+Keep the design clean and professional.
+Do not make the player look like a cheap default browser widget unless the existing design is very simple.
+Make all buttons easy to tap on mobile.
+Use accessible button labels.
+Use clear focus states for keyboard users.
+Do not add anything that blocks the main homepage CTA.
+Do not use autoplay.
+Do not loop by default unless specifically requested later.
+
+Technical Requirements
+
+Use React best practices.
+Avoid duplicate player code.
+Create reusable components.
+Keep song data centralized so new songs are easy to add.
+Use relative public asset paths for MP3 files.
+Make sure the audio works after production build.
+Test locally and in production preview.
+Make sure no console errors appear.
+
+Suggested Files To Create Or Update
+
+Create:
+
+src/components/MusicPlayer.jsx
+src/data/songs.js
+
+Create or update depending on the site structure:
+
+src/pages/Playlist.jsx
+
+Or if the site is single page:
+
+Add a Playlist section to the home page with id="playlist"
+
+Update:
+
+Header or Navigation component
+Footer component
+Home page component
+Routing file if the app uses routes
+
+Acceptance Criteria
+
+The website loads with no music playing.
+The home page has a Play Music button or music player area.
+Clicking Play starts the current MP3.
+Clicking Pause pauses the music.
+Clicking Stop stops the music and resets it to the beginning.
+The main navigation includes Playlist.
+The footer includes Playlist.
+Clicking Playlist from navigation takes the visitor to the playlist page or section.
+Clicking Playlist from footer takes the visitor to the same playlist page or section.
+The playlist page or section displays the current song.
+The playlist setup is ready for more songs later.
+The design works on desktop and mobile.
+The build succeeds without errors.
+The MP3 file plays correctly in the deployed website.
+
+Important User Experience Rule
+
+Music should always be visitor controlled. Never autoplay music, never hide the stop button, and never force sound on the visitor.

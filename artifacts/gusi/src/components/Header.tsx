@@ -39,6 +39,7 @@ export function Header() {
     { name: "Space", href: anchor("space") },
     { name: "Menu", href: anchor("menu") },
     { name: "Bar", href: anchor("bar") },
+    { name: "Playlist", href: anchor("playlist") },
     { name: "Press", href: "/press", isRoute: true },
     { name: "Visit", href: anchor("visit") },
   ];
