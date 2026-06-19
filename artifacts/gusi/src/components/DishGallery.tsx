@@ -17,7 +17,7 @@ const DISHES: Dish[] = [
   {
     src: "/dishes/dish-02.jpg",
     alt: "Crispy chicken cutlet sandwich at GUSI with red cabbage and pickles, served with roasted potatoes",
-    caption: "Chicken cutlet, on a bun.",
+    caption: "Chicken schnitzel with challah.",
   },
   {
     src: "/dishes/dish-03.jpg",
