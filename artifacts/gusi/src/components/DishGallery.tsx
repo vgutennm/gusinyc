@@ -117,7 +117,7 @@ const DISHES: Dish[] = [
   {
     src: "/dishes/dish-22.jpg",
     alt: "Golubtzi at GUSI — stuffed cabbage rolls of beef and beef tongue in a creamy tomato sauce, finished with dill and parsley",
-    caption: "Golubtzi in tomato cream.",
+    caption: "Golubtzi in tomato sauce.",
   },
   {
     src: "/dishes/dish-23.jpg",
