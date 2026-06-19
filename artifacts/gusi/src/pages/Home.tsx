@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Story } from "@/components/Story";
 import { TwoFloors } from "@/components/TwoFloors";
 import { MenuPreview } from "@/components/MenuPreview";
+import { DishGallery } from "@/components/DishGallery";
 import { BarSection } from "@/components/BarSection";
 import { MusicPlayer } from "@/components/MusicPlayer";
 import { Playlist } from "@/components/Playlist";
@@ -47,6 +48,7 @@ export default function Home() {
         <Story />
         <TwoFloors />
         <MenuPreview />
+        <DishGallery />
         <BarSection />
         {SONGS.length > 0 && (
           <section className="py-16 md:py-20 bg-gusi-burgundy text-gusi-ivory bg-texture-dark border-t border-gusi-gold/10">
