@@ -109,6 +109,26 @@ const DISHES: Dish[] = [
     alt: "Cherry dumplings at GUSI — vareniki filled with cherries in a sweet cherry sauce, garnished with mint",
     caption: "Cherry dumplings.",
   },
+  {
+    src: "/dishes/dish-21.jpg",
+    alt: "Cherry dumplings at GUSI in a dark bowl — vareniki filled with cherries in a glossy cherry sauce, topped with fresh mint",
+    caption: "Cherry dumplings, close up.",
+  },
+  {
+    src: "/dishes/dish-22.jpg",
+    alt: "Golubtzi at GUSI — stuffed cabbage rolls of beef and beef tongue in a creamy tomato sauce, finished with dill and parsley",
+    caption: "Golubtzi in tomato cream.",
+  },
+  {
+    src: "/dishes/dish-23.jpg",
+    alt: "Beef stroganoff at GUSI — tender beef and mushrooms in a creamy sauce served with buckwheat and a pickle",
+    caption: "Beef stroganoff with buckwheat.",
+  },
+  {
+    src: "/dishes/dish-24.jpg",
+    alt: "A flight of GUSI's house-infused vodkas lined up in glasses on the bar, glowing in candlelight",
+    caption: "A flight of infused vodkas.",
+  },
 ];
 
 export function DishGallery() {
