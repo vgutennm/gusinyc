@@ -111,8 +111,8 @@ const DISHES: Dish[] = [
   },
   {
     src: "/dishes/dish-21.jpg",
-    alt: "Cherry dumplings at GUSI in a dark bowl — vareniki filled with cherries in a glossy cherry sauce, topped with fresh mint",
-    caption: "Cherry dumplings, close up.",
+    alt: "Borscht at GUSI — beet soup with a dollop of sour cream, served with garlic, dill, and dark rye bread",
+    caption: "Borscht with rye and smetana.",
   },
   {
     src: "/dishes/dish-22.jpg",
