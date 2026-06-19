@@ -15,9 +15,9 @@ const DISHES: Dish[] = [
     caption: "Herring under a fur coat.",
   },
   {
-    src: "/dishes/dish-02.jpg",
-    alt: "Crispy chicken cutlet sandwich at GUSI with red cabbage and pickles, served with roasted potatoes",
-    caption: "Chicken schnitzel with challah.",
+    src: "/dishes/dish-21.jpg",
+    alt: "Borscht at GUSI — beet soup with a dollop of sour cream, served with garlic, dill, and dark rye bread",
+    caption: "Borscht with duck.",
   },
   {
     src: "/dishes/dish-03.jpg",
@@ -110,9 +110,9 @@ const DISHES: Dish[] = [
     caption: "Cherry dumplings.",
   },
   {
-    src: "/dishes/dish-21.jpg",
-    alt: "Borscht at GUSI — beet soup with a dollop of sour cream, served with garlic, dill, and dark rye bread",
-    caption: "Borscht with duck.",
+    src: "/dishes/dish-02.jpg",
+    alt: "Crispy chicken cutlet sandwich at GUSI with red cabbage and pickles, served with roasted potatoes",
+    caption: "Chicken schnitzel with challah.",
   },
   {
     src: "/dishes/dish-22.jpg",
