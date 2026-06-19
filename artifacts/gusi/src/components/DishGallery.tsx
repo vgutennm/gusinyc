@@ -42,7 +42,7 @@ const DISHES: Dish[] = [
   {
     src: "/dishes/dish-07.jpg",
     alt: "Hummus at GUSI swept across a bowl and topped with a fresh chopped cucumber and tomato salad with sumac",
-    caption: "Hummus and chopped salad.",
+    caption: "Village garden salad with tahini.",
   },
   {
     src: "/dishes/dish-08.jpg",
