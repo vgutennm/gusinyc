@@ -25,9 +25,9 @@ const DISHES: Dish[] = [
     caption: "Meringue roll.",
   },
   {
-    src: "/dishes/dish-04.jpg",
-    alt: "Sirniki at GUSI — golden farmer's cheese pancakes with condensed milk, cherry jam, and sour cream",
-    caption: "Sirniki, three ways.",
+    src: "/dishes/dish-17.jpg",
+    alt: "Lamb lula kebab at GUSI over labneh with roasted peppers, tomato, and onion on a patterned platter",
+    caption: "Lamb lula kebab.",
   },
   {
     src: "/dishes/dish-05.jpg",
@@ -90,9 +90,9 @@ const DISHES: Dish[] = [
     caption: "Hummus with prime beef.",
   },
   {
-    src: "/dishes/dish-17.jpg",
-    alt: "Lamb lula kebab at GUSI over labneh with roasted peppers, tomato, and onion on a patterned platter",
-    caption: "Lamb lula kebab.",
+    src: "/dishes/dish-04.jpg",
+    alt: "Sirniki at GUSI — golden farmer's cheese pancakes with condensed milk, cherry jam, and sour cream",
+    caption: "Sirniki, three ways.",
   },
   {
     src: "/dishes/dish-18.jpg",
