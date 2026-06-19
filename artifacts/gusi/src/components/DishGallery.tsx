@@ -52,7 +52,7 @@ const DISHES: Dish[] = [
   {
     src: "/dishes/dish-09.jpg",
     alt: "Baba ganoush at GUSI — smoky eggplant spread with herbs, red onion, sesame, and green chili",
-    caption: "Baba ganoush.",
+    caption: "Eggplant carpaccio.",
   },
   {
     src: "/dishes/dish-10.jpg",
