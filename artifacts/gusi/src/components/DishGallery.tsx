@@ -112,7 +112,7 @@ const DISHES: Dish[] = [
   {
     src: "/dishes/dish-21.jpg",
     alt: "Borscht at GUSI — beet soup with a dollop of sour cream, served with garlic, dill, and dark rye bread",
-    caption: "Borscht with rye and smetana.",
+    caption: "Borscht with duck.",
   },
   {
     src: "/dishes/dish-22.jpg",
