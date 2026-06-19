@@ -86,8 +86,8 @@ const DISHES: Dish[] = [
   },
   {
     src: "/dishes/dish-16.jpg",
-    alt: "Close-up of vareniki with caramelized onions at GUSI",
-    caption: "Vareniki, up close.",
+    alt: "Hummus with prime beef at GUSI — creamy hummus topped with spiced strips of beef, chickpeas, pickled onion, and schoug",
+    caption: "Hummus with prime beef.",
   },
   {
     src: "/dishes/dish-17.jpg",
