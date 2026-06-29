@@ -44,6 +44,25 @@ export function Footer() {
           >
             <Store className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden="true" />
           </a>
+          <a
+            href="https://inkind.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Pay with inKind (opens in a new tab)"
+            title="inKind"
+            className="inline-flex items-center justify-center rounded-lg hover:opacity-80 transition-opacity duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+          >
+            <img
+              src="/brand/inkind-app-icon.png"
+              alt="inKind"
+              width={445}
+              height={438}
+              className="block h-10 w-auto select-none"
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+            />
+          </a>
         </div>
         <div className="text-xs sm:text-sm flex flex-col sm:flex-row items-center gap-1 sm:gap-3">
           <span>&copy; {new Date().getFullYear()} GUSI</span>
