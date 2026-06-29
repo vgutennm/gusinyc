@@ -4,8 +4,33 @@ import { GOOGLE_REVIEW_URL, GOOGLE_BUSINESS_URL } from "@/lib/constants";
 export function Footer() {
   return (
     <footer className="bg-gusi-charcoal text-gusi-porcelain/40 py-10 sm:py-12 border-t border-gusi-ivory/5 text-sm font-light tracking-wide">
-      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-6 text-center lg:text-left">
-        <div className="flex items-center">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col items-center gap-2.5 pb-8 mb-8 border-b border-gusi-ivory/10">
+          <a
+            href="https://inkind.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Pay with inKind (opens in a new tab)"
+            title="inKind"
+            className="group inline-flex flex-col items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-4 focus-visible:ring-offset-gusi-charcoal rounded-xl"
+          >
+            <img
+              src="/brand/inkind-app-icon.png"
+              alt="inKind"
+              width={445}
+              height={438}
+              className="block h-16 w-auto select-none transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+              draggable={false}
+            />
+            <span className="uppercase tracking-[0.28em] text-[11px] text-gusi-porcelain/60 group-hover:text-gusi-gold transition-colors">
+              Pay with inKind
+            </span>
+          </a>
+        </div>
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-6 text-center lg:text-left">
+          <div className="flex items-center">
           <img
             src="/brand/gusi-wordmark-light.svg"
             alt="GUSI"
@@ -44,25 +69,6 @@ export function Footer() {
           >
             <Store className="w-3.5 h-3.5" strokeWidth={1.5} aria-hidden="true" />
           </a>
-          <a
-            href="https://inkind.com/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Pay with inKind (opens in a new tab)"
-            title="inKind"
-            className="inline-flex items-center justify-center rounded-lg hover:opacity-80 transition-opacity duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
-          >
-            <img
-              src="/brand/inkind-app-icon.png"
-              alt="inKind"
-              width={445}
-              height={438}
-              className="block h-10 w-auto select-none"
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-            />
-          </a>
         </div>
         <div className="text-xs sm:text-sm flex flex-col sm:flex-row items-center gap-1 sm:gap-3">
           <span>&copy; {new Date().getFullYear()} GUSI</span>
@@ -78,6 +84,7 @@ export function Footer() {
               SetUpShopOnline.com
             </a>
           </span>
+        </div>
         </div>
       </div>
     </footer>
