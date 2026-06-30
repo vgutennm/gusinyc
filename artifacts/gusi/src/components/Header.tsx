@@ -19,10 +19,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Auto-close mobile/tablet menu when viewport crosses into desktop (e.g. iPad rotation portrait→landscape).
+  // Auto-close the menu when viewport crosses into desktop (full nav appears at ≥1280px).
   useEffect(() => {
     if (typeof window === "undefined" || !window.matchMedia) return;
-    const mql = window.matchMedia("(min-width: 1024px)");
+    const mql = window.matchMedia("(min-width: 1280px)");
     const handleChange = (event: MediaQueryListEvent) => {
       if (event.matches) setMobileMenuOpen(false);
     };
@@ -79,8 +79,8 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop Nav (≥1024px so 4 nav links + Press + Visit + Reserve don't crowd at tablet widths) */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
+        {/* Desktop Nav (≥1280px so the full link set + inKind + Reserve has room and never crowds the logo) */}
+        <nav className="hidden xl:flex items-center gap-6 2xl:gap-8">
           {navLinks.map((link) =>
             link.isRoute ? (
               <Link
@@ -116,8 +116,8 @@ export function Header() {
           </a>
         </nav>
 
-        {/* Mobile + Tablet Toggle (<1024px) */}
-        <div className="flex items-center gap-2 sm:gap-3 lg:hidden">
+        {/* Mobile + Tablet Toggle (<1280px) */}
+        <div className="flex items-center gap-2 sm:gap-3 xl:hidden">
           <a
             href="https://inkind.com/"
             target="_blank"
