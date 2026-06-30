@@ -10,6 +10,7 @@ import { MusicPlayer } from "@/components/MusicPlayer";
 import { Playlist } from "@/components/Playlist";
 import { SONGS } from "@/data/songs";
 import { PressPreview } from "@/components/PressPreview";
+import { PrivateEventsPreview } from "@/components/PrivateEventsPreview";
 import { Gallery } from "@/components/Gallery";
 import { Visit } from "@/components/Visit";
 import { Footer } from "@/components/Footer";
@@ -70,6 +71,7 @@ export default function Home() {
         <Gallery />
         <Playlist />
         <PressPreview />
+        <PrivateEventsPreview />
         <Visit />
       </main>
       <Footer />

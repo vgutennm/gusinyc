@@ -1,0 +1,523 @@
+GUSI Website Update Spec
+
+Project Goal
+
+Update the GUSI website to clearly promote private events, celebrations, and group gatherings at the restaurant. The new content should help visitors immediately understand that GUSI can accommodate private events separately, including use of a private floor for up to 70 guests.
+
+This update must support local SEO, AI SEO, and conversion by creating a dedicated Events page, adding homepage visibility, improving navigation, and adding internal links where relevant.
+
+Important Context
+
+Business Name: GUSI
+
+Location: Greenwich Village, NYC
+
+Audience: Russian speaking people from various cultures, as well as local NYC guests looking for private dining and event space
+
+Primary Message: GUSI offers a private floor for events, celebrations, client meetings, personal gatherings, parties, corporate events, business functions, and special occasions for up to 70 guests.
+
+Tone: Warm, elegant, inviting, hospitality focused, local, premium, and easy to understand.
+
+Primary CTA: Reserve or Inquire About an Event
+
+Important spelling correction: The customer wrote “privet events,” but the website should say “private events.”
+
+New Page Required
+
+Create a new page in the Events subdirectory.
+
+Recommended URL
+
+/events/private-events
+
+Page Name
+
+Private Events
+
+Recommended SEO Title
+
+Private Events in Greenwich Village NYC | GUSI
+
+Recommended Meta Description
+
+Host private events, celebrations, parties, client meetings, and business functions at GUSI in Greenwich Village NYC. Private floor available for up to 70 guests.
+
+Recommended H1
+
+Private Events in Greenwich Village NYC
+
+Hero Section Content
+
+Headline:
+
+Private Floor. Events. Celebrations. Up to 70 Guests.
+
+Subheadline:
+
+Host your next private gathering at GUSI in Greenwich Village, where warm hospitality, Mediterranean inspired dining, and an inviting private floor create the perfect setting for celebrations, client meetings, personal events, and business functions.
+
+Primary Button:
+
+Inquire About an Event
+
+Secondary Button:
+
+View Our Menu
+
+Hero Notes:
+
+Use a refined restaurant or private dining style visual if available.
+
+Make the page feel elegant and local.
+
+Include “Greenwich Village NYC” naturally in the hero or opening section.
+
+Events Page Content Structure
+
+Section 1: Intro
+
+Heading:
+
+Host Your Event at GUSI
+
+Content:
+
+GUSI offers a welcoming private event space in the heart of Greenwich Village for guests who want a more personal, comfortable, and memorable dining experience. Whether you are planning a birthday dinner, family celebration, client meeting, corporate dinner, business function, or private party, our team can help create a setting that feels thoughtful, warm, and easy to enjoy.
+
+Include the phrase:
+
+Private floor available for up to 70 guests.
+
+Section 2: Best For
+
+Heading:
+
+Perfect For Private Gatherings
+
+Create a clean list or card layout for:
+
+Birthday celebrations
+
+Family gatherings
+
+Personal events
+
+Private parties
+
+Client meetings
+
+Corporate dinners
+
+Business events
+
+Team celebrations
+
+Holiday gatherings
+
+Special occasions
+
+Note:
+
+Only include “parties,” “client meetings,” “personal events,” “corporate events,” and “business functions” where it reads naturally. Do not overstuff keywords.
+
+Section 3: Private Floor
+
+Heading:
+
+A Private Floor for Up to 70 Guests
+
+Content:
+
+For larger gatherings and private dining experiences, GUSI offers a private floor that can accommodate up to 70 guests. This makes it a strong fit for guests who want a dedicated space while still enjoying the atmosphere, food, and hospitality of a Greenwich Village restaurant.
+
+Section 4: Local and Cultural Relevance
+
+Heading:
+
+Welcoming Guests From Many Cultures
+
+Content:
+
+Located in Greenwich Village, GUSI welcomes New Yorkers, visitors, and Russian speaking guests from many different cultural backgrounds. Our space is designed to feel warm, flexible, and comfortable for meaningful gatherings, shared meals, and memorable celebrations.
+
+Important:
+
+Do not make the page sound like it is only for Russian speaking guests.
+
+The message should be inclusive.
+
+Use wording such as “Russian speaking guests from many cultures” or “Russian speaking communities across NYC” only where appropriate.
+
+Section 5: Food and Experience
+
+Heading:
+
+Food, Hospitality, and Atmosphere
+
+Content:
+
+At GUSI, private events are built around the experience of sharing good food, conversation, and time together. Guests can enjoy a menu inspired by Mediterranean and Eastern European flavors in a setting that feels elevated, comfortable, and personal.
+
+Link this section to the menu page using anchor text:
+
+explore our menu
+
+Section 6: Call to Action
+
+Heading:
+
+Plan Your Private Event at GUSI
+
+Content:
+
+Tell us about your event, guest count, date, and any special details. Our team will help you understand the best options for hosting your gathering at GUSI.
+
+CTA Button:
+
+Inquire About an Event
+
+Secondary CTA:
+
+Call Us
+
+If a contact form exists, link to it.
+
+If a reservation page exists, link to it but avoid making normal reservations the only option for events.
+
+Homepage Update Required
+
+Create a new section on the homepage promoting private events.
+
+Placement Recommendation
+
+Add the section after the main dining or experience section and before the final reservation CTA.
+
+Homepage Section
+
+Heading:
+
+Private Events in Greenwich Village
+
+Subheading:
+
+Private Floor. Events. Celebrations. Up to 70 Guests.
+
+Content:
+
+Planning a celebration, private party, client meeting, corporate dinner, or special gathering? GUSI offers a private floor in Greenwich Village for up to 70 guests, creating a warm and memorable setting for personal events, business functions, and shared dining experiences.
+
+Button:
+
+Explore Private Events
+
+Button Link:
+
+/events/private-events
+
+Optional Secondary Button:
+
+Contact Us
+
+Design Notes:
+
+This section should be visually distinct but consistent with the existing site.
+
+Use a warm restaurant event photo or elegant private dining visual if available.
+
+The content should be concise and conversion focused.
+
+Navigation Updates
+
+Top Navigation
+
+Add:
+
+Events
+
+Link:
+
+/events/private-events
+
+Placement:
+
+Add near Reservations, Menu, or About, whichever fits the current navigation best.
+
+Recommended order if applicable:
+
+Home
+
+Menu
+
+About
+
+Events
+
+Reservations
+
+Contact
+
+Bottom Navigation
+
+Add:
+
+Private Events
+
+Link:
+
+/events/private-events
+
+Placement:
+
+Add in the footer navigation with other important site links.
+
+Internal Linking Requirements
+
+Add internal links where they make sense.
+
+Recommended internal links:
+
+Homepage to Private Events page
+
+Private Events page to Menu page
+
+Private Events page to Reservations or Contact page
+
+About page to Private Events page if there is a section about hospitality, gatherings, or the restaurant experience
+
+Menu page to Private Events page if there is a natural place to mention group dining or celebrations
+
+Suggested Anchor Text
+
+private events in Greenwich Village
+
+private dining at GUSI
+
+host your event at GUSI
+
+explore our menu
+
+plan your visit
+
+Do not force links into unrelated content.
+
+Local SEO Requirements
+
+The new page and homepage section should naturally include:
+
+GUSI
+
+Greenwich Village
+
+NYC
+
+private events
+
+private dining
+
+private floor
+
+up to 70 guests
+
+celebrations
+
+corporate events
+
+business functions
+
+client meetings
+
+personal events
+
+parties
+
+Use these naturally. Do not keyword stuff.
+
+Recommended Local SEO Copy Themes
+
+Private events in Greenwich Village NYC
+
+Private dining in Greenwich Village
+
+Event space for up to 70 guests in NYC
+
+Restaurant private floor in Greenwich Village
+
+Celebrations and business events at GUSI
+
+AI SEO Requirements
+
+Structure the page so AI search engines can easily understand:
+
+What GUSI offers
+
+Where GUSI is located
+
+Who the event space is for
+
+How many guests it can accommodate
+
+What types of events are supported
+
+What action the visitor should take next
+
+Add clear headings, direct answers, and structured content.
+
+Recommended FAQ Section
+
+Add a short FAQ section to the Private Events page.
+
+FAQ 1
+
+Question:
+
+Does GUSI host private events in Greenwich Village?
+
+Answer:
+
+Yes. GUSI hosts private events in Greenwich Village NYC, including celebrations, private parties, client meetings, corporate dinners, business functions, and personal gatherings.
+
+FAQ 2
+
+Question:
+
+How many guests can GUSI accommodate for private events?
+
+Answer:
+
+GUSI offers a private floor that can accommodate up to 70 guests for private events and group dining experiences.
+
+FAQ 3
+
+Question:
+
+Can I host a corporate or business event at GUSI?
+
+Answer:
+
+Yes. GUSI can accommodate corporate dinners, client meetings, business functions, team gatherings, and other professional events in a warm restaurant setting.
+
+FAQ 4
+
+Question:
+
+Is GUSI a good option for Russian speaking guests?
+
+Answer:
+
+Yes. GUSI welcomes Russian speaking guests from many cultures, along with local New Yorkers and visitors looking for a warm private dining experience in Greenwich Village.
+
+FAQ 5
+
+Question:
+
+How do I inquire about hosting an event at GUSI?
+
+Answer:
+
+You can contact GUSI through the website to share your preferred date, guest count, event type, and any special requests.
+
+Schema Markup
+
+Add schema markup to the Private Events page.
+
+Recommended schema types:
+
+Restaurant
+
+EventVenue if appropriate
+
+FAQPage for the FAQ section
+
+LocalBusiness or Restaurant schema should include:
+
+Name: GUSI
+
+Location: Greenwich Village, NYC
+
+Service offering: private events, private dining, celebrations, corporate events, client meetings, business functions
+
+Capacity note: up to 70 guests
+
+FAQ schema should match the FAQ content exactly.
+
+Conversion Requirements
+
+The page should make it easy for visitors to inquire.
+
+Required CTA locations:
+
+Hero section
+
+After private floor section
+
+Bottom of page
+
+Recommended CTA copy:
+
+Inquire About an Event
+
+Plan Your Private Event
+
+Contact GUSI
+
+Do not rely only on a general reservation button because private events require a different intent.
+
+Design Direction
+
+The design should feel:
+
+Warm
+
+Elegant
+
+Restaurant focused
+
+Premium but approachable
+
+Local to Greenwich Village
+
+Good for celebrations and business gatherings
+
+Avoid:
+
+Generic banquet hall language
+
+Cold corporate wording
+
+Keyword stuffing
+
+Making it sound only for Russian speaking guests
+
+Making it sound like a nightclub or party venue
+
+Final Acceptance Checklist
+
+Create new page at /events/private-events
+
+Add Events to top navigation
+
+Add Private Events to footer navigation
+
+Add homepage private events section
+
+Add internal links from relevant pages
+
+Optimize title and meta description
+
+Include Greenwich Village NYC naturally
+
+Mention private floor and up to 70 guests clearly
+
+Mention Russian speaking guests from many cultures in an inclusive way
+
+Include event types where natural
+
+Add FAQ section
+
+Add FAQ schema
+
+Add LocalBusiness or Restaurant schema enhancement
+
+Add clear CTA buttons throughout
+
+Ensure mobile layout looks strong and easy to use

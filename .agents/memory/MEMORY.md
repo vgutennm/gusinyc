@@ -1,0 +1,1 @@
+- [GUSI deploy & build quirk](gusi-deploy-and-build.md) — gusi.nyc serves committed `dist/`, so rebuild before every push; build hangs need a `artifacts/gusi: web` workflow restart first.

@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Press from "@/pages/Press";
+import PrivateEvents from "@/pages/PrivateEvents";
 
 const queryClient = new QueryClient();
 
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/press" component={Press} />
+      <Route path="/events/private-events" component={PrivateEvents} />
       <Route component={NotFound} />
     </Switch>
   );

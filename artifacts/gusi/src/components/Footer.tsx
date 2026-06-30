@@ -1,4 +1,5 @@
 import { Star, Store } from "lucide-react";
+import { Link } from "wouter";
 import { GOOGLE_REVIEW_URL, GOOGLE_BUSINESS_URL } from "@/lib/constants";
 
 export function Footer() {
@@ -42,12 +43,20 @@ export function Footer() {
           />
         </div>
         <div>432 Sixth Avenue, New York, NY 10011</div>
-        <a
-          href="/#playlist"
-          className="uppercase tracking-[0.2em] text-[11px] text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
-        >
-          Playlist
-        </a>
+        <nav className="flex items-center gap-4 sm:gap-6 uppercase tracking-[0.2em] text-[11px]">
+          <a
+            href="/#playlist"
+            className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+          >
+            Playlist
+          </a>
+          <Link
+            href="/events/private-events"
+            className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+          >
+            Private Events
+          </Link>
+        </nav>
         <div className="flex items-center gap-2">
           <a
             href={GOOGLE_REVIEW_URL}
