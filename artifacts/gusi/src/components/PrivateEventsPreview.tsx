@@ -46,7 +46,7 @@ export function PrivateEventsPreview() {
             id="private-events-heading"
             className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-gold mb-4 leading-tight"
           >
-            Private Floor. Events. Celebrations. Up to 70 Guests.
+            Private Floor. Events. Celebrations.
           </h2>
           <div className="w-12 h-px bg-gusi-gold/50 mb-6 sm:mb-8" />
           <p className="text-base sm:text-lg text-gusi-porcelain/85 font-light leading-relaxed max-w-2xl mb-8 sm:mb-10">
