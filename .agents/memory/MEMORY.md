@@ -1,1 +1,2 @@
 - [GUSI deploy & build quirk](gusi-deploy-and-build.md) — gusi.nyc serves committed `dist/`, so rebuild before every push; build hangs need a `artifacts/gusi: web` workflow restart first.
+- [Fixed overlay + backdrop-filter trap](css-fixed-overlay-backdrop-filter.md) — a transform/filter/backdrop-filter ancestor makes position:fixed anchor to it, not the viewport; portal overlays to body.

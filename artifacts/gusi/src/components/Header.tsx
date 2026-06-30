@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -149,10 +150,13 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
+      {/* Mobile Menu — portaled to <body> so the scrolled header's backdrop-filter
+          can't trap this fixed overlay in a containing block (which made items
+          appear only at the top of the page). */}
+      {createPortal(
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -221,8 +225,10 @@ export function Header() {
               </a>
             </nav>
           </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>,
+        document.body,
+      )}
     </header>
   );
 }
