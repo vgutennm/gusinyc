@@ -133,6 +133,12 @@ export function Header() {
           >
             Reserve
           </a>
+          <a
+            href={anchor("menu")}
+            className="hidden md:inline-flex items-center justify-center whitespace-nowrap min-h-11 border border-gusi-gold text-gusi-gold px-3 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+          >
+            Menu
+          </a>
           <Link
             href="/events/private-events"
             className="hidden md:inline-flex items-center justify-center whitespace-nowrap min-h-11 border border-gusi-gold text-gusi-gold px-3 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
