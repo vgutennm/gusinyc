@@ -77,7 +77,7 @@ export function Hero() {
             aria-label="Claim $50 off with inKind (opens in a new tab)"
             className="border border-gusi-gold/50 text-gusi-gold px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-gold/10 transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
-            $50 Off
+            inKind $50 Off
           </a>
         </motion.div>
       </div>
