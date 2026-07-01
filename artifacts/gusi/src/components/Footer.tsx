@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-2.5 pb-8 mb-8 border-b border-gusi-ivory/10">
           <a
-            href="https://inkind.com/"
+            href="https://app.inkind.com/offer/OGWQC4LM"
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Pay with inKind (opens in a new tab)"
