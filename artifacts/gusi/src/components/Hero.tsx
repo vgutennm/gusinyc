@@ -3,7 +3,7 @@ import { Link } from "wouter";
 
 export function Hero() {
   return (
-    <section className="relative h-[100svh] min-h-[560px] w-full flex items-center justify-center overflow-hidden bg-gusi-charcoal">
+    <section className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-gusi-charcoal">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
