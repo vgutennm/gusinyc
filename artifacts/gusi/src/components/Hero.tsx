@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export function Hero() {
   return (
@@ -70,15 +71,12 @@ export function Hero() {
           >
             Explore the Menu
           </a>
-          <a
-            href="https://app.inkind.com/offer/OGWQC4LM"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Claim $50 off with inKind (opens in a new tab)"
+          <Link
+            href="/events/private-events"
             className="border border-gusi-gold/50 text-gusi-gold px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-gold/10 transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
-            inKind $50 Off
-          </a>
+            Book An Event
+          </Link>
         </motion.div>
       </div>
 
