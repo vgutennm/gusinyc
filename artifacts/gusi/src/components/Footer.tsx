@@ -6,29 +6,48 @@ export function Footer() {
   return (
     <footer className="bg-gusi-charcoal text-gusi-porcelain/40 py-10 sm:py-12 border-t border-gusi-ivory/5 text-sm font-light tracking-wide">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center gap-2.5 pb-8 mb-8 border-b border-gusi-ivory/10">
-          <a
-            href="https://app.inkind.com/offer/OGWQC4LM"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Pay with inKind (opens in a new tab)"
-            title="inKind"
-            className="group inline-flex flex-col items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-4 focus-visible:ring-offset-gusi-charcoal rounded-xl"
-          >
-            <img
-              src="/brand/inkind-app-icon.png"
-              alt="inKind"
-              width={445}
-              height={438}
-              className="block h-16 w-auto select-none transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-              decoding="async"
-              draggable={false}
-            />
-            <span className="uppercase tracking-[0.28em] text-[11px] text-gusi-porcelain/60 group-hover:text-gusi-gold transition-colors">
-              Pay with inKind
+        <div className="flex justify-center pb-8 mb-8 border-b border-gusi-ivory/10">
+          <div className="w-full max-w-xl flex flex-col items-center text-center gap-4 rounded-2xl border border-gusi-gold/25 bg-gusi-gold/[0.04] px-6 py-8 sm:px-10 sm:py-9">
+            <div className="flex items-center gap-2.5">
+              <img
+                src="/brand/inkind-app-icon.png"
+                alt="inKind"
+                width={445}
+                height={438}
+                className="block h-9 w-auto select-none"
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+              />
+              <span className="uppercase tracking-[0.28em] text-[10px] text-gusi-porcelain/50">
+                Courtesy of inKind
+              </span>
+            </div>
+            <span className="uppercase tracking-[0.3em] text-[11px] text-gusi-gold">
+              Welcome Gift
             </span>
-          </a>
+            <div className="flex flex-col items-center gap-1">
+              <span className="font-serif text-4xl sm:text-5xl leading-none text-gusi-ivory">
+                Claim Your $50
+              </span>
+              <span className="font-serif text-lg sm:text-xl italic text-gusi-porcelain/70">
+                Off Your Next $150+ Meal
+              </span>
+            </div>
+            <p className="max-w-md text-[13px] sm:text-sm leading-relaxed text-gusi-porcelain/60">
+              Here&rsquo;s $50 toward your next $150+ visit at GUSI when you pay
+              using the inKind app.
+            </p>
+            <a
+              href="https://app.inkind.com/offer/OGWQC4LM"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Claim your $50 welcome gift with inKind (opens in a new tab)"
+              className="mt-1 inline-flex items-center justify-center border border-gusi-gold bg-gusi-gold/95 text-gusi-charcoal px-8 py-3 uppercase tracking-[0.22em] text-[11px] font-medium hover:bg-gusi-gold transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+            >
+              Claim $50 with inKind
+            </a>
+          </div>
         </div>
         <div className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-6 text-center lg:text-left">
           <div className="flex items-center">
