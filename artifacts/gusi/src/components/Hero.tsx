@@ -60,8 +60,17 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto max-w-xs sm:max-w-none"
         >
           <a
-            href="#reservations"
+            href="https://app.inkind.com/offer/OGWQC4LM"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Claim $50 off your meal with inKind (opens in a new tab)"
             className="bg-gusi-gold text-gusi-charcoal px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-ivory transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-ivory/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+          >
+            Claim $50 Off Your Meal
+          </a>
+          <a
+            href="#reservations"
+            className="border border-gusi-gold/50 text-gusi-gold px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-gold/10 transition-colors duration-300 text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
             Reserve a Table
           </a>
