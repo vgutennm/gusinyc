@@ -23,7 +23,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-gusi-charcoal via-gusi-charcoal/50 to-gusi-charcoal/80" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-6 max-w-4xl mx-auto pt-20 sm:pt-16">
+      <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-6 max-w-4xl mx-auto pt-20 sm:pt-16 pb-20 sm:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
