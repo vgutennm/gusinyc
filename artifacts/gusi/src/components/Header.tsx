@@ -107,7 +107,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="ml-4 border border-gusi-gold text-gusi-gold px-6 py-2 uppercase tracking-widest text-xs hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors duration-300"
           >
-            inKind
+            $50 Off
           </a>
           <a
             href={anchor("reservations")}
@@ -125,7 +125,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center min-h-11 border border-gusi-gold text-gusi-gold px-3 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
-            inKind
+            $50 Off
           </a>
           <a
             href={anchor("reservations")}
@@ -221,7 +221,7 @@ export function Header() {
                 onClick={closeMobile}
                 className="border border-gusi-gold text-gusi-gold px-10 py-4 uppercase tracking-[0.25em] text-sm hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
               >
-                inKind
+                $50 Off
               </a>
             </nav>
           </motion.div>
