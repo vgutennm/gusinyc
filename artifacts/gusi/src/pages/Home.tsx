@@ -53,6 +53,7 @@ export default function Home() {
         <HomeIntro />
         <TwoFloors />
         <Story />
+        <StoriesPreview />
         <MenuPreview />
         <DishGallery />
         <DinnerCta />
@@ -78,7 +79,6 @@ export default function Home() {
         <Playlist />
         <PrivateEventsPreview />
         <Visit />
-        <StoriesPreview />
         <HomeFaq />
         <FinalCta />
       </main>
