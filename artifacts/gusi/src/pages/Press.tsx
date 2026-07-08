@@ -190,7 +190,7 @@ export default function Press() {
       const absolute = (p: string) => (p.startsWith("http") ? p : `${origin}${p}`);
       const pageUrl = `${origin}/press`;
       const ogImageUrl = absolute(SOCIAL_IMAGE);
-      canonicalSnap = applyCanonical("https://gusinyc.com/press");
+      canonicalSnap = applyCanonical("https://gusi.nyc/press");
 
       snapshots.push(
         applyMeta('meta[property="og:url"]', "property", "og:url", pageUrl),

@@ -21,6 +21,25 @@ export function Visit() {
   return (
     <section id="visit" className="py-20 md:py-24 bg-gusi-charcoal text-gusi-ivory bg-texture-dark border-t border-gusi-gold/10">
       <div className="container mx-auto px-6 max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-14 md:mb-20"
+        >
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-5 sm:mb-6 leading-tight">
+            Located in the Heart of Greenwich Village
+          </h2>
+          <div className="w-12 h-px bg-gusi-gold/50 mx-auto mb-6 sm:mb-8" />
+          <p className="text-base sm:text-lg leading-relaxed text-gusi-porcelain/80 font-light">
+            Located at 432 Sixth Avenue in Greenwich Village, GUSI is two
+            blocks from the West 4th Street subway and a short walk from NYU
+            and Washington Square Park. Whether you&rsquo;re meeting friends
+            for dinner, planning a date night, or exploring the neighborhood,
+            we&rsquo;re easy to find and even easier to settle into.
+          </p>
+        </motion.div>
         <div id="reservations" className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-16 lg:gap-32 scroll-mt-20">
 
           {/* Reservations & Hours */}
@@ -30,7 +49,7 @@ export function Visit() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-serif text-3xl sm:text-4xl mb-6 sm:mb-8 leading-tight">Reserve your table.</h2>
+            <h3 className="font-serif text-3xl sm:text-4xl mb-6 sm:mb-8 leading-tight">Reserve your table.</h3>
             <p className="text-gusi-porcelain/70 font-light mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">
               Choose a date, time, and party size below to book through OpenTable.
             </p>

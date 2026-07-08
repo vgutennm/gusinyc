@@ -133,7 +133,7 @@ export default function PrivateEvents() {
       const origin = window.location.origin;
       const absolute = (p: string) => (p.startsWith("http") ? p : `${origin}${p}`);
       const pageUrl = `${origin}/events/private-events`;
-      const canonicalUrl = "https://gusinyc.com/events/private-events";
+      const canonicalUrl = "https://gusi.nyc/events/private-events";
       const ogImageUrl = absolute(SOCIAL_IMAGE);
       canonicalSnap = applyCanonical(canonicalUrl);
 

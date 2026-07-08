@@ -46,22 +46,33 @@ export function PrivateEventsPreview() {
             id="private-events-heading"
             className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-gold mb-4 leading-tight"
           >
-            Private Floor. Events. Celebrations.
+            Private Dining &amp; Special Gatherings
           </h2>
-          <div className="w-12 h-px bg-gusi-gold/50 mb-6 sm:mb-8" />
-          <p className="text-base sm:text-lg text-gusi-porcelain/85 font-light leading-relaxed max-w-2xl mb-8 sm:mb-10">
-            Planning a celebration, private party, client meeting, corporate
-            dinner, or special gathering? GUSI offers a private floor in
-            Greenwich Village for up to 70 guests, creating a warm and memorable
-            setting for personal events, business functions, and shared dining
-            experiences.
+          <p className="font-serif italic text-lg sm:text-xl text-gusi-porcelain/80 mb-4">
+            Private Floor. Events. Celebrations. Up to 70 Guests.
           </p>
+          <div className="w-12 h-px bg-gusi-gold/50 mb-6 sm:mb-8" />
+          <div className="space-y-5 text-base sm:text-lg text-gusi-porcelain/85 font-light leading-relaxed max-w-2xl mb-8 sm:mb-10">
+            <p>
+              Whether you&rsquo;re hosting a corporate gathering, client dinner,
+              birthday, personal celebration, business function, or private
+              event for up to 70 guests, GUSI&rsquo;s dedicated dining space
+              combines refined hospitality with the warmth and character that
+              define the restaurant.
+            </p>
+            <p>
+              Carefully tailored menus, attentive service, and seamless
+              planning make sure every detail is considered, allowing you to
+              relax and enjoy an evening that feels effortless right from the
+              beginning.
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto max-w-xs sm:max-w-none">
             <Link
               href="/events/private-events"
               className="inline-flex items-center justify-center min-h-11 bg-gusi-gold text-gusi-charcoal px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-ivory transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-ivory/80 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
             >
-              Explore Private Events
+              Plan a Private Event
             </Link>
             <a
               href={CONTACT_MAILTO}

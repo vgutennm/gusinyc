@@ -1,7 +1,12 @@
 import { useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { HomeIntro } from "@/components/HomeIntro";
 import { Story } from "@/components/Story";
+import { DinnerCta } from "@/components/DinnerCta";
+import { StoriesPreview } from "@/components/StoriesPreview";
+import { HomeFaq } from "@/components/HomeFaq";
+import { FinalCta } from "@/components/FinalCta";
 import { TwoFloors } from "@/components/TwoFloors";
 import { MenuPreview } from "@/components/MenuPreview";
 import { DishGallery } from "@/components/DishGallery";
@@ -21,7 +26,7 @@ export default function Home() {
     if (typeof window === "undefined") return;
     const link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     const previous = link?.getAttribute("href") ?? null;
-    link?.setAttribute("href", "https://gusinyc.com/");
+    link?.setAttribute("href", "https://gusi.nyc/");
     return () => {
       if (link && previous !== null) link.setAttribute("href", previous);
     };
@@ -45,10 +50,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Story />
+        <HomeIntro />
         <TwoFloors />
+        <Story />
         <MenuPreview />
         <DishGallery />
+        <DinnerCta />
         <BarSection />
         {SONGS.length > 0 && (
           <section className="py-16 md:py-20 bg-gusi-burgundy text-gusi-ivory bg-texture-dark border-t border-gusi-gold/10">
@@ -71,6 +78,9 @@ export default function Home() {
         <Playlist />
         <PrivateEventsPreview />
         <Visit />
+        <StoriesPreview />
+        <HomeFaq />
+        <FinalCta />
       </main>
       <Footer />
       <ScrollToTop />

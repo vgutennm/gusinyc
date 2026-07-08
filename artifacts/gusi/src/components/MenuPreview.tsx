@@ -9,8 +9,25 @@ export function MenuPreview() {
     <section id="menu" className="py-20 md:py-32 bg-gusi-ivory text-gusi-charcoal bg-texture-paper">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-serif text-4xl md:text-5xl text-gusi-burgundy mb-5 md:mb-6">Menu</h2>
-          <div className="w-12 h-px bg-gusi-gold mx-auto" />
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-burgundy mb-5 md:mb-6 leading-tight">
+            Eastern European Comfort Food Reimagined
+          </h2>
+          <div className="w-12 h-px bg-gusi-gold mx-auto mb-6 md:mb-8" />
+          <div className="space-y-5 text-base sm:text-lg leading-relaxed text-gusi-charcoal/80 font-light max-w-2xl mx-auto">
+            <p>
+              The kitchen at GUSI does not chase trends. Pelmeni and vareniki
+              are still folded by hand, the way they&rsquo;d be made in a humble
+              European kitchen. Borscht follows the rhythm of the seasons,
+              sometimes simmered with duck and other times finished with dill
+              and sour cream. Pickles are made in house and grace every table.
+            </p>
+            <p>
+              There are no unnecessary flourishes here, only authentic
+              ingredients, patient cooking, and respect for time honored
+              techniques. That&rsquo;s what sets every dish and experience
+              apart.
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-24">

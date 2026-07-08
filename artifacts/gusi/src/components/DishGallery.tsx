@@ -146,14 +146,31 @@ export function DishGallery() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12 sm:mb-16 max-w-2xl mx-auto"
         >
-          <h3 className="text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-3 sm:mb-4">On the table</h3>
+          <span className="block text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-3 sm:mb-4">On the table</span>
           <h2 id="dishes-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl mb-5 sm:mb-6 leading-tight">
-            From the kitchen.
+            Signature Dishes Inspired by Tradition
           </h2>
-          <p className="text-gusi-porcelain/75 leading-relaxed font-light text-base sm:text-lg">
-            Pelmeni and vareniki, blini and caviar, kebabs and cured fish — a closer look at the plates
-            coming out of the GUSI kitchen.
-          </p>
+          <div className="space-y-5 text-gusi-porcelain/75 leading-relaxed font-light text-base sm:text-lg">
+            <p>
+              Each plate arrives carrying a piece of tradition. Herring layered
+              with beet and potato, kebabs gently charred over the flame, and
+              hand folded dumplings prepared with quiet precision to celebrate
+              recipes that have stood the test of time.
+            </p>
+            <p>
+              As the seasons change, so do the ingredients, bringing subtle new
+              expressions to familiar favorites. Order a few, pass them around,
+              and let every shared bite become part of the evening — or browse
+              the full{" "}
+              <a
+                href="#menu"
+                className="text-gusi-gold underline underline-offset-4 hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory"
+              >
+                menu
+              </a>
+              .
+            </p>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">

@@ -3,6 +3,52 @@ import { motion } from "framer-motion";
 export function TwoFloors() {
   return (
     <section id="space" className="bg-gusi-charcoal text-gusi-ivory overflow-hidden">
+      {/* Intro: A Modern Take on Eastern European Hospitality */}
+      <div className="py-20 md:py-28 bg-texture-dark">
+        <div className="container mx-auto px-6 max-w-3xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7 }}
+            className="flex flex-col items-center"
+          >
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-gold mb-5 sm:mb-6 leading-tight">
+              A Modern Take on Eastern European Hospitality
+            </h2>
+            <div className="w-12 h-px bg-gusi-gold/50 mb-6 sm:mb-8" />
+            <div className="space-y-5 text-base sm:text-lg leading-relaxed text-gusi-porcelain/80 font-light">
+              <p>
+                Every detail at GUSI has been thoughtfully composed to honor one
+                simple idea: &ldquo;The finest evenings are never rushed.&rdquo;
+                Beneath one roof, two distinct spaces offer their own
+                interpretation of Eastern European hospitality.
+              </p>
+              <p>
+                The first floor, The Geese, glows with lively conversation,
+                handcrafted cocktails, and the warmth of oak and candlelight.
+                Upstairs, the atmosphere is more peaceful, inviting guests to
+                savor each course, sip on thoughtfully selected Georgian wines,
+                and dive deep into meaningful conversations that unfold at their
+                own pace.
+              </p>
+              <p>
+                Different in mood yet united in purpose, both spaces embrace
+                modern Eastern European cuisine through remarkable
+                craftsmanship, generous hospitality, and the tradition of
+                bringing people together.
+              </p>
+            </div>
+            <a
+              href="#story"
+              className="mt-8 sm:mt-10 inline-flex items-center justify-center min-h-11 border border-gusi-gold/50 text-gusi-gold px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-gold/10 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
+            >
+              Learn Our Story
+            </a>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Panel 1: First Floor */}
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[80vh]">
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-1">

@@ -70,10 +70,16 @@ export function Footer() {
             Playlist
           </a>
           <Link
-            href="/events/private-events"
+            href="/events"
             className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
           >
-            Private Events
+            Events
+          </Link>
+          <Link
+            href="/blog"
+            className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+          >
+            Stories
           </Link>
         </nav>
         <div className="flex items-center gap-2">

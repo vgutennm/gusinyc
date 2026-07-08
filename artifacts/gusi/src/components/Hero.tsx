@@ -34,7 +34,7 @@ export function Hero() {
           </p>
           <h1 className="mb-5 sm:mb-6 leading-none">
             <span className="sr-only">
-              GUSI — Modern Eastern European Restaurant in Greenwich Village, New York
+              GUSI: Modern Eastern European Dining in Greenwich Village
             </span>
             <img
               src="/brand/gusi-wordmark-light.svg"

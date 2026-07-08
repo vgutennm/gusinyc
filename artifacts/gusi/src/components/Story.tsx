@@ -24,14 +24,28 @@ export function Story() {
         >
           <div className="w-px h-12 sm:h-16 bg-gusi-gold/40 mb-6 sm:mb-8" />
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-burgundy mb-6 sm:mb-8 leading-tight">
-            A restaurant of two wings.
+            The Story Behind GUSI
           </h2>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gusi-charcoal/80 font-light text-center">
-            GUSI reimagines familiar Eastern European flavors, rituals, and memories for modern New York.
-            The name carries folklore, humor, childhood, and migration — a layered word for a layered place.
-            The restaurant moves between two moods: the warmth and texture of the first floor, and the softer,
-            elevated ceremony of the second floor.
-          </p>
+          <div className="space-y-6 text-base sm:text-lg md:text-xl leading-relaxed text-gusi-charcoal/80 font-light text-center">
+            <p>
+              In Eastern European tradition, a goose is more than a bird. It is
+              a symbol of home, cherished memories, and journeys that always
+              lead back to the people waiting around the table. That&rsquo;s why
+              we chose the name GUSI.
+            </p>
+            <p>
+              Rooted in folklore and woven through generations of family
+              gatherings, it reflects a culture where food is never simply
+              served but shared, celebrated, and remembered.
+            </p>
+            <p>
+              A pair of porcelain geese rests at the first floor bar, gently
+              watching over the room. These pieces are more than decorations.
+              They represent the heart of our restaurant, a place where every
+              guest is wrapped in warmth and served comforting meals, creating
+              an evening that leaves you feeling a little closer to home.
+            </p>
+          </div>
           <div className="w-12 h-px bg-gusi-gold/40 mt-10 sm:mt-12" />
         </motion.div>
       </div>

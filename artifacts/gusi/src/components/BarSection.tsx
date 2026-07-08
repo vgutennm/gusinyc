@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export function BarSection() {
   const cards = [
@@ -19,11 +20,29 @@ export function BarSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-gold mb-6 sm:mb-8 leading-tight">
-            Infused vodka, cocktails, natural wine.
+            Cocktails, Georgian Wine &amp; House Infusions
           </h2>
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gusi-porcelain/80 font-light max-w-2xl mx-auto mb-12 sm:mb-16">
-            The GUSI bar is built around house-infused vodkas, classic cocktails, natural wines, rare spirits, and forgotten Eastern European flavors reimagined for New York.
-          </p>
+          <div className="space-y-5 text-base sm:text-lg md:text-xl leading-relaxed text-gusi-porcelain/80 font-light max-w-2xl mx-auto mb-8 sm:mb-10">
+            <p>
+              As the evening settles in, the bar becomes a destination of its
+              own. House infused vodka, crafted with horseradish and the finest
+              seasonal ingredients, shares the spotlight with an exceptional
+              collection of Georgian wine.
+            </p>
+            <p>
+              Alongside them, seasonal cocktails are mixed with precision to
+              complement the kitchen&rsquo;s comforting flavors, creating
+              pairings that feel as natural as the conversations unfolding
+              around the table. However your evening begins, you&rsquo;ll find
+              plenty of reasons to order just one more round.
+            </p>
+          </div>
+          <Link
+            href="/blog"
+            className="mb-12 sm:mb-16 inline-flex items-center justify-center min-h-11 border border-gusi-gold/50 text-gusi-gold px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-gold/10 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-burgundy"
+          >
+            Read Our Beverage Stories
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 md:gap-6">
