@@ -240,7 +240,7 @@ export function Gallery() {
             Inside GUSI.
           </h2>
           <p className="text-gusi-porcelain/75 leading-relaxed font-light text-base sm:text-lg">
-            Two floors at 432 Sixth Avenue in Greenwich Village — a candlelit Eastern European tavern bar downstairs,
+            Two floors at 432 Sixth Avenue in Greenwich Village: a candlelit Eastern European tavern bar downstairs,
             a light-filled dining room of original art and hand-painted ceilings upstairs.
           </p>
         </motion.div>
