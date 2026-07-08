@@ -1,0 +1,601 @@
+Update the GUSI website homepage for production.
+
+Website:
+https://gusi.nyc/
+
+Primary goal:
+Replace the current homepage content with the approved SEO homepage revision while preserving the current visual identity, brand feel, navigation behavior, performance, and mobile responsiveness.
+
+Important domain correction:
+The schema provided by the SEO team uses gusinyc.com in multiple places. Do not use gusinyc.com unless it is already confirmed as the canonical production domain and redirects correctly to gusi.nyc.
+
+Use https://gusi.nyc/ as the canonical URL, schema @id, schema url, logo URL, image URLs, sameAs website reference, and any internal links unless the existing codebase already has a verified asset path that requires a different source.
+
+Core tasks:
+
+1. Inspect the existing site structure
+
+Review the current homepage code, routing, components, header, footer, schema implementation, meta tag setup, image handling, CTA buttons, and navigation.
+
+Identify where homepage content currently lives.
+
+Preserve existing working styles, animations, spacing, fonts, images, buttons, and layout patterns unless a change is required for the new content.
+
+Do not break any existing routes.
+
+2. Update SEO metadata
+
+Set the homepage meta title to:
+
+GUSI | Modern Eastern European Restaurant in Greenwich Village, NYC
+
+Set the homepage meta description to:
+
+Discover GUSI, a Greenwich Village restaurant reimagining Eastern European classics & house-infused vodka, with warm hospitality & an experience like no other.
+
+Set or confirm the canonical URL:
+
+https://gusi.nyc/
+
+Add or update Open Graph and Twitter metadata using the same title and description.
+
+Use the best available GUSI share image already present in the project. If no share image exists, use the strongest existing restaurant interior or food image and leave a clear code comment showing where the final share image should be replaced.
+
+3. Update homepage content
+
+Replace the current homepage body copy with the approved structure below.
+
+Keep the tone premium, warm, polished, and hospitality focused.
+
+Use one H1 only.
+
+Use H2 headings for main homepage sections.
+
+Use H3 headings only inside FAQ and featured story areas where appropriate.
+
+Do not keyword stuff.
+
+Make the content feel natural on mobile. Avoid huge paragraph blocks on small screens.
+
+Approved homepage content:
+
+H1:
+GUSI: Modern Eastern European Dining in Greenwich Village
+
+Hero body:
+The finest meals are recalled for more than their flavors. They become stories, shared between friends and family, celebrated over another glass of wine, and revisited long after the evening ends. That's the spirit of GUSI.
+
+Positioned in Greenwich Village, our modern Eastern European restaurant is designed to celebrate the joy of gathering, from gently folded dumplings and comforting borscht to handcrafted cocktails and Georgian wine shared generously around the table.
+
+Amid the constant chaos of NYC, we've created a dining experience where time slows, conversation flows, and genuine hospitality is felt in every course. Reserve a table and experience a meal like no other.
+
+Hero CTAs:
+Reserve a Table
+Explore the Menu
+
+Section:
+A Modern Take on Eastern European Hospitality
+
+Body:
+Every detail at GUSI has been thoughtfully composed to honor one simple idea: “The finest evenings are never rushed.” Beneath one roof, two distinct spaces offer their own interpretation of Eastern European hospitality.
+
+The first floor, The Geese, glows with lively conversation, handcrafted cocktails, and the warmth of oak and candlelight. Upstairs, known as The Passage, the atmosphere is more peaceful, inviting guests to savor each course, sip on thoughtfully selected Georgian wines, and dive deep into meaningful conversations that unfold at their own pace.
+
+Different in mood yet united in purpose, both spaces embrace modern Eastern European cuisine through remarkable craftsmanship, generous hospitality, and the tradition of bringing people together.
+
+CTA:
+Learn Our Story
+
+Section:
+The Story Behind GUSI
+
+Body:
+In Eastern European tradition, a goose is more than a bird. It is a symbol of home, cherished memories, and journeys that always lead back to the people waiting around the table. That's why we chose the name GUSI.
+
+Rooted in folklore and woven through generations of family gatherings, it reflects a culture where food is never simply served but shared, celebrated, and remembered.
+
+A pair of porcelain geese rests at the first floor bar, gently watching over the room. These pieces are more than decorations. They represent the heart of our restaurant, a place where every guest is wrapped in warmth and served comforting meals, creating an evening that leaves you feeling a little closer to home.
+
+Section:
+Eastern European Comfort Food Reimagined
+
+Body:
+The kitchen at GUSI does not chase trends. Pelmeni and vareniki are still folded by hand, the way they'd be made in a humble European kitchen. Borscht follows the rhythm of the seasons, sometimes simmered with duck and other times finished with dill and sour cream. Pickles are made in house and grace every table.
+
+There are no unnecessary flourishes here, only authentic ingredients, patient cooking, and respect for time honored techniques. That's what sets every dish and experience apart.
+
+CTA:
+View the Full Menu
+
+Section:
+Signature Dishes Inspired by Tradition
+
+Body:
+Each plate arrives carrying a piece of tradition. Herring layered with beet and potato, kebabs gently charred over the flame, and hand folded dumplings prepared with quiet precision to celebrate recipes that have stood the test of time.
+
+As the seasons change, so do the ingredients, bringing subtle new expressions to familiar favorites. Order a few, pass them around, and let every shared bite become part of the evening.
+
+Internal link:
+Menu Page
+
+Section:
+Join Us for Dinner in Greenwich Village
+
+Body:
+A date, a birthday, a Tuesday that turned into dinner with friends, GUSI works for all of it. The room fits a table for 2 as easily as for 8. Greenwich Village dinner reservations are open now. Book now before the week fills up around you.
+
+CTA:
+Reserve a Table
+
+Section:
+Cocktails, Georgian Wine & House Infusions
+
+Body:
+As the evening settles in, the bar becomes a destination of its own. House infused vodka, crafted with horseradish and the finest seasonal ingredients, shares the spotlight with an exceptional collection of Georgian wine.
+
+Alongside them, seasonal cocktails are mixed with precision to complement the kitchen's comforting flavors, creating pairings that feel as natural as the conversations unfolding around the table. However your evening begins, you'll find plenty of reasons to order just one more round.
+
+CTA:
+Read Our Beverage Stories
+
+Link target:
+Blog page or beverage related blog category if available
+
+Section:
+Private Dining & Special Gatherings
+
+Body:
+Whether you're hosting a corporate gathering, client dinner, birthday, personal celebration, business function, or private event for up to 70 guests, GUSI's dedicated dining space combines refined hospitality with the warmth and character that define the restaurant.
+
+Carefully tailored menus, attentive service, and seamless planning make sure every detail is considered, allowing you to relax and enjoy an evening that feels effortless right from the beginning.
+
+CTA:
+Plan a Private Event
+
+Link target:
+Events page if it exists. If it does not exist yet, link to /events and make sure this route is prepared for the new Events page.
+
+Section:
+Located in the Heart of Greenwich Village
+
+Body:
+Located at 432 Sixth Avenue in Greenwich Village, GUSI is two blocks from the West 4th Street subway and a short walk from NYU and Washington Square Park. Whether you're meeting friends for dinner, planning a date night, or exploring the neighborhood, we're easy to find and even easier to settle into.
+
+CTA:
+Reserve Your Visit
+
+Section:
+Stories From GUSI
+
+H3:
+The experience at GUSI extends well beyond the table.
+
+Body:
+Through our stories, we share the traditions, ingredients, and craftsmanship behind the dishes and drinks you love, from Eastern European culinary heritage and Georgian wine to house infusions, seasonal flavors, and the stories that inspire our kitchen.
+
+It's a space for curious diners who enjoy knowing what's behind every memorable meal.
+
+Featured articles:
+Hummus vs Baba Ganoush: Which Mediterranean Spread Should You Try First?
+The Rise of House Infused Vodka in NYC Cocktail Culture
+Why Natural Wine Is Becoming a Favorite Among NYC Diners
+
+CTA:
+Read Our Stories
+
+Section:
+Frequently Asked Questions
+
+Question:
+What Type of Cuisine Does GUSI Serve?
+
+Answer:
+GUSI serves modern Eastern European cuisine with Mediterranean influences, featuring hand folded dumplings, seasonal borscht, house made spreads, and thoughtfully crafted dishes prepared with time honored techniques and quality ingredients.
+
+Question:
+Where Is GUSI Located?
+
+Answer:
+GUSI is located at 432 Sixth Avenue in Greenwich Village, just two blocks from the West 4th Street subway and within walking distance of NYU and Washington Square Park.
+
+Question:
+Does GUSI Accept Reservations?
+
+Answer:
+Yes. Reservations can be made through OpenTable, and walk ins are always welcome whenever seating is available. We recommend booking in advance, especially for weekends and special occasions.
+
+Question:
+Does GUSI Serve Cocktails and Wine?
+
+Answer:
+Absolutely. Our beverages feature house infused vodka, handcrafted seasonal cocktails, and a carefully curated selection of Georgian wine and natural wines, thoughtfully chosen to complement our menu.
+
+Question:
+Is GUSI Suitable for Date Nights and Group Dining?
+
+Answer:
+Yes. Whether you're planning an intimate date night, a relaxed dinner with friends, or a larger celebration, GUSI offers welcoming spaces for every occasion. We also have a private dining floor that accommodates events for up to 70 guests.
+
+Final CTA section:
+
+H3:
+The Table Is Set. All That's Missing Is You.
+
+Body:
+Good food, well poured drinks, and nobody rushing you out the door. That's the whole idea. Make a reservation today and allow us to take care of the rest.
+
+Primary CTA:
+Reserve a Table
+
+Secondary CTA:
+View Menu
+
+4. Add Events visibility
+
+Add an Events button or navigation item to the top navigation and footer navigation.
+
+Preferred label:
+Events
+
+Preferred route:
+/events
+
+Use this positioning:
+Desktop top navigation: place Events near Reservations, Menu, or Private Dining if such labels exist.
+Mobile menu: include Events in the collapsed navigation.
+Footer: include Events with other primary navigation links.
+
+Events CTA language where appropriate:
+Private Floor. Events. Celebrations. Up to 70 Guests.
+
+Do not overuse this line. Use it once in a prominent homepage private dining section and once on the future Events page if that page already exists.
+
+5. CTA link mapping
+
+Use existing internal route names if they already exist.
+
+Reserve a Table:
+OpenTable reservation link currently used by the site or:
+https://www.opentable.com/r/gusi-reservations-new-york?restref=1490239
+
+Explore the Menu:
+/menu
+
+View the Full Menu:
+/menu
+
+Learn Our Story:
+/story if this page exists or /about if that is the existing route
+
+Read Our Stories:
+/blog
+
+Read Our Beverage Stories:
+Link to the beverage blog if available. Otherwise link to /blog.
+
+Plan a Private Event:
+/events
+
+Reserve Your Visit:
+OpenTable reservation link
+
+View Menu:
+/menu
+
+6. Replace Restaurant schema
+
+Replace the current Restaurant schema with updated JSON LD.
+
+Use this corrected version with gusi.nyc as the canonical domain.
+
+Important:
+Only include aggregateRating if the ratingValue and reviewCount are verified from a public source or already displayed on the site. If not verified, remove the aggregateRating block before publishing. Do not publish unverifiable review numbers.
+
+Add this JSON LD in the correct SEO or head component:
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "https://gusi.nyc/#restaurant",
+  "name": "GUSI",
+  "alternateName": ["GUSI Restaurant", "GUSI NYC", "GUSI Greenwich Village"],
+  "description": "Modern Eastern European restaurant and bar in Greenwich Village, New York. Two floors include a candlelit tavern bar with infused vodka, natural wine, and rare spirits downstairs, and a light filled dining room with original art and hand painted ceilings upstairs.",
+  "url": "https://gusi.nyc/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://gusi.nyc/brand/gusi-wordmark.svg",
+    "contentUrl": "https://gusi.nyc/brand/gusi-wordmark.svg",
+    "caption": "GUSI Restaurant wordmark"
+  },
+  "image": [
+    "https://gusi.nyc/brand/gusi-share-card.webp",
+    "https://gusi.nyc/gallery/gusi-1f-05.webp",
+    "https://gusi.nyc/gallery/gusi-1f-01.webp",
+    "https://gusi.nyc/gallery/gusi-1f-08.webp",
+    "https://gusi.nyc/gallery/gusi-2f-02.webp",
+    "https://gusi.nyc/gallery/gusi-2f-01.webp",
+    "https://gusi.nyc/gallery/gusi-2f-05.webp",
+    "https://gusi.nyc/gallery/gusi-2f-09.webp"
+  ],
+  "servesCuisine": ["Eastern European", "Mediterranean", "Modern European", "Slavic"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "432 Sixth Avenue",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10011",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7344716,
+    "longitude": -74.0013098
+  },
+  "hasMap": "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6",
+  "areaServed": [
+    { "@type": "Place", "name": "Greenwich Village" },
+    { "@type": "Place", "name": "West Village" },
+    { "@type": "Place", "name": "Manhattan" },
+    { "@type": "Place", "name": "New York City" }
+  ],
+  "priceRange": "$$$",
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card",
+  "acceptsReservations": true,
+  "telephone": "+1-646-370-5413",
+  "email": "gagaga@gusi.nyc",
+  "foundingDate": "2026-05-08",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "name": "Dinner",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "16:00",
+      "closes": "00:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "name": "Brunch",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "11:30",
+      "closes": "16:00",
+      "validFrom": "2026-05-23"
+    }
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.opentable.com/r/gusi-reservations-new-york?restref=1490239",
+      "inLanguage": "en-US",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
+        "http://schema.org/IOSPlatform",
+        "http://schema.org/AndroidPlatform"
+      ]
+    },
+    "result": {
+      "@type": "FoodEstablishmentReservation",
+      "name": "Reserve a table at GUSI"
+    }
+  },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Full bar", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Cocktails", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Natural wine list", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "House infused vodka", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Two floor dining", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Original commissioned art", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Accepts reservations", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Weekend brunch", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Private events up to 70 guests", "value": true }
+  ],
+  "publicAccess": true,
+  "smokingAllowed": false,
+  "isAccessibleForFree": true,
+  "knowsLanguage": ["en", "ru", "uk"],
+  "sameAs": [
+    "https://instagram.com/gusi.nyc",
+    "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6"
+  ]
+}
+</script>
+
+7. Replace FAQ schema
+
+Replace the current FAQ schema with this JSON LD:
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What Type of Cuisine Does GUSI Serve?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI serves modern Eastern European cuisine with Mediterranean influences, featuring hand folded dumplings, seasonal borscht, house made spreads, and thoughtfully crafted dishes prepared with time honored techniques and quality ingredients."
+    }
+  },{
+    "@type": "Question",
+    "name": "Where Is GUSI Located?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI is located at 432 Sixth Avenue in Greenwich Village, just two blocks from the West 4th Street subway and within walking distance of NYU and Washington Square Park."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does GUSI Accept Reservations?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Reservations can be made through OpenTable, and walk ins are always welcome whenever seating is available. We recommend booking in advance, especially for weekends and special occasions."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does GUSI Serve Cocktails and Wine?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Absolutely. Our beverages feature house infused vodka, handcrafted seasonal cocktails, and a carefully curated selection of Georgian wine and natural wines, thoughtfully chosen to complement our menu."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is GUSI Suitable for Date Nights and Group Dining?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Whether you're planning an intimate date night, a relaxed dinner with friends, or a larger celebration, GUSI offers welcoming spaces for every occasion. We also have a private dining floor that accommodates events for up to 70 guests."
+    }
+  }]
+}
+</script>
+
+8. Mobile, tablet, and desktop requirements
+
+Mobile requirements:
+Use a clean single column layout.
+Hero copy must be easy to read without overwhelming the first screen.
+Primary CTA should appear above the fold when possible.
+CTA buttons must be full width or comfortably tappable.
+Minimum tap target should be 44 pixels high.
+Navigation must collapse cleanly.
+Events must appear inside the mobile menu.
+FAQ should use accordion behavior if the current site already uses accordions. If not, use stacked readable FAQ blocks.
+Avoid text over images unless contrast is excellent.
+Keep line length short and readable.
+
+Tablet requirements:
+Use one or two column layouts where appropriate.
+Keep section spacing generous but not excessive.
+Make sure image and text pairings stack naturally.
+Do not allow CTAs to wrap awkwardly.
+
+Desktop requirements:
+Preserve premium restaurant feel.
+Use strong visual hierarchy.
+Use alternating content sections if the current design supports it.
+Keep paragraphs constrained to readable width.
+Use high quality imagery where available.
+Do not make the homepage feel like a long SEO article.
+
+Suggested responsive breakpoints:
+Mobile: 0 to 767 pixels
+Tablet: 768 to 1023 pixels
+Desktop: 1024 pixels and above
+Large desktop: 1280 pixels and above
+
+9. SEO and AI SEO implementation notes
+
+Use semantic HTML.
+
+Use one H1.
+
+Use descriptive H2s.
+
+Use internal links with meaningful anchor text.
+
+Mention key location signals naturally:
+Greenwich Village
+432 Sixth Avenue
+West 4th Street subway
+NYU
+Washington Square Park
+New York City
+
+Mention service and experience signals naturally:
+modern Eastern European restaurant
+Eastern European dining
+Georgian wine
+house infused vodka
+private dining
+events up to 70 guests
+group dining
+date night
+dinner reservations
+
+Do not repeat keywords unnaturally.
+
+Make sure important content is rendered as HTML text, not hidden in images.
+
+Add alt text to images based on the image content. Examples:
+GUSI dining room in Greenwich Village
+Hand folded dumplings at GUSI
+Cocktails and Georgian wine at GUSI
+Private dining space at GUSI for events
+Eastern European dishes served at GUSI NYC
+
+10. Performance requirements
+
+Do not add heavy libraries unless already used.
+
+Optimize images with existing project conventions.
+
+Use lazy loading for below the fold images.
+
+Do not lazy load the main hero image if it is the LCP image.
+
+Preserve or improve Core Web Vitals.
+
+Avoid layout shift from images by setting width and height or using aspect ratio containers.
+
+11. Accessibility requirements
+
+Maintain proper heading order.
+
+Buttons and links must have accessible names.
+
+CTA contrast must meet accessibility standards.
+
+Navigation must be keyboard usable.
+
+Mobile menu must be keyboard accessible.
+
+FAQ accordion, if used, must have proper aria expanded states.
+
+Do not remove visible focus states.
+
+12. Quality assurance checklist
+
+After implementation, test:
+
+Homepage loads at /
+Meta title and meta description render correctly
+Canonical URL is https://gusi.nyc/
+There is only one H1
+All CTA links work
+Reserve CTAs go to OpenTable
+Menu CTAs go to /menu
+Events CTAs go to /events
+Story CTA goes to the correct story or about route
+Blog CTAs go to /blog or the correct blog article
+Top navigation includes Events
+Footer navigation includes Events
+Mobile navigation includes Events
+Restaurant schema validates as JSON
+FAQ schema validates as JSON
+No schema uses gusinyc.com unless confirmed
+No broken internal links
+No missing images
+No major layout issues on mobile
+No major layout issues on tablet
+No major layout issues on desktop
+No horizontal scrolling on mobile
+No console errors
+No hydration errors if the site uses React or Next.js
+No duplicate schema blocks remain from the prior homepage
+
+13. Acceptance criteria
+
+The homepage should look polished and production ready on mobile, tablet, and desktop.
+
+The approved SEO content should be visible on the homepage.
+
+The Events offering should be clearly visible in navigation and homepage content.
+
+The site should maintain the current GUSI brand style.
+
+The homepage should be optimized for local SEO and AI SEO without feeling stuffed or robotic.
+
+All structured data should use the correct canonical domain and validate without errors.
+
+Do not deploy automatically unless the project workflow already requires it. Prepare the changes for review first.
