@@ -7,7 +7,7 @@ export function StoriesPreview() {
     <section
       id="stories"
       aria-labelledby="stories-heading"
-      className="py-20 md:py-28 bg-gusi-ivory text-gusi-charcoal bg-texture-paper"
+      className="pt-20 md:pt-28 pb-10 md:pb-14 bg-gusi-ivory text-gusi-charcoal bg-texture-paper"
     >
       <div className="container mx-auto px-6 max-w-5xl">
         <motion.div

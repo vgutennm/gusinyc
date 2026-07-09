@@ -6,7 +6,7 @@ export function MenuPreview() {
   const [activeCategory, setActiveCategory] = useState(MENU_DATA[0].id);
 
   return (
-    <section id="menu" className="py-20 md:py-32 bg-gusi-ivory text-gusi-charcoal bg-texture-paper">
+    <section id="menu" className="pt-10 md:pt-14 pb-20 md:pb-32 bg-gusi-ivory text-gusi-charcoal bg-texture-paper">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-burgundy mb-5 md:mb-6 leading-tight">
