@@ -3,33 +3,53 @@
         xmlns:image="http://www.google.com/schemas/sitemaps/image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gusinyc.com/</loc>
+    <loc>https://gusi.nyc/</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusinyc.com/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusinyc.com/" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/" />
     <image:image>
-      <image:loc>https://gusinyc.com/gallery/gusi-1f-05.webp</image:loc>
+      <image:loc>https://gusi.nyc/gallery/gusi-1f-05.webp</image:loc>
       <image:title>GUSI Restaurant &amp; Bar — Greenwich Village, NYC</image:title>
       <image:caption>Interior of GUSI restaurant and bar at 432 Sixth Avenue, Greenwich Village — first-floor dining and bar space.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://gusinyc.com/gallery/gusi-2f-02.webp</image:loc>
+      <image:loc>https://gusi.nyc/gallery/gusi-2f-02.webp</image:loc>
       <image:title>Lebedi / The Swans — GUSI second-floor dining room</image:title>
       <image:caption>GUSI's second-floor dining room with commissioned paintings, ivory chairs, white-clothed tables, and a hand-painted ceiling.</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://gusinyc.com/brand/gusi-share-card-og.webp</image:loc>
+      <image:loc>https://gusi.nyc/brand/gusi-share-card-og.webp</image:loc>
       <image:title>GUSI Restaurant wordmark</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://gusinyc.com/press</loc>
+    <loc>https://gusi.nyc/press</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusinyc.com/press" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusinyc.com/press" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/press" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/press" />
+  </url>
+  <url>
+    <loc>https://gusi.nyc/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/blog" />
+  </url>
+  <url>
+    <loc>https://gusi.nyc/blog/hummus-vs-baba-ganoush</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/blog/hummus-vs-baba-ganoush" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/blog/hummus-vs-baba-ganoush" />
+    <image:image>
+      <image:loc>https://gusi.nyc/blog/hummus-vs-baba-ganoush.webp</image:loc>
+      <image:title>Hummus vs Baba Ganoush: Which Mediterranean Spread Should You Try First?</image:title>
+      <image:caption>Learn the difference between hummus and baba ganoush, from flavor and texture to ingredients, and discover which Mediterranean spread is right for you.</image:caption>
+    </image:image>
   </url>
 </urlset>

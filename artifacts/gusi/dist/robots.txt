@@ -65,5 +65,5 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-Sitemap: https://gusinyc.com/sitemap.xml
-Host: https://gusinyc.com
+Sitemap: https://gusi.nyc/sitemap.xml
+Host: https://gusi.nyc
