@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
@@ -71,26 +72,52 @@ export default function Blog() {
         <section className="py-16 md:py-24 bg-gusi-ivory text-gusi-charcoal bg-texture-paper">
           <div className="container mx-auto px-6 max-w-3xl">
             <div className="space-y-6">
-              {STORY_ARTICLES.map((article, idx) => (
-                <motion.article
-                  key={article.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className="border border-gusi-gold/25 bg-gusi-porcelain/40 p-7 sm:p-9"
-                >
-                  <span className="uppercase tracking-[0.25em] text-[11px] text-gusi-gold block mb-4">
-                    Coming Soon
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl leading-snug text-gusi-charcoal mb-3">
-                    {article.title}
-                  </h2>
-                  <p className="text-base leading-relaxed text-gusi-charcoal/70 font-light">
-                    {article.teaser}
-                  </p>
-                </motion.article>
-              ))}
+              {STORY_ARTICLES.map((article, idx) => {
+                const isPublished = article.published && article.slug;
+                const inner = (
+                  <>
+                    <span
+                      className={`uppercase tracking-[0.25em] text-[11px] block mb-4 ${
+                        isPublished ? "text-gusi-burgundy" : "text-gusi-gold"
+                      }`}
+                    >
+                      {isPublished ? "Read Story" : "Coming Soon"}
+                    </span>
+                    <h2
+                      className={`font-serif text-2xl sm:text-3xl leading-snug text-gusi-charcoal mb-3 ${
+                        isPublished ? "group-hover:text-gusi-burgundy transition-colors" : ""
+                      }`}
+                    >
+                      {article.title}
+                    </h2>
+                    <p className="text-base leading-relaxed text-gusi-charcoal/70 font-light">
+                      {article.teaser}
+                    </p>
+                  </>
+                );
+                return (
+                  <motion.article
+                    key={article.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  >
+                    {isPublished ? (
+                      <Link
+                        href={`/blog/${article.slug}`}
+                        className="group block border border-gusi-gold/25 bg-gusi-porcelain/40 p-7 sm:p-9 transition-colors duration-300 hover:border-gusi-gold/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-ivory"
+                      >
+                        {inner}
+                      </Link>
+                    ) : (
+                      <div className="border border-gusi-gold/25 bg-gusi-porcelain/40 p-7 sm:p-9">
+                        {inner}
+                      </div>
+                    )}
+                  </motion.article>
+                );
+              })}
             </div>
             <p className="text-center text-sm text-gusi-charcoal/60 font-light mt-10">
               New stories are on their way. Check back soon — or visit us in

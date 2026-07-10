@@ -51,3 +51,18 @@ export function restoreCanonical(snap: CanonicalSnapshot) {
   if (snap.previous === null) el.removeAttribute("href");
   else el.setAttribute("href", snap.previous);
 }
+
+export type JsonLdSnapshot = { el: HTMLScriptElement };
+
+export function applyJsonLd(id: string, data: unknown): JsonLdSnapshot {
+  const el = document.createElement("script");
+  el.type = "application/ld+json";
+  el.setAttribute("data-jsonld", id);
+  el.textContent = JSON.stringify(data);
+  document.head.appendChild(el);
+  return { el };
+}
+
+export function restoreJsonLd(snap: JsonLdSnapshot) {
+  snap.el.remove();
+}

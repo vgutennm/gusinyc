@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import Press from "@/pages/Press";
 import PrivateEvents from "@/pages/PrivateEvents";
 import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/press" component={Press} />
       <Route path="/events/private-events" component={PrivateEvents} />
       <Route path="/events" component={PrivateEvents} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/blog" component={Blog} />
       <Route component={NotFound} />
     </Switch>

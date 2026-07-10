@@ -42,31 +42,38 @@ export function StoriesPreview() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-10 md:mb-12">
-          {STORY_ARTICLES.map((article, idx) => (
-            <motion.div
-              key={article.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-            >
-              <Link
-                href="/blog"
-                className="group flex h-full flex-col border border-gusi-gold/25 bg-gusi-porcelain/40 p-6 sm:p-7 text-left transition-colors duration-300 hover:border-gusi-gold/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-ivory"
+          {STORY_ARTICLES.map((article, idx) => {
+            const isPublished = article.published && article.slug;
+            return (
+              <motion.div
+                key={article.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
               >
-                <div className="w-6 h-px bg-gusi-gold/50 mb-4" />
-                <h3 className="font-serif text-lg sm:text-xl leading-snug text-gusi-charcoal mb-3 group-hover:text-gusi-burgundy transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-gusi-charcoal/70 font-light mb-4">
-                  {article.teaser}
-                </p>
-                <span className="mt-auto uppercase tracking-[0.2em] text-[11px] text-gusi-gold">
-                  Coming Soon
-                </span>
-              </Link>
-            </motion.div>
-          ))}
+                <Link
+                  href={isPublished ? `/blog/${article.slug}` : "/blog"}
+                  className="group flex h-full flex-col border border-gusi-gold/25 bg-gusi-porcelain/40 p-6 sm:p-7 text-left transition-colors duration-300 hover:border-gusi-gold/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-ivory"
+                >
+                  <div className="w-6 h-px bg-gusi-gold/50 mb-4" />
+                  <h3 className="font-serif text-lg sm:text-xl leading-snug text-gusi-charcoal mb-3 group-hover:text-gusi-burgundy transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-gusi-charcoal/70 font-light mb-4">
+                    {article.teaser}
+                  </p>
+                  <span
+                    className={`mt-auto uppercase tracking-[0.2em] text-[11px] ${
+                      isPublished ? "text-gusi-burgundy" : "text-gusi-gold"
+                    }`}
+                  >
+                    {isPublished ? "Read Story" : "Coming Soon"}
+                  </span>
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="text-center">

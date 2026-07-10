@@ -188,3 +188,48 @@ section[id] {
 .bg-texture-dark {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }
+
+.blog-prose {
+  color: color-mix(in srgb, var(--color-gusi-charcoal) 82%, transparent);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.blog-prose p {
+  margin-bottom: 1.4em;
+}
+
+.blog-prose h2 {
+  font-family: var(--font-serif);
+  color: var(--color-gusi-burgundy);
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  line-height: 1.2;
+  margin-top: 2.4em;
+  margin-bottom: 0.7em;
+}
+
+.blog-prose h3 {
+  font-family: var(--font-serif);
+  color: var(--color-gusi-charcoal);
+  font-size: clamp(1.25rem, 3vw, 1.45rem);
+  line-height: 1.3;
+  margin-top: 1.9em;
+  margin-bottom: 0.6em;
+}
+
+.blog-prose h2 + h3 {
+  margin-top: 1.1em;
+}
+
+.blog-prose a {
+  color: var(--color-gusi-burgundy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, var(--color-gusi-gold) 60%, transparent);
+  transition: color 0.2s ease;
+}
+
+.blog-prose a:hover {
+  color: var(--color-gusi-gold);
+}
