@@ -1,0 +1,964 @@
+PROJECT
+
+GUSI Homepage Revisions and SEO Corrections
+
+
+LIVE WEBSITE
+
+https://gusi.nyc/
+
+
+PRIMARY OBJECTIVE
+
+Update the GUSI production website according to the final review provided by the SEO team.
+
+Preserve the existing premium visual design, typography, spacing, animations, responsive behavior, reservation functionality, and brand styling unless a change is specifically required below.
+
+Do not redesign the website.
+
+Do not remove or rewrite approved homepage content except where specifically instructed.
+
+
+1. MAKE THE HOMEPAGE H1 VISIBLE
+
+
+CURRENT PROBLEM
+
+The homepage H1 exists in the approved content but is not visibly displayed in the introductory section.
+
+The screenshot shows an empty area above the opening paragraphs where the heading should appear.
+
+
+REQUIRED H1
+
+GUSI: Modern Eastern European Dining in Greenwich Village
+
+
+IMPLEMENTATION
+
+Add the H1 in the centered introductory section immediately above this paragraph:
+
+“The finest meals are recalled for more than their flavors...”
+
+
+DESIGN REQUIREMENTS
+
+Use the existing GUSI heading typography and visual language.
+
+Center the H1 horizontally.
+
+Make sure the text color has sufficient contrast against the light background.
+
+Do not hide the H1 through opacity, visibility, display, clipping, animation state, zero height, an offscreen position, or matching foreground and background colors.
+
+Do not use an image to represent the heading.
+
+The heading must remain selectable HTML text.
+
+Use exactly one visible H1 on the homepage.
+
+If another H1 currently exists in the hero or elsewhere, convert the less important heading to an H2 or styled div so the homepage contains one primary H1.
+
+Preserve the decorative vertical line above the heading and the decorative horizontal line below the introductory content if those elements are part of the current design.
+
+
+RESPONSIVE REQUIREMENTS
+
+Desktop:
+
+The H1 must be clearly visible without overlapping the decorative line or introductory paragraphs.
+
+Tablet:
+
+The heading may wrap naturally across two lines.
+
+Mobile:
+
+Use a readable size and comfortable line height.
+
+Prevent the heading from being clipped or extending beyond the viewport.
+
+Maintain appropriate spacing above and below it.
+
+
+2. MOVE THE STORIES FROM GUSI SECTION
+
+
+CURRENT PROBLEM
+
+The Stories From GUSI section is positioned too close to The Story Behind GUSI section, creating thematic repetition and possible confusion.
+
+
+REQUIRED SECTION ORDER
+
+Move the complete Stories From GUSI section so it appears immediately before the Frequently Asked Questions section.
+
+
+TARGET HOMEPAGE ORDER
+
+Keep all existing sections in their current order except for the following placement:
+
+Located in the Heart of Greenwich Village
+
+Stories From GUSI
+
+Frequently Asked Questions
+
+Final reservation call to action
+
+
+REQUIREMENTS
+
+Move the complete section rather than duplicating it.
+
+Preserve its heading, introductory copy, featured article cards, images, links, and Read Our Stories call to action.
+
+Confirm that no second Stories From GUSI instance remains elsewhere on the homepage.
+
+Preserve existing section spacing and visual transitions.
+
+
+3. LIMIT THE INITIAL SIGNATURE DISHES GALLERY
+
+
+SECTION
+
+Signature Dishes Inspired by Tradition
+
+
+CURRENT PROBLEM
+
+Displaying the entire gallery creates excessive homepage scrolling.
+
+
+REQUIRED BEHAVIOR
+
+Display a maximum of 8 images when the page first loads.
+
+Hide all remaining images until the visitor selects Load More.
+
+
+LOAD MORE BUTTON
+
+Label:
+
+Load More
+
+
+AFTER EXPANSION
+
+Display the remaining images.
+
+Change the button label to:
+
+Show Less
+
+
+WHEN SHOW LESS IS SELECTED
+
+Collapse the gallery back to the first 8 images.
+
+Return the visitor to a sensible position near the beginning of the Signature Dishes gallery so the page does not appear to jump unpredictably.
+
+
+IMPLEMENTATION REQUIREMENTS
+
+Use the current gallery component and image assets.
+
+Do not create duplicate image records.
+
+Do not reload the page.
+
+Do not navigate to another URL.
+
+Use an accessible button element rather than a plain text link.
+
+Include an appropriate `aria-expanded` value.
+
+The hidden images should not create large empty spaces.
+
+Preserve the existing grid, hover states, lightbox behavior, image aspect ratios, and responsive layout.
+
+Lazy load images that are not initially visible where technically appropriate.
+
+If the total gallery contains 8 or fewer images, do not display the Load More button.
+
+
+RESPONSIVE DISPLAY
+
+Desktop:
+
+Preserve the existing multi column gallery layout.
+
+Tablet:
+
+Adjust the number of columns using the current responsive system.
+
+Mobile:
+
+Use a clean one or two column layout based on the current design.
+
+Do not crop important image content unnecessarily.
+
+
+4. LIMIT THE INITIAL INSIDE GUSI GALLERY
+
+
+SECTION
+
+Inside GUSI
+
+
+REQUIRED BEHAVIOR
+
+Apply the same gallery expansion behavior used for Signature Dishes.
+
+
+INITIAL IMAGE LIMIT
+
+Display the first 8 images initially unless the current gallery contains fewer than 8 images.
+
+
+BUTTON LABELS
+
+Collapsed:
+
+Load More
+
+Expanded:
+
+Show Less
+
+
+REQUIREMENTS
+
+Use a shared reusable gallery expansion component or shared logic where practical.
+
+Do not duplicate gallery code unnecessarily.
+
+Preserve existing gallery styling, image interactions, animations, lightbox functionality, and responsive behavior.
+
+Use accessible button controls and `aria-expanded`.
+
+Lazy load images outside the initial visible set where appropriate.
+
+
+5. REMOVE THE DUPLICATE MUSIC PLAYLIST SECTION
+
+
+CURRENT PROBLEM
+
+The Music Playlist section appears twice on the homepage.
+
+
+REQUIRED CHANGE
+
+Remove the first Music Playlist instance that appears before the Inside GUSI section.
+
+Keep the later Music Playlist instance.
+
+
+IMPORTANT
+
+Remove the duplicate component from the rendered page rather than hiding it with CSS.
+
+Do not remove shared music functionality, assets, scripts, or styles required by the remaining playlist.
+
+Confirm that only one Music Playlist heading and one playlist player remain on the homepage.
+
+
+6. ADD BLOG TO THE MAIN NAVIGATION
+
+
+REQUIRED NAVIGATION LABEL
+
+Blog
+
+
+REQUIRED DESTINATION
+
+Use the actual existing blog index route.
+
+Preferred destination if this is the current blog route:
+
+/blog
+
+
+IMPLEMENTATION
+
+Add Blog to the desktop main navigation.
+
+Add Blog to the mobile navigation menu.
+
+Use the same typography, spacing, hover treatment, focus treatment, and interaction pattern as the other navigation links.
+
+Do not open the Blog link in a new tab.
+
+Make sure the link works from both the homepage and all internal pages.
+
+If the navigation uses a route configuration or shared data array, add Blog there rather than hardcoding separate desktop and mobile links.
+
+Do not remove the Events navigation item.
+
+
+SUGGESTED NAVIGATION POSITION
+
+Place Blog near Story or Events while preserving the current reservation call to action.
+
+Do not allow the navigation to wrap or overlap at common desktop widths.
+
+If necessary, make a small proportional adjustment to spacing without reducing usability.
+
+
+7. PRESERVE THE EVENTS SECTION AND NAVIGATION
+
+
+Confirm that the previously implemented Events section remains on the homepage.
+
+Confirm that the Events link remains in the desktop navigation, mobile navigation, and footer navigation where currently implemented.
+
+Confirm that the Events link points to the correct private events page.
+
+Do not overwrite or remove the private dining content while completing the current revisions.
+
+
+8. UPDATE THE HOMEPAGE METADATA
+
+
+META TITLE
+
+GUSI | Modern Eastern European Restaurant in Greenwich Village, NYC
+
+
+META DESCRIPTION
+
+Discover GUSI, a Greenwich Village restaurant reimagining Eastern European classics & house-infused vodka, with warm hospitality & an experience like no other.
+
+
+REQUIREMENTS
+
+Apply this metadata specifically to the homepage.
+
+Confirm there is only one document title.
+
+Confirm there is only one meta description.
+
+Do not allow a generic global metadata component to overwrite these values after rendering.
+
+Preserve the canonical URL:
+
+https://gusi.nyc/
+
+Confirm that no homepage metadata refers to gusinyc.com.
+
+
+9. REPLACE THE RESTAURANT SCHEMA
+
+
+Remove the current homepage Restaurant JSON LD block and replace it with the revised Restaurant schema below.
+
+There must be only one primary Restaurant entity for GUSI on the homepage.
+
+Do not leave an outdated duplicate Restaurant schema elsewhere in the rendered HTML.
+
+Use valid JSON LD.
+
+Do not include HTML comments inside the JSON object.
+
+
+IMPORTANT RATING SAFEGUARD
+
+The supplied schema contains:
+
+Rating value: 4.96
+
+Review count: 62
+
+
+Before production deployment:
+
+Confirm that these values come from a legitimate current public review source.
+
+Confirm the values are still accurate.
+
+Confirm the rating is not fabricated, estimated, or manually rounded without a source.
+
+When possible, store the rating and review count in one editable configuration location rather than scattering them throughout the code.
+
+If the rating cannot be verified, omit only the aggregateRating object until accurate values are available.
+
+Do not delay the remaining homepage corrections because the rating needs verification.
+
+
+RESTAURANT SCHEMA
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "https://gusi.nyc/#restaurant",
+  "name": "GUSI",
+  "alternateName": [
+    "GUSI Restaurant",
+    "GUSI NYC",
+    "GUSI Greenwich Village"
+  ],
+  "description": "Modern Eastern European restaurant and bar in Greenwich Village, New York. Two floors — a candlelit tavern bar of infused vodka, natural wine, and rare spirits downstairs (GUSI / The Geese), and a light-filled dining room of original art and hand-painted ceilings upstairs (Lebedi / The Swans).",
+  "url": "https://gusi.nyc/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://gusi.nyc/brand/gusi-goose-emblem.webp"
+  },
+  "image": [
+    "https://gusi.nyc/brand/gusi-share-card.webp",
+    "https://gusi.nyc/gallery/gusi-1f-05.webp",
+    "https://gusi.nyc/gallery/gusi-1f-01.webp",
+    "https://gusi.nyc/gallery/gusi-1f-08.webp",
+    "https://gusi.nyc/gallery/gusi-2f-02.webp",
+    "https://gusi.nyc/gallery/gusi-2f-01.webp",
+    "https://gusi.nyc/gallery/gusi-2f-05.webp",
+    "https://gusi.nyc/gallery/gusi-2f-09.webp"
+  ],
+  "servesCuisine": [
+    "Eastern European",
+    "Mediterranean",
+    "Modern European",
+    "Slavic"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "432 Sixth Avenue",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10011",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7344716,
+    "longitude": -74.0013098
+  },
+  "hasMap": "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6",
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Greenwich Village"
+    },
+    {
+      "@type": "Place",
+      "name": "West Village"
+    },
+    {
+      "@type": "Place",
+      "name": "Manhattan"
+    },
+    {
+      "@type": "Place",
+      "name": "New York City"
+    }
+  ],
+  "priceRange": "$$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.96",
+    "reviewCount": "62",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "currenciesAccepted": "USD",
+  "paymentAccepted": "Cash, Credit Card",
+  "acceptsReservations": true,
+  "telephone": "+1-646-370-5413",
+  "email": "gagaga@gusi.nyc",
+  "foundingDate": "2026-05-08",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "name": "Dinner",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "16:00",
+      "closes": "00:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "name": "Brunch",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:30",
+      "closes": "16:00",
+      "validFrom": "2026-05-23"
+    }
+  ],
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.opentable.com/r/gusi-reservations-new-york?restref=1490239",
+      "inLanguage": "en-US",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform",
+        "http://schema.org/IOSPlatform",
+        "http://schema.org/AndroidPlatform"
+      ]
+    },
+    "result": {
+      "@type": "FoodEstablishmentReservation",
+      "name": "Reserve a table at GUSI"
+    }
+  },
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Full bar",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Cocktails",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Natural wine list",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "House-infused vodka",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Two-floor dining",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Original commissioned art",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Accepts reservations",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Weekend brunch",
+      "value": true
+    }
+  ],
+  "publicAccess": true,
+  "smokingAllowed": false,
+  "isAccessibleForFree": true,
+  "knowsLanguage": [
+    "en",
+    "ru",
+    "uk"
+  ],
+  "sameAs": [
+    "https://instagram.com/gusi.nyc",
+    "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6"
+  ]
+}
+</script>
+
+
+TECHNICAL CORRECTION
+
+Use the Boolean value:
+
+"acceptsReservations": true
+
+Do not use the string:
+
+"acceptsReservations": "True"
+
+
+10. REPLACE THE FAQ SCHEMA
+
+
+Remove the existing homepage FAQPage JSON LD block.
+
+Replace it with the schema below.
+
+Do not create duplicate FAQPage schema.
+
+The questions and answers in the schema must match the visible FAQ content on the homepage.
+
+Keep FAQ content visible to visitors rather than placing answers only inside structured data.
+
+
+FAQ SCHEMA
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What Type of Cuisine Does GUSI Serve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GUSI serves modern Eastern European cuisine with Mediterranean influences, featuring hand-folded dumplings, seasonal borscht, house-made spreads, and thoughtfully crafted dishes prepared with time-honored techniques and quality ingredients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where Is GUSI Located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GUSI is located at 432 Sixth Avenue in Greenwich Village, just two blocks from the West 4th Street subway and within walking distance of NYU and Washington Square Park."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does GUSI Accept Reservations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Reservations can be made through OpenTable, and walk-ins are always welcome whenever seating is available. We recommend booking in advance, especially for weekends and special occasions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does GUSI Serve Cocktails and Wine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. Our beverages feature house-infused vodka, handcrafted seasonal cocktails, and a carefully curated selection of Georgian wine and natural wines, thoughtfully chosen to complement our menu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GUSI Suitable for Date Nights and Group Dining?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Whether you're planning an intimate date night, a relaxed dinner with friends, or a larger celebration, GUSI offers welcoming spaces for every occasion. We also have a private dining floor that accommodates events for up to 70 guests."
+      }
+    }
+  ]
+}
+</script>
+
+
+11. VERIFY HOMEPAGE CONTENT AND LINKS
+
+
+Confirm that the approved homepage content remains present and correctly formatted.
+
+Confirm the following calls to action point to the proper internal or external destinations:
+
+Reserve a Table
+
+Explore the Menu
+
+Learn Our Story
+
+View the Full Menu
+
+Read Our Beverage Stories
+
+Reserve Your Visit
+
+Read Our Stories
+
+View Menu
+
+
+Confirm that:
+
+Reservation buttons use the correct OpenTable destination.
+
+Menu links lead to the current Menu page.
+
+Story links lead to the current Story or About page.
+
+Events links lead to the private events page.
+
+Blog links lead to the blog index.
+
+Featured article cards lead to the correct articles.
+
+No link points to gusinyc.com.
+
+No placeholder link uses `#` unless it performs an intentional same page interaction.
+
+
+12. STRUCTURED DATA ARCHITECTURE
+
+
+Render the JSON LD through the existing metadata or SEO system where possible.
+
+Do not insert the same schema in both a global layout and the homepage component.
+
+Ensure the following identifiers remain consistent:
+
+Restaurant ID:
+
+https://gusi.nyc/#restaurant
+
+Homepage URL:
+
+https://gusi.nyc/
+
+Canonical domain:
+
+https://gusi.nyc
+
+
+Do not silently change business names, address, telephone number, opening hours, reservation URL, social links, image URLs, or geographic coordinates.
+
+Before deployment, confirm each schema image URL returns a valid public image.
+
+Confirm the logo URL returns the intended GUSI emblem.
+
+Confirm the schema scripts contain valid JSON with no trailing commas.
+
+
+13. ACCESSIBILITY
+
+
+Maintain logical heading order.
+
+Use one visible H1.
+
+Use H2 elements for major homepage sections.
+
+Use H3 elements only beneath the appropriate H2.
+
+Load More and Show Less controls must be keyboard accessible.
+
+Visible focus indicators must remain available.
+
+Interactive gallery images must have meaningful accessible labels or alt text.
+
+Decorative images should use empty alt attributes when appropriate.
+
+Do not communicate expanded or collapsed state through appearance alone.
+
+Do not reduce text contrast to make the H1 match the previous invisible appearance.
+
+
+14. PERFORMANCE
+
+
+Do not load every hidden gallery image at full priority during initial page rendering.
+
+Use native image lazy loading or the existing image optimization system where appropriate.
+
+Preserve image dimensions to prevent layout shift.
+
+Do not introduce a new third party gallery library unless the current architecture cannot support the required behavior.
+
+Do not duplicate large image assets.
+
+The changes must not materially degrade homepage load time or responsiveness.
+
+
+15. RESPONSIVE QUALITY ASSURANCE
+
+
+Test at minimum at these viewport widths:
+
+375 pixels
+
+430 pixels
+
+768 pixels
+
+1024 pixels
+
+1280 pixels
+
+1440 pixels
+
+
+Confirm at every size:
+
+The H1 is visible.
+
+The navigation does not overlap.
+
+The Blog link is accessible.
+
+The Events link remains accessible.
+
+The mobile menu opens and closes correctly.
+
+The introductory text remains centered and readable.
+
+Both galleries initially show no more than 8 images.
+
+Load More and Show Less work correctly.
+
+No empty gallery space appears after collapse.
+
+Stories From GUSI appears immediately before the FAQ section.
+
+Only one Music Playlist section appears.
+
+The FAQ layout remains usable.
+
+No horizontal scrolling occurs.
+
+
+16. SEO AND VALIDATION CHECKS
+
+
+After implementation:
+
+Inspect the rendered page source rather than relying only on the React component source.
+
+Confirm the homepage contains:
+
+One visible H1
+
+One title element
+
+One meta description
+
+One canonical tag
+
+One Restaurant schema entity
+
+One FAQPage schema entity
+
+
+Validate both JSON LD objects for syntax.
+
+Confirm all structured data uses gusi.nyc.
+
+Confirm that the visible FAQ wording matches the FAQ schema.
+
+Confirm that all rating data is accurate before retaining aggregateRating.
+
+Confirm that no development, preview, or Replit URL appears in canonical tags, metadata, schema, sitemap references, social metadata, or internal links.
+
+
+17. REGRESSION PROTECTION
+
+
+Do not break:
+
+OpenTable reservation functionality
+
+Existing menu links
+
+Events page
+
+Story page
+
+Blog article routes
+
+Gallery lightboxes
+
+Music player functionality
+
+Mobile navigation
+
+Footer navigation
+
+Existing analytics
+
+Contact links
+
+Social links
+
+Animations
+
+Image optimization
+
+SEO metadata on internal pages
+
+
+18. ACCEPTANCE CRITERIA
+
+
+The work is complete only when all of the following are true:
+
+The H1 “GUSI: Modern Eastern European Dining in Greenwich Village” is clearly visible above the opening homepage copy.
+
+There is exactly one visible homepage H1.
+
+Stories From GUSI appears immediately before Frequently Asked Questions.
+
+Signature Dishes initially displays no more than 8 images.
+
+Signature Dishes includes working Load More and Show Less controls when more than 8 images exist.
+
+Inside GUSI initially displays no more than 8 images.
+
+Inside GUSI includes working Load More and Show Less controls when more than 8 images exist.
+
+Only one Music Playlist section remains.
+
+Blog appears in both desktop and mobile navigation.
+
+The Events section and navigation links remain intact.
+
+The homepage metadata matches the approved title and description.
+
+The Restaurant schema has been replaced.
+
+The FAQ schema has been replaced.
+
+The schema uses gusi.nyc throughout.
+
+No duplicate Restaurant or FAQ schema remains.
+
+The aggregate rating is included only after its source and current values are confirmed.
+
+All specified internal links and calls to action work.
+
+The homepage passes desktop, tablet, and mobile visual inspection.
+
+No existing production functionality is broken.
+
+
+19. DEPLOYMENT PROCESS
+
+
+Create a backup or restorable checkpoint before editing.
+
+Implement and test the changes in the development environment.
+
+Review the rendered page at all required viewport sizes.
+
+Validate metadata and JSON LD.
+
+Confirm that the correct production domain is used everywhere.
+
+Deploy to production only after all acceptance criteria pass.
+
+After deployment, perform another production check because production metadata, caching, and routing may differ from the development environment.
+
+Provide a concise completion report listing:
+
+Files or components changed
+
+Navigation changes
+
+Sections moved or removed
+
+Gallery behavior added
+
+Metadata updated
+
+Schema updated
+
+Aggregate rating verification status
+
+Responsive testing completed
+
+Any unresolved issue
