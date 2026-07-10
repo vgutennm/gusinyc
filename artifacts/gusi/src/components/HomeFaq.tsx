@@ -8,7 +8,7 @@ const FAQS: Faq[] = [
   {
     question: "What Type of Cuisine Does GUSI Serve?",
     answer:
-      "GUSI serves modern Eastern European cuisine with Mediterranean influences, featuring hand folded dumplings, seasonal borscht, house made spreads, and thoughtfully crafted dishes prepared with time honored techniques and quality ingredients.",
+      "GUSI serves modern Eastern European cuisine with Mediterranean influences, featuring hand-folded dumplings, seasonal borscht, house-made spreads, and thoughtfully crafted dishes prepared with time-honored techniques and quality ingredients.",
   },
   {
     question: "Where Is GUSI Located?",
@@ -18,12 +18,12 @@ const FAQS: Faq[] = [
   {
     question: "Does GUSI Accept Reservations?",
     answer:
-      "Yes. Reservations can be made through OpenTable, and walk ins are always welcome whenever seating is available. We recommend booking in advance, especially for weekends and special occasions.",
+      "Yes. Reservations can be made through OpenTable, and walk-ins are always welcome whenever seating is available. We recommend booking in advance, especially for weekends and special occasions.",
   },
   {
     question: "Does GUSI Serve Cocktails and Wine?",
     answer:
-      "Absolutely. Our beverages feature house infused vodka, handcrafted seasonal cocktails, and a carefully curated selection of Georgian wine and natural wines, thoughtfully chosen to complement our menu.",
+      "Absolutely. Our beverages feature house-infused vodka, handcrafted seasonal cocktails, and a carefully curated selection of Georgian wine and natural wines, thoughtfully chosen to complement our menu.",
   },
   {
     question: "Is GUSI Suitable for Date Nights and Group Dining?",

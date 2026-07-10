@@ -20,3 +20,5 @@ description: How the gusi.nyc site ships, the committed-dist requirement, and th
 # Screenshot limitation
 
 `screenshot` captures from the top of the page and cannot scroll. To see lower sections (e.g. footer), use a tall `viewport_size` height (max 3000) rather than expecting a scrolled view.
+
+The homepage Hero is `min-h-[100svh]`, so it always fills the viewport and pushes everything below the fold no matter how tall you make the viewport. To capture a specific below-fold section, navigate to its anchor hash (e.g. `path="/#dishes"`, `/#gallery`, `/#faq`) — Home.tsx runs a hash-scroll effect on mount, so the screenshot lands on that section.

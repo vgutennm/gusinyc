@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useGalleryExpansion, GalleryExpandButton } from "@/components/GalleryExpander";
 
 type GalleryImage = {
   src: string;
@@ -221,8 +222,12 @@ const IMAGES: GalleryImage[] = [
 ];
 
 export function Gallery() {
+  const { visibleItems, canExpand, expanded, toggle, sectionRef } =
+    useGalleryExpansion(IMAGES);
+
   return (
     <section
+      ref={sectionRef}
       id="gallery"
       className="py-20 md:py-28 bg-gusi-charcoal text-gusi-ivory bg-texture-dark border-t border-gusi-gold/10"
       aria-labelledby="gallery-heading"
@@ -245,8 +250,8 @@ export function Gallery() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {IMAGES.map((img, idx) => {
+        <div id="gallery-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+          {visibleItems.map((img, idx) => {
             const spanClass =
               img.span === "wide"
                 ? "sm:col-span-2 aspect-[16/9]"
@@ -287,6 +292,10 @@ export function Gallery() {
             );
           })}
         </div>
+
+        {canExpand && (
+          <GalleryExpandButton expanded={expanded} onClick={toggle} controls="gallery-grid" />
+        )}
       </div>
     </section>
   );

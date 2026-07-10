@@ -32,10 +32,8 @@ export function Hero() {
           <p className="text-gusi-gold uppercase tracking-[0.3em] text-[10px] sm:text-xs md:text-sm mb-5 sm:mb-6">
             Greenwich Village, New York
           </p>
-          <h1 className="mb-5 sm:mb-6 leading-none">
-            <span className="sr-only">
-              GUSI: Modern Eastern European Dining in Greenwich Village
-            </span>
+          <div className="mb-5 sm:mb-6 leading-none">
+            <span className="sr-only">GUSI</span>
             <img
               src="/brand/gusi-wordmark-light.svg"
               alt=""
@@ -47,7 +45,7 @@ export function Hero() {
               className="block mx-auto h-[72px] sm:h-[112px] md:h-[140px] lg:h-[180px] w-auto select-none"
               draggable={false}
             />
-          </h1>
+          </div>
           <p className="text-gusi-porcelain/80 text-base sm:text-lg md:text-xl font-light tracking-wide max-w-md md:max-w-lg mx-auto mb-10 sm:mb-12 leading-relaxed">
             Modern Eastern European cuisine with a Mediterranean touch.
           </p>

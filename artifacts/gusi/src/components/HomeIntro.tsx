@@ -12,6 +12,9 @@ export function HomeIntro() {
           className="text-center flex flex-col items-center"
         >
           <div className="w-px h-12 sm:h-16 bg-gusi-gold/40 mb-6 sm:mb-8" />
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-burgundy mb-8 sm:mb-10 leading-tight max-w-2xl">
+            GUSI: Modern Eastern European Dining in Greenwich Village
+          </h1>
           <div className="space-y-6 text-base sm:text-lg leading-relaxed text-gusi-charcoal/80 font-light">
             <p>
               The finest meals are recalled for more than their flavors. They

@@ -42,6 +42,7 @@ export function Header() {
     { name: "Bar", href: anchor("bar") },
     { name: "Playlist", href: anchor("playlist") },
     { name: "Press", href: "/press", isRoute: true },
+    { name: "Blog", href: "/blog", isRoute: true },
     { name: "Events", href: "/events/private-events", isRoute: true },
     { name: "Visit", href: anchor("visit") },
   ];

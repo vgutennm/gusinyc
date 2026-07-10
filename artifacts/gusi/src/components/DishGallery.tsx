@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useGalleryExpansion, GalleryExpandButton } from "@/components/GalleryExpander";
 
 type Dish = {
   src: string;
@@ -132,8 +133,12 @@ const DISHES: Dish[] = [
 ];
 
 export function DishGallery() {
+  const { visibleItems, canExpand, expanded, toggle, sectionRef } =
+    useGalleryExpansion(DISHES);
+
   return (
     <section
+      ref={sectionRef}
       id="dishes"
       className="py-20 md:py-28 bg-gusi-charcoal text-gusi-ivory bg-texture-dark border-t border-gusi-gold/10"
       aria-labelledby="dishes-heading"
@@ -173,8 +178,8 @@ export function DishGallery() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
-          {DISHES.map((dish, idx) => (
+        <div id="dishes-grid" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+          {visibleItems.map((dish, idx) => (
             <motion.figure
               key={dish.src}
               initial={{ opacity: 0, y: 16 }}
@@ -199,6 +204,10 @@ export function DishGallery() {
             </motion.figure>
           ))}
         </div>
+
+        {canExpand && (
+          <GalleryExpandButton expanded={expanded} onClick={toggle} controls="dishes-grid" />
+        )}
       </div>
     </section>
   );
