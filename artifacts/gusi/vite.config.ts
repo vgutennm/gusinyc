@@ -45,6 +45,14 @@ function buildSitemap(): string {
     </image:image>
   </url>
   <url>
+    <loc>${SITE_URL}/events/private-events</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/events/private-events" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/events/private-events" />
+  </url>
+  <url>
     <loc>${SITE_URL}/press</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
