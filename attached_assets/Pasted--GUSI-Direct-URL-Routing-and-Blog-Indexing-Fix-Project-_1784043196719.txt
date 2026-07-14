@@ -1,0 +1,537 @@
+# GUSI Direct URL Routing and Blog Indexing Fix
+
+## Project
+
+GUSI Website
+Production domain: https://gusi.nyc
+
+## Issue Summary
+
+The following blog page works when visitors navigate to it from within the website:
+
+https://gusi.nyc/blog/hummus-vs-baba-ganoush
+
+However, when the same URL is opened directly in a new browser session, Incognito window, search crawler, or external link, the server returns:
+
+404 Not Found
+
+This is a server routing problem affecting the React single page application.
+
+Googlebot accesses pages through direct URL requests. Therefore, the current server behavior may prevent Google from crawling and indexing blog pages, even when the pages:
+
+• Appear in the XML sitemap
+• Contain a canonical URL
+• Use index,follow directives
+• Work through internal website navigation
+
+## Primary Objective
+
+Configure the production server and React application so all valid public routes return the correct page when accessed directly.
+
+Valid routes must return an HTTP 200 status and must not return a server generated 404 response.
+
+This includes:
+
+• `/blog`
+• `/blog/hummus-vs-baba-ganoush`
+• All existing blog post routes
+• All future blog post routes
+• All other valid React routes on the website
+
+## Technical Background
+
+The website uses React with Vite and is deployed to a production web server.
+
+React Router handles routing inside the browser after the application loads. However, when a visitor requests a nested URL directly, the web server looks for a matching physical file or directory.
+
+For example, the server may look for:
+
+`/blog/hummus-vs-baba-ganoush/index.html`
+
+Because that physical file does not exist, the server returns a 404 before React Router has a chance to load.
+
+The server must fall back to the main React application entry file for valid application routes.
+
+## Required Implementation
+
+### 1. Configure Server Routing Fallback
+
+Configure the production server so requests that do not match a real file or directory are served through:
+
+`/index.html`
+
+React Router must then resolve the requested route and display the correct page.
+
+Do not redirect every request to the homepage URL.
+
+The browser URL must remain unchanged.
+
+Correct behavior:
+
+Visitor requests:
+
+`https://gusi.nyc/blog/hummus-vs-baba-ganoush`
+
+Server returns the React application through `index.html`.
+
+React Router displays the Hummus vs Baba Ganoush article.
+
+The address bar remains:
+
+`https://gusi.nyc/blog/hummus-vs-baba-ganoush`
+
+### 2. Apache and cPanel Configuration
+
+The production deployment uses cPanel and may use Apache.
+
+Add or update the `.htaccess` file in the website document root.
+
+Use the following configuration:
+
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Preserve access to existing files and directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Send all other application routes to React
+  RewriteRule ^ index.html [L]
+</IfModule>
+```
+
+Confirm that:
+
+• `.htaccess` is included in the deployed production files
+• Apache `mod_rewrite` is enabled
+• The server permits `.htaccess` rewrite rules
+• The deployment process does not delete or overwrite the file
+• The file is located in the same production directory as `index.html`
+
+If the application is deployed inside a subdirectory rather than the domain root, adjust `RewriteBase` and the fallback path accordingly.
+
+### 3. Preserve Real Static Files
+
+The routing fallback must not interfere with real files or directories.
+
+The following must continue loading normally:
+
+• JavaScript bundles
+• CSS bundles
+• Images
+• Fonts
+• Favicon files
+• `robots.txt`
+• XML sitemap files
+• Uploaded assets
+• Existing API endpoints
+• Any verification files used by Google or other services
+
+Requests for existing files must be served directly and must not be rewritten to `index.html`.
+
+### 4. Verify React Router Configuration
+
+Review the React Router configuration and confirm the following routes are explicitly supported:
+
+```jsx
+<Route path="/blog" element={<BlogPage />} />
+<Route
+  path="/blog/hummus-vs-baba-ganoush"
+  element={<HummusVsBabaGanoushPage />}
+/>
+```
+
+If blog posts use a dynamic route, confirm that the route works correctly:
+
+```jsx
+<Route path="/blog/:slug" element={<BlogPostPage />} />
+```
+
+The application must correctly resolve the slug:
+
+`hummus-vs-baba-ganoush`
+
+Do not rely only on navigation state passed from another page. The article must load correctly when no prior browser state exists.
+
+### 5. Remove Navigation State Dependency
+
+Review the blog post component for any dependency on data passed through:
+
+```javascript
+location.state
+```
+
+or another temporary client navigation state.
+
+A direct URL request will not contain this state.
+
+The blog post must retrieve its content using the URL slug or another persistent source.
+
+Acceptable options include:
+
+• A local blog content data file
+• A static JavaScript or TypeScript blog post registry
+• A content management system request
+• An API request using the slug
+• A generated static content module
+
+Example:
+
+```javascript
+const { slug } = useParams();
+const post = blogPosts.find((item) => item.slug === slug);
+```
+
+The page must not show an empty state merely because the visitor did not arrive through the blog listing page.
+
+### 6. Add a Proper Application Level 404 Page
+
+The server fallback should load React for unknown application paths, but React must still show a proper Not Found page when no valid route exists.
+
+Add or preserve a final wildcard route:
+
+```jsx
+<Route path="*" element={<NotFoundPage />} />
+```
+
+Valid routes must show the requested content.
+
+Invalid routes must show the branded GUSI Not Found page.
+
+Do not display the homepage for nonexistent URLs.
+
+Examples:
+
+Valid:
+
+`/blog/hummus-vs-baba-ganoush`
+
+Result: Article page
+
+Invalid:
+
+`/blog/this-article-does-not-exist`
+
+Result: GUSI Not Found page
+
+### 7. HTTP Status Requirements
+
+Verify the production response status for direct requests.
+
+The valid article URL must return:
+
+```text
+HTTP 200 OK
+```
+
+Test:
+
+```bash
+curl -I https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+Expected response:
+
+```text
+HTTP/2 200
+```
+
+or:
+
+```text
+HTTP/1.1 200 OK
+```
+
+The response must not return:
+
+• 404 Not Found
+• 301 redirect to the homepage
+• 302 redirect to the homepage
+• A server error
+• A blank document
+
+Also test:
+
+```bash
+curl -I https://gusi.nyc/blog
+curl -I https://gusi.nyc/story
+curl -I https://gusi.nyc/contact
+```
+
+Every valid route must return a successful response.
+
+## SEO Requirements
+
+### 8. Preserve Article Metadata
+
+Confirm that the article still contains the correct metadata after the routing fix.
+
+Required values:
+
+```html
+<title>Hummus vs Baba Ganoush: Know What's the Difference</title>
+```
+
+```html
+<meta
+  name="description"
+  content="Learn the difference between hummus and baba ganoush, from flavor and texture to ingredients, and discover which Mediterranean spread is right for you."
+/>
+```
+
+Canonical:
+
+```html
+<link
+  rel="canonical"
+  href="https://gusi.nyc/blog/hummus-vs-baba-ganoush"
+/>
+```
+
+Robots:
+
+```html
+<meta name="robots" content="index,follow" />
+```
+
+The canonical domain must remain:
+
+`https://gusi.nyc`
+
+Do not use:
+
+`https://gusinyc.com`
+
+### 9. Verify XML Sitemap
+
+Confirm the sitemap contains the article URL using the correct domain:
+
+```xml
+<url>
+  <loc>https://gusi.nyc/blog/hummus-vs-baba-ganoush</loc>
+</url>
+```
+
+The sitemap itself must return HTTP 200.
+
+Test the production sitemap URL currently referenced in `robots.txt`.
+
+Do not create duplicate sitemap entries for URLs with:
+
+• Trailing slash and no trailing slash versions
+• Query parameters
+• Incorrect domains
+• Uppercase variations
+
+### 10. Verify robots.txt
+
+Confirm `robots.txt` does not block:
+
+• `/blog`
+• `/blog/`
+• JavaScript required to render the site
+• CSS required to render the site
+
+The sitemap reference inside `robots.txt` must use the production domain:
+
+```text
+Sitemap: https://gusi.nyc/sitemap.xml
+```
+
+### 11. Social and Structured Data Validation
+
+Confirm the article retains its Open Graph, social sharing, and structured data.
+
+Recommended Open Graph values:
+
+```html
+<meta property="og:type" content="article" />
+<meta
+  property="og:url"
+  content="https://gusi.nyc/blog/hummus-vs-baba-ganoush"
+/>
+```
+
+Confirm any BlogPosting or Article structured data uses:
+
+```text
+https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+All structured data URLs must use the `gusi.nyc` domain.
+
+## Build and Deployment Requirements
+
+### 12. Ensure `.htaccess` Is Included in the Vite Build
+
+Vite copies files from the `public` directory into the root of the production build.
+
+Store the `.htaccess` file at:
+
+```text
+/public/.htaccess
+```
+
+After running:
+
+```bash
+npm run build
+```
+
+Confirm the generated file exists at:
+
+```text
+/dist/.htaccess
+```
+
+Do not store `.htaccess` only in the source root if the production deployment publishes only the `dist` directory.
+
+### 13. Deployment Process
+
+Complete the following:
+
+1. Update the React Router configuration if required.
+2. Add the `.htaccess` fallback configuration.
+3. Place `.htaccess` inside the Vite `public` directory.
+4. Build the production application.
+5. Confirm `.htaccess` exists inside `dist`.
+6. Deploy the full updated `dist` contents to the production document root.
+7. Confirm the server did not rename, remove, or ignore `.htaccess`.
+8. Clear any hosting cache, CDN cache, or deployment cache.
+9. Test the production URL directly in a new Incognito session.
+10. Test the response using `curl`.
+11. Test at least one nonexistent URL to confirm the React Not Found page still works.
+
+## Required Quality Assurance Tests
+
+### Direct Browser Tests
+
+Open each URL by pasting it directly into a new Incognito browser session:
+
+```text
+https://gusi.nyc/blog
+https://gusi.nyc/blog/hummus-vs-baba-ganoush
+https://gusi.nyc/story
+https://gusi.nyc/contact
+```
+
+Each page must load without first visiting the homepage.
+
+### Refresh Tests
+
+For each page:
+
+1. Open the URL directly.
+2. Refresh the browser.
+3. Perform a hard refresh.
+4. Close the browser.
+5. Reopen the URL in a new session.
+
+The page must continue working.
+
+### Crawler Response Tests
+
+Run:
+
+```bash
+curl -I https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+Run a Googlebot user agent test:
+
+```bash
+curl -I \
+  -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
+  https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+Both requests must return HTTP 200.
+
+The server must not treat Googlebot differently from normal visitors.
+
+### Navigation Tests
+
+Confirm all of the following continue working:
+
+• Homepage to blog listing
+• Blog listing to article
+• Article back to blog listing
+• Header navigation
+• Footer navigation
+• Internal links inside the article
+• Browser back and forward controls
+
+### Static Asset Tests
+
+Confirm there are no 404 errors in the browser console or network panel for:
+
+• JavaScript
+• CSS
+• Images
+• Fonts
+• Favicon
+• Sitemap
+• robots.txt
+
+### Invalid URL Test
+
+Open:
+
+```text
+https://gusi.nyc/blog/nonexistent-test-page
+```
+
+Expected result:
+
+• React application loads
+• Branded Not Found page appears
+• The site does not crash
+• The page does not incorrectly show the Hummus vs Baba Ganoush article
+• The page does not redirect silently to the homepage
+
+## Important Limitation
+
+This routing fix will cause the web server to return the React application shell with HTTP 200 for valid application routes.
+
+Because this is a client rendered React site, the first server response may still contain generic application HTML rather than the complete article body.
+
+The routing fix resolves the immediate 404 crawl failure. However, server side rendering, static generation, or prerendering would provide stronger SEO reliability because search engines and AI crawlers could receive the full article content in the initial HTML response.
+
+Do not convert the entire website architecture as part of this fix unless separately approved.
+
+Document whether the article content is present in the initial HTML response or inserted only after JavaScript loads.
+
+## Definition of Done
+
+The task is complete only when:
+
+• The article works through internal navigation
+• The article works when opened directly
+• The article works in Incognito mode
+• Refreshing the article does not produce a 404
+• Googlebot user agent requests return HTTP 200
+• `/blog` works through direct access
+• Other valid React routes work through direct access
+• Existing static files remain accessible
+• The XML sitemap remains accessible
+• The canonical URL uses `https://gusi.nyc`
+• Unknown URLs display the proper React Not Found page
+• The production deployment includes the `.htaccess` file
+• No homepage redirect is used as a workaround
+• No console or network errors are introduced
+
+## Completion Report
+
+After deployment, provide:
+
+1. The files that were changed.
+2. The production deployment date.
+3. Confirmation that `.htaccess` exists in the production document root.
+4. The HTTP status returned by the article URL.
+5. The results of the Googlebot user agent test.
+6. Confirmation that direct access and browser refresh were tested.
+7. Confirmation that the sitemap and canonical URLs still use `https://gusi.nyc`.
+8. Screenshots showing the article opened directly in an Incognito browser.

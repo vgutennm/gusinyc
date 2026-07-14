@@ -1,11 +1,13 @@
-# SPA fallback: send any non-file/non-directory request to index.html
-# so wouter client-side routes (e.g. /press) work on direct hits.
+# SPA fallback: send any request that is not a real file to index.html so
+# client-side routes (e.g. /press, /blog, /blog/<slug>) work on direct hits.
+# Note: directories are intentionally NOT exempted — asset folders like
+# /blog/ or /gallery/ contain no index.html, so a bare directory URL must
+# fall through to the app instead of returning a 403 directory listing.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
 
