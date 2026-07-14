@@ -44,10 +44,14 @@ Options -Indexes
   RewriteCond %{REQUEST_FILENAME}/index.html -f
   RewriteRule ^(.*?)/?$ $1/index.html [L]
 
-  # 3. Unknown blog slugs must return a real 404
+  # 3. "Inside GUSI" gallery lives on the homepage; /space is not an app
+  #    route, so send visitors to the homepage space section (single hop).
+  RewriteRule ^space/?$ https://gusi.nyc/#space [R=301,NE,L]
+
+  # 4. Unknown blog slugs must return a real 404
   RewriteRule ^blog/ - [R=404,L]
 
-  # 4. SPA fallback for any remaining client-side routes
+  # 5. SPA fallback for any remaining client-side routes
   RewriteRule ^ index.html [L]
 </IfModule>
 
