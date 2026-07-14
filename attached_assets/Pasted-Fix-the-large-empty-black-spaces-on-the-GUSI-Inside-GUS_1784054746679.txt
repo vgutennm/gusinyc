@@ -1,0 +1,238 @@
+Fix the large empty black spaces on the GUSI “Inside GUSI” gallery page shown in the attached screenshots.
+
+Page to fix:
+https://gusi.nyc/space
+
+Objective:
+Remove all unintended blank gallery areas while preserving the current page design, image captions, typography, colors, navigation, background, animations, and overall editorial appearance.
+
+Do not redesign the page. Only fix the gallery image rendering and layout issue.
+
+The screenshots show multiple large empty black rectangles where gallery images should be displayed. These gaps appear beside and below other images and make the gallery look incomplete.
+
+Investigate the current implementation and identify the actual cause. Check for:
+
+1. Missing or incorrect image paths
+2. Case sensitive filename mismatches
+3. Images that return 404 or fail to decode
+4. Empty gallery records
+5. Undefined or blank image sources
+6. Hard coded grid positions
+7. Empty spacer elements
+8. Fixed height wrappers remaining after an image fails
+9. CSS Grid cells reserved for missing images
+10. Masonry calculations running before images finish loading
+11. Lazy loaded images that never render
+12. Different desktop and mobile gallery datasets
+13. Assets not included in the production build
+
+Use the browser console and network panel to identify all failed image requests and layout errors.
+
+Required fix:
+
+1. Validate every gallery image record before rendering it.
+2. Do not render any gallery item without a valid image source.
+3. Correct every invalid asset path and filename.
+4. Use root relative paths for files in the public directory, such as:
+
+/images/gusi-interior-01.webp
+
+Do not use fragile paths such as:
+
+../../images/gusi-interior-01.webp
+
+5. Confirm filename capitalization exactly matches the deployed asset.
+6. Remove any empty gallery placeholders or spacer elements.
+7. Remove fixed height or minimum height values from failed or empty image wrappers.
+8. Ensure an image failure removes that entire gallery item so it does not leave an empty rectangle.
+9. Preserve meaningful existing captions and alt text.
+10. Keep the existing Load More button working.
+
+Use a resilient masonry style layout that automatically closes gaps. Prefer native CSS rather than adding a new library.
+
+Recommended implementation:
+
+.gusi-gallery {
+  column-count: 3;
+  column-gap: 18px;
+}
+
+.gusi-gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 18px;
+  break-inside: avoid;
+  vertical-align: top;
+}
+
+.gusi-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .gusi-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .gusi-gallery {
+    column-count: 1;
+  }
+}
+
+If the current visual design requires CSS Grid instead of CSS columns, use automatic dense placement and do not hard code empty positions:
+
+.gusi-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  gap: 18px;
+}
+
+Do not use empty spacer divs.
+
+Do not use hard coded grid row or column values unless every referenced image is confirmed to exist.
+
+Filter gallery data before rendering:
+
+const validGalleryImages = galleryImages.filter(
+  image =>
+    image &&
+    typeof image.src === "string" &&
+    image.src.trim().length > 0
+);
+
+Add image failure handling so a failed asset is removed from the layout:
+
+const [failedImages, setFailedImages] = useState(new Set());
+
+const visibleImages = validGalleryImages.filter(
+  image => !failedImages.has(image.src)
+);
+
+On the image:
+
+<img
+  src={image.src}
+  alt={image.alt || ""}
+  loading="lazy"
+  decoding="async"
+  onError={() => {
+    setFailedImages(previous => {
+      const updated = new Set(previous);
+      updated.add(image.src);
+      return updated;
+    });
+
+    if (import.meta.env.DEV) {
+      console.warn(`Gallery image failed to load: ${image.src}`);
+    }
+  }}
+/>
+
+The first main gallery image visible above the fold may use:
+
+loading="eager"
+fetchPriority="high"
+
+Do not leave a wrapper rendered after the image fails.
+
+Remove CSS such as:
+
+height: 600px;
+min-height: 600px;
+
+from normal gallery item wrappers unless the height is intentionally required for a real image.
+
+Use:
+
+height: auto;
+min-height: 0;
+
+Make sure the Load More logic only uses valid images:
+
+const displayedImages = visibleImages.slice(0, visibleCount);
+const hasMore = visibleCount < visibleImages.length;
+
+The Load More button must:
+
+1. Add real images only
+2. Reflow the masonry layout correctly
+3. Disappear when no more valid images remain
+4. Never create empty placeholders
+5. Never count failed images as visible images
+
+Accessibility:
+
+Every meaningful interior image must have descriptive alt text, such as:
+
+GUSI ground floor bar and dining room in Greenwich Village
+
+Candlelit dining tables inside GUSI restaurant
+
+GUSI first floor dining room with original artwork
+
+Do not use filenames as alt text.
+
+Performance:
+
+1. Continue using optimized WebP or AVIF images where available
+2. Do not load the full gallery immediately on mobile
+3. Prevent cumulative layout shift by including accurate image dimensions where possible
+4. Do not add a heavy masonry library
+5. Confirm all gallery assets are included in the production build
+
+Test all of the following:
+
+Routes:
+https://gusi.nyc/space
+https://gusi.nyc/space/
+https://gusi.nyc/space?test=1
+
+Viewport widths:
+1440px
+1024px
+768px
+430px
+390px
+
+Test conditions:
+Normal refresh
+Hard refresh
+Incognito session
+Slow 3G throttling
+Direct navigation to /space
+Navigation to /space from another page
+Repeated Load More clicks
+Rapid scrolling before all images finish loading
+Production build
+
+Acceptance criteria:
+
+1. No large empty black rectangles remain
+2. Every rendered gallery item contains a valid image
+3. All visible image requests return HTTP 200
+4. No broken image icons appear
+5. No console errors appear
+6. Images flow naturally around different image heights
+7. Desktop, tablet, and mobile layouts look intentional
+8. Navigation remains correctly positioned
+9. Captions remain visible and associated with the correct images
+10. Load More continues to work
+11. No unrelated page or design changes are made
+
+After completing the fix, provide a report that includes:
+
+1. Root cause
+2. Files changed
+3. Image paths corrected
+4. Layout method used
+5. Desktop test results
+6. Mobile test results
+7. Production URL tested
+8. Confirmation that all gallery image requests return HTTP 200
+9. Before and after screenshots

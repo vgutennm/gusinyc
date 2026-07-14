@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useGalleryExpansion, GalleryExpandButton } from "@/components/GalleryExpander";
 
@@ -218,12 +219,19 @@ const IMAGES: GalleryImage[] = [
     caption: "Looking in from Sixth Avenue.",
     width: 1600,
     height: 1200,
+    span: "wide",
   },
 ];
 
+const VALID_IMAGES = IMAGES.filter(
+  (image) => image && typeof image.src === "string" && image.src.trim().length > 0,
+);
+
 export function Gallery() {
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+  const images = VALID_IMAGES.filter((image) => !failedImages.has(image.src));
   const { visibleItems, canExpand, expanded, toggle, sectionRef } =
-    useGalleryExpansion(IMAGES);
+    useGalleryExpansion(images, 9);
 
   return (
     <section
@@ -250,7 +258,10 @@ export function Gallery() {
           </p>
         </motion.div>
 
-        <div id="gallery-grid" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+        <div
+          id="gallery-grid"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 [grid-auto-flow:dense]"
+        >
           {visibleItems.map((img, idx) => {
             const spanClass =
               img.span === "wide"
@@ -282,6 +293,16 @@ export function Gallery() {
                   height={img.height}
                   loading="lazy"
                   decoding="async"
+                  onError={() => {
+                    setFailedImages((previous) => {
+                      const updated = new Set(previous);
+                      updated.add(img.src);
+                      return updated;
+                    });
+                    if (import.meta.env.DEV) {
+                      console.warn(`Gallery image failed to load: ${img.src}`);
+                    }
+                  }}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-gusi-charcoal/85 via-gusi-charcoal/10 to-transparent pointer-events-none" />
