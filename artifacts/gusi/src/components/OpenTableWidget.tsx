@@ -97,7 +97,7 @@ export function OpenTableWidget() {
           </span>
         </div>
       </section>
-      <p className="mt-2 text-xs text-gusi-porcelain/50 font-light italic text-center sm:text-left">
+      <p className="mt-2 text-xs text-gusi-porcelain/70 font-light italic text-center sm:text-left">
         Bookings open through OpenTable. Widget not loading?{" "}
         <a
           href={OPEN_TABLE_URL}

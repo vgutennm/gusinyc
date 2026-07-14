@@ -65,7 +65,7 @@ export function StoriesPreview() {
                   </p>
                   <span
                     className={`mt-auto uppercase tracking-[0.2em] text-[11px] ${
-                      isPublished ? "text-gusi-burgundy" : "text-gusi-gold"
+                      isPublished ? "text-gusi-burgundy" : "text-gusi-gold-deep"
                     }`}
                   >
                     {isPublished ? "Read Story" : "Coming Soon"}

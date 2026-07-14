@@ -93,7 +93,7 @@ export function MusicPlayer({ songTitle, artistName, description, audioSrc, comp
       <div className={compact ? "sm:flex-1 min-w-0" : ""}>
         <h3 className="font-serif text-xl sm:text-2xl text-gusi-gold leading-tight truncate">{songTitle}</h3>
         {artistName && (
-          <p className="text-xs uppercase tracking-[0.25em] text-gusi-porcelain/50 mt-1">{artistName}</p>
+          <p className="text-xs uppercase tracking-[0.25em] text-gusi-porcelain/70 mt-1">{artistName}</p>
         )}
         {description && <p className="text-sm text-gusi-porcelain/70 font-light mt-2">{description}</p>}
       </div>
@@ -130,7 +130,7 @@ export function MusicPlayer({ songTitle, artistName, description, audioSrc, comp
         </div>
 
         <div className={`flex items-center gap-3 ${compact ? "sm:w-64" : "w-full"}`}>
-          <span className="text-[11px] tabular-nums text-gusi-porcelain/50 w-9 text-right">
+          <span className="text-[11px] tabular-nums text-gusi-porcelain/70 w-9 text-right">
             {formatTime(currentTime)}
           </span>
           <div
@@ -143,7 +143,7 @@ export function MusicPlayer({ songTitle, artistName, description, audioSrc, comp
           >
             <div className="h-full bg-gusi-gold transition-[width] duration-200" style={{ width: `${progress}%` }} />
           </div>
-          <span className="text-[11px] tabular-nums text-gusi-porcelain/50 w-9">{formatTime(duration)}</span>
+          <span className="text-[11px] tabular-nums text-gusi-porcelain/70 w-9">{formatTime(duration)}</span>
         </div>
       </div>
     </div>

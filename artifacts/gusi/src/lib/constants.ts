@@ -20,7 +20,7 @@ export const MEDIA_CONTACT = {
   phoneTel: "+19173743756",
 };
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/gusi.nyc",
+  instagram: "https://www.instagram.com/gusi.nyc",
   tiktok: "https://tiktok.com/@gusi.nyc",
   facebook: "https://facebook.com/gusi.nyc",
   youtube: "https://youtube.com/@gusi.nyc",

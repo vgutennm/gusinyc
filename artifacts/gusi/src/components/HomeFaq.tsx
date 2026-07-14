@@ -77,7 +77,7 @@ export function HomeFaq() {
                     <ChevronDown
                       aria-hidden="true"
                       strokeWidth={1.5}
-                      className={`h-5 w-5 shrink-0 text-gusi-gold transition-transform duration-300 ${
+                      className={`h-5 w-5 shrink-0 text-gusi-gold-deep transition-transform duration-300 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />

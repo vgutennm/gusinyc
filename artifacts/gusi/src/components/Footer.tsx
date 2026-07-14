@@ -4,7 +4,7 @@ import { GOOGLE_REVIEW_URL, GOOGLE_BUSINESS_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-gusi-charcoal text-gusi-porcelain/40 py-10 sm:py-12 border-t border-gusi-ivory/5 text-sm font-light tracking-wide">
+    <footer className="bg-gusi-charcoal text-gusi-porcelain/70 py-10 sm:py-12 border-t border-gusi-ivory/5 text-sm font-light tracking-wide">
       <div className="container mx-auto px-6">
         <div className="flex justify-center pb-8 mb-8 border-b border-gusi-ivory/10">
           <div className="w-full max-w-xl flex flex-col items-center text-center gap-4 rounded-2xl border border-gusi-gold/25 bg-gusi-gold/[0.04] px-6 py-8 sm:px-10 sm:py-9">
@@ -19,7 +19,7 @@ export function Footer() {
                 decoding="async"
                 draggable={false}
               />
-              <span className="uppercase tracking-[0.28em] text-[10px] text-gusi-porcelain/50">
+              <span className="uppercase tracking-[0.28em] text-[10px] text-gusi-porcelain/70">
                 Courtesy of inKind
               </span>
             </div>

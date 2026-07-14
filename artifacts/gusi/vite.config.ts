@@ -25,8 +25,6 @@ function buildSitemap(): string {
   const staticEntries = `  <url>
     <loc>${SITE_URL}/</loc>
     <lastmod>2026-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/" />
     <image:image>
@@ -45,25 +43,24 @@ function buildSitemap(): string {
     </image:image>
   </url>
   <url>
+    <loc>${SITE_URL}/events</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/events" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/events" />
+  </url>
+  <url>
     <loc>${SITE_URL}/events/private-events</loc>
     <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/events/private-events" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/events/private-events" />
   </url>
   <url>
     <loc>${SITE_URL}/press</loc>
     <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/press" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/press" />
   </url>
   <url>
     <loc>${SITE_URL}/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog" />
   </url>`;
@@ -77,9 +74,7 @@ function buildSitemap(): string {
       const loc = `${SITE_URL}/blog/${post.slug}`;
       return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${post.datePublished}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>${post.dateModified ?? post.datePublished}</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="${loc}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${loc}" />
     <image:image>

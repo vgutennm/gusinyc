@@ -1,3 +1,19 @@
+# Canonical domain: https://gusi.nyc (single-hop 301, preserves path + query).
+# Note: https://www.gusi.nyc only works if DNS + the SSL certificate cover the
+# www hostname; otherwise browsers fail before reaching Apache (DNS/SSL action
+# required at the hosting level, not in this file).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www (any scheme) -> https://gusi.nyc, one hop
+  RewriteCond %{HTTP_HOST} ^www\.gusi\.nyc$ [NC]
+  RewriteRule ^(.*)$ https://gusi.nyc/$1 [R=301,L]
+
+  # http -> https on the bare domain
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://gusi.nyc/$1 [R=301,L]
+</IfModule>
+
 # Custom 404 page (prerendered, branded, noindex)
 ErrorDocument 404 /404.html
 

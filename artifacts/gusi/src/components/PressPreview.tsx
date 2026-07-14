@@ -17,7 +17,7 @@ export function PressPreview() {
           transition={{ duration: 0.7 }}
           className="flex flex-col items-center"
         >
-          <span className="text-gusi-gold uppercase tracking-[0.3em] text-[11px] sm:text-xs mb-5">
+          <span className="text-gusi-gold-deep uppercase tracking-[0.3em] text-[11px] sm:text-xs mb-5">
             Now Opening in Greenwich Village
           </span>
           <h2

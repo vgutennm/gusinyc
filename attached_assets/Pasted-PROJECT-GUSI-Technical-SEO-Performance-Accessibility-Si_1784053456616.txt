@@ -1,0 +1,671 @@
+PROJECT
+
+GUSI Technical SEO, Performance, Accessibility, Sitemap, Robots and AI Discovery Updates
+
+LIVE DOMAIN
+
+https://gusi.nyc/
+
+CANONICAL DOMAIN RULE
+
+The only canonical production domain is:
+
+https://gusi.nyc/
+
+Do not use or introduce:
+
+https://gusinyc.com/
+https://www.gusi.nyc/
+http://gusi.nyc/
+http://www.gusi.nyc/
+
+GENERAL REQUIREMENTS
+
+1. Create a complete backup before making changes.
+
+2. Do not redesign the website.
+
+3. Preserve all current content, navigation, images, reservations, event calls to action, OpenTable integration, analytics, schema, responsive layouts, and existing URLs.
+
+4. Do not remove any current homepage sections.
+
+5. Do not modify visible website copy unless specifically stated in this specification.
+
+6. Do not publish placeholder content.
+
+7. Complete all testing in the Replit development environment before publishing.
+
+8. After deployment, test the live production domain.
+
+SECTION 1
+
+VERIFY HOMEPAGE H1
+
+The homepage should contain exactly one semantic H1 element.
+
+Required H1:
+
+GUSI: Modern Eastern European Dining in Greenwich Village
+
+The H1 appears to be present already.
+
+Do not add a second H1.
+
+Verify that:
+
+1. The heading is rendered as an actual h1 HTML element.
+
+2. There is only one h1 element on the homepage.
+
+3. It is present in the server delivered or rendered page content available to search engine crawlers.
+
+4. The visual appearance remains unchanged.
+
+SECTION 2
+
+ENFORCE THE CANONICAL DOMAIN
+
+Configure permanent redirects so every nonpreferred homepage and route version resolves to the equivalent URL on:
+
+https://gusi.nyc/
+
+Required behavior:
+
+http://gusi.nyc/* redirects to https://gusi.nyc/*
+http://www.gusi.nyc/* redirects to https://gusi.nyc/*
+https://www.gusi.nyc/* redirects to https://gusi.nyc/*
+
+Requirements:
+
+1. Use HTTP 301 permanent redirects.
+
+2. Preserve the full path.
+
+3. Preserve query parameters.
+
+4. Avoid redirect chains.
+
+5. A nonpreferred URL should reach the final canonical URL in one redirect wherever server configuration permits.
+
+6. Do not redirect every route to the homepage.
+
+7. Continue supporting the website’s selected trailing slash convention consistently.
+
+8. Verify that all canonical tags use the gusi.nyc domain.
+
+9. Verify that Open Graph URLs, schema URLs, sitemap URLs, internal absolute links, and structured data do not use gusinyc.com.
+
+Apache implementation:
+
+Update the production Apache configuration or .htaccess file as appropriate.
+
+Do not make assumptions about DNS.
+
+If the www hostname is not configured at the DNS or SSL level, document the required DNS or certificate action instead of hiding the error.
+
+SECTION 3
+
+CREATE A CLEAN ROBOTS.TXT
+
+Create or replace the production file at:
+
+https://gusi.nyc/robots.txt
+
+Use this content:
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gusi.nyc/sitemap.xml
+
+Requirements:
+
+1. Do not include a Host directive.
+
+2. Do not reference gusinyc.com.
+
+3. Do not block website CSS, JavaScript, images, fonts, pages, or blog posts.
+
+4. Do not add a large list of redundant Allow directives for individual crawlers.
+
+5. Serve the file with HTTP 200.
+
+6. Serve it as text/plain.
+
+7. Confirm there are no HTML tags, redirect pages, or application shell markup in the response.
+
+SECTION 4
+
+CREATE A VALID XML SITEMAP
+
+Create a valid sitemap at:
+
+https://gusi.nyc/sitemap.xml
+
+Generate the sitemap from the website’s actual production routes rather than maintaining an incomplete duplicate list wherever practical.
+
+Include only URLs that:
+
+1. Use https://gusi.nyc.
+
+2. Are canonical.
+
+3. Return HTTP 200.
+
+4. Are intended for indexing.
+
+5. Are not redirected.
+
+6. Are not duplicate route versions.
+
+7. Are not application assets, APIs, tracking URLs, or query parameter variations.
+
+The sitemap should include all applicable public pages, including:
+
+Homepage
+Story page
+Space page
+Menu page
+Bar page
+Playlist page
+Press page
+Blog index
+Published blog articles
+Events page
+Contact or visit page
+
+Use the exact routes currently implemented by the application.
+
+Do not invent routes based only on the labels above.
+
+Requirements:
+
+1. Use valid XML sitemap protocol formatting.
+
+2. Use fully qualified canonical URLs.
+
+3. Include accurate lastmod values when reliable modification dates are available.
+
+4. Do not add fabricated changefreq or priority values.
+
+5. Escape XML characters correctly.
+
+6. Serve the sitemap with HTTP 200.
+
+7. Use an XML content type.
+
+8. Confirm the sitemap does not return the React application HTML shell.
+
+9. Add the sitemap location to robots.txt.
+
+10. Provide the final sitemap URL for submission to Google Search Console and Bing Webmaster Tools.
+
+SECTION 5
+
+CREATE LLMS.TXT
+
+Create:
+
+https://gusi.nyc/llms.txt
+
+Serve it as text/plain with HTTP 200.
+
+Use clear Markdown style plain text.
+
+Initial content:
+
+# GUSI
+
+GUSI is a modern Eastern European restaurant with Mediterranean influences located at 432 Sixth Avenue in Greenwich Village, New York City.
+
+GUSI offers modern interpretations of Eastern European comfort food, hand folded dumplings, seasonal borscht, house made spreads, Georgian wine, natural wine, handcrafted cocktails, and house infused vodka.
+
+## Key Information
+
+Location: 432 Sixth Avenue, New York, NY 10011
+Neighborhood: Greenwich Village
+Phone: +1 646 370 5413
+Website: https://gusi.nyc/
+Reservations: Available through the reservation links on the website
+Private events: Dedicated private dining space for events and celebrations of up to 70 guests
+
+## Main Pages
+
+Homepage: https://gusi.nyc/
+Story: Use the final canonical Story page URL
+Space: Use the final canonical Space page URL
+Menu: Use the final canonical Menu page URL
+Bar: Use the final canonical Bar page URL
+Events: Use the final canonical Events page URL
+Blog: Use the final canonical Blog page URL
+Contact: Use the final canonical Contact or Visit page URL
+
+## Restaurant Topics
+
+Modern Eastern European cuisine
+Mediterranean influences
+Greenwich Village dining
+Private dining and events
+Hand folded dumplings
+Borscht
+Georgian wine
+Natural wine
+House infused vodka
+Craft cocktails
+
+Implementation requirements:
+
+1. Replace the descriptive route labels above with the website’s real canonical URLs.
+
+2. Do not include unpublished pages.
+
+3. Do not include marketing claims that cannot be verified from the website.
+
+4. Do not claim awards, rankings, historical facts, menu items, hours, or services that are not currently accurate.
+
+5. Keep the file easy for humans and automated systems to read.
+
+6. Add a brief comment in the source documentation explaining that llms.txt is an emerging discovery convention and is not a guaranteed ranking mechanism.
+
+SECTION 6
+
+PERFORMANCE OPTIMIZATION
+
+The current Lighthouse results supplied for review show:
+
+Mobile performance: 62
+Desktop performance: 84
+Mobile Largest Contentful Paint: 55.2 seconds
+Mobile First Contentful Paint: 4.7 seconds
+Approximate page payload: 10.8 MB to 10.9 MB
+
+Investigate the actual Lighthouse trace before making assumptions.
+
+First identify:
+
+1. The mobile Largest Contentful Paint element.
+
+2. The exact asset or request responsible for the delayed LCP.
+
+3. The largest image, video, font and JavaScript payloads.
+
+4. Render blocking CSS and JavaScript.
+
+5. JavaScript that is unused on the homepage.
+
+6. Resources with inefficient browser cache lifetimes.
+
+7. Any third party script delaying rendering.
+
+IMAGE OPTIMIZATION
+
+1. Convert oversized photographic images to modern formats such as WebP or AVIF where browser support permits.
+
+2. Preserve high quality source images.
+
+3. Generate appropriately sized responsive image variants.
+
+4. Use srcset and sizes for responsive image delivery.
+
+5. Do not serve a full desktop image to small mobile screens when a smaller version is sufficient.
+
+6. Set explicit width and height attributes or aspect ratio values to prevent layout shifts.
+
+7. Lazy load images below the first viewport.
+
+8. Do not lazy load the primary LCP image.
+
+9. Give the LCP image high fetch priority when appropriate.
+
+10. Preload the LCP image only after confirming it is the actual LCP resource.
+
+11. Ensure mobile users do not download unused hidden desktop background images.
+
+12. Preserve image alt text.
+
+13. Do not visibly degrade restaurant photography.
+
+JAVASCRIPT OPTIMIZATION
+
+1. Remove unused application JavaScript where safe.
+
+2. Split route specific or feature specific code where practical.
+
+3. Defer noncritical scripts.
+
+4. Delay optional third party functionality until needed where doing so will not break analytics, reservations or consent requirements.
+
+5. Do not remove Google Analytics or Google Tag Manager.
+
+6. Do not load heavy gallery, player, reservation, map or animation code before the user reaches or interacts with the associated component unless required.
+
+7. Confirm that the OpenTable widget and music player still function.
+
+CSS AND FONT OPTIMIZATION
+
+1. Reduce render blocking resources.
+
+2. Inline only genuinely critical CSS when appropriate.
+
+3. Load noncritical CSS without delaying the initial render.
+
+4. Remove unused CSS only after visual regression testing.
+
+5. Use font display swap for locally served web fonts where appropriate.
+
+6. Preload only fonts used above the fold.
+
+7. Avoid preloading every font weight.
+
+CACHING AND COMPRESSION
+
+Configure production cache behavior where supported.
+
+1. Fingerprinted JavaScript, CSS, images and fonts should use long cache lifetimes.
+
+2. HTML should remain revalidatable so updates are visible.
+
+3. Enable Brotli or gzip compression for text resources where supported.
+
+4. Do not cache mutable HTML for a year.
+
+5. Do not apply immutable caching to files that can change without a filename change.
+
+PERFORMANCE ACCEPTANCE TARGETS
+
+Treat these as targets rather than guarantees because Lighthouse scores can vary between runs.
+
+Mobile target:
+
+Performance score of at least 80
+Largest Contentful Paint below 3.5 seconds in the controlled Lighthouse test
+Cumulative Layout Shift below 0.1
+Total Blocking Time below 200 milliseconds
+
+Desktop target:
+
+Performance score of at least 90
+Largest Contentful Paint below 2.5 seconds
+Cumulative Layout Shift below 0.1
+
+Run at least three tests after deployment and report the median result.
+
+Provide before and after screenshots or shareable PageSpeed reports.
+
+SECTION 7
+
+ACCESSIBILITY CORRECTIONS
+
+The audit reports an accessibility score of 93 and identifies two primary issues.
+
+VIEWPORT
+
+Remove any viewport setting that blocks zooming.
+
+Do not use:
+
+user-scalable=no
+maximum-scale=1
+
+Use an accessible viewport configuration such as:
+
+width=device-width, initial-scale=1
+
+Users must be able to zoom the website.
+
+COLOR CONTRAST
+
+Identify the exact elements failing contrast requirements.
+
+Adjust only the required foreground or background colors.
+
+Requirements:
+
+1. Preserve the GUSI visual identity.
+
+2. Meet WCAG AA contrast wherever reasonably possible.
+
+3. Pay special attention to small text, muted gold text, buttons, captions and footer links.
+
+4. Do not globally change the entire color palette.
+
+5. Test normal, hover, focus and disabled states.
+
+6. Provide a list of every adjusted element.
+
+LINK PURPOSE
+
+Review identical link text such as Reserve, Menu, Contact or Learn More.
+
+Ensure that links with identical accessible names lead to the same purpose or receive context appropriate accessible labels.
+
+SECTION 8
+
+SOCIAL MEDIA LINK
+
+The Instagram link appears to already exist on the live website.
+
+Required action:
+
+1. Verify that the footer or social media section links to:
+
+https://www.instagram.com/gusi.nyc
+
+2. Open the external link safely in a new tab if that matches the current website pattern.
+
+3. Add rel="noopener noreferrer" when using target="_blank".
+
+4. Include an accessible label such as:
+
+Visit GUSI on Instagram
+
+5. Do not add a duplicate Instagram link if one already exists.
+
+SECTION 9
+
+CONTACT FORM
+
+Do not automatically add a contact form until business approval is confirmed.
+
+Prepare the code architecture only if requested.
+
+If approved later, the form should support:
+
+Name
+Email
+Phone
+Inquiry type
+Event date when relevant
+Estimated guest count when relevant
+Message
+Consent acknowledgement
+
+Potential inquiry types:
+
+General inquiry
+Private event
+Press inquiry
+Group dining
+Other
+
+Security requirements:
+
+1. Server side validation.
+
+2. Spam protection.
+
+3. Rate limiting.
+
+4. Honeypot or equivalent bot filtering.
+
+5. Do not expose email delivery credentials in frontend code.
+
+6. Do not store inquiries in browser storage.
+
+7. Show clear success and error messages.
+
+8. Preserve user input when a recoverable error occurs.
+
+9. Add a privacy notice.
+
+10. Confirm the approved recipient email before activation.
+
+Do not implement this section without explicit approval.
+
+SECTION 10
+
+SCHEMA AND METADATA VALIDATION
+
+The website currently contains structured data.
+
+Do not replace valid schema without reviewing it.
+
+Validate the final pages and ensure:
+
+1. All schema URLs use https://gusi.nyc/.
+
+2. Restaurant name, address, phone and website are consistent.
+
+3. No schema uses gusinyc.com.
+
+4. Breadcrumb URLs correspond to real canonical pages.
+
+5. FAQ schema matches visible page content.
+
+6. Event schema is used only for actual scheduled events, not the general private events service page.
+
+7. Opening hours are accurate and consistent with the visible website.
+
+8. Structured data contains no placeholder values.
+
+9. Canonical tags and Open Graph URLs use the correct domain.
+
+10. Each indexable page has a unique title and meta description.
+
+SECTION 11
+
+TESTING
+
+After implementation, test all of the following:
+
+1. Homepage loads normally on mobile and desktop.
+
+2. Main navigation works.
+
+3. Footer navigation works.
+
+4. Reservations work.
+
+5. OpenTable integration works.
+
+6. Menu links work.
+
+7. Events links work.
+
+8. Blog links work.
+
+9. Contact links work.
+
+10. Instagram link works.
+
+11. Music player works.
+
+12. Images and galleries work.
+
+13. Google Analytics and Google Tag Manager remain installed.
+
+14. The homepage contains exactly one H1.
+
+15. Every indexable page contains an appropriate H1.
+
+16. Canonical tags use gusi.nyc.
+
+17. No production page or schema references gusinyc.com.
+
+18. robots.txt returns HTTP 200.
+
+19. sitemap.xml returns valid XML with HTTP 200.
+
+20. llms.txt returns plain text with HTTP 200.
+
+21. All sitemap URLs return HTTP 200.
+
+22. No sitemap URL redirects.
+
+23. HTTP redirects to HTTPS.
+
+24. www redirects to the non www domain.
+
+25. Deep route redirects preserve paths and query strings.
+
+26. Browser zoom is not disabled.
+
+27. No new accessibility errors are introduced.
+
+28. There are no new browser console errors.
+
+29. There are no broken images or blank sections.
+
+30. Mobile layouts remain usable at common viewport widths.
+
+SECTION 12
+
+DELIVERABLES
+
+Provide:
+
+1. List of every changed file.
+
+2. Copy of the final robots.txt.
+
+3. Copy of the final sitemap.xml.
+
+4. Copy of the final llms.txt.
+
+5. List of all URLs included in the sitemap.
+
+6. Confirmation of the final canonical domain.
+
+7. Redirect test results with status codes.
+
+8. Before and after PageSpeed results.
+
+9. List of images compressed or replaced.
+
+10. Total homepage transfer size before and after optimization.
+
+11. Identification of the original and final LCP element.
+
+12. List of accessibility changes.
+
+13. Confirmation that analytics, reservations, events, menu, blog and music functionality remain operational.
+
+14. Any DNS, SSL, Apache or hosting changes still required outside the codebase.
+
+DEFINITION OF DONE
+
+The project is complete only when:
+
+1. The site remains visually and functionally intact.
+
+2. All approved technical changes are live.
+
+3. The canonical domain is consistently https://gusi.nyc/.
+
+4. No content or technical file references gusinyc.com.
+
+5. robots.txt is valid and accessible.
+
+6. sitemap.xml is valid, accessible and complete.
+
+7. llms.txt is accurate and accessible.
+
+8. Mobile performance has materially improved.
+
+9. Browser zoom works.
+
+10. Contrast issues identified by Lighthouse have been corrected.
+
+11. All production tests pass.
+
+12. A written completion report has been provided.
