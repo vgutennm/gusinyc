@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
 import { Link, useRoute } from "wouter";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -98,11 +97,9 @@ export default function BlogPost() {
       <main>
         <section className="bg-gusi-charcoal text-gusi-ivory bg-texture-dark pt-36 sm:pt-40 pb-14 sm:pb-16">
           <div className="container mx-auto px-6 max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
+            {/* No motion wrapper here: this hero must be visible in the
+                prerendered HTML even when JavaScript is disabled. */}
+            <div>
               <Link
                 href="/blog"
                 className="inline-flex items-center gap-2 text-gusi-gold uppercase tracking-[0.25em] text-[11px] sm:text-xs mb-6 hover:text-gusi-ivory transition-colors focus:outline-none focus-visible:text-gusi-ivory"
@@ -115,7 +112,7 @@ export default function BlogPost() {
               <p className="text-gusi-porcelain/60 text-sm tracking-wide">
                 {post.dateDisplay} &middot; {post.readTime}
               </p>
-            </motion.div>
+            </div>
           </div>
         </section>
 

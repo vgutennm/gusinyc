@@ -37,9 +37,9 @@ const IMG_DIMS = {
   cabaretMural: { w: 1050, h: 600 },
 } as const;
 
-const PAGE_TITLE =
+export const PAGE_TITLE =
   "GUSI Opened in Greenwich Village | Eastern European Restaurant & Bar in NYC";
-const PAGE_DESCRIPTION =
+export const PAGE_DESCRIPTION =
   "GUSI, a two-storey Eastern European restaurant and bar with Mediterranean influence, opens Friday, May 8, 2026 at 432 Sixth Avenue in Greenwich Village, NYC.";
 
 const SOCIAL_IMAGE = storefrontWide;

@@ -1,0 +1,586 @@
+# GUSI Blog Static Prerendering and Real 404 Fix
+
+## Project
+
+GUSI Website
+Production domain: https://gusi.nyc
+
+## Current Status
+
+The initial direct routing problem has been resolved.
+
+The live article now returns:
+
+```text
+HTTP/2 200
+```
+
+Direct access also works in a private browser:
+
+```text
+https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+However, additional testing exposed two remaining technical SEO problems.
+
+## Problem 1: The Initial HTML Is Still the Homepage
+
+Running:
+
+```bash
+curl https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+returns the generic homepage HTML rather than article specific HTML.
+
+The initial HTML currently contains:
+
+```html
+<title>GUSI | Modern Eastern European Restaurant in Greenwich Village, NYC</title>
+```
+
+It also contains:
+
+```html
+<link rel="canonical" href="https://gusi.nyc/">
+```
+
+The initial HTML contains homepage Open Graph metadata, homepage structured data, and:
+
+```html
+<div id="root"></div>
+```
+
+The Hummus vs Baba Ganoush article content is not present in the initial server response.
+
+React replaces the metadata and displays the article only after JavaScript executes.
+
+## Problem 2: Unknown Blog URLs Return 200
+
+The following nonexistent URL currently returns HTTP 200:
+
+```text
+https://gusi.nyc/blog/invented-test-article
+```
+
+This creates a soft 404.
+
+A nonexistent article must return a real HTTP 404 response.
+
+## Primary Objective
+
+Prerender all valid blog pages into static HTML during the production build and configure Apache to return a real HTTP 404 for nonexistent blog slugs.
+
+Do not replace the existing routing fix until the new behavior has been tested.
+
+## Required Architecture
+
+Use static site generation or build time prerendering for the blog.
+
+Because GUSI blog articles are known before deployment and do not require live server generated content, full runtime server side rendering is unnecessary.
+
+The preferred output for the article is:
+
+```text
+dist/blog/hummus-vs-baba-ganoush/index.html
+```
+
+The generated file must contain the complete article before JavaScript runs.
+
+React may hydrate the page afterward for navigation and interactive functionality.
+
+## Important Compatibility Requirement
+
+Before implementing, inspect:
+
+```text
+package.json
+vite.config.*
+React Router version
+current route structure
+current blog data structure
+current metadata implementation
+current deployment process
+```
+
+Do not perform an unnecessary major React Router migration.
+
+Use the least disruptive prerendering implementation compatible with the existing application.
+
+Acceptable approaches include:
+
+1. React Router framework prerendering when the existing application is compatible.
+2. A Vite static generation implementation.
+3. A custom build time rendering script using ReactDOM server rendering and StaticRouter.
+4. Another stable static generation approach that creates complete route specific HTML.
+
+Do not use user agent detection.
+
+Do not serve special content only to Googlebot.
+
+Do not use a paid third party rendering service unless separately approved.
+
+## Required Prerendered Routes
+
+Prerender at least:
+
+```text
+/
+/story
+/menu
+/contact
+/events
+/blog
+/blog/hummus-vs-baba-ganoush
+```
+
+Also include every other public route that contains meaningful search content.
+
+The route list must be generated from the authoritative route and blog data rather than maintained through several unrelated manual lists.
+
+## Blog Data Source
+
+Create or preserve a single structured content source for every blog article.
+
+Each article should contain fields equivalent to:
+
+```typescript
+type BlogPost = {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  excerpt: string;
+  content: string;
+  featuredImage: string;
+  featuredImageAlt: string;
+  publishedDate: string;
+  modifiedDate?: string;
+  author: string;
+};
+```
+
+For this article:
+
+```text
+slug: hummus-vs-baba-ganoush
+canonical: https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+Use this content source to generate:
+
+• The article page
+• The blog listing
+• Metadata
+• Structured data
+• Sitemap entries
+• Prerender route entries
+
+Do not duplicate the article information across unrelated files unless technically required.
+
+## Required Initial HTML
+
+The generated article HTML must contain the complete article content.
+
+A request made without executing JavaScript must include:
+
+```html
+<h1>...</h1>
+```
+
+It must also include the article introduction, headings, paragraphs, internal links, image, and other visible article content.
+
+The initial HTML must not consist only of:
+
+```html
+<div id="root"></div>
+```
+
+## Required Article Metadata
+
+The initial HTML for the article must contain:
+
+```html
+<title>Hummus vs Baba Ganoush: Know What's the Difference</title>
+```
+
+```html
+<meta
+  name="description"
+  content="Learn the difference between hummus and baba ganoush, from flavor and texture to ingredients, and discover which Mediterranean spread is right for you."
+>
+```
+
+```html
+<link
+  rel="canonical"
+  href="https://gusi.nyc/blog/hummus-vs-baba-ganoush"
+>
+```
+
+```html
+<meta
+  name="robots"
+  content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+>
+```
+
+Do not leave the homepage canonical in the article’s initial HTML.
+
+Do not place multiple canonical tags on the same page.
+
+## Open Graph Requirements
+
+The initial article HTML must contain page specific Open Graph values:
+
+```html
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gusi.nyc/blog/hummus-vs-baba-ganoush">
+<meta property="og:title" content="Hummus vs Baba Ganoush: Know What's the Difference">
+<meta property="og:description" content="Learn the difference between hummus and baba ganoush, from flavor and texture to ingredients, and discover which Mediterranean spread is right for you.">
+```
+
+Use the correct article featured image.
+
+Include:
+
+```html
+<meta property="og:image" content="ABSOLUTE_IMAGE_URL">
+<meta property="og:image:alt" content="Hummus vs Baba Ganoush">
+```
+
+The image URL must be absolute and publicly accessible.
+
+## Twitter Metadata
+
+Generate article specific Twitter metadata:
+
+```html
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hummus vs Baba Ganoush: Know What's the Difference">
+<meta name="twitter:description" content="Learn the difference between hummus and baba ganoush, from flavor and texture to ingredients, and discover which Mediterranean spread is right for you.">
+<meta name="twitter:image" content="ABSOLUTE_IMAGE_URL">
+```
+
+## Article Structured Data
+
+Add valid `BlogPosting` structured data to the initial HTML.
+
+Include:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://gusi.nyc/blog/hummus-vs-baba-ganoush#article",
+  "url": "https://gusi.nyc/blog/hummus-vs-baba-ganoush",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gusi.nyc/blog/hummus-vs-baba-ganoush"
+  },
+  "headline": "Hummus vs Baba Ganoush: Know What's the Difference",
+  "description": "Learn the difference between hummus and baba ganoush, from flavor and texture to ingredients, and discover which Mediterranean spread is right for you.",
+  "image": "ABSOLUTE_IMAGE_URL",
+  "datePublished": "ACTUAL_PUBLICATION_DATE",
+  "dateModified": "ACTUAL_MODIFIED_DATE",
+  "author": {
+    "@type": "Organization",
+    "name": "GUSI",
+    "url": "https://gusi.nyc/"
+  },
+  "publisher": {
+    "@id": "https://gusi.nyc/#restaurant"
+  }
+}
+```
+
+Use real publication and modification dates.
+
+Do not invent dates.
+
+Preserve the Restaurant and WebSite structured data where appropriate, but do not use homepage only FAQ schema on the blog article unless the same questions and answers are visibly present on that article.
+
+## Breadcrumb Structured Data
+
+The initial HTML must contain article specific breadcrumbs:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://gusi.nyc/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://gusi.nyc/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hummus vs Baba Ganoush",
+      "item": "https://gusi.nyc/blog/hummus-vs-baba-ganoush"
+    }
+  ]
+}
+```
+
+## Real 404 Implementation
+
+Generate a physical custom error page:
+
+```text
+dist/404.html
+```
+
+The page should match the GUSI design and provide useful links to:
+
+• Home
+• Menu
+• Blog
+• Contact
+• Reservations
+
+The page must include:
+
+```html
+<meta name="robots" content="noindex, follow">
+```
+
+Configure Apache:
+
+```apache
+ErrorDocument 404 /404.html
+```
+
+Because valid blog posts will be generated as physical directories and HTML files, Apache can distinguish valid articles from invalid blog slugs.
+
+Use logic equivalent to:
+
+```apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  ErrorDocument 404 /404.html
+
+  # Serve real files and generated directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Unknown blog slugs must return a real 404
+  RewriteRule ^blog/[^/]+/?$ - [R=404,L]
+
+  # Preserve the React fallback for remaining application routes
+  RewriteRule ^ index.html [L]
+</IfModule>
+```
+
+Confirm this configuration works correctly with the actual server.
+
+Do not blindly copy the rules if the hosting environment requires a variation.
+
+## Client Side Unknown Article Handling
+
+The React application must also handle invalid slugs reached through client side navigation.
+
+When `/blog/:slug` does not match an article:
+
+• Do not display another article
+• Do not display the homepage
+• Do not display an empty screen
+• Display the GUSI Not Found experience
+• Add `noindex` to the rendered page
+
+Where practical, navigate to the server backed `/404.html` page so a reload returns a real HTTP 404.
+
+## Sitemap Generation
+
+Generate sitemap blog URLs from the same authoritative blog data.
+
+The sitemap must contain:
+
+```xml
+<loc>https://gusi.nyc/blog/hummus-vs-baba-ganoush</loc>
+```
+
+Do not include:
+
+• Invented article URLs
+• The custom 404 page
+• URLs using `gusinyc.com`
+• Duplicate trailing slash versions
+• Query string versions
+
+## Build Requirements
+
+The production build must generate:
+
+```text
+dist/index.html
+dist/blog/index.html
+dist/blog/hummus-vs-baba-ganoush/index.html
+dist/404.html
+dist/.htaccess
+```
+
+Also generate physical HTML for the other approved public routes.
+
+Confirm `.htaccess` is preserved in the final deployed files.
+
+## Required Validation
+
+### Valid Article Status
+
+Run:
+
+```bash
+curl -I https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+Expected:
+
+```text
+HTTP/2 200
+```
+
+### Invalid Article Status
+
+Run:
+
+```bash
+curl -I https://gusi.nyc/blog/invented-test-article
+```
+
+Expected:
+
+```text
+HTTP/2 404
+```
+
+### Initial HTML Content
+
+Run:
+
+```bash
+curl -s https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+The output must include:
+
+• The article title
+• The article body
+• The article canonical URL
+• Article specific description
+• BlogPosting schema
+• Article breadcrumbs
+
+The output must not use the homepage canonical.
+
+### JavaScript Disabled Test
+
+Disable JavaScript in the browser and open:
+
+```text
+https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+The article must remain readable.
+
+Navigation that requires JavaScript may be limited, but the primary content must be present.
+
+### Metadata Tests
+
+Confirm the source HTML contains only one:
+
+```text
+title
+meta description
+canonical
+robots directive
+og:title
+og:url
+```
+
+Do not rely solely on the browser Elements panel because that may show metadata inserted after JavaScript executes.
+
+Validate the original page source or curl response.
+
+### Googlebot Test
+
+Run:
+
+```bash
+curl -s \
+  -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
+  https://gusi.nyc/blog/hummus-vs-baba-ganoush
+```
+
+Googlebot must receive the same complete article HTML as a normal visitor.
+
+Do not create crawler specific output.
+
+## Regression Tests
+
+Confirm that all of the following still work:
+
+```text
+/
+/story
+/menu
+/contact
+/events
+/blog
+/blog/hummus-vs-baba-ganoush
+```
+
+Test each route through:
+
+• Direct access
+• Incognito access
+• Browser refresh
+• Hard refresh
+• Internal navigation
+• JavaScript disabled access
+
+Confirm JavaScript, CSS, images, fonts, sitemap, robots.txt, and verification files remain accessible.
+
+## Definition of Done
+
+This task is complete only when:
+
+• The real article returns HTTP 200
+• A nonexistent blog slug returns HTTP 404
+• The complete article appears in the initial HTML
+• The article has its own initial title and description
+• The initial canonical points to the article URL
+• Article Open Graph data is present initially
+• BlogPosting schema is present initially
+• Article breadcrumbs are present initially
+• JavaScript disabled visitors can read the article
+• The sitemap is generated from the blog data
+• All production routes continue working
+• No crawler specific rendering is used
+• The deployed output contains physical article HTML files
+
+## Completion Report
+
+After deployment, provide:
+
+1. The prerendering method selected.
+2. The files changed.
+3. The generated production routes.
+4. The output directory structure.
+5. The valid article HTTP status.
+6. The invalid article HTTP status.
+7. Confirmation that the article body appears in curl output.
+8. Confirmation that the article canonical appears in curl output.
+9. Confirmation that JavaScript disabled testing passed.
+10. Confirmation that all existing routes passed regression testing.

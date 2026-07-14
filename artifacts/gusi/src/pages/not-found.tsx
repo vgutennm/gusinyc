@@ -1,8 +1,21 @@
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { applyMeta, restoreMeta } from "@/lib/seo";
 
 export default function NotFound() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const snap = applyMeta(
+      'meta[name="robots"]',
+      "name",
+      "robots",
+      "noindex, follow",
+    );
+    return () => restoreMeta(snap);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gusi-charcoal text-gusi-ivory bg-texture-dark flex flex-col">
       <Header />
@@ -25,13 +38,38 @@ export default function NotFound() {
             >
               Back to Home
             </Link>
+          </div>
+          <nav
+            aria-label="Helpful links"
+            className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm uppercase tracking-[0.2em]"
+          >
+            <Link
+              href="/#menu"
+              className="text-gusi-porcelain/70 hover:text-gusi-gold underline underline-offset-4 decoration-gusi-gold/40 transition-colors duration-300"
+            >
+              Menu
+            </Link>
             <Link
               href="/blog"
-              className="text-gusi-porcelain/70 hover:text-gusi-gold underline underline-offset-4 decoration-gusi-gold/40 text-sm uppercase tracking-[0.2em] transition-colors duration-300"
+              className="text-gusi-porcelain/70 hover:text-gusi-gold underline underline-offset-4 decoration-gusi-gold/40 transition-colors duration-300"
             >
-              Visit the Blog
+              Blog
             </Link>
-          </div>
+            <Link
+              href="/#visit"
+              className="text-gusi-porcelain/70 hover:text-gusi-gold underline underline-offset-4 decoration-gusi-gold/40 transition-colors duration-300"
+            >
+              Contact
+            </Link>
+            <a
+              href="https://www.opentable.com/r/gusi-reservations-new-york?restref=1490239"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gusi-porcelain/70 hover:text-gusi-gold underline underline-offset-4 decoration-gusi-gold/40 transition-colors duration-300"
+            >
+              Reservations
+            </a>
+          </nav>
         </div>
       </main>
       <Footer />

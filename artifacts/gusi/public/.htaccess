@@ -1,14 +1,34 @@
-# SPA fallback: send any request that is not a real file to index.html so
-# client-side routes (e.g. /press, /blog, /blog/<slug>) work on direct hits.
-# Note: directories are intentionally NOT exempted — asset folders like
-# /blog/ or /gallery/ contain no index.html, so a bare directory URL must
-# fall through to the app instead of returning a 403 directory listing.
+# Custom 404 page (prerendered, branded, noindex)
+ErrorDocument 404 /404.html
+
+# Routing for the prerendered site:
+# - Real files are served directly.
+# - Prerendered routes (dist/<route>/index.html) are served without a
+#   trailing-slash redirect so /blog/<slug> answers 200 at the exact URL.
+# - Unknown /blog/... slugs return a real HTTP 404 (no soft-404), because
+#   every valid article exists as a physical directory after the build.
+# - Remaining app routes fall back to the SPA index.html.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule . /index.html [L]
+
+  # 1. Serve real files directly
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # 2. Serve prerendered directory indexes at the slashless URL (no 301)
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+  RewriteRule ^(.+)$ $1/index.html [L]
+
+  # 3. Existing directories (trailing-slash URLs) — let mod_dir serve index.html
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 4. Unknown blog slugs must return a real 404
+  RewriteRule ^blog/ - [R=404,L]
+
+  # 5. SPA fallback for any remaining client-side routes
+  RewriteRule ^ index.html [L]
 </IfModule>
 
 # Long-cache hashed asset files; short-cache html so deploys take effect.

@@ -160,7 +160,8 @@ export function Header() {
       {/* Mobile Menu — portaled to <body> so the scrolled header's backdrop-filter
           can't trap this fixed overlay in a containing block (which made items
           appear only at the top of the page). */}
-      {createPortal(
+      {typeof document !== "undefined" &&
+        createPortal(
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div

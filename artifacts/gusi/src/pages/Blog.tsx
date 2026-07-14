@@ -13,8 +13,8 @@ import {
   type MetaSnapshot,
 } from "@/lib/seo";
 
-const PAGE_TITLE = "Stories From GUSI | Eastern European Food, Wine & Cocktail Culture";
-const PAGE_DESCRIPTION =
+export const PAGE_TITLE = "Stories From GUSI | Eastern European Food, Wine & Cocktail Culture";
+export const PAGE_DESCRIPTION =
   "Stories from GUSI in Greenwich Village — Eastern European culinary heritage, Georgian wine, house infused vodka, and the craftsmanship behind every dish.";
 
 export default function Blog() {

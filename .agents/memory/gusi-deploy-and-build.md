@@ -29,3 +29,9 @@ description: How the gusi.nyc site ships, the committed-dist requirement, and th
 `screenshot` captures from the top of the page and cannot scroll. To see lower sections (e.g. footer), use a tall `viewport_size` height (max 3000) rather than expecting a scrolled view.
 
 The homepage Hero is `min-h-[100svh]`, so it always fills the viewport and pushes everything below the fold no matter how tall you make the viewport. To capture a specific below-fold section, navigate to its anchor hash (e.g. `path="/#dishes"`, `/#gallery`, `/#faq`) — Home.tsx runs a hash-scroll effect on mount, so the screenshot lands on that section.
+
+## Prerendering (added July 2026)
+- Build now: client vite build → SSR bundle (.prerender/, deleted after) → scripts/prerender.mjs writes dist/<route>/index.html for all PRERENDER_PAGES (src/data/seo.ts, derived from BLOG_POSTS) + dist/404.html.
+- **Do NOT use `vite preview` to validate prerendered pages** — its SPA fallback rewrites every route to root index.html. Use a plain static server (`python3 -m http.server`) instead.
+- New blog posts: add to BLOG_POSTS, rebuild, then deploy — prerender routes and sitemap both derive from it automatically.
+- .htaccess serves <path>/index.html at slashless URLs without a 301; unknown /blog/* returns real HTTP 404 via ErrorDocument 404 /404.html.

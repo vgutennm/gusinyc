@@ -28,8 +28,8 @@ const IMG_DIMS = {
   tastingSpread: { w: 884, h: 1076 },
 } as const;
 
-const PAGE_TITLE = "Private Events in Greenwich Village NYC | GUSI";
-const PAGE_DESCRIPTION =
+export const PAGE_TITLE = "Private Events in Greenwich Village NYC | GUSI";
+export const PAGE_DESCRIPTION =
   "Host private events, celebrations, parties, client meetings, and business functions at GUSI in Greenwich Village NYC. Private floor available for up to 70 guests.";
 
 const SOCIAL_IMAGE = groundFloorInterior;

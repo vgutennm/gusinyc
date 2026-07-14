@@ -14,6 +14,7 @@ export type BlogPost = {
   imageAlt: string;
   image: string;
   datePublished: string;
+  dateModified?: string;
   dateDisplay: string;
   readTime: string;
   faq: BlogFaq[];
@@ -262,7 +263,7 @@ function HummusVsBabaGanoushBody() {
 export const BLOG_POSTS: Record<string, BlogPost> = {
   "hummus-vs-baba-ganoush": {
     slug: "hummus-vs-baba-ganoush",
-    metaTitle: "Hummus vs Baba Ganoush: What Is the Difference?",
+    metaTitle: "Hummus vs Baba Ganoush: Know What's the Difference",
     metaDescription:
       "Learn the difference between hummus and baba ganoush, from flavor and texture to ingredients, and discover which Mediterranean spread is right for you.",
     h1: "Hummus vs Baba Ganoush: Which Mediterranean Spread Should You Try First?",
