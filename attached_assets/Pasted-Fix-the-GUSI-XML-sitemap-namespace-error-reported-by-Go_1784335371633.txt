@@ -1,0 +1,97 @@
+Fix the GUSI XML sitemap namespace error reported by Google Search Console.
+
+Production site:
+[https://gusi.nyc/](https://gusi.nyc/)
+
+Current sitemap:
+[https://gusi.nyc/sitemap.xml](https://gusi.nyc/sitemap.xml)
+
+Issue reported by Google Search Console:
+“Sitemap can be read, but has errors”
+“Incorrect namespace”
+Parent tag: url
+Tag: image
+Reported near line 10
+
+Root cause to verify:
+The sitemap appears to use image sitemap tags such as `<image:image>` without correctly declaring the Google image sitemap namespace on the root `<urlset>` element.
+
+Required work:
+
+1. Inspect the sitemap generation code and identify the exact cause of the namespace error.
+
+2. Update the root `<urlset>` element so it declares both the standard sitemap namespace and the Google image sitemap namespace:
+
+```xml
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+```
+
+3. Confirm that all image sitemap entries use valid image sitemap syntax:
+
+```xml
+<image:image>
+  <image:loc>https://gusi.nyc/path-to-image.jpg</image:loc>
+</image:image>
+```
+
+4. Do not use an unprefixed `<image>` tag.
+
+5. Do not remove valid page URLs or image entries merely to hide the error. Correct the XML structure properly.
+
+6. Confirm that every sitemap page URL:
+
+Uses `https://gusi.nyc/`
+
+Returns HTTP 200
+
+Is canonical
+
+Is indexable
+
+Does not redirect
+
+Does not reference `gusinyc.com`
+
+7. Confirm that every image URL included in the sitemap:
+
+Uses an absolute HTTPS URL
+
+Returns HTTP 200
+
+Points to the correct production asset
+
+Does not reference `gusinyc.com`
+
+8. Preserve the existing sitemap location:
+
+[https://gusi.nyc/sitemap.xml](https://gusi.nyc/sitemap.xml)
+
+9. Confirm that robots.txt still includes:
+
+```txt
+Sitemap: https://gusi.nyc/sitemap.xml
+```
+
+10. Validate the final sitemap as XML before deployment.
+
+11. After deployment, test the live production sitemap and provide a completion report containing:
+
+The exact file or code changed
+
+The root cause
+
+The final live sitemap URL
+
+The total number of page URLs
+
+The total number of image entries
+
+HTTP status results for the sitemap and every listed page URL
+
+Confirmation that the XML validates successfully
+
+Confirmation that no `gusinyc.com` references remain
+
+Do not make unrelated website, design, content, routing, metadata, schema, robots.txt, or performance changes as part of this task.
