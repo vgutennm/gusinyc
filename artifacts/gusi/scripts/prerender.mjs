@@ -38,8 +38,11 @@ function replaceBlock(html, name, replacement) {
   );
 }
 
-function jsonLd(data) {
-  return `    <script type="application/ld+json">\n    ${JSON.stringify(data, null, 2).split("\n").join("\n    ")}\n    </script>`;
+// The optional id matches the ids used by applyJsonLd() in src/lib/seo.ts so
+// the client reuses the prerendered script instead of appending a duplicate.
+function jsonLd(data, id) {
+  const idAttr = id ? ` data-jsonld="${id}"` : "";
+  return `    <script type="application/ld+json"${idAttr}>\n    ${JSON.stringify(data, null, 2).split("\n").join("\n    ")}\n    </script>`;
 }
 
 function buildHead(html, page) {
@@ -133,7 +136,7 @@ function buildHead(html, page) {
           url: `${SITE_URL}/`,
         },
         publisher: { "@id": `${SITE_URL}/#restaurant` },
-      }),
+      }, "blogposting"),
     );
     if (page.article.faq.length > 0) {
       schemas.push(
@@ -145,7 +148,7 @@ function buildHead(html, page) {
             name: item.question,
             acceptedAnswer: { "@type": "Answer", text: item.answer },
           })),
-        }),
+        }, "faq"),
       );
     }
   }

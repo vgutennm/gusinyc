@@ -55,11 +55,16 @@ export function restoreCanonical(snap: CanonicalSnapshot) {
 export type JsonLdSnapshot = { el: HTMLScriptElement };
 
 export function applyJsonLd(id: string, data: unknown): JsonLdSnapshot {
-  const el = document.createElement("script");
-  el.type = "application/ld+json";
-  el.setAttribute("data-jsonld", id);
+  // Reuse a prerendered script with the same id (if present) so the page
+  // never carries duplicate structured data after hydration.
+  let el = document.querySelector<HTMLScriptElement>(`script[data-jsonld="${id}"]`);
+  if (!el) {
+    el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.setAttribute("data-jsonld", id);
+    document.head.appendChild(el);
+  }
   el.textContent = JSON.stringify(data);
-  document.head.appendChild(el);
   return { el };
 }
 
