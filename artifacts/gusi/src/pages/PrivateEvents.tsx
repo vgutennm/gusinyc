@@ -304,7 +304,7 @@ export default function PrivateEvents() {
                 <a href={INQUIRY_MAILTO} className={primaryBtn}>
                   Inquire About an Event
                 </a>
-                <Link href="/#menu" className={outlineBtnGold}>
+                <Link href="/menu" className={outlineBtnGold}>
                   View Our Menu
                 </Link>
               </div>
@@ -461,7 +461,7 @@ export default function PrivateEvents() {
                   At GUSI, private events are built around the experience of
                   sharing good food, conversation, and time together. Guests can{" "}
                   <Link
-                    href="/#menu"
+                    href="/menu"
                     className="text-gusi-burgundy underline underline-offset-4 decoration-gusi-gold/60 hover:decoration-gusi-burgundy transition-colors"
                   >
                     explore our menu

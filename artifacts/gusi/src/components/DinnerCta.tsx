@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export function DinnerCta() {
   return (
@@ -21,12 +22,12 @@ export function DinnerCta() {
             for 8. Greenwich Village dinner reservations are open now. Book now
             before the week fills up around you.
           </p>
-          <a
-            href="#reservations"
+          <Link
+            href="/reservations"
             className="inline-flex items-center justify-center min-h-11 bg-gusi-gold text-gusi-charcoal px-8 py-4 uppercase tracking-[0.2em] text-sm hover:bg-gusi-burgundy hover:text-gusi-ivory transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-burgundy/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-porcelain"
           >
             Reserve a Table
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

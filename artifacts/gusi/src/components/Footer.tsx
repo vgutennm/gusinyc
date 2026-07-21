@@ -62,7 +62,31 @@ export function Footer() {
           />
         </div>
         <div>432 Sixth Avenue, New York, NY 10011</div>
-        <nav className="flex items-center gap-4 sm:gap-6 uppercase tracking-[0.2em] text-[11px]">
+        <nav className="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 uppercase tracking-[0.2em] text-[11px]">
+          <Link
+            href="/story"
+            className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+          >
+            Story
+          </Link>
+          <Link
+            href="/menu"
+            className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+          >
+            Menu
+          </Link>
+          <Link
+            href="/reservations"
+            className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+          >
+            Reservations
+          </Link>
+          <Link
+            href="/contact"
+            className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+          >
+            Contact
+          </Link>
           <a
             href="/#playlist"
             className="text-gusi-porcelain/60 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"

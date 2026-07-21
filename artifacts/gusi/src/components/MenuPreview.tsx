@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { MENU_DATA } from "@/data/menu";
 import { motion } from "framer-motion";
 
@@ -118,6 +119,15 @@ export function MenuPreview() {
               ) : null,
             )}
           </div>
+        </div>
+
+        <div className="text-center mt-12 md:mt-16">
+          <Link
+            href="/menu"
+            className="inline-flex items-center justify-center min-h-11 border border-gusi-burgundy text-gusi-burgundy px-8 py-3.5 uppercase tracking-[0.2em] text-xs sm:text-sm hover:bg-gusi-burgundy hover:text-gusi-ivory transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-burgundy/40 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-ivory"
+          >
+            Discover the Menu Experience
+          </Link>
         </div>
       </div>
     </section>

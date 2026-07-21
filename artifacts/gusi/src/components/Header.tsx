@@ -36,15 +36,15 @@ export function Header() {
   const anchor = (id: string) => (isHome ? `#${id}` : `/#${id}`);
 
   const navLinks: NavLink[] = [
-    { name: "Story", href: anchor("story") },
+    { name: "Story", href: "/story", isRoute: true },
     { name: "Space", href: anchor("space") },
-    { name: "Menu", href: anchor("menu") },
+    { name: "Menu", href: "/menu", isRoute: true },
     { name: "Bar", href: anchor("bar") },
     { name: "Playlist", href: anchor("playlist") },
     { name: "Press", href: "/press", isRoute: true },
     { name: "Blog", href: "/blog", isRoute: true },
     { name: "Events", href: "/events/private-events", isRoute: true },
-    { name: "Visit", href: anchor("visit") },
+    { name: "Contact", href: "/contact", isRoute: true },
   ];
 
   const closeMobile = () => setMobileMenuOpen(false);
@@ -110,12 +110,12 @@ export function Header() {
           >
             inKind $50 Off
           </a>
-          <a
-            href={anchor("reservations")}
+          <Link
+            href="/reservations"
             className="border border-gusi-gold text-gusi-gold px-6 py-2 uppercase tracking-widest text-xs hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors duration-300"
           >
             Reserve
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile + Tablet Toggle (<1280px) */}
@@ -128,18 +128,18 @@ export function Header() {
           >
             inKind $50 Off
           </a>
-          <a
-            href={anchor("reservations")}
+          <Link
+            href="/reservations"
             className="hidden sm:inline-flex items-center justify-center whitespace-nowrap min-h-11 border border-gusi-gold text-gusi-gold px-3 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
             Reserve
-          </a>
-          <a
-            href={anchor("menu")}
+          </Link>
+          <Link
+            href="/menu"
             className="hidden md:inline-flex items-center justify-center whitespace-nowrap min-h-11 border border-gusi-gold text-gusi-gold px-3 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
           >
             Menu
-          </a>
+          </Link>
           <Link
             href="/events/private-events"
             className="hidden md:inline-flex items-center justify-center whitespace-nowrap min-h-11 border border-gusi-gold text-gusi-gold px-3 py-2 uppercase tracking-[0.18em] text-[11px] leading-none hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
@@ -215,13 +215,13 @@ export function Header() {
                 );
               })}
               <div className="w-12 h-px bg-gusi-gold/40 my-2" />
-              <a
-                href={anchor("reservations")}
+              <Link
+                href="/reservations"
                 onClick={closeMobile}
                 className="mt-2 border border-gusi-gold text-gusi-gold px-10 py-4 uppercase tracking-[0.25em] text-sm hover:bg-gusi-gold hover:text-gusi-charcoal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
               >
                 Reserve a Table
-              </a>
+              </Link>
               <a
                 href="https://app.inkind.com/offer/OGWQC4LM"
                 target="_blank"

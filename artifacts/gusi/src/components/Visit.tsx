@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import {
   GOOGLE_MAPS_URL,
   APPLE_MAPS_URL,
@@ -92,6 +93,13 @@ export function Visit() {
                 >
                   {RESTAURANT_EMAIL}
                 </a>
+                <Link
+                  href="/contact"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs uppercase tracking-[0.2em] text-gusi-gold/80 hover:text-gusi-gold transition-colors focus:outline-none focus-visible:text-gusi-gold"
+                >
+                  <span>Hours, Directions &amp; Contact</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
           </motion.div>

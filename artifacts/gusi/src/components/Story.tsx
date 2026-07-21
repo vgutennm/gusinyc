@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export function Story() {
   return (
@@ -46,6 +47,12 @@ export function Story() {
               an evening that leaves you feeling a little closer to home.
             </p>
           </div>
+          <Link
+            href="/story"
+            className="mt-10 sm:mt-12 inline-flex items-center justify-center min-h-11 border border-gusi-burgundy text-gusi-burgundy px-8 py-3.5 uppercase tracking-[0.2em] text-xs sm:text-sm hover:bg-gusi-burgundy hover:text-gusi-ivory transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-burgundy/40 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-ivory"
+          >
+            Read Our Full Story
+          </Link>
           <div className="w-12 h-px bg-gusi-gold/40 mt-10 sm:mt-12" />
         </motion.div>
       </div>
