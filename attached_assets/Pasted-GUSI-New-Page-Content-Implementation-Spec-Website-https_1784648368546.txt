@@ -1,0 +1,450 @@
+GUSI New Page Content Implementation Spec
+
+Website:
+https://gusi.nyc/
+
+Objective
+
+Add or update the following pages using the final approved content supplied in this project:
+
+1. Story page
+2. Menu page
+3. Reservations page
+4. Contact page
+
+Preserve the current GUSI visual design, navigation, footer, typography, responsiveness, accessibility, tracking, structured data conventions, and overall site behavior.
+
+Do not make unrelated design, routing, metadata, schema, content, navigation, or technical changes.
+
+Canonical domain
+
+Use only:
+
+https://gusi.nyc/
+
+Do not use gusinyc.com or any other domain in canonical tags, internal links, schema, metadata, or page content.
+
+Routes
+
+Story:
+https://gusi.nyc/story
+
+Menu:
+https://gusi.nyc/menu
+
+Reservations:
+https://gusi.nyc/reservations
+
+Contact:
+https://gusi.nyc/contact
+
+Use canonical URLs without unnecessary trailing slash inconsistencies.
+
+Global requirements
+
+1. Use the supplied approved content exactly unless a correction is specifically listed below.
+
+2. Maintain one visible H1 per page.
+
+3. Use proper heading hierarchy with H2 and H3 elements.
+
+4. Add the supplied meta title and meta description to each page.
+
+5. Make every CTA functional and link it to the appropriate internal page, booking system, event inquiry form, menu, map, or contact destination.
+
+6. Use standard internal links rather than JavaScript only navigation wherever possible.
+
+7. Ensure all pages are included in the sitemap.
+
+8. Ensure each page is prerendered or included in the server delivered HTML consistently with the current SEO implementation.
+
+9. Preserve responsive behavior across desktop, tablet, and mobile.
+
+10. Do not replace existing images or create new images unless necessary for the page layout.
+
+11. Ensure FAQ structured data exactly matches the visible FAQ content.
+
+12. Do not create duplicate FAQPage schema if the page framework already generates the same schema automatically.
+
+13. Use proper apostrophes, punctuation, spacing, and HTML encoding.
+
+14. Do not change the live opening hours, footer hours, Google Business Profile information, OpenTable information, or Contact page hours until Vlad confirms the final hours after speaking with Boris.
+
+Story Page
+
+Route:
+
+/story
+
+Meta title:
+
+About GUSI NYC | Modern Eastern European Dining
+
+Meta description:
+
+Learn the story behind GUSI, where modern Eastern European cuisine, handcrafted cocktails, Georgian wine, & warm hospitality come together in Greenwich Village.
+
+H1:
+
+About GUSI: A Modern Eastern European Restaurant in Greenwich Village
+
+Use the final approved Story page content supplied by E2M exactly as provided.
+
+The May 8, 2026 opening date is confirmed and may be published.
+
+Required CTA destinations:
+
+Explore our story through food, wine, and hospitality:
+Link to /menu
+
+Reserve a Table Today:
+Link to /reservations or the live reservation booking destination already used by the site
+
+Contact page:
+Link to /contact
+
+Google Maps:
+Use the confirmed live GUSI Google Maps destination
+
+Events page:
+Link to the current Events page or event section used by the website
+
+Ensure the FAQ schema matches the visible FAQ answers exactly.
+
+Menu Page
+
+Route:
+
+/menu
+
+Meta title:
+
+GUSI Menu | Eastern European Restaurant NYC
+
+Meta description:
+
+Explore GUSI's menu featuring dumplings, borscht, caviar, Georgian-inspired flavors, cocktails, and modern Eastern European cuisine in Greenwich Village.
+
+H1:
+
+Explore the GUSI Menu
+
+Use the final approved Menu page content supplied by E2M exactly as provided, with this correction:
+
+Replace:
+
+can comfortably seat upto 70 guests
+
+With:
+
+can comfortably seat up to 70 guests
+
+Required CTA destinations:
+
+Reserve a Table:
+Link to /reservations or the current reservation booking destination
+
+Learn About GUSI:
+Link to /story
+
+View the Full Menu:
+Link to the actual menu display, PDF, embedded menu, or appropriate section on the page
+
+Plan Your Private Event:
+Link to the Events page or active event inquiry destination
+
+Read Our Stories:
+Link to /blog
+
+Final Reserve a Table:
+Link to /reservations or the current booking destination
+
+Ensure the visible FAQ wording and FAQ schema remain identical.
+
+Reservations Page
+
+Route:
+
+/reservations
+
+Meta title:
+
+Reserve a Table at GUSI | Greenwich Village NYC
+
+Meta description:
+
+Reserve your table at GUSI in Greenwich Village and enjoy modern Eastern European cuisine, handcrafted cocktails, Georgian wine, and warm hospitality.
+
+H1:
+
+Reserve Your Table at GUSI
+
+Use the final approved Reservations page content supplied by E2M exactly as provided, with this correction:
+
+Replace:
+
+Every detail is designed to create a dining experience that feels welcoming, thoughtful, and memorable..
+
+With:
+
+Every detail is designed to create a dining experience that feels welcoming, thoughtful, and memorable.
+
+Place the reservation booking widget or primary booking control immediately after the opening introduction and Book a Table CTA.
+
+Required CTA destinations:
+
+Book a Table:
+Use the active reservation booking destination or booking widget
+
+View the Menu:
+Link to /menu
+
+Learn About Our Events:
+Link to the Events page or event inquiry destination
+
+Reserve a Table Today:
+Use the active reservation booking destination
+
+Confirm that walk ins are accepted before publishing the visible FAQ answer stating that walk ins may be available. If that wording is already confirmed by GUSI, retain it.
+
+Ensure the visible FAQ wording and FAQ schema remain identical.
+
+Contact Page
+
+Route:
+
+/contact
+
+Meta title:
+
+Contact GUSI | Visit Our Greenwich Village Restaurant
+
+Meta description:
+
+Contact GUSI in Greenwich Village for reservations, private dining, events, and general inquiries. Find our address, hours, phone number, and directions.
+
+H1:
+
+Contact GUSI
+
+Use the final Contact page content supplied by E2M, subject to the pending confirmations and schema corrections below.
+
+Confirmed contact information
+
+Address:
+
+432 Sixth Avenue
+New York, NY 10011
+
+Phone:
+
++1 (646) 370-5413
+
+Pending confirmation
+
+Do not treat the following information as finally approved until Vlad confirms it after speaking with Boris:
+
+Email:
+
+[gagaga@gusi.nyc](mailto:gagaga@gusi.nyc)
+
+Hours currently supplied by E2M:
+
+Monday through Friday:
+4:00 pm to midnight
+
+Saturday and Sunday:
+12:00 pm to midnight
+
+Brunch Saturday and Sunday:
+11:30 am to 4:00 pm
+
+The weekend hours overlap. Do not change the live website, footer, schema, OpenTable references, or any other hours until final confirmation is provided.
+
+Contact page booking widget
+
+The FAQ says visitors can use a reservation booking widget on the Contact page.
+
+Only retain that wording if a functioning reservation widget is actually placed on the Contact page above the FAQ.
+
+If no reservation widget will appear on the Contact page, revise both the visible FAQ and schema answer to:
+
+For table reservations, visit our Reservations page.
+
+Required CTA destinations:
+
+Reserve a Table:
+Link to /reservations or the current booking destination
+
+Get Directions:
+Link to the confirmed Google Maps destination
+
+Inquire About Events:
+Link to the active event inquiry form or Events page
+
+Make a Reservation:
+Link to /reservations or the current booking destination
+
+Story page:
+Link to /story
+
+Menu:
+Link to /menu
+
+Contact Local Business Schema Corrections
+
+Do not publish the Local Business schema supplied by E2M as written.
+
+Use Restaurant as the schema type:
+
+"@type": "Restaurant"
+
+Use:
+
+"@id": "https://gusi.nyc/#restaurant"
+
+Use:
+
+"url": "https://gusi.nyc/"
+
+Do not use:
+
+"https://gusi.nyc/contact/#localbusiness"
+
+Do not use the Contact page as the primary Restaurant entity URL.
+
+Retain the confirmed business name, address, telephone number, geographic coordinates, price range, description, and Google Maps destination after verifying that each value matches the live business information.
+
+Add:
+
+"servesCuisine": [
+"Eastern European",
+"Georgian",
+"Mediterranean"
+]
+
+Add:
+
+"acceptsReservations": true
+
+Add:
+
+"menu": "https://gusi.nyc/menu"
+
+Add the official reservation URL if there is a stable public reservation page or OpenTable booking URL.
+
+Use the confirmed Google Maps URL only under:
+
+"hasMap"
+
+Remove the Google Maps URL from:
+
+"sameAs"
+
+The sameAs array should contain only confirmed official social or business profiles.
+
+The Instagram profile may remain only if this is the confirmed official account:
+
+https://instagram.com/gusi.nyc
+
+Email schema requirement
+
+Do not add [gagaga@gusi.nyc](mailto:gagaga@gusi.nyc) to the schema until Vlad confirms that it is the correct public email and is actively monitored.
+
+Logo requirement
+
+Verify that this exact image exists and returns successfully before using it in schema:
+
+https://gusi.nyc/brand/gusi-goose-emblem.webp
+
+Do not publish a broken or nonexistent logo URL.
+
+Opening hours schema requirement
+
+Do not use the supplied openingHoursSpecification because it incorrectly states a 4:00 pm opening seven days per week while the visible page states noon on weekends.
+
+It also adds an overlapping weekend brunch schedule.
+
+Once Vlad supplies the confirmed hours, create separate OpeningHoursSpecification entries for:
+
+Monday through Friday
+
+Saturday and Sunday
+
+A separate brunch service only if it is accurate and necessary to represent independently
+
+The visible Contact page, footer, Restaurant schema, reservation system references, and any other website hours must match exactly.
+
+FAQ schema
+
+Add the approved FAQPage schema for each page only once.
+
+Every question and answer in schema must match the visible page text exactly, including punctuation and wording.
+
+Testing and verification
+
+After implementation, verify all of the following on production:
+
+1. All four routes return HTTP 200.
+
+2. Each page has the correct canonical URL.
+
+3. Each page has the correct meta title and meta description.
+
+4. Each page contains exactly one H1.
+
+5. All CTAs and internal links open the correct destination.
+
+6. The reservation widget works wherever referenced.
+
+7. The Events CTA points to the correct event page or inquiry form.
+
+8. The Google Maps link opens the correct GUSI location.
+
+9. No page contains gusinyc.com.
+
+10. No visible page or schema contains “upto.”
+
+11. The Reservations page does not contain the double period after “memorable.”
+
+12. FAQ schema matches the visible FAQ content exactly.
+
+13. The Contact page uses Restaurant schema rather than LocalBusiness.
+
+14. The Contact schema uses https://gusi.nyc/#restaurant as the entity ID.
+
+15. Google Maps is not duplicated in sameAs.
+
+16. No unconfirmed hours or email address are published or changed.
+
+17. All pages appear correctly on desktop and mobile.
+
+18. All four URLs are included in sitemap.xml.
+
+19. No duplicate schema entities are introduced.
+
+20. No unrelated website content, design, routes, schema, navigation, or functionality are changed.
+
+Completion report
+
+After deployment, provide:
+
+1. Exact files changed
+
+2. Exact routes created or updated
+
+3. Final meta titles and descriptions
+
+4. Final CTA destinations
+
+5. Structured data added to each page
+
+6. Confirmation that FAQ schema matches visible content
+
+7. Confirmation that the Menu “up to” correction was made
+
+8. Confirmation that the Reservations double period was removed
+
+9. Status of the Contact email and hours
+
+10. Results of production URL, canonical, responsive, link, schema, and sitemap testing
