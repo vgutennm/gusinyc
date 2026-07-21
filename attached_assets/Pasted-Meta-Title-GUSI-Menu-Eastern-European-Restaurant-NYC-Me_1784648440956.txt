@@ -1,0 +1,86 @@
+Meta Title: GUSI Menu | Eastern European Restaurant NYC
+Meta Description: Explore GUSI's menu featuring dumplings, borscht, caviar, Georgian-inspired flavors, cocktails, and modern Eastern European cuisine in Greenwich Village.
+URL: /menu
+
+H1: Explore the GUSI Menu
+The GUSI menu is an invitation to discover modern Eastern European cuisine through thoughtfully prepared dishes, shared plates, curated wines, and signature cocktails.
+Explore our menu and discover the flavors that unfold with every course, perfectly complemented by carefully chosen wines, signature cocktails, and gracious hospitality.
+Reserve a Table
+H2: A Menu Inspired by Eastern European Traditions
+At GUSI, every dish begins with a story passed from one generation to another.
+Rooted in the culinary traditions of Eastern Europe and Georgia, our menu reimagines treasured recipes with a fresh and modern perspective, while Mediterranean influences and warm hospitality create a dining experience designed for sharing.
+Rather than following trends, our kitchen embraces the beauty of thoughtful craftsmanship, bringing together seasonal ingredients and careful preparation in every course. The result is a dining experience that feels both familiar and distinctly modern.
+Learn About GUSI
+
+H2: Discover Our Menu
+Our menu invites guests to wander, share, and savor. 
+Begin with our house-made spreads like creamy hummus, smoky baba ganoush, nutty tahini, tangy tzatziki, and spicy feta, perfect for sharing around the table. Continue with thoughtfully prepared starters and appetizers, or enjoy delicate blinis topped with caviar.
+Fresh and crispy salads offer a lighter start, while our handcrafted pelmeni and vareniki paint the picture of Eastern European culinary culture. 
+Seasonal soups like classic borscht fill the table with warmth and nostalgia, while our signature entrées bring together bold flavors, timeless traditions, and the thoughtful craftsmanship of our kitchen.
+Treat your palate to the gentle indulgence of our decadent desserts, then linger over coffee or tea, where the finest evenings are never rushed.
+Each page of our menu unfolds like a story waiting to be shared. So take your sweet time, taste a little of everything, and discover the dishes that become your favorites.
+View the Full Menu
+H2: Pair Your Meal with Curated Drinks
+A meal at GUSI is made even more memorable with the right pour. Our beverage menu features signature cocktails, house infused vodka, and a curated wine selection, including Georgian wines that reflect the heritage woven throughout our menu.
+Whether you begin the evening with a spirited cocktail or sip a glass of wine alongside a sweet treat, every pour is chosen to complement the flavors on your plate.
+
+H2: Great Food for Every Gathering
+The most cherished occasions begin where stories are shared, glasses are raised, and every seat at the table is filled with those who matter most. 
+Crafted for every gathering, our expansive menu creates a memorable setting for birthdays, anniversaries, business dinners, and other special occasions.
+Whether you're planning an intimate evening or a grand celebration, our private floor can comfortably seat upto 70 guests and the team will thoughtfully curate an experience that feels personalized and worthy of the memories you'll create with your loved ones.
+Plan Your Private Event
+H2: Stories Behind the Menu
+Curious about the ingredients, traditions, and inspiration behind our menu? Our blog explores the stories behind GUSI's dishes and drinks, from the origins of house-infused vodka to centuries-old traditions of Georgian winemaking.
+Read a little before your visit, or revisit a favorite story after.
+Read Our Stories
+H2: Frequently Asked Questions
+H3: What Type of Cuisine Does GUSI Serve?
+GUSI serves modern Eastern European cuisine influenced by Georgian culinary traditions and Mediterranean-inspired hospitality, blending familiar comfort food with contemporary techniques and seasonal ingredients.
+H3: Does GUSI Offer Vegetarian Options?
+Yes, our menu includes vegetarian spreads, fresh salads, roasted vegetables, potato vareniki, and other thoughtfully prepared dishes. 
+H3: Can I View the Menu Before Making a Reservation?
+We encourage guests to explore our full menu online before reserving a table, making it easy to learn about the dishes and beverages that await.
+H3: Does GUSI Host Private Events or Group Dining?
+Yes. GUSI hosts birthdays, anniversaries, business dinners, private events, and group gatherings. Our private floor can accommodate events and celebrations for up to 70 guests. Visit our Events page or contact our team to begin planning. 
+H2: Experience the GUSI Menu in Greenwich Village
+Join us at GUSI in Greenwich Village for thoughtfully prepared Eastern European dishes, curated wines, signature cocktails, and warm hospitality. Reserve your table and discover a dining experience designed to be shared.
+Reserve a Table
+FAQ Schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What Type of Cuisine Does GUSI Serve?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI serves modern Eastern European cuisine influenced by Georgian culinary traditions and Mediterranean-inspired hospitality, blending familiar comfort food with contemporary techniques and seasonal ingredients."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does GUSI Offer Vegetarian Options?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, our menu includes vegetarian spreads, fresh salads, roasted vegetables, potato vareniki, and other thoughtfully prepared dishes."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I View the Menu Before Making a Reservation?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We encourage guests to explore our full menu online before reserving a table, making it easy to learn about the dishes and beverages that await."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does GUSI Host Private Events or Group Dining?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. GUSI hosts birthdays, anniversaries, business dinners, private events, and group gatherings. Our private floor can accommodate events and celebrations for up to 70 guests. Visit our Events page or contact our team to begin planning."
+    }
+  }]
+}
+</script>
+
+
+

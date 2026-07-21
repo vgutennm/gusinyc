@@ -1,0 +1,70 @@
+Meta title: Reserve a Table at GUSI | Greenwich Village NYC
+Meta Description: Reserve your table at GUSI in Greenwich Village and enjoy modern Eastern European cuisine, handcrafted cocktails, Georgian wine, and warm hospitality. 
+URL: /reservations
+
+H1: Reserve Your Table at GUSI
+Welcome to GUSI, where modern Eastern European cuisine, thoughtful hospitality, and shared conversation come together in the heart of Greenwich Village.
+Located in the heart of Greenwich Village, GUSI offers a warm and refined setting for dinner, drinks, celebrations, and memorable evenings together.
+Whether you are planning a date night, meeting friends, celebrating with family, or gathering with colleagues, we recommend reserving your table in advance.
+Book a Table 
+H2: Join Us for Dinner in Greenwich Village
+Step into GUSI and discover a dining experience where warmth, tradition, and genuine hospitality come together. 
+Our menu reimagines Eastern European cuisine through Georgian culinary traditions, Mediterranean influences, and a modern New York perspective.
+Handcrafted cocktails and a thoughtfully curated selection of Georgian wines elevate the evening, selected to complement the flavors throughout the menu. Every detail is designed to create a dining experience that feels welcoming, thoughtful, and memorable..
+View the Menu
+
+H2: Planning a Celebration or Group Gathering?
+Surrounded by the timeless charm of Greenwich Village, GUSI offers a distinctive Greenwich Village setting for date nights, family celebrations, business dinners, and meaningful occasions.
+For larger gatherings and private events, GUSI offers a dedicated private floor for celebrations, business functions, dinners, and special occasions of up to 70 guests. Our team will help coordinate the details so the experience feels seamless from the first arrival to the final course.
+Learn About Our Events
+H2: Frequently Asked Questions
+H3: Do I Need a Reservation?
+Walk-ins may be available, but reservations are recommended, especially on weekends, holidays, and for special occasions.
+H3: Can I Reserve for a Large Group?
+Yes. GUSI welcomes larger parties, group dinners, and private gatherings. Our private floor can accommodate events and celebrations of up to 70 guests. Visit the Events page or contact our team to discuss your plans.
+H3: Where Is GUSI Located?
+GUSI is located at 432 Sixth Avenue, New York, NY 10011, in Greenwich Village. 
+H3: Can I View the Menu Before Booking?
+Yes, the full menu is available to explore before making a reservation.
+
+H2: Reserve Your Table in Greenwich Village
+Whether you are visiting GUSI for the first time or returning for another evening, we look forward to welcoming you with thoughtfully prepared dishes, curated wines, signature cocktails, and warm hospitality. Reserve your table and let our team take care of the rest.
+Reserve a Table Today
+FAQ Schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Do I Need a Reservation?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Walk-ins may be available, but reservations are recommended, especially on weekends, holidays, and for special occasions."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I Reserve for a Large Group?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. GUSI welcomes larger parties, group dinners, and private gatherings. Our private floor can accommodate events and celebrations of up to 70 guests. Visit the Events page or contact our team to discuss your plans."
+    }
+  },{
+    "@type": "Question",
+    "name": "Where Is GUSI Located?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI is located at 432 Sixth Avenue, New York, NY 10011, in Greenwich Village."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I View the Menu Before Booking?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes, the full menu is available to explore before making a reservation."
+    }
+  }]
+}
+</script>
+
+

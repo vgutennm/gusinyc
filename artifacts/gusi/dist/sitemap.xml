@@ -45,6 +45,26 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/blog" />
   </url>
   <url>
+    <loc>https://gusi.nyc/story</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/story" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/story" />
+  </url>
+  <url>
+    <loc>https://gusi.nyc/menu</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/menu" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/menu" />
+  </url>
+  <url>
+    <loc>https://gusi.nyc/reservations</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/reservations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/reservations" />
+  </url>
+  <url>
+    <loc>https://gusi.nyc/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gusi.nyc/contact" />
+  </url>
+  <url>
     <loc>https://gusi.nyc/blog/hummus-vs-baba-ganoush</loc>
     <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="en-US" href="https://gusi.nyc/blog/hummus-vs-baba-ganoush" />

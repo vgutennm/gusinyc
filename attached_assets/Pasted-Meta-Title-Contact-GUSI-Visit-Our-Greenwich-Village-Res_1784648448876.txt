@@ -1,0 +1,139 @@
+Meta Title: Contact GUSI | Visit Our Greenwich Village Restaurant 
+Meta Description: Contact GUSI in Greenwich Village for reservations, private dining, events, and general inquiries. Find our address, hours, phone number, and directions.
+URL: /contact
+H1: Contact GUSI
+Contact GUSI in Greenwich Village for help with reservations, private events, group dining, directions, or general questions. Whether you are planning a visit, organizing a private event, or looking for more information, our team is happy to help.
+H2: Contact Information
+Address: 
+432 Sixth Avenue
+New York, NY 10011
+Phone: +1 (646) 370-5413
+Email: gagaga@gusi.nyc
+Hours: 
+Mon–Fri: 4:00 pm – Midnight
+Sat & Sun: 12:00 pm – Midnight
+Brunch: Sat & Sun, 11:30 am – 4:00 pm
+Reserve a Table
+
+H2: Visit Us in Greenwich Village
+Located at 432 Sixth Avenue, GUSI is in the heart of Greenwich Village, near Washington Square Park, NYU, and the Jefferson Market Library. Join us for modern Eastern European cuisine, handcrafted cocktails, Georgian wines, and warm hospitality in one of New York City’s most distinctive neighborhoods.
+Come find us amid the tree-lined streets and timeless charm of Greenwich Village.
+Get Directions
+H2: Planning a Private Event or Group Gathering?
+GUSI offers a dedicated private floor for birthdays, anniversaries, family celebrations, business dinners, corporate gatherings, and other special occasions of up to 70 guests.
+Our team can help create a thoughtful experience with modern Eastern European cuisine, curated wines, handcrafted cocktails, and warm hospitality in the heart of Greenwich Village.
+Contact us to discuss your date, group size, menu preferences, and event needs.
+Inquire About Events
+H2: Before You Visit
+A little planning makes every visit to GUSI even more enjoyable. Take a moment to browse our menu and discover the rich flavors awaiting you. Reservations are recommended, especially during peak dining hours, to help ensure availability.
+Curious about our story and inspiration? Explore our Story page to learn more about GUSI, our inspiration, and the traditions behind the restaurant. 
+Make a Reservation
+H2: Frequently Asked Questions
+H3: Where Is GUSI Located?
+GUSI is located at 432 Sixth Avenue in Greenwich Village, NYC, just steps from Washington Square Park and NYU.
+H3: Is There Parking Nearby?
+GUSI does not offer dedicated parking. Street parking and commercial parking facilities may be available in the surrounding area. Guests can also reach us by subway, PATH, bus, taxi, or rideshare.
+H3: Can I Contact GUSI About Private Events?
+Yes. GUSI offers a dedicated private floor for celebrations, business dinners, corporate gatherings, and private events of up to 70 guests. Use our event inquiry form or contact the restaurant directly to discuss your plans.
+H3: Can I Make a Reservation Through the Contact Page?
+For table reservations, visit our Reservations page or use the reservation booking widget on this page.
+H2: We Look Forward to Welcoming You
+We look forward to welcoming you to GUSI in Greenwich Village. Contact our team with questions, reserve your table, or inquire about a private event, and we will help you plan your visit.
+Reserve a Table
+FAQ Schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Where Is GUSI Located?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI is located at 432 Sixth Avenue in Greenwich Village, NYC, just steps from Washington Square Park and NYU."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is There Parking Nearby?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI does not offer dedicated parking. Street parking and commercial parking facilities may be available in the surrounding area. Guests can also reach us by subway, PATH, bus, taxi, or rideshare."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I Contact GUSI About Private Events?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. GUSI offers a dedicated private floor for celebrations, business dinners, corporate gatherings, and private events of up to 70 guests. Use our event inquiry form or contact the restaurant directly to discuss your plans."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I Make a Reservation Through the Contact Page?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For table reservations, visit our Reservations page or use the reservation booking widget on this page."
+    }
+  }]
+}
+</script>
+
+
+Local Business Schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://gusi.nyc/contact/#localbusiness",
+  "name": "GUSI",
+  "url": "https://gusi.nyc/contact/",
+  "logo": "https://gusi.nyc/brand/gusi-goose-emblem.webp",
+  "description": "Modern Eastern European restaurant and bar located in Greenwich Village, New York.",
+  "telephone": "+1-646-370-5413",
+  "email": "gagaga@gusi.nyc",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "432 Sixth Avenue",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10011",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7344716,
+    "longitude": -74.0013098
+  },
+  "hasMap": "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "16:00",
+      "closes": "00:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:30",
+      "closes": "16:00"
+    }
+  ],
+  "sameAs": [
+    "https://instagram.com/gusi.nyc",
+    "https://maps.app.goo.gl/YbMdzny3GNHvhHrT6"
+  ]
+}
+</script>
+

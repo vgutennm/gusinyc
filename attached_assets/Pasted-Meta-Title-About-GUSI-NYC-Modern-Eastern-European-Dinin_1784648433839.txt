@@ -1,0 +1,90 @@
+Meta Title: About GUSI NYC | Modern Eastern European Dining
+Meta Description: Learn the story behind GUSI, where modern Eastern European cuisine, handcrafted cocktails, Georgian wine, & warm hospitality come together in Greenwich Village.
+URL Structure:  /story
+
+H1: About GUSI: A Modern Eastern European Restaurant in Greenwich Village
+GUSI opened its doors in Greenwich Village on May 8, 2026, introducing a modern Eastern European dining experience where every meal begins with hospitality. 
+From hand-folded dumplings and borscht to Georgian wine and warm hospitality, GUSI brings together heritage, conversation, and memorable moments around the table.
+CTA: Explore our story through food, wine, and hospitality >> Menu Page
+H2: The Philosophy Behind GUSI 
+Eastern European dining carries centuries of memory of kitchens where pots simmered with love, recipes passed from one generation to the next, and every meal was an invitation to gather. GUSI carries that spirit forward, reimagining it for the rhythm of New York.
+Here, modern Eastern European cuisine meets Mediterranean influence, bringing contemporary techniques and fresh seasonal ingredients to a culinary tradition rooted in comfort.
+GUSI has always been about more than what's on the plate. It's about the feeling of being welcomed, the conversations that linger long after the last bite, and the simple pleasure of letting an evening unfold at its own pace. 
+H2: A Comfort-Driven Culinary Identity
+At GUSI, every dish carries a story worth sharing. Inspired by generations of Eastern European home cooking, our menu celebrates recipes shaped by time, tradition, and the simple joy of gathering around the table.
+Comforting borscht, hand-folded dumplings, and house-pickled vegetables sit alongside seasonal dishes inspired by the freshest ingredients available throughout the year. Every plate honors Eastern European traditions while embracing contemporary techniques and subtle Mediterranean influence.
+H2: Infusions, Wine & Cultural Pairings
+Every glass at GUSI is an invitation to discover something unexpected. House-infused vodkas draw depth from herbs, spices, and seasonal botanicals, while a carefully curated selection of Georgian wines celebrates one of the world's oldest and most enduring winemaking traditions.
+Seasonal cocktails evolve alongside the menu, creating thoughtful pairings that complement each season's menu. Together, our beverage menu is curated to bring balance, contrast, and a sense of occasion to every meal.
+H2: Atmosphere & Hospitality
+The best evenings are the ones you never want to end. 
+That's the feeling GUSI was created to capture. 
+Beneath the glow of candlelight and among the warmth of natural wood, conversations linger, glasses are raised, and every table becomes a place to pause from the pace of the city. 
+Across two thoughtfully designed floors, one vibrant and the other intimate, the atmosphere shifts with the occasion while the hospitality remains the same.
+Whether you're celebrating a special occasion, gathering with family and friends, hosting a client dinner, planning a business meeting, or reserving space for a private event, GUSI offers a warm and private setting that can easily accommodate 70 guests, making sure every gathering feels memorable.
+CTA: Reserve a Table Today
+H2: Location
+You'll find GUSI at 432 Sixth Avenue in the heart of Greenwich Village, just a short walk from the West Village, SoHo, Washington Square Park, and NYU. Whether you're joining us for dinner, drinks, or a private gathering, we're easy to reach and look forward to welcoming you.
+Internal Links
+Contact page
+Google Maps
+H2: Frequently Asked Questions
+H3: What Type of Cuisine Does GUSI Serve?
+GUSI serves modern Eastern European cuisine with Mediterranean influence. Our menu features hand-folded dumplings, borscht, seasonal dishes, Georgian wine, handcrafted cocktails, and warm hospitality.
+H3: Does GUSI Take Reservations?
+Yes. We recommend making reservations online, especially for weekends and evenings, although walk-ins are welcome whenever space is available.
+H3: Is GUSI Good for Group Dining, Celebrations, or Private Events?
+Yes. Our two thoughtfully designed floors accommodate intimate dinners, celebrations, private events, business dinners, corporate gatherings, and larger group dining of 70 guests. Visit our Events page to learn more.
+H3: Does GUSI Serve Cocktails and Wine?
+Yes. Our beverage menu includes house-infused vodkas, seasonal cocktails, and a curated selection of Georgian wines designed to complement our modern Eastern European menu.
+H3: Where Is GUSI Located?
+GUSI is located at 432 Sixth Avenue in Greenwich Village, making it an easy destination whether you're exploring the neighborhood, visiting NYU, or meeting friends for dinner.
+H2: Come for the Meal. Stay for the Story.
+GUSI NYC isn't a recreation of the past. It's a new chapter written with the same spirit of warmth and gathering that has always defined Eastern European hospitality. As a Greenwich Village restaurant, we invite you to slow down, share a meal, and become part of the story. 
+CTA: Reserve a table and discover modern Eastern European dining in Greenwich Village.
+
+FAQ Schema:
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What Type of Cuisine Does GUSI Serve?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI serves modern Eastern European cuisine with Mediterranean influence. Our menu features hand-folded dumplings, borscht, seasonal dishes, Georgian wine, handcrafted cocktails, and warm hospitality."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does GUSI Take Reservations?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We recommend making reservations online, especially for weekends and evenings, although walk-ins are welcome whenever space is available."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is GUSI Good for Group Dining, Celebrations, or Private Events?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Our two thoughtfully designed floors accommodate intimate dinners, celebrations, private events, business dinners, corporate gatherings, and larger group dining of 70 guests. Visit our Events page to learn more."
+    }
+  },{
+    "@type": "Question",
+    "name": "Does GUSI Serve Cocktails and Wine?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Our beverage menu includes house-infused vodkas, seasonal cocktails, and a curated selection of Georgian wines designed to complement our modern Eastern European menu."
+    }
+  },{
+    "@type": "Question",
+    "name": "Where Is GUSI Located?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GUSI is located at 432 Sixth Avenue in Greenwich Village, making it an easy destination whether you're exploring the neighborhood, visiting NYU, or meeting friends for dinner."
+    }
+  }]
+}
+</script>
+
+

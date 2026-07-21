@@ -151,6 +151,18 @@ function buildHead(html, page) {
         }, "faq"),
       );
     }
+  } else if (page.faq && page.faq.length > 0) {
+    schemas.push(
+      jsonLd({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: page.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }, "faq"),
+    );
   }
   html = replaceBlock(html, "schema", schemas.join("\n"));
 

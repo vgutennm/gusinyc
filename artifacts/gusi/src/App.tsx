@@ -8,6 +8,10 @@ import Press from "@/pages/Press";
 import PrivateEvents from "@/pages/PrivateEvents";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import Story from "@/pages/Story";
+import Menu from "@/pages/Menu";
+import Reservations from "@/pages/Reservations";
+import Contact from "@/pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +24,10 @@ function Router() {
       <Route path="/events" component={PrivateEvents} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/blog" component={Blog} />
+      <Route path="/story" component={Story} />
+      <Route path="/menu" component={Menu} />
+      <Route path="/reservations" component={Reservations} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );

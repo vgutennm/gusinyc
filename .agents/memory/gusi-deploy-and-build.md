@@ -24,6 +24,10 @@ description: How the gusi.nyc site ships, the committed-dist requirement, and th
 **Fix that works:** `restart_workflow "artifacts/gusi: web"`, then build immediately. Clearing `node_modules/.vite` alone did NOT fix it.
 **Verify pattern:** `cd artifacts/gusi && pnpm run build > /tmp/gusi-build.log 2>&1; echo "exit:$?"; tail -3 /tmp/gusi-build.log`.
 
+# Typecheck quirk
+
+- `tsc -p tsconfig.json --noEmit` for gusi can exceed the 2-min bash timeout under dev-server contention; background/detached processes get killed between bash calls. What works: restart the web workflow, run the build first, then `timeout 110 npx tsc -p tsconfig.json --noEmit` (completes quickly once caches are warm).
+
 # Screenshot limitation
 
 `screenshot` captures from the top of the page and cannot scroll. To see lower sections (e.g. footer), use a tall `viewport_size` height (max 3000) rather than expecting a scrolled view.

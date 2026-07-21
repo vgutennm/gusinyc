@@ -63,6 +63,26 @@ function buildSitemap(): string {
     <loc>${SITE_URL}/blog</loc>
     <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/blog" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/blog" />
+  </url>
+  <url>
+    <loc>${SITE_URL}/story</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/story" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/story" />
+  </url>
+  <url>
+    <loc>${SITE_URL}/menu</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/menu" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/menu" />
+  </url>
+  <url>
+    <loc>${SITE_URL}/reservations</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/reservations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/reservations" />
+  </url>
+  <url>
+    <loc>${SITE_URL}/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="${SITE_URL}/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}/contact" />
   </url>`;
 
   const publishedPosts = STORY_ARTICLES.filter(

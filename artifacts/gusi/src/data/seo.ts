@@ -11,6 +11,26 @@ import {
   PAGE_TITLE as EVENTS_TITLE,
   PAGE_DESCRIPTION as EVENTS_DESCRIPTION,
 } from "@/pages/PrivateEvents";
+import {
+  PAGE_TITLE as STORY_TITLE,
+  PAGE_DESCRIPTION as STORY_DESCRIPTION,
+  STORY_FAQ,
+} from "@/pages/Story";
+import {
+  PAGE_TITLE as MENU_TITLE,
+  PAGE_DESCRIPTION as MENU_DESCRIPTION,
+  MENU_FAQ,
+} from "@/pages/Menu";
+import {
+  PAGE_TITLE as RESERVATIONS_TITLE,
+  PAGE_DESCRIPTION as RESERVATIONS_DESCRIPTION,
+  RESERVATIONS_FAQ,
+} from "@/pages/Reservations";
+import {
+  PAGE_TITLE as CONTACT_TITLE,
+  PAGE_DESCRIPTION as CONTACT_DESCRIPTION,
+  CONTACT_FAQ,
+} from "@/pages/Contact";
 
 export const SITE_URL = "https://gusi.nyc";
 
@@ -29,6 +49,8 @@ export type PrerenderPage = {
   image: string;
   imageAlt: string;
   breadcrumbs: Breadcrumb[];
+  /** Page-level FAQ rendered as a FAQPage schema (non-article pages) */
+  faq?: { question: string; answer: string }[];
   article?: {
     headline: string;
     datePublished: string;
@@ -131,6 +153,57 @@ export const PRERENDER_PAGES: PrerenderPage[] = [
     image: DEFAULT_IMAGE,
     imageAlt: DEFAULT_IMAGE_ALT,
     breadcrumbs: [HOME_CRUMB, { name: "Blog", item: `${SITE_URL}/blog` }],
+  },
+  {
+    path: "/story",
+    title: STORY_TITLE,
+    description: STORY_DESCRIPTION,
+    canonical: `${SITE_URL}/story`,
+    robots: DEFAULT_ROBOTS,
+    ogType: "website",
+    image: DEFAULT_IMAGE,
+    imageAlt: DEFAULT_IMAGE_ALT,
+    breadcrumbs: [HOME_CRUMB, { name: "Story", item: `${SITE_URL}/story` }],
+    faq: STORY_FAQ,
+  },
+  {
+    path: "/menu",
+    title: MENU_TITLE,
+    description: MENU_DESCRIPTION,
+    canonical: `${SITE_URL}/menu`,
+    robots: DEFAULT_ROBOTS,
+    ogType: "website",
+    image: DEFAULT_IMAGE,
+    imageAlt: DEFAULT_IMAGE_ALT,
+    breadcrumbs: [HOME_CRUMB, { name: "Menu", item: `${SITE_URL}/menu` }],
+    faq: MENU_FAQ,
+  },
+  {
+    path: "/reservations",
+    title: RESERVATIONS_TITLE,
+    description: RESERVATIONS_DESCRIPTION,
+    canonical: `${SITE_URL}/reservations`,
+    robots: DEFAULT_ROBOTS,
+    ogType: "website",
+    image: DEFAULT_IMAGE,
+    imageAlt: DEFAULT_IMAGE_ALT,
+    breadcrumbs: [
+      HOME_CRUMB,
+      { name: "Reservations", item: `${SITE_URL}/reservations` },
+    ],
+    faq: RESERVATIONS_FAQ,
+  },
+  {
+    path: "/contact",
+    title: CONTACT_TITLE,
+    description: CONTACT_DESCRIPTION,
+    canonical: `${SITE_URL}/contact`,
+    robots: DEFAULT_ROBOTS,
+    ogType: "website",
+    image: DEFAULT_IMAGE,
+    imageAlt: DEFAULT_IMAGE_ALT,
+    breadcrumbs: [HOME_CRUMB, { name: "Contact", item: `${SITE_URL}/contact` }],
+    faq: CONTACT_FAQ,
   },
   ...blogPostPages,
 ];
