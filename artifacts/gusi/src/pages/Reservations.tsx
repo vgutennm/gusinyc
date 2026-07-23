@@ -1,10 +1,10 @@
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { OpenTableWidget } from "@/components/OpenTableWidget";
-import { OPEN_TABLE_URL } from "@/lib/constants";
 import { usePageSeo, type PageFaq } from "@/hooks/usePageSeo";
 
 export const PAGE_TITLE = "Reserve a Table at GUSI | Greenwich Village NYC";
@@ -46,6 +46,41 @@ const fade = {
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
   transition: { duration: 0.7 },
+};
+
+const inlineLink =
+  "text-gusi-burgundy underline underline-offset-4 decoration-gusi-gold/60 hover:decoration-gusi-burgundy transition-colors";
+
+/**
+ * Rendered FAQ answers with inline internal links. The plain-text `answer`
+ * strings in RESERVATIONS_FAQ remain the source of truth for the FAQ
+ * structured data and must not change.
+ */
+const FAQ_ANSWER_JSX: Record<string, ReactNode> = {
+  "Can I Reserve for a Large Group?": (
+    <>
+      Yes. GUSI welcomes larger parties, group dinners, and private gatherings.
+      Our private floor can accommodate events and celebrations of up to 70
+      guests. Visit the{" "}
+      <Link href="/events" className={inlineLink}>
+        Events page
+      </Link>{" "}
+      or{" "}
+      <Link href="/contact" className={inlineLink}>
+        contact our team
+      </Link>{" "}
+      to discuss your plans.
+    </>
+  ),
+  "Can I View the Menu Before Booking?": (
+    <>
+      Yes, the{" "}
+      <Link href="/menu" className={inlineLink}>
+        full menu
+      </Link>{" "}
+      is available to explore before making a reservation.
+    </>
+  ),
 };
 
 export default function Reservations() {
@@ -97,14 +132,26 @@ export default function Reservations() {
                   recommend reserving your table in advance.
                 </p>
               </div>
-              <a
-                href={OPEN_TABLE_URL}
-                target="_blank"
-                rel="noreferrer noopener"
-                className={`${primaryBtn} mb-10`}
-              >
+              <a href="#find-a-table" className={primaryBtn}>
                 Book a Table
               </a>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* FIND A TABLE */}
+        <section
+          id="find-a-table"
+          className="relative py-16 sm:py-20 bg-gusi-charcoal text-gusi-ivory bg-texture-dark overflow-hidden border-t border-gusi-gold/15 scroll-mt-24"
+        >
+          <div className="relative z-10 container mx-auto px-5 sm:px-6 max-w-3xl text-center flex flex-col items-center">
+            <motion.div {...fade} className="flex flex-col items-center">
+              <span className="text-gusi-gold uppercase tracking-[0.3em] text-[11px] sm:text-xs mb-5">
+                Book Online
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-gusi-gold mb-8 leading-tight">
+                Find a Table
+              </h2>
               <OpenTableWidget />
             </motion.div>
           </div>
@@ -200,7 +247,7 @@ export default function Reservations() {
                     {faq.question}
                   </h3>
                   <p className="text-base sm:text-lg text-gusi-charcoal/80 font-light leading-relaxed">
-                    {faq.answer}
+                    {FAQ_ANSWER_JSX[faq.question] ?? faq.answer}
                   </p>
                 </motion.div>
               ))}
@@ -230,12 +277,7 @@ export default function Reservations() {
                 cocktails, and warm hospitality. Reserve your table and let our
                 team take care of the rest.
               </p>
-              <a
-                href={OPEN_TABLE_URL}
-                target="_blank"
-                rel="noreferrer noopener"
-                className={primaryBtn}
-              >
+              <a href="#find-a-table" className={primaryBtn}>
                 Reserve a Table Today
               </a>
             </motion.div>

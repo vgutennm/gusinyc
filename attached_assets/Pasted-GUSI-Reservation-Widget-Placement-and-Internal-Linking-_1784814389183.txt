@@ -1,0 +1,221 @@
+GUSI Reservation Widget Placement and Internal Linking Update
+
+Objective
+
+Update the live GUSI website based on E2M’s review of the published Menu, Reservations, and Contact pages.
+
+Do not rewrite approved page content, change the visual design, modify metadata, alter schema, change business hours, or make unrelated website changes.
+
+1. Reservations Page Booking Widget
+
+Page:
+
+https://gusi.nyc/reservations
+
+The booking widget currently appears inside the hero area, directly beneath the “Book a Table” button. This makes the hero feel crowded and creates two competing reservation actions in the same visual block. The screenshot provided by E2M shows the current placement. fileciteturn0file4
+
+Do not move the booking widget to the global website footer.
+
+Instead, make the following update:
+
+Keep the hero focused on the approved heading, introductory content, and primary “Book a Table” CTA.
+
+Move the OpenTable booking widget out of the hero and place it in a dedicated reservation section immediately below the hero.
+
+This dedicated section should remain high on the page so visitors can book without scrolling through the full page.
+
+Use a clear section heading such as:
+
+Find a Table
+
+The hero “Book a Table” button should scroll smoothly to this booking section on the same page.
+
+The booking widget must remain responsive and fully functional on desktop, tablet, and mobile.
+
+Retain the fallback link that allows visitors to reserve directly through OpenTable if the widget does not load.
+
+Do not duplicate the booking widget elsewhere on the Reservations page.
+
+The approved Reservations page content and FAQ schema must remain unchanged, except for implementing the internal links described below. fileciteturn0file2
+
+2. Contact Page Booking Widget
+
+Page:
+
+https://gusi.nyc/contact
+
+Keep the reservation booking widget on the Contact page.
+
+E2M confirmed that the Contact page FAQ language referring to the booking widget is intentional because the live page already contains the widget. The approved Contact page document also states that visitors may use the reservation widget on the page. fileciteturn0file1
+
+Confirm that:
+
+The widget loads correctly.
+
+The widget is positioned logically within the page.
+
+The widget is responsive on desktop, tablet, and mobile.
+
+The FAQ statement remains accurate after implementation.
+
+The reservation CTA either scrolls to the widget or clearly leads to the Reservations page, depending on its current context.
+
+Do not add a second widget if one is already present.
+
+3. Implement Internal Links on the Menu Page
+
+Page:
+
+https://gusi.nyc/menu
+
+Implement the internal links recommended in the approved Menu page document. fileciteturn0file3
+
+Use the existing live routes. Inspect the application routing before making changes and do not create duplicate routes.
+
+Required links:
+
+“Reserve a Table” should link to the Reservations page.
+
+“Learn About GUSI” should link to the existing Story or About page. Use the exact canonical route currently used by the website.
+
+“View the Full Menu” should link to the appropriate full menu section, menu document, or menu anchor currently used by the website. Do not create a dead link or reload the same page without moving the visitor to the relevant content.
+
+“Plan Your Private Event” should link to the Events page.
+
+“Read Our Stories” should link to the Blog or Stories page.
+
+Within the FAQ answer about private events:
+
+“Events page” should link to the Events page.
+
+“contact our team” should link to the Contact page.
+
+Within the FAQ answer about viewing the menu before booking, link the relevant reservation wording to the Reservations page where natural and accessible.
+
+The CTA in the final section should link to the Reservations page.
+
+4. Implement Internal Links on the Reservations Page
+
+Page:
+
+https://gusi.nyc/reservations
+
+Implement the internal links recommended in the approved Reservations page document. fileciteturn0file2
+
+Required links:
+
+The hero “Book a Table” button should scroll to the dedicated booking widget section immediately below the hero.
+
+“View the Menu” should link to the Menu page.
+
+“Learn About Our Events” should link to the Events page.
+
+Within the large group FAQ answer:
+
+“Events page” should link to the Events page.
+
+“contact our team” should link to the Contact page.
+
+Within the menu FAQ answer, link “full menu” to the Menu page.
+
+The final “Reserve a Table Today” CTA should scroll to the booking widget section or launch the same confirmed OpenTable reservation flow.
+
+5. Implement Internal Links on the Contact Page
+
+Page:
+
+https://gusi.nyc/contact
+
+Implement the internal links recommended in the approved Contact page document. fileciteturn0file1
+
+Required links:
+
+The reservation CTA near the contact information should scroll to the Contact page booking widget or link to the Reservations page. Use whichever action is clearest based on its placement.
+
+“Get Directions” should use the confirmed Google Maps directions link already used by the website.
+
+Retain the Apple Maps directions link if it is currently present.
+
+“Inquire About Events” should link to the Events page or its event inquiry section.
+
+Within the “Before You Visit” section:
+
+“browse our menu” should link to the Menu page.
+
+“Story page” should link to the existing Story or About page using the exact canonical route.
+
+“Make a Reservation” should link to the Reservations page or scroll to the Contact page widget.
+
+Within the private events FAQ answer:
+
+“event inquiry form” should link to the Events page or its inquiry form.
+
+“contact the restaurant directly” should link to the appropriate Contact page form, phone link, or email link.
+
+Within the reservation FAQ answer:
+
+“Reservations page” should link to the Reservations page.
+
+The final page CTAs should link to the correct Reservations, Contact, and Events destinations based on their labels.
+
+6. Link Implementation Standards
+
+Use normal crawlable anchor links.
+
+Do not use JavaScript only navigation where a standard anchor is appropriate.
+
+Use the canonical internal URL format already established by the website.
+
+Do not introduce unnecessary trailing slash inconsistencies.
+
+Do not open internal links in a new tab.
+
+External map and reservation provider links may open in a new tab where appropriate.
+
+Add accessible link labels where an icon or button does not clearly describe its destination.
+
+Do not add links solely for SEO when they would feel unnatural to a visitor.
+
+Do not link every occurrence of the same phrase. Use the most relevant contextual occurrence.
+
+7. Verification
+
+After implementation, verify the following on production:
+
+The Reservations page hero no longer contains the embedded booking widget.
+
+The booking widget appears immediately below the Reservations hero in a dedicated section.
+
+The hero booking CTA scrolls to the widget.
+
+The Contact page booking widget remains present and functional.
+
+Every requested internal link leads to the correct live destination.
+
+No links return 404 errors.
+
+No buttons lead to empty anchors.
+
+No duplicate booking widgets appear on either page.
+
+Desktop, tablet, and mobile layouts remain intact.
+
+The OpenTable widget and fallback reservation link work correctly.
+
+The approved page copy, metadata, FAQ content, and structured data remain unchanged.
+
+Provide a completion report listing:
+
+The exact files changed.
+
+The exact internal links added or corrected on each page.
+
+The final booking widget location on the Reservations page.
+
+Confirmation that the Contact page widget was retained.
+
+Desktop and mobile verification results.
+
+Any route or destination that could not be confirmed.
+
+Do not make any unrelated changes.

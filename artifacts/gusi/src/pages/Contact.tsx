@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Header } from "@/components/Header";
@@ -55,6 +56,38 @@ const fade = {
 
 const inlineLink =
   "text-gusi-burgundy underline underline-offset-4 decoration-gusi-gold/60 hover:decoration-gusi-burgundy transition-colors";
+
+/**
+ * Rendered FAQ answers with inline internal links. The plain-text `answer`
+ * strings in CONTACT_FAQ remain the source of truth for the FAQ structured
+ * data and must not change.
+ */
+const FAQ_ANSWER_JSX: Record<string, ReactNode> = {
+  "Can I Contact GUSI About Private Events?": (
+    <>
+      Yes. GUSI offers a dedicated private floor for celebrations, business
+      dinners, corporate gatherings, and private events of up to 70 guests. Use
+      our{" "}
+      <Link href="/events" className={inlineLink}>
+        event inquiry form
+      </Link>{" "}
+      or{" "}
+      <a href={`tel:${RESTAURANT_PHONE_TEL}`} className={inlineLink}>
+        contact the restaurant directly
+      </a>{" "}
+      to discuss your plans.
+    </>
+  ),
+  "Can I Make a Reservation Through the Contact Page?": (
+    <>
+      For table reservations, visit our{" "}
+      <Link href="/reservations" className={inlineLink}>
+        Reservations page
+      </Link>{" "}
+      or use the reservation booking widget on this page.
+    </>
+  ),
+};
 
 export default function Contact() {
   usePageSeo({
@@ -302,7 +335,7 @@ export default function Contact() {
                     {faq.question}
                   </h3>
                   <p className="text-base sm:text-lg text-gusi-charcoal/80 font-light leading-relaxed">
-                    {faq.answer}
+                    {FAQ_ANSWER_JSX[faq.question] ?? faq.answer}
                   </p>
                 </motion.div>
               ))}

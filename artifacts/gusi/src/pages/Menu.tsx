@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Header } from "@/components/Header";
@@ -44,6 +45,41 @@ const fade = {
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
   transition: { duration: 0.7 },
+};
+
+const inlineLink =
+  "text-gusi-burgundy underline underline-offset-4 decoration-gusi-gold/60 hover:decoration-gusi-burgundy transition-colors";
+
+/**
+ * Rendered FAQ answers with inline internal links. The plain-text `answer`
+ * strings in MENU_FAQ remain the source of truth for the FAQ structured data
+ * and must not change.
+ */
+const FAQ_ANSWER_JSX: Record<string, ReactNode> = {
+  "Can I View the Menu Before Making a Reservation?": (
+    <>
+      We encourage guests to explore our full menu online before{" "}
+      <Link href="/reservations" className={inlineLink}>
+        reserving a table
+      </Link>
+      , making it easy to learn about the dishes and beverages that await.
+    </>
+  ),
+  "Does GUSI Host Private Events or Group Dining?": (
+    <>
+      Yes. GUSI hosts birthdays, anniversaries, business dinners, private
+      events, and group gatherings. Our private floor can accommodate events
+      and celebrations for up to 70 guests. Visit our{" "}
+      <Link href="/events" className={inlineLink}>
+        Events page
+      </Link>{" "}
+      or{" "}
+      <Link href="/contact" className={inlineLink}>
+        contact our team
+      </Link>{" "}
+      to begin planning.
+    </>
+  ),
 };
 
 export default function Menu() {
@@ -296,7 +332,7 @@ export default function Menu() {
                     {faq.question}
                   </h3>
                   <p className="text-base sm:text-lg text-gusi-charcoal/80 font-light leading-relaxed">
-                    {faq.answer}
+                    {FAQ_ANSWER_JSX[faq.question] ?? faq.answer}
                   </p>
                 </motion.div>
               ))}
