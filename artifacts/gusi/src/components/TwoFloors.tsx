@@ -86,7 +86,7 @@ export function TwoFloors() {
         <div className="absolute inset-0 z-0">
           <img
             src="/gallery/gusi-chandelier-mirror-detail.webp"
-            srcSet="/gallery/gusi-chandelier-mirror-detail-800.webp 800w, /gallery/gusi-chandelier-mirror-detail.webp 1600w"
+            srcSet="/gallery/gusi-chandelier-mirror-detail-480.webp 480w, /gallery/gusi-chandelier-mirror-detail-800.webp 800w, /gallery/gusi-chandelier-mirror-detail.webp 1600w"
             sizes="100vw"
             alt="A crystal chandelier and antique gilt mirror in GUSI's passage between floors — Greenwich Village, NYC"
             width={825}
@@ -133,7 +133,7 @@ export function TwoFloors() {
         <div className="relative h-[44vh] sm:h-[50vh] lg:h-auto order-1 lg:order-2">
           <img
             src="/gallery/gusi-2f-greenroom.webp"
-            srcSet="/gallery/gusi-2f-greenroom-800.webp 800w, /gallery/gusi-2f-greenroom.webp 1086w"
+            srcSet="/gallery/gusi-2f-greenroom-480.webp 480w, /gallery/gusi-2f-greenroom-800.webp 800w, /gallery/gusi-2f-greenroom.webp 1086w"
             sizes="(max-width: 1024px) 100vw, 50vw"
             alt="GUSI's second-floor dining room (Lebedi / The Swans) — emerald-green and burgundy tablecloths, ivory leather chairs, and golden evening light through tall windows over leafy Sixth Avenue trees at 432 Sixth Avenue, Greenwich Village, NYC"
             title="Lebedi / The Swans — GUSI second-floor dining room, 432 Sixth Avenue, Greenwich Village, NYC"

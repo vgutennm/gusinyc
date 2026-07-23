@@ -49,7 +49,7 @@ export function ScrollToTop() {
         ${visible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-3 pointer-events-none"}`}
     >
       <img
-        src="/brand/gusi-goose-mark-600.webp"
+        src="/brand/gusi-goose-mark-72.webp"
         alt=""
         aria-hidden="true"
         width={600}

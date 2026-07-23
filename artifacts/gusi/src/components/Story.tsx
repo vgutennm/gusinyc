@@ -6,7 +6,9 @@ export function Story() {
     <section id="story" className="relative py-20 md:py-32 bg-gusi-ivory text-gusi-charcoal bg-texture-paper overflow-hidden">
       {/* Decorative goose silhouette — subtle watermark on every viewport */}
       <img
-        src="/brand/gusi-goose-mark.webp"
+        src="/brand/gusi-goose-mark-300.webp"
+        srcSet="/brand/gusi-goose-mark-300.webp 300w, /brand/gusi-goose-mark-600.webp 600w"
+        sizes="(min-width: 1280px) 295px, (min-width: 768px) 222px, 111px"
         alt=""
         aria-hidden="true"
         width={900}

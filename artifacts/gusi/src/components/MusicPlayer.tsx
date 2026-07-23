@@ -22,6 +22,9 @@ export function MusicPlayer({ songTitle, artistName, description, audioSrc, comp
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  // The audio file is only requested after the visitor intentionally presses
+  // play: until then the <audio> element has no src and preload="none".
+  const [activated, setActivated] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -62,6 +65,10 @@ export function MusicPlayer({ songTitle, artistName, description, audioSrc, comp
     document.querySelectorAll("audio").forEach((el) => {
       if (el !== audio) el.pause();
     });
+    if (!activated) {
+      setActivated(true);
+      audio.src = audioSrc;
+    }
     void audio.play();
   };
 
@@ -88,7 +95,7 @@ export function MusicPlayer({ songTitle, artistName, description, audioSrc, comp
         compact ? "flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7" : "flex flex-col gap-5"
       } border border-gusi-gold/25 bg-gusi-charcoal/40 px-6 py-6 sm:px-8 sm:py-7`}
     >
-      <audio ref={audioRef} src={audioSrc} preload="metadata" />
+      <audio ref={audioRef} preload="none" />
 
       <div className={compact ? "sm:flex-1 min-w-0" : ""}>
         <h3 className="font-serif text-xl sm:text-2xl text-gusi-gold leading-tight truncate">{songTitle}</h3>

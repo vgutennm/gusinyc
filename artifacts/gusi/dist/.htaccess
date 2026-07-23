@@ -60,6 +60,10 @@ Options -Indexes
   <FilesMatch "\.(?:js|css|woff2?|ttf|otf|eot|svg|webp|jpg|jpeg|png|gif|ico)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+  # Audio: long cache, but not immutable (file is not content-hashed)
+  <FilesMatch "\.(?:mp3|m4a|ogg|wav)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>

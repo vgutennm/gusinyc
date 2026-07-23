@@ -177,6 +177,36 @@ function injectApp(html, appHtml) {
   return html.replace(marker, `<div id="root">${appHtml}</div>`);
 }
 
+// Inject <link rel="modulepreload"> for the code-split page chunk so
+// prerendered subpages fetch their chunk in parallel with the main bundle
+// instead of waterfalling behind it.
+const assetFiles = fs.readdirSync(path.join(distDir, "assets"));
+function chunkFor(prefix) {
+  return assetFiles.find((f) => f.startsWith(`${prefix}-`) && f.endsWith(".js"));
+}
+function pageChunkPrefix(routePath) {
+  if (routePath === "/press") return "Press";
+  if (routePath === "/events" || routePath === "/events/private-events") return "PrivateEvents";
+  if (routePath === "/blog") return "Blog";
+  if (routePath.startsWith("/blog/")) return "BlogPost";
+  if (routePath === "/story") return "Story";
+  if (routePath === "/menu") return "Menu";
+  if (routePath === "/reservations") return "Reservations";
+  if (routePath === "/contact") return "Contact";
+  if (routePath === "/404.html") return "not-found";
+  return null;
+}
+function injectModulePreload(html, routePath) {
+  const prefix = pageChunkPrefix(routePath);
+  if (!prefix) return html;
+  const chunk = chunkFor(prefix);
+  if (!chunk) throw new Error(`No built chunk found for page prefix "${prefix}"`);
+  return html.replace(
+    "</head>",
+    `  <link rel="modulepreload" crossorigin href="/assets/${chunk}">\n  </head>`,
+  );
+}
+
 function outputPathFor(routePath) {
   if (routePath === "/") return path.join(distDir, "index.html");
   return path.join(distDir, routePath.replace(/^\//, ""), "index.html");
@@ -185,11 +215,12 @@ function outputPathFor(routePath) {
 const written = [];
 
 for (const page of PRERENDER_PAGES) {
-  const appHtml = render(page.path);
+  const appHtml = await render(page.path);
   if (!appHtml || appHtml.length < 500) {
     throw new Error(`Suspiciously small render for ${page.path}`);
   }
   let html = page.useTemplateHead ? template : buildHead(template, page);
+  html = injectModulePreload(html, page.path);
   html = injectApp(html, appHtml);
   const outFile = outputPathFor(page.path);
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
@@ -199,7 +230,7 @@ for (const page of PRERENDER_PAGES) {
 
 // Physical 404 page (served by Apache via ErrorDocument 404 /404.html)
 {
-  const appHtml = render("/this-page-does-not-exist");
+  const appHtml = await render("/this-page-does-not-exist");
   let html = buildHead(template, {
     path: "/404.html",
     title: "Page Not Found | GUSI",
@@ -212,6 +243,7 @@ for (const page of PRERENDER_PAGES) {
     imageAlt: "GUSI Restaurant wordmark",
     breadcrumbs: [{ name: "Home", item: `${SITE_URL}/` }],
   });
+  html = injectModulePreload(html, "/404.html");
   html = injectApp(html, appHtml);
   fs.writeFileSync(path.join(distDir, "404.html"), html, "utf8");
   written.push("404.html");

@@ -70,7 +70,9 @@ export function Header() {
           className="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gusi-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gusi-charcoal"
         >
           <img
-            src="/brand/gusi-goose-emblem.webp"
+            src="/brand/gusi-goose-emblem-256.webp"
+            srcSet="/brand/gusi-goose-emblem-256.webp 256w, /brand/gusi-goose-emblem-512.webp 512w"
+            sizes="48px"
             alt="GUSI Restaurant logo — a hand-drawn brown and amber goose standing inside a thin amber circle, the brand mark of GUSI Eastern European restaurant and bar in Greenwich Village, NYC"
             title="GUSI Restaurant — Greenwich Village, NYC"
             width={1024}

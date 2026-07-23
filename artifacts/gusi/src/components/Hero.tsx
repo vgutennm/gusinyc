@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Link } from "wouter";
 
 export function Hero() {
@@ -8,7 +7,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/gallery/gusi-1f-05.webp"
-          srcSet="/gallery/gusi-1f-05-800.webp 800w, /gallery/gusi-1f-05.webp 1600w"
+          srcSet="/gallery/gusi-1f-05-480.webp 480w, /gallery/gusi-1f-05-800.webp 800w, /gallery/gusi-1f-05.webp 1600w"
           sizes="100vw"
           alt="Interior of GUSI restaurant and bar in Greenwich Village, New York — first-floor dining and bar space at 432 Sixth Avenue."
           title="GUSI Restaurant & Bar — 432 Sixth Avenue, Greenwich Village, NYC"
@@ -24,11 +23,10 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center text-center px-5 sm:px-6 max-w-4xl mx-auto pt-20 sm:pt-28 lg:pt-32 pb-20 sm:pb-16">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
+        {/* LCP-critical content renders visible immediately (no JS-driven
+            opacity entrance) so prerendered HTML paints without waiting for
+            hydration. */}
+        <div>
           <p className="text-gusi-gold uppercase tracking-[0.3em] text-[10px] sm:text-xs md:text-sm mb-5 sm:mb-6">
             Greenwich Village, New York
           </p>
@@ -49,14 +47,9 @@ export function Hero() {
           <p className="text-gusi-porcelain/80 text-base sm:text-lg md:text-xl font-light tracking-wide max-w-md md:max-w-lg mx-auto mb-10 sm:mb-12 leading-relaxed">
             Modern Eastern European cuisine with a Mediterranean touch.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto max-w-xs sm:max-w-none"
-        >
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto max-w-xs sm:max-w-none">
           <a
             href="https://app.inkind.com/offer/OGWQC4LM"
             target="_blank"
@@ -84,7 +77,7 @@ export function Hero() {
           >
             Book An Event
           </Link>
-        </motion.div>
+        </div>
       </div>
 
     </section>

@@ -1,0 +1,315 @@
+GUSI PageSpeed Performance Optimization
+
+Production website:
+https://gusi.nyc/
+
+Objective
+
+Improve the homepage mobile and desktop performance based on the July 2026 PageSpeed findings.
+
+Make only performance related changes. Do not change the website’s design, branding, visible content, navigation, page structure, SEO metadata, schema, analytics configuration, URLs, sitemap, robots.txt, reservation functionality, gallery behavior, or music controls unless a change is specifically required below.
+
+The current PageSpeed report may reference hashed asset filenames from an earlier build. Inspect the current source code and current production build rather than editing a hashed filename directly.
+
+Before Making Changes
+
+1. Run current mobile and desktop PageSpeed or Lighthouse tests for:
+
+https://gusi.nyc/
+
+2. Record the current scores and Core Web Vitals laboratory measurements, including:
+
+Performance score
+Largest Contentful Paint
+First Contentful Paint
+Total Blocking Time
+Cumulative Layout Shift
+Speed Index
+Total network payload
+
+3. Confirm the current Largest Contentful Paint element separately for mobile and desktop. The supplied report is not fully consistent because the mobile report identifies hero text while the desktop report identifies the GUSI wordmark or logo.
+
+4. Identify exactly where the following are loaded:
+
+The theme song audio
+Google Fonts
+Global CSS
+The hero wordmark and logo assets
+Google Tag Manager
+Google Analytics
+Homepage gallery images
+Any JavaScript responsible for hero animations or delayed rendering
+
+Required Work
+
+Section 1: Stop the Theme Song From Loading During Initial Page Load
+
+The file below is approximately 4.8 MB and is the largest source of unnecessary page weight:
+
+/music/gusi-theme-song.mp3
+
+Update the audio implementation so that:
+
+The MP3 is not requested during the initial page load.
+The audio element uses preload="none".
+The MP3 source is assigned or requested only after the visitor intentionally activates the music control.
+The existing play, pause, mute, volume, and other music controls continue working exactly as they do now.
+No autoplay behavior is introduced.
+The visitor experience and visible interface remain unchanged.
+
+Do not remove the theme song.
+
+If the current audio file can be reduced materially without creating an audible quality problem, create and test an optimized version. Preserve the existing file as a fallback until the optimized version has been verified.
+
+Section 2: Add Browser Caching
+
+Configure production caching rules appropriate for the Apache or cPanel deployment.
+
+Use long cache lifetimes for versioned or stable static assets, including:
+
+JavaScript
+CSS
+WebP images
+SVG files
+Locally hosted fonts
+The theme song audio
+
+Recommended approach:
+
+Hashed JavaScript and CSS assets:
+Cache-Control: public, max-age=31536000, immutable
+
+Versioned image and font assets:
+Cache-Control: public, max-age=31536000, immutable
+
+Theme song audio:
+Cache-Control: public, max-age=31536000
+
+HTML:
+Do not apply an immutable one year cache. Keep HTML capable of receiving updated deployments.
+
+Verify the final production response headers with curl or another direct HTTP header test. Do not report caching as completed based only on source code.
+
+Section 3: Optimize Font Loading
+
+Remove Google Fonts from the critical rendering path.
+
+Preferred approach:
+
+Self host only the font families and font weights that the live website actually uses.
+Use WOFF2 files.
+Add font-display: swap.
+Preload only the font file needed for the immediately visible hero content.
+Do not preload every font or font weight.
+Remove unused font families and weights.
+Preserve the current typography and visual appearance.
+
+If self hosting is not technically appropriate, use the safest nonblocking Google Fonts implementation with display=swap and the existing preconnect settings.
+
+Confirm that no visible font breakage, layout shift, or incorrect fallback font remains after loading.
+
+Section 4: Improve Hero Rendering and LCP
+
+The hero must render from the server delivered or prerendered HTML without waiting for unnecessary JavaScript.
+
+Review the hero for:
+
+JavaScript controlled visibility
+Initial opacity of zero
+Delayed entrance animations
+Client hydration dependencies
+DOM measurements before display
+Unnecessary state initialization
+Images marked as lazy
+Resources loaded behind noncritical scripts
+
+Make the following changes where applicable:
+
+Render the hero text and primary branding immediately.
+Remove any artificial delay that prevents the hero from becoming visible.
+Do not hide the LCP element until an animation or JavaScript event completes.
+Do not lazy load the actual LCP image.
+Use fetchpriority="high" only for the confirmed LCP image.
+Preload the confirmed LCP image only when doing so improves measured performance.
+Keep explicit width and height attributes to prevent layout shift.
+Keep all current design and animation effects that do not delay the initial hero display.
+
+The desktop report identified the GUSI wordmark SVG as an LCP candidate. Confirm that the current SVG is small, delivered promptly, and not delayed by JavaScript or CSS.
+
+Section 5: Reduce Render Blocking CSS
+
+Review the current global CSS bundle and identify the styles required to render the header and above the fold hero.
+
+Implement a safe critical rendering strategy:
+
+Inline only the minimum critical styles needed for the header and hero.
+Load noncritical styles without blocking the initial hero render where technically safe.
+Remove duplicate or unused global CSS.
+Do not create a flash of unstyled content.
+Do not alter any page design.
+Do not break prerendered pages.
+Do not convert working styles into a fragile inline implementation simply to satisfy a Lighthouse recommendation.
+
+Test the homepage and all major templates after making CSS changes.
+
+Section 6: Optimize the Images Identified in the Report
+
+The report specifically flags assets including:
+
+/brand/gusi-goose-emblem.webp
+/brand/gusi-goose-mark-600.webp
+/gallery/gusi-chandelier-mirror-detail.webp
+/gallery/gusi-chandelier-mirror-detail-800.webp
+/gallery/gusi-2f-greenroom-800.webp
+/gallery/gusi-1f-05.webp
+/gallery/gusi-1f-05-800.webp
+
+Inspect their actual rendered dimensions at mobile and desktop breakpoints.
+
+Required changes:
+
+Create appropriately sized responsive variants for images that are being delivered substantially larger than their rendered dimensions.
+Use accurate srcset and sizes attributes.
+Do not use sizes="100vw" for images that never occupy the full viewport width.
+Continue using WebP or a more efficient supported format.
+Apply additional compression where there is no noticeable visual degradation.
+Keep explicit width and height values.
+Do not lazy load the confirmed LCP image.
+Continue lazy loading below the fold gallery images.
+Do not reduce image quality enough to damage the restaurant’s premium visual presentation.
+
+For small logo placements, do not send a 600 pixel or 1024 pixel asset when the displayed image is approximately 22 to 70 pixels wide. Provide suitable small variants with higher density options for Retina displays.
+
+Ensure every existing image URL used in metadata, schema, social sharing, or other external references remains valid. Do not replace or delete a canonical brand asset merely because a smaller display variant is added.
+
+Section 7: Reduce Initial JavaScript
+
+The report estimates approximately 215 KB to 217 KB of potentially unused JavaScript.
+
+Analyze the current production bundle and implement safe reductions:
+
+Use route based code splitting where it is not already present.
+Lazy load components that are not required above the fold.
+Delay gallery interactions, modal logic, music logic, and other nonessential homepage functionality until required.
+Remove genuinely unused imports, libraries, components, and code.
+Avoid loading code for unrelated pages on the homepage.
+Preserve prerendering, routing, SEO content, navigation, forms, reservations, gallery behavior, and all interactive functionality.
+
+Do not simply defer the entire application if doing so delays visible content or breaks hydration.
+
+Section 8: Review Google Analytics and Google Tag Manager
+
+The report shows both:
+
+Google Tag Manager: GTM-NWSBPTPW
+Google Analytics: G-VJ7V5E7MJV
+
+Confirm whether GA4 is intentionally loaded directly and also through Google Tag Manager.
+
+If the same GA4 property is being initialized twice:
+
+Remove only the duplicate implementation.
+Keep one verified working analytics implementation.
+Confirm page views are still being sent.
+Confirm Google Tag Manager still loads.
+Confirm consent behavior, if present, remains intact.
+
+If both scripts serve separate confirmed purposes, retain them and document why.
+
+Do not remove analytics merely to improve the PageSpeed score.
+
+Section 9: Reduce Forced Reflow
+
+The mobile report identified approximately 48 ms of forced reflow.
+
+Use browser performance tooling to identify the actual source.
+
+Where applicable:
+
+Batch DOM reads and writes.
+Avoid repeatedly reading layout measurements immediately after changing styles.
+Use ResizeObserver or requestAnimationFrame where appropriate.
+Avoid unnecessary scroll or resize calculations.
+Do not make speculative rewrites when the source cannot be identified.
+
+Document the exact source and the change made.
+
+Section 10: Regression Testing
+
+Test the following on mobile and desktop:
+
+Homepage loading
+Header and navigation
+Mobile menu
+Hero design
+Theme song controls
+Reservation buttons and links
+Gallery layout
+Gallery image loading
+Contact page
+Menu page
+Blog index
+Individual blog posts
+Press page
+Structured data
+Canonical tags
+Google Tag Manager
+Google Analytics
+Sitemap
+Robots.txt
+All existing redirects
+All prerendered routes
+
+Confirm there are no:
+
+Broken images
+Missing fonts
+Layout shifts
+JavaScript errors
+Hydration errors
+Console errors
+Failed routes
+Changed text
+Changed metadata
+Changed schema
+Changed design elements
+Broken analytics events
+Broken music controls
+
+Production Verification
+
+After deployment, verify the live production website rather than only the Replit preview.
+
+Run PageSpeed Insights again for mobile and desktop.
+
+Because PageSpeed scores vary between runs, do not claim a guaranteed score. Run at least three tests for each device type and report the median result.
+
+Provide a completion report containing:
+
+1. Exact files changed
+
+2. Root cause of each major performance problem
+
+3. Before and after mobile results
+
+4. Before and after desktop results
+
+5. Before and after LCP, FCP, Total Blocking Time, CLS, Speed Index, and total payload
+
+6. Confirmation that the MP3 is no longer requested during initial loading
+
+7. Production cache headers for the MP3, CSS, JavaScript, images, fonts, and HTML
+
+8. Image variants created and the places where they are used
+
+9. JavaScript bundles or components that were split or deferred
+
+10. Analytics verification results
+
+11. Forced reflow source and resolution
+
+12. Confirmation that no visible content, design, SEO, schema, tracking, reservation functionality, gallery functionality, or music functionality was changed or broken
+
+13. Remaining PageSpeed opportunities that cannot safely be addressed, including the reason
+
+Do not mark the project complete until the changes and response headers have been verified on https://gusi.nyc/.
